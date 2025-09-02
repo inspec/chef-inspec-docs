@@ -279,10 +279,12 @@ calls can easily cause trouble when an automated profiles runs into an
 interactive `pry` call that stops the execution and waits for user input.
 
 Avoid:
-  - `binding.pry` in production profiles
+
+- `binding.pry` in production profiles
 
 Use:
-  - Use debugging calls during development only
+
+- Use debugging calls during development only
 
 Also you may find it helpful to use the Chef InSpec logging interface:
 

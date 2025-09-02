@@ -49,7 +49,7 @@ where
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Test the service name.
+### Test the service name
 
     describe apache do
       its ('service') { should cmp 'apache2' }

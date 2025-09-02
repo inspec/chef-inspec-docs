@@ -150,9 +150,10 @@ This example would run the `find` command for up to 300 seconds, then give up an
 Aside from setting the value on a per-resource basis, you may also use the `--command-timeout` CLI option to globally set a command timeout. The CLI option takes precedence over any per-resource `timeout:` options.
 
 Currently supported target platforms include:
- * Local Unix-like OSes, including macOS
- * SSH targets
- * Windows targets via WinRM
+
+- Local Unix-like OSes, including macOS
+- SSH targets
+- Windows targets via WinRM
 
 Any target platforms not listed are not supported at this time.
 

@@ -61,13 +61,14 @@ Properties that can be accessed from the `google_bigquery_dataset` resource:
 : A special group to grant access to.
 
   Possible values include:
+
   - `projectOwners`: Owners of the enclosing project.
   - `projectReaders`: Readers of the enclosing project.
   - `projectWriters`: Writers of the enclosing project.
   - `allAuthenticatedUsers`: All authenticated BigQuery users.
 
 `user_by_email`
-: An email address of a user to grant access to. For example: fred@example.com
+: An email address of a user to grant access to. For example: `fred@example.com`
 
 `iam_member`
 : Some other type of member that appears in the IAM Policy but isn't a user, group, domain, or special group. For example: `allUsers`

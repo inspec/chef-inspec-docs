@@ -88,7 +88,7 @@ The following examples show how to use this Chef InSpec audit resource.
       its('rules') { should include ['r', 'sha512'] }
     end
 
-### The usage of all_have_rule will return whether or not all selection lines in audit.conf contain a particular rule:
+### The usage of all_have_rule will return whether or not all selection lines in audit.conf contain a particular rule
 
     describe aide_conf.all_have_rule('sha512') do
       it { should eq true }

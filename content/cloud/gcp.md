@@ -40,7 +40,7 @@ Instructions for this pre-requisite can be found in the [Google CLoud SDK docume
 
 ### Set the GCP credentials file
 
-While InSpec can use user accounts for authentication, [Google Cloud documentation](https://cloud.google.com/docs/authentication/) recommends using service accounts. 
+While InSpec can use user accounts for authentication, [Google Cloud documentation](https://cloud.google.com/docs/authentication/) recommends using service accounts.
 
 1. Create a [service account](https://cloud.google.com/docs/authentication/getting-started) with the scopes appropriate for your needs.
 

@@ -70,7 +70,7 @@ The `all_host_names` property returns a two-dimensional string array where each 
 
 ## Examples
 
-### Test the IP address of the given primary name 'localhost'.
+### Test the IP address of the given primary name 'localhost'
 
     describe etc_hosts.where { primary_name == 'localhost' } do
       its('ip_address') { should cmp '127.0.1.154' }
@@ -82,7 +82,7 @@ The `all_host_names` property returns a two-dimensional string array where each 
       its('primary_name') { should cmp 'localhost' }
     end
 
-### Test the list of primary names and their aliases for the given IP address.
+### Test the list of primary names and their aliases for the given IP address
 
     describe etc_hosts.where { ip_address == '127.0.1.154' } do
       its('all_host_names') { should eq [['localhost', 'localhost.localdomain', 'localhost4', 'localhost4.localdomain4'],  ['localhost', 'localhost.localdomain', 'localhost6', 'localhost6.localdomain6']] }

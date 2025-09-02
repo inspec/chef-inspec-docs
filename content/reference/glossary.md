@@ -257,8 +257,8 @@ end
 
 A _`matcher`_ performs the actual assertions against [resources](#resource) or the [properties](#property) of resources. Matchers always return a true/false value. Matchers fall into two camps:
 
-* [resource-specific matchers](#resource-specific-matcher), which operate directly on the resource, are used with [it](#it), and tend to be highly customized to the auditing needs of the resource
-* [universal matchers](#universal-matcher), which operate on the properties of the resource, are used with [its](#its), and tend to be very generic, operating on text, numbers, and lists
+- [resource-specific matchers](#resource-specific-matcher), which operate directly on the resource, are used with [it](#it), and tend to be highly customized to the auditing needs of the resource
+- [universal matchers](#universal-matcher), which operate on the properties of the resource, are used with [its](#its), and tend to be very generic, operating on text, numbers, and lists
 
 Some matchers accept parameters, called [expected results](#expected-result).
 

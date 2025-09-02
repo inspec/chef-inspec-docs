@@ -79,7 +79,7 @@ The following methods are available to the resource.
 The additional methods may be defined within the resource:
 
 `resource_id`
-: An instance method. Place logic here to determine the unique identifier for a resource, and set it using the superclass method. 
+: An instance method. Place logic here to determine the unique identifier for a resource, and set it using the superclass method.
 
   Following is an example of its usage in an InSpec test:
 

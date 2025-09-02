@@ -72,8 +72,6 @@ This subcommand has the following additional options:
 `--no-zip`
 : Generates a zip archive.
 
-
-
 ## automate
 
 Communicates with Chef Automate.

@@ -237,7 +237,7 @@ end
 
 #### Setting Inputs
 
-When you write `input('some_name', value: 'some_value')`, you are *setting* an input value in the DSL.
+When you write `input('some_name', value: 'some_value')`, you are _setting_ an input value in the DSL.
 Because the `value:` option is present, a new value will be set.
 You may also pass any other option listed in the
 [input option reference](#input-options).
@@ -285,7 +285,6 @@ To disable input caching, you can disable the cache from your Ruby code:
 ```ruby
 Inspec::InputRegistry.instance.cache_inputs = false
 ```
-
 
 ## Input options
 
@@ -336,13 +335,13 @@ Inspec::InputRegistry.instance.cache_inputs = false
 
   Allowed values:
 
-  - `String`
-  - `Numeric`
-  - `Regexp`
-  - `Array`
-  - `Hash`
-  - `Boolean`
-  - `Any`
+- `String`
+- `Numeric`
+- `Regexp`
+- `Array`
+- `Hash`
+- `Boolean`
+- `Any`
 
   Allowed in: control code, `inspec.yml` file
 
@@ -408,7 +407,7 @@ Inspec::InputRegistry.instance.cache_inputs = false
 
 ## Input priority
 
-The following table lists the *default* priority for input methods in order from highest priority (50) to lowest priority (20).
+The following table lists the _default_ priority for input methods in order from highest priority (50) to lowest priority (20).
 
 | Input Provider                          | Priority | May change priority |
 | --------------------------------------- | -------- | ------------------- |
@@ -472,7 +471,7 @@ remember that highest priority wins; order only matters to break a tie.
 
 ## InSpec Attributes
 
-When originally introduced, the Input facility was named *Attributes*. This name
+When originally introduced, the Input facility was named _Attributes_. This name
 was problematic, because:
 
 - The Chef Infra tool uses the same word to describe its parameterization system.

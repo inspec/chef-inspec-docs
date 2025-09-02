@@ -61,7 +61,7 @@ The `groups` property returns the list of groups from `/etc/group` file.
 
 ### users
 
-The `users` property returns the list of users from `/etc/group `file.
+The `users` property returns the list of users from `/etc/group` file.
 
     its('users') { should include 'my_user' }
 

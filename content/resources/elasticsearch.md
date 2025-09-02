@@ -197,7 +197,7 @@ The `version` property returns the version of Elasticsearch running on each node
 
 ## Examples
 
-### Test to verify the specific module. Uses additional Ruby to find a specific module and assert a value. For a succinct list of the names of each of the modules enabled, use the `module_list` property.
+### Test to verify the specific module. Uses additional Ruby to find a specific module and assert a value. For a succinct list of the names of each of the modules enabled, use the `module_list` property
 
     modules = elasticsearch.modules.first
     lang_groovy_module = modules.find { |mod| mod.name == 'lang-groovy' }
@@ -207,7 +207,7 @@ The `version` property returns the version of Elasticsearch running on each node
       its('version') { should cmp '5.5.2' }
     end
 
-### Tests to verify the specific plugin. Uses additional Ruby to find a specific plugin and assert a value. For a succinct list of the names of each of the plugins enabled, use the `plugin_list` property.
+### Tests to verify the specific plugin. Uses additional Ruby to find a specific plugin and assert a value. For a succinct list of the names of each of the plugins enabled, use the `plugin_list` property
 
     plugins = elasticsearch.plugins.first
     my_plugin = plugins.find { |plugin| plugin.name == 'my_plugin' }

@@ -118,6 +118,7 @@ Many of these options allow you to limit the report size because some reporters 
 : Includes enhanced outcome of controls in report data.
 
   The control level status outcomes are:
+
   - `Passed`
   - `Failed`
   - `Not Applicable (N/A)`
@@ -125,6 +126,7 @@ Many of these options allow you to limit the report size because some reporters 
   - `Error (ERR)`.
 
   Supported with the following reporters:
+
   - automate
   - cli
   - html2
@@ -132,7 +134,6 @@ Many of these options allow you to limit the report size because some reporters 
   - json-automate
   - progress-bar
   - yaml
-
 
 `--filter-empty-profiles`
 

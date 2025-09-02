@@ -70,19 +70,19 @@ The `text` property returns the value of DH parameters in text format.
 
 ## Examples
 
-### Test generator used for the Diffie-Hellman operation:
+### Test generator used for the Diffie-Hellman operation
 
     describe dh_params('/path/to/file.dh_pem') do
       its('generator') { should eq 2 }
     end
 
-### Test prime modulus used for the Diffie-Hellman operation:
+### Test prime modulus used for the Diffie-Hellman operation
 
     describe dh_params('/path/to/file.dh_pem') do
       its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
     end
 
-### Test example using multi-line string:
+### Test example using multi-line string
 
 ```ruby
 describe dh_params('/path/to/file.dh_pem') do
@@ -112,20 +112,19 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test length of prime modulus used for the Diffie-Hellman operation:
+### Test length of prime modulus used for the Diffie-Hellman operation
 
     describe dh_params('/path/to/file.dh_pem') do
       its('prime_length') { should eq 2048 }
     end
 
-
-### Test `pem` output of DH parameters:
+### Test `pem` output of DH parameters
 
     describe dh_params('/path/to/file.dh_pem') do
       its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
     end
 
-### Test example using multi-line string:
+### Test example using multi-line string
 
 ```ruby
 describe dh_params('/path/to/file.dh_pem') do
@@ -145,7 +144,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test via `openssl dhparam` command:
+### Test via `openssl dhparam` command
 
     $ openssl dhparam -in /path/to/file.dh_pem
     -----BEGIN DH PARAMETERS-----
@@ -157,14 +156,13 @@ end
     KqM3tjT5/pZM9sXjoVKvAcFPx0Kgvu3NEwIBAg==
     -----END DH PARAMETERS-----
 
-
-### Test human-readable text output of DH parameters:
+### Test human-readable text output of DH parameters
 
     describe dh_params('/path/to/file.dh_pem') do
       its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
     end
 
-### Test example using multi-line string:
+### Test example using multi-line string
 
 ```ruby
 describe dh_params('/path/to/file.dh_pem') do
@@ -197,7 +195,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test via `openssl dhparam` command:
+### Test via `openssl dhparam` command
 
     $ openssl dhparam -in /path/to/file.dh_pem -noout -text
     PKCS#3 DH Parameters: (2048 bit)
