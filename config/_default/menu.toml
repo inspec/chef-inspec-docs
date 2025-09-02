@@ -1,0 +1,122 @@
+### Menu Configuration #####################
+#
+# Define the major menu sections and subsections in this file.
+# Define where each page exists in a menu in each page's frontmatter.
+# Define the order of each menu section in the `config/_default/params.toml` file with the `menuOrder` paramater
+#
+# See our documentation for more information about defining menus.
+# https://docs.chef.io/style/front_matter/
+#
+# See Hugo's documentation about menus.
+# https://gohugo.io/content-management/menus/
+#
+############################################
+
+
+####
+## Main Menu ##
+####
+
+[[main]]
+title = "chef.io"
+identifier = "chef"
+url = "https://www.chef.io/"
+weight = 10
+
+[[main]]
+title = "Blog"
+identifier = "blog"
+url = "https://www.chef.io/blog"
+weight = 30
+
+[[main]]
+title = "Community"
+identifier = "community"
+url = "https://community.chef.io/"
+weight = 40
+
+[[main]]
+title = "Training"
+identifier = "training"
+url = "https://www.chef.io/training"
+weight = 50
+
+[[main]]
+title = "Downloads"
+identifier = "downloads"
+url = "https://www.chef.io/downloads"
+weight = 60
+
+####
+## End Main Menu ##
+####
+
+[[install]]
+title = "Install"
+identifier = "install"
+
+[[profiles]]
+title = "Profiles"
+identifier = "profiles"
+
+[[cloud]]
+title = "Cloud Platforms"
+identifier = "cloud"
+
+[[chef_tools]]
+title = "Chef Tools"
+identifier = "chef_tools"
+
+[[related]]
+title = "Related projects"
+identifier = "related"
+
+[[reference]]
+title = "Reference"
+identifier = "reference"
+
+[[resources]]
+title = "Resources"
+identifier = "resources"
+
+    [[resources]]
+    title = "OS"
+    identifier = "resources/os"
+    parent = "resources"
+    weight = 20
+
+    [[resources]]
+    title = "Alibaba"
+    identifier = "resources/alibaba"
+    parent = "resources"
+    weight = 30
+
+    [[resources]]
+    title = "AWS"
+    identifier = "resources/aws"
+    parent = "resources"
+    weight = 40
+
+    [[resources]]
+    title = "Azure"
+    identifier = "resources/azure"
+    parent = "resources"
+    weight = 50
+
+    [[resources]]
+    title = "GCP"
+    identifier = "resources/gcp"
+    parent = "resources"
+    weight = 60
+
+    [[resources]]
+    title = "Habitat"
+    identifier = "resources/habitat"
+    parent = "resources"
+    weight = 70
+
+    [[resources]]
+    title = "Kubernetes"
+    identifier = "resources/k8s"
+    parent = "resources"
+    weight = 80
