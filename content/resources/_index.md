@@ -1,61 +1,15 @@
 +++
-title = "InSpec Resources Reference"
+title = "Chef InSpec resources"
 draft = false
-linkTitle = "Resources reference"
+linkTitle = "Resources"
+list_pages = true
 
 [menu.resources]
-    title = "InSpec Resources (Single Page)"
-    identifier = "resources/_index.md Chef InSpec Resources (Single Page)"
+    title = "InSpec resources"
+    identifier = "resources/_index.md Chef InSpec Resources"
     parent = "resources"
     weight = 10
 +++
 
-The following list of InSpec resources are available.
-
-{{< inspec_resources_filter >}}
-
-## OS
-
-{{< inspec_resources platform="os" >}}
-
-### Linux
-
-The following resources work on Linux operating systems.
-
-{{< inspec_resources platform="linux" >}}
-
-### BSD
-
-The following resources work on BSD operating systems.
-
-{{< inspec_resources platform="bsd" >}}
-
-### Windows
-
-The following resources work on Windows operating systems.
-
-{{< inspec_resources platform="windows" >}}
-
-## Alibaba
-
-{{< inspec_resources platform="alicloud" >}}
-
-## AWS
-
-{{< inspec_resources platform="aws" >}}
-
-## Azure
-
-{{< inspec_resources platform="azure" >}}
-
-## GCP
-
-{{< inspec_resources platform="gcp" >}}
-
-## Habitat
-
-{{< inspec_resources platform="habitat" >}}
-
-## Kubernetes
-
-{{< inspec_resources platform="k8s" >}}
+Chef InSpec resources allow you to audit different applications and platforms.
+InSpec has [core resources](core) that are bundled with InSpec and [resource packs](packs) that can be added as dependencies in a profile.

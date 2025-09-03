@@ -61,7 +61,7 @@ curl https://chefdownload-commercial.chef.io/install.sh?license_id=<LICENSE_ID> 
 
 Replace `<LICENSE_ID>` with your license ID.
 
-For more information about the install script, see the [Chef Install Script documentation](/chef_install_script/).
+For more information about the install script, see the [Chef Install Script documentation](https://docs.chef.io/chef_install_script/).
 
 If you prefer, you can use a package manager to install Chef InSpec.
 Once you downloaded the latest [Chef InSpec package](https://www.chef.io/downloads)

@@ -80,43 +80,20 @@ title = "Resources"
 identifier = "resources"
 
     [[resources]]
-    title = "OS"
-    identifier = "resources/os"
+    title = "Packs"
+    identifier = "resources/packs"
     parent = "resources"
     weight = 20
 
     [[resources]]
-    title = "Alibaba"
-    identifier = "resources/alibaba"
+    title = "Core"
+    identifier = "resources/core"
     parent = "resources"
     weight = 30
 
     [[resources]]
-    title = "AWS"
-    identifier = "resources/aws"
+    title = "Custom"
+    identifier = "resources/custom"
     parent = "resources"
+    url = "/profiles/custom_resources/"
     weight = 40
-
-    [[resources]]
-    title = "Azure"
-    identifier = "resources/azure"
-    parent = "resources"
-    weight = 50
-
-    [[resources]]
-    title = "GCP"
-    identifier = "resources/gcp"
-    parent = "resources"
-    weight = 60
-
-    [[resources]]
-    title = "Habitat"
-    identifier = "resources/habitat"
-    parent = "resources"
-    weight = 70
-
-    [[resources]]
-    title = "Kubernetes"
-    identifier = "resources/k8s"
-    parent = "resources"
-    weight = 80

@@ -1,10 +1,10 @@
 +++
-title = "InSpec Custom Resources"
+title = "Chef InSpec custom resources"
 draft = false
 
 
 [menu.profiles]
-    title = "Custom Resources"
+    title = "Custom resources"
     identifier = "profiles/libraries"
     parent = "profiles"
     weight = 40

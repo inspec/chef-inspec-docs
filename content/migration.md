@@ -5,7 +5,7 @@ draft = false
 
 [menu.related]
     title = "Migration from Serverspec"
-    identifier = "friends/migration.md Migration from Serverspec"
+    identifier = "related/migration.md Migration from Serverspec"
     parent = "related"
 +++
 
@@ -23,33 +23,33 @@ The following resources are available in Chef InSpec:
 
 |                                         Serverspec                                         |                                        Chef InSpec                                        |
 |:------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------:|
-| [`bond`](http://serverspec.org/resource_types.html#bond)                                     | [`bond`](/resources/bond/)                         |
-| [`bridge`](http://serverspec.org/resource_types.html#bridge)                                 | [`bridge`](/resources/bridge/)                     |
-| [`command`](http://serverspec.org/resource_types.html#command)                               | [`command`](/resources/command/)                   |
-| [`cron`](http://serverspec.org/resource_types.html#cron)                                     | [`crontab`](/resources/crontab/)                   |
-| [`docker_container`](http://serverspec.org/resource_types.html#docker_container)             | [`docker_container`](/resources/docker_container/) |
-| [`docker_image`](http://serverspec.org/resource_types.html#docker_image)                     | [`docker_image`](/resources/docker_image/)         |
-| [`file`](http://serverspec.org/resource_types.html#file)                                     | [`file`](/resources/file/)                         |
-| [`group`](http://serverspec.org/resource_types.html#group)                                   | [`group`](/resources/group/)                       |
-| [`host`](http://serverspec.org/resource_types.html#host)                                     | [`host`](/resources/host/)                         |
-| [`interface`](http://serverspec.org/resource_types.html#interface)                           | [`interface`](/resources/interface/)               |
-| [`iis_website`](http://serverspec.org/resource_types.html#iis_website)                       | [`iis_site`](/resources/iis_site/)           |
-| [`iis_app_pool`](http://serverspec.org/resource_types.html#iis_app_pool)                     | [`iis_app`](/resources/iis_app/)           |
-| [`iptables`](http://serverspec.org/resource_types.html#iptables)                             | [`iptables`](/resources/iptables/)                 |
-| [`kernel_module`](http://serverspec.org/resource_types.html#kernel_module)                   | [`kernel_module`](/resources/kernel_module/)       |
-| [`linux_kernel_parameter`](http://serverspec.org/resource_types.html#linux_kernel_parameter) | [`kernel_parameter`](/resources/kernel_parameter/) |
-| [`mysql_config`](http://serverspec.org/resource_types.html#mysql_config)                     | [`mysql_conf`](/resources/mysql_conf/)             |
-| [`package`](http://serverspec.org/resource_types.html#package)                               | [`package`](/resources/package/)                   |
-| [`port`](http://serverspec.org/resource_types.html#port)                                     | [`port`](/resources/port/)                         |
-| [`ppa`](http://serverspec.org/resource_types.html#ppa)                                       | [`apt`](/resources/apt/)                           |
-| [`process`](http://serverspec.org/resource_types.html#process)                               | [`processes`](/resources/processes/)               |
-| [`service`](http://serverspec.org/resource_types.html#service)                               | [`service`](/resources/service/)                   |
-| [`user`](http://serverspec.org/resource_types.html#user)                                     | [`user`](/resources/user/)                         |
-| [`windows_feature`](http://serverspec.org/resource_types.html#windows_feature)               | [`windows_feature`](/resources/windows_feature/)   |
-| [`windows_registry_key`](http://serverspec.org/resource_types.html#windows_registry_key)     | [`registry_key`](/resources/registry_key/)         |
-| [`x509_certificate`](http://serverspec.org/resource_types.html#x509_certificate)             | [`x509_certificate`](/resources/x509_certificate/) |
-| [`yumrepo`](http://serverspec.org/resource_types.html#yumrepo)                               | [`yum`](/resources/yum/)                           |
-| [`zfs`](http://serverspec.org/resource_types.html#zfs)                                       | [`zfs_pool`](/resources/zfs_pool/)                 |
+| [`bond`](http://serverspec.org/resource_types.html#bond)                                     | [`bond`](/resources/core/bond/)                         |
+| [`bridge`](http://serverspec.org/resource_types.html#bridge)                                 | [`bridge`](/resources/core/bridge/)                     |
+| [`command`](http://serverspec.org/resource_types.html#command)                               | [`command`](/resources/core/command/)                   |
+| [`cron`](http://serverspec.org/resource_types.html#cron)                                     | [`crontab`](/resources/core/crontab/)                   |
+| [`docker_container`](http://serverspec.org/resource_types.html#docker_container)             | [`docker_container`](https://docs.chef.io/inspec/resources/docker_container/) |
+| [`docker_image`](http://serverspec.org/resource_types.html#docker_image)                     | [`docker_image`](https://docs.chef.io/inspec/resources/resources/docker_image/)         |
+| [`file`](http://serverspec.org/resource_types.html#file)                                     | [`file`](/resources/core/file/)                         |
+| [`group`](http://serverspec.org/resource_types.html#group)                                   | [`group`](/resources/core/group/)                       |
+| [`host`](http://serverspec.org/resource_types.html#host)                                     | [`host`](/resources/core/host/)                         |
+| [`interface`](http://serverspec.org/resource_types.html#interface)                           | [`interface`](/resources/core/interface/)               |
+| [`iis_website`](http://serverspec.org/resource_types.html#iis_website)                       | [`iis_site`](/resources/core/iis_site/)           |
+| [`iis_app_pool`](http://serverspec.org/resource_types.html#iis_app_pool)                     | [`iis_app`](/resources/core/iis_app/)           |
+| [`iptables`](http://serverspec.org/resource_types.html#iptables)                             | [`iptables`](/resources/core/iptables/)                 |
+| [`kernel_module`](http://serverspec.org/resource_types.html#kernel_module)                   | [`kernel_module`](/resources/core/kernel_module/)       |
+| [`linux_kernel_parameter`](http://serverspec.org/resource_types.html#linux_kernel_parameter) | [`kernel_parameter`](/resources/core/kernel_parameter/) |
+| [`mysql_config`](http://serverspec.org/resource_types.html#mysql_config)                     | [`mysql_conf`](/resources/core/mysql_conf/)             |
+| [`package`](http://serverspec.org/resource_types.html#package)                               | [`package`](/resources/core/package/)                   |
+| [`port`](http://serverspec.org/resource_types.html#port)                                     | [`port`](/resources/core/port/)                         |
+| [`ppa`](http://serverspec.org/resource_types.html#ppa)                                       | [`apt`](/resources/core/apt/)                           |
+| [`process`](http://serverspec.org/resource_types.html#process)                               | [`processes`](/resources/core/processes/)               |
+| [`service`](http://serverspec.org/resource_types.html#service)                               | [`service`](/resources/core/service/)                   |
+| [`user`](http://serverspec.org/resource_types.html#user)                                     | [`user`](/resources/core/user/)                         |
+| [`windows_feature`](http://serverspec.org/resource_types.html#windows_feature)               | [`windows_feature`](/resources/core/windows_feature/)   |
+| [`windows_registry_key`](http://serverspec.org/resource_types.html#windows_registry_key)     | [`registry_key`](/resources/core/registry_key/)         |
+| [`x509_certificate`](http://serverspec.org/resource_types.html#x509_certificate)             | [`x509_certificate`](/resources/core/x509_certificate/) |
+| [`yumrepo`](http://serverspec.org/resource_types.html#yumrepo)                               | [`yum`](/resources/core/yum/)                           |
+| [`zfs`](http://serverspec.org/resource_types.html#zfs)                                       | [`zfs_pool`](/resources/core/zfs_pool/)                 |
 
 Some Serverspec resources are not available yet. We will implement those resources based on user feedback. If you need a resource that is not available in InSpec, please open an [Github issue](https://github.com/chef/inspec/issues). The list of resources that are not available in InSpec:
 
@@ -67,29 +67,29 @@ Some Serverspec resources are not available yet. We will implement those resourc
 * [`selinux_module`](http://serverspec.org/resource_types.html#selinux_module)
 * [`x509_private_key`](http://serverspec.org/resource_types.html#x509_private_key)
 
-In addition Chef InSpec provides additional [resources](/resources/) that are not available in Serverspec:
+In addition Chef InSpec provides additional [resources](/resources/core/) that are not available in Serverspec:
 
-* [`apache_conf`](/resources/apache_conf/)
-* [`apt`](/resources/apt/)
-* [`audit_policy`](/resources/audit_policy/)
-* [`auditd_conf`](/resources/auditd_conf/)
-* [`bash`](/resources/bash/)
-* [`csv`](/resources/csv/)
-* [`shadow`](/resources/shadow/)
-* [`gem`](/resources/gem/)
-* [`grub_conf`](/resources/grub_conf/)
-* [`inetd_conf`](/resources/inetd_conf/)
-* [`ini`](/resources/ini/)
-* [`json`](/resources/json/)
-* [`npm`](/resources/npm/)
-* [`ntp_conf`](/resources/ntp_conf/)
-* [`oneget`](/resources/oneget/)
-* [`pip`](/resources/pip/)
-* [`powershell`](/resources/powershell/)
-* [`security_policy`](/resources/security_policy/)
-* [`ssh_config`](/resources/ssh_config/)
-* [`sshd_config`](/resources/sshd_config/)
-* [`sys_info`](/resources/sys_info/)
+* [`apache_conf`](/resources/core/apache_conf/)
+* [`apt`](/resources/core/apt/)
+* [`audit_policy`](/resources/core/audit_policy/)
+* [`auditd_conf`](/resources/core/auditd_conf/)
+* [`bash`](/resources/core/bash/)
+* [`csv`](/resources/core/csv/)
+* [`shadow`](/resources/core/shadow/)
+* [`gem`](/resources/core/gem/)
+* [`grub_conf`](/resources/core/grub_conf/)
+* [`inetd_conf`](/resources/core/inetd_conf/)
+* [`ini`](/resources/core/ini/)
+* [`json`](/resources/core/json/)
+* [`npm`](/resources/core/npm/)
+* [`ntp_conf`](/resources/core/ntp_conf/)
+* [`oneget`](/resources/core/oneget/)
+* [`pip`](/resources/core/pip/)
+* [`powershell`](/resources/core/powershell/)
+* [`security_policy`](/resources/core/security_policy/)
+* [`ssh_config`](/resources/core/ssh_config/)
+* [`sshd_config`](/resources/core/sshd_config/)
+* [`sys_info`](/resources/core/sys_info/)
 
 ## How do I migrate my Serverspec tests to InSpec
 

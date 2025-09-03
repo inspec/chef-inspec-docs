@@ -27,8 +27,7 @@ You can describe your profiles with metadata, version them, pin them to specific
 A control defines a regulatory recommendation or requirement for the state of a system. Each profile can have many controls and each control audits different aspects of a system.
 
 Chef InSpec resources allow you to test specific parts of your infrastructure.
-Chef InSpec has {{% inspec_count_resources %}} [resources](/resources/) ready to use--from Apache2 to ZFS pool.
-This includes resources for testing [AWS, Azure, AliCloud, and GCP cloud infrastructure](/cloud/), and you can create your own [custom resources](profiles/custom_resources) if we don't have a resource that meets your needs.
+Chef InSpec has [resources](/resources/) for testing different applications and platforms, including AWS, Azure, AliCloud, and GCP cloud infrastructure, and you can create your own [custom resources](/profiles/custom_resources) if we don't have a resource that meets your needs.
 
 [InSpec reporters](/reporters/) format and deliver the results of an InSpec audit run.
 You can output results to the standard output; to text formats like JSON, HTML, or plain text; or send the results directly to [Chef Automate](https://docs.chef.io/automate/).

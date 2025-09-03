@@ -5,7 +5,7 @@ draft = false
 
 [menu.related]
     title = "RSpec and Serverspec"
-    identifier = "friends/inspec_and_friends.md Chef InSpec and friends"
+    identifier = "related/inspec_and_friends.md Chef InSpec and friends"
     parent = "related"
 +++
 

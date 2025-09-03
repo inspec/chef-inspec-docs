@@ -345,7 +345,7 @@ An output format for the `inspec exec` command line. Several reporters are avail
 
 ### Resource
 
-A _`resource`_ represents a category of things on the [target](#target) you wish to examine. For example, to check for the existence and permissions of a file, you would use the [`file`](/resources/file/) resource. Chef InSpec offers dozens of different resources, from the highly specialized (such as `aws_security_group`, which examines firewall rules in AWS) to the very general (such as `command`, which runs a command and lets you examine its output).
+A _`resource`_ represents a category of things on the [target](#target) you wish to examine. For example, to check for the existence and permissions of a file, you would use the [`file`](/resources/core/file/) resource. Chef InSpec offers dozens of different resources, from the highly specialized (such as `aws_security_group`, which examines firewall rules in AWS) to the very general (such as `command`, which runs a command and lets you examine its output).
 
 Resources are generally categorized as either [singular](#singular-resource) or [plural](#plural-resource), though there are some irregular resources that cannot be cleanly considered one or the other.
 
