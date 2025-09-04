@@ -80,19 +80,19 @@ title = "Resources"
 identifier = "resources"
 
     [[resources]]
-    title = "Packs"
+    title = "Resource packs"
     identifier = "resources/packs"
     parent = "resources"
     weight = 20
 
     [[resources]]
-    title = "Core"
+    title = "Core resources"
     identifier = "resources/core"
     parent = "resources"
     weight = 30
 
     [[resources]]
-    title = "Custom"
+    title = "Custom resources"
     identifier = "resources/custom"
     parent = "resources"
     url = "/profiles/custom_resources/"

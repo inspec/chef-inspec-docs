@@ -1,6 +1,6 @@
 +++
 title = "Chef InSpec Habitat resources"
-draft = false
+draft = true
 linkTitle = "Habitat"
 summary = "Resources for auditing Habitat"
 

@@ -1,6 +1,6 @@
 +++
 title = "Chef InSpec and Kubernetes"
-draft = false
+draft = true
 linkTitle = "Kubernetes"
 summary = "Resources for auditing Kubernetes"
 
