@@ -46,7 +46,7 @@ To install Hugo on Linux, run:
 
 - `apt install -y build-essential`
 - `sudo apt-get install jq`
-- `snap install node --classic --channel=12`
+- `snap install node --classic`
 - `snap install hugo --channel=extended`
 - See the Go-Swagger [docs](https://goswagger.io/install.html) to install go-swagger
 
