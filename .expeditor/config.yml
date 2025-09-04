@@ -13,8 +13,3 @@ pipelines:
 slack:
   notify_channel:
     - docs-notify
-
-subscriptions:
-  - workload: habitat-sh/habitat:main_completed:project_promoted:habitat-sh/habitat:main:current:*
-    actions:
-      - bash:.expeditor/update_generated_content_project_promoted.sh
