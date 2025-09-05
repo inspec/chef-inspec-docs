@@ -13,7 +13,7 @@ draft = false
 
 This document should help you become familiar with some of the terminology used by the Chef InSpec project.
 
-There are two ways to use it:
+The glossary is organized into two sections:
 
 - A [text glossary](#text-glossary). Learn the meaning of a word you have encountered.
 - A [visual glossary](#visual-glossary). Look at examples and see how the parts are labelled. You can then use the text glossary to read details of each concept.
@@ -22,7 +22,7 @@ There are two ways to use it:
 
 ### Motivating Example
 
-Suppose we are interested in auditing cars. Let's suppose we have two Chef InSpec resources for auditing: `cars`, which searches for and filters groups of cars, and `car`, which performs detailed auditing of a single car.
+Suppose we're interested in auditing cars. Let's suppose there are two Chef InSpec resources for auditing: `cars`, which searches for and filters groups of cars, and `car`, which performs detailed auditing of a single car.
 
 ### Basic Syntax
 
@@ -41,7 +41,7 @@ end
 
 #### describe car(owner: 'Tony Clifton') do
 
-_car_ is a [resource](#resource). Since we are talking about only one car, it is a [singular resource](#singular-resource).
+_car_ is a [resource](#resource). Since we're talking about only one car, it's a [singular resource](#singular-resource).
 
 #### describe car(_owner: 'Tony Clifton'_)
 
@@ -51,25 +51,25 @@ _owner_ is a [resource parameter](#resource-parameter) and _'Tony Clifton'_ is a
 
 Each line within the resource block beginning with `it` or `its` is a [test](#test). Use [it](#it) to access [resource-specific matchers](#resource-specific-matcher), and use [its](#its) to access [properties](#property) of the [resource](#resource), which are in turn used with [universal matchers](#universal-matcher).
 
-#### its('_license\_plate_') { should cmp 'MOONMAN' }
+#### its('_license_plate_') { should cmp 'MOONMAN' }
 
-_license\_plate_ is a [property](#property) belonging to the [resource](#resource). Properties expose testable information about the resource. Some properties are numbers, some (like this one) are text, some are lists, and some are more complex objects. Properties are always used with [universal matchers](#universal-matcher).
+_license_plate_ is a [property](#property) belonging to the [resource](#resource). Properties expose testable information about the resource. Some properties are numbers, some (like this one) are text, some are lists, and some are more complex objects. Properties are always used with [universal matchers](#universal-matcher).
 
-#### its('license\_plate') { should _cmp_ 'MOONMAN' }
+#### its('license_plate') { should _cmp_ 'MOONMAN' }
 
 _cmp_ is a [universal matcher](#universal-matcher). `cmp` is a very flexible, loosely typed equality operator; here it checks to see if the license plate text is the same as the text 'MOONMAN'. Notice that the test operates on the license plate text (the property value) and not on the resource. You can find the full list of supported universal matchers on the [Universal Matcher page](/reference/matchers/).
 
-#### its('license\_plate') { should cmp _'MOONMAN'_ }
+#### its('license_plate') { should cmp _'MOONMAN'_ }
 
-_'MOONMAN'_ is an [expected result](#expected-result). Some matchers take an expected result; others do not.
+_'MOONMAN'_ is an [expected result](#expected-result). Some matchers take an expected result; others don't.
 
-#### it { should _be\_classy_ }
+#### it { should _be_classy_ }
 
-_be\_classy_ is a [resource-specific matcher](#resource-specific-matcher). It returns a yes-or-no value, based on whether Tony's car is classy or not. (It is. Tony is a classy guy.)
+_be_classy_ is a [resource-specific matcher](#resource-specific-matcher). It returns a yes-or-no value, based on whether Tony's car is classy or not. (It is. Tony is a classy guy.)
 
-#### it { _should\_not_ have\_check\_engine\_light\_on }
+#### it { _should_not_ have_check_engine_light_on }
 
-_should\_not_ indicates this is a negated test. So, this test passes if the matcher says "no".
+_should_not_ indicates this is a negated test, so this test passes if the matcher says "no".
 
 ### Plural Resource Example
 
@@ -83,7 +83,7 @@ end
 
 #### describe _cars_.where(color: /^b/) do
 
-_cars_ is a [resource](#resource). Since we are potentially talking about many cars, it is a [plural resource](#plural-resource).
+_cars_ is a [resource](#resource). Since we're potentially talking about many cars, it's a [plural resource](#plural-resource).
 
 #### describe cars._where(color: /^b/)_ do
 
@@ -101,7 +101,7 @@ With plural resources, `exist` has a special meaning: did the filter match anyth
 
 #### its('_manufacturers_') { should include 'Cadillac' }
 
-_manufacturers_ is a [property](#property) of the [resource](#resource). Properties expose testable information about the resource. On plural resources, properties are almost always names in the plural, and almost always return a list of values. Here, the test returns a list of the car manufacturer names. Some list properties are de-duplicated; for example, you might have 10 cars, but if they are all Subarus and Cadillacs, it returns only two entries in the `manufacturers` property. Be sure to check the documentation for your resource.
+_manufacturers_ is a [property](#property) of the [resource](#resource). Properties expose testable information about the resource. On plural resources, properties are almost always names in the plural, and almost always return a list of values. Here, the test returns a list of the car manufacturer names. Some list properties are de-duplicated; for example, you might have 10 cars, but if they're all Subarus and Cadillacs, it returns only two entries in the `manufacturers` property. Be sure to check the documentation for your resource.
 
 #### its('manufacturers') { should _include_ 'Cadillac' }
 
@@ -109,7 +109,7 @@ _include_ is a [universal matcher](#universal-matcher). `include` works with lis
 
 #### its('manufacturers') { should include '_Cadillac_' }
 
-_'Cadillac'_ is an [expected result](#expected-result). Some matchers take an expected result; others do not.
+_'Cadillac'_ is an [expected result](#expected-result). Some matchers take an expected result; others don't.
 
 #### its('count') { should _be >=_ 10 }
 
@@ -200,7 +200,7 @@ describe cars.where(color: 'blue') do
 end
 ```
 
-When block-method syntax is used with the filter statement, you provide a block. The block may contain arbitrary code, and each filter criteria will be available as an accessor. The block will be evaluated once per row, and each block that evaluates to a truthy value will pass the filter.
+When block-method syntax is used with the filter statement, you provide a block. The block may contain arbitrary code, and each filter criteria will be available as an accessor. The block will be evaluated once on each row, and each block that evaluates to a truthy value will pass the filter.
 
 Here, `{ engine_cylinders >= 6 }` is a block-syntax filter statement referring to one filter criterion.
 
@@ -213,7 +213,7 @@ end
 
 ### Input
 
-An _`input`_ is a value that Chef InSpec can source from a number of providers, including from the command line, profile metadata, or within the control file DSL itself. You can use this feature either to change a [profile's](#profile) behavior by passing different attribute files or to store secrets that should not be directly present in a profile.
+An _`input`_ is a value that Chef InSpec can source from a number of providers, including from the command line, profile metadata, or within the control file DSL itself. You can use this feature either to change a [profile's](#profile) behavior by passing different attribute files or to store secrets that shouldn't be directly present in a profile.
 
 Inputs were formerly known as `attributes`. Chef InSpec inputs are unrelated to Chef Infra attributes.
 
@@ -223,7 +223,7 @@ Inputs are documented in detail in the [input documentation](/profiles/inputs/).
 
 ### It
 
-Within a [describe block](#describe), _`it`_ declares an individual [test](#test) directly against the [resource](#resource) (as opposed to testing against one of the resource's [properties](#property), as [its](#its) does). Though it is possible to use [universal matchers](#universal-matcher) with `it`, it is much more typical to use [resource-specific matchers](#resource-specific-matcher).
+Within a [describe block](#describe), _`it`_ declares an individual [test](#test) directly against the [resource](#resource) (as opposed to testing against one of the resource's [properties](#property), as [its](#its) does). Though it's possible to use [universal matchers](#universal-matcher) with `it`, it's much more typical to use [resource-specific matchers](#resource-specific-matcher).
 
 `it` may be used with `should`, or negated using `should_not`.
 
@@ -237,7 +237,7 @@ end
 
 ### Its
 
-Within a [describe block](#describe), _`its`_ declares an individual [test](#test) against a property of the [resource](#resource) (as opposed to testing directly against the resource itself, as [it](#it) does). You must use [universal matchers](#universal-matcher) with `its`; you cannot use [resource-specific matchers](#resource-specific-matcher).
+Within a [describe block](#describe), _`its`_ declares an individual [test](#test) against a property of the [resource](#resource) (as opposed to testing directly against the resource itself, as [it](#it) does). You must use [universal matchers](#universal-matcher) with `its`; you can't use [resource-specific matchers](#resource-specific-matcher).
 
 `its` may be used with `should`, or negated using `should_not`.
 
@@ -297,7 +297,7 @@ Operators include:
 
 A _`plural resource`_ is a [resource](#resource) that specializes in performing searches and represents multiple occurrences of the resource on the [target](#target) platform. Plural resources are used to audit counts, inspect group properties, and have the unique ability to enforce negative tests ("nothing like this should exist") often required by compliance standards. Plural resources aren't intended to perform in-depth auditing of an individual; use [singular resources](#singular-resource) for that.
 
-Plural resources nearly always have a name that ends in 's': `processes`, `aws_security_groups`, `cars`. Plural resources generally do not have [resource-specific matchers](#resource-specific-matcher). If they have properties, they are almost always list properties, meaning that they return a list of values, which may or may not be de-duplicated.
+Plural resources nearly always have a name that ends in 's': `processes`, `aws_security_groups`, `cars`. Plural resources generally don't have [resource-specific matchers](#resource-specific-matcher). If they have properties, they're almost always list properties, meaning that they return a list of values, which may or may not be de-duplicated.
 
 Plural resources support [filter statements](#filter-statement). See the [resource documentation](/resources/) for details regarding which [filter criteria](#filter-criteria) are supported on each resource.
 
@@ -347,7 +347,7 @@ An output format for the `inspec exec` command line. Several reporters are avail
 
 A _`resource`_ represents a category of things on the [target](#target) you wish to examine. For example, to check for the existence and permissions of a file, you would use the [`file`](/resources/core/file/) resource. Chef InSpec offers dozens of different resources, from the highly specialized (such as `aws_security_group`, which examines firewall rules in AWS) to the very general (such as `command`, which runs a command and lets you examine its output).
 
-Resources are generally categorized as either [singular](#singular-resource) or [plural](#plural-resource), though there are some irregular resources that cannot be cleanly considered one or the other.
+Resources are generally categorized as either [singular](#singular-resource) or [plural](#plural-resource), though there are some irregular resources that can't be cleanly considered one or the other.
 
 Resources are used within a [describe block](#describe-block) to perform [tests](#test).
 
@@ -365,7 +365,7 @@ A _resource pack_ is a type of [profile](#profile) that's used to distribute [cu
 
 ### Resource Parameter
 
-_`resource parameters`_ are information passed to the resource when they are declared. Typically, resource parameters provide identifying information or connectivity information. Resource parameters aren't the same as a [filter statement](#filter-statement).
+_`resource parameters`_ are information passed to the resource when they're declared. Typically, resource parameters provide identifying information or connectivity information. Resource parameters aren't the same as a [filter statement](#filter-statement).
 
 Resource parameters vary from resource to resource; refer to the [resource documentation](/resources/) for details.
 
@@ -393,7 +393,7 @@ end
 
 ### Singular Resource
 
-A [resource](#resource) intended to uniquely identify a single object on the [target](#target). Singular resources specialize in providing richer auditing capabilities via resource-specific matchers. Compare to [plural resources](#plural-resource).
+A [resource](#resource) intended to uniquely identify a single object on the [target](#target). Singular resources specialize in providing richer auditing capabilities with resource-specific matchers. Compare to [plural resources](#plural-resource).
 
 ### Target
 
