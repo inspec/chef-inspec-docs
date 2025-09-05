@@ -1,11 +1,12 @@
 +++
 title = "Waivers"
 draft = false
+summary = "Waivers allow you to waive controls"
 
-
-[menu.waivers]
+[menu.configure]
     title = "Waivers"
-    identifier = "Waivers"
+    identifier = "configure/waivers"
+    parent = "configure"
 +++
 
 Waivers allow you to waive controls and to dictate the running and/or reporting of those controls. A waiver file identifies:

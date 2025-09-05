@@ -1,14 +1,14 @@
 +++
-title = "Chef InSpec Audit Log"
+title = "Chef InSpec audit log"
 draft = false
+linkTitle = "Audit log"
+summary = "The audit log captures activity between InSpec and the target."
 
-
-[menu.audit_log]
-    title = "Audit Log"
-    identifier = "Audit Log"
+[menu.configure]
+    title = "Audit log"
+    identifier = "configure/Audit Log"
+    parent = "configure"
 +++
-
-This page documents Chef InSpec's audit log. This is a preview feature starting in **Chef InSpec 6**.
 
 The Chef InSpec audit log uses the Train library to capture activity between the scanning workstation and the scanned target environment.
 
@@ -16,6 +16,10 @@ The InSpec audit log captures the following event types:
 
 - command events
 - file use events
+
+## Support
+
+This is a preview feature starting in Chef InSpec 6.
 
 ## Audit log limitations
 

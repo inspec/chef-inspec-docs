@@ -1,11 +1,13 @@
 +++
 title = "Chef InSpec Reporters"
 draft = false
+linkTitle = "Reporters"
+summary = "Reporters format and deliver the results of an audit run."
 
-
-[menu.reporters]
+[menu.configure]
     title = "Reporters"
-    identifier = "Reporters"
+    identifier = "configure/Reporters"
+    parent = "configure"
 +++
 
 A Chef InSpec reporter formats and delivers the results of a Chef InSpec audit run. You can output the results of your audits to more than one reporter.
@@ -70,7 +72,7 @@ inspec exec example_profile --reporter progress-bar
 ### config file
 
 You can also set reporters using a configuration file.
-For guidance on creating and using a config file, see the [InSpec config documentation](/config/).
+For guidance on creating and using a config file, see the [InSpec configuration file documentation](/configure/config_file/).
 
 **Output CLI to screen.**
 
@@ -230,7 +232,7 @@ This reporter is an improved HTML reporter that contains full data about the str
 
 The `html2` reporter requires no configuration to function. However, options `--alternate_css_file` and `--alternate_js_file` are available for customization. The options are set in the JSON-formatted configuration file that Chef InSpec consumes.
 
-For details, see [our configuration file documentation](/config/).
+For details, see [our configuration file documentation](/configure/config_file/).
 
 For example:
 

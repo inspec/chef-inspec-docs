@@ -29,7 +29,7 @@ A control defines a regulatory recommendation or requirement for the state of a 
 Chef InSpec resources allow you to test specific parts of your infrastructure.
 Chef InSpec has [resources](/resources/) for testing different applications and platforms, including AWS, Azure, AliCloud, and GCP cloud infrastructure, and you can create your own [custom resources](/profiles/custom_resources) if we don't have a resource that meets your needs.
 
-[InSpec reporters](/reporters/) format and deliver the results of an InSpec audit run.
+[InSpec reporters](/configure/reporters/) format and deliver the results of an InSpec audit run.
 You can output results to the standard output; to text formats like JSON, HTML, or plain text; or send the results directly to [Chef Automate](https://docs.chef.io/automate/).
 
 ## Use cases

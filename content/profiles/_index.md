@@ -103,7 +103,7 @@ inspec exec <PROFILE>
 `inspec exec` accepts profiles from several sources, including a local directory, Git repositories, and web-hosted tar files.
 See the [`inspec exec` documentation](/reference/cli#exec) for more information.
 
-You can format the results of an audit using [InSpec reporters](/reporters/).
+You can format the results of an audit using [InSpec reporters](/configure/reporters/).
 
 ## Example profiles
 

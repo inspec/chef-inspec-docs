@@ -129,7 +129,7 @@ The _`control`_ keyword is used to declare a _`control block`_. Here, the word '
 
 ### Core Resource
 
-A [resource](#resource) that is included with InSpec; you are not required to install additional [plugins](/plugins) or depend on a [resource pack](#resource-pack) to use the resource.
+A [resource](#resource) that is included with InSpec; you are not required to install additional [plugins](/configure/plugins) or depend on a [resource pack](#resource-pack) to use the resource.
 
 ### Custom Resource
 
