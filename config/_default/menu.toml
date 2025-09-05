@@ -64,7 +64,7 @@ title = "Cloud Platforms"
 identifier = "cloud"
 
 [[chef_tools]]
-title = "Chef Tools"
+title = "Chef tools"
 identifier = "chef_tools"
 
 [[related]]
