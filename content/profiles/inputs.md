@@ -389,8 +389,8 @@ Inspec::InputRegistry.instance.cache_inputs = false
 
   If `true`, the value of the input will be used normally
   during the `exec` run, but the value will be obscured as "***" in the "inputs" or
-  "attributes" section of any [Reporter](/reporters/) that explicitly lists
-  inputs (the `json` reporter is one such reporter). Note that this will not obscure
+  "attributes" section of any [Reporter](/configure/reporters/) that explicitly lists
+  inputs (the `json` reporter is one such reporter). Note that this won't obscure
   input values that are used as test results.
 
   Allowed in: `inspec.yml` file

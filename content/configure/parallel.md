@@ -1,31 +1,34 @@
 +++
 title = "Chef InSpec Parallel"
 draft = false
+linkTitle = "InSpec Parallel"
+summary = "Parallel manages multiple profile executions in parallel targeting several remote systems and environments."
 
-[menu.parallel]
-    title = "Parallel"
-    identifier = "parallel.md InSpec Parallel"
+[menu.configure]
+    title = "InSpec Parallel"
+    identifier = "configure/parallel"
+    parent = "configure"
 +++
 
-Chef InSpec Parallel can automatically manage multiple profile executions in parallel on a system targeting several remote systems and environments.
-It manages multiple processes, their status updates, their exit codes, and user updates.
-All target operating systems and environments that can be addressed using `--target` are supported, and it is supported on Windows, MacOS, and Linux environments.
+Chef InSpec Parallel runs multiple profile executions at the same time, targeting several remote systems and environments. It automatically manages each process, tracks status and exit codes, and provides progress updates to the user.
+
+## Support
 
 InSpec Parallel is a new feature in **Chef InSpec 6**.
 
-{{< note >}}
+You can use InSpec Parallel with any target operating system or environment that you specify using `--target`, and you can run it from Windows, MacOS, or Linux workstations.
 
-Currently, `inspec parallel` only supports the `exec` command.
-
-{{< /note >}}
+Currently, `inspec parallel` supports only the `exec` command.
 
 ## How to use InSpec Parallel
 
-The following example shows you how to execute the **Dev-Sec SSH Baseline** profile against five servers in parallel using `inpec parallel exec`.
+The following example shows you how to execute the **Dev-Sec SSH Baseline** profile against five servers in parallel using `inspec parallel exec`.
+
+To run an InSpec audit in parallel, follow these steps:
 
 1. Create an [option file](#option-file) that contains the CLI options that are passed to `inspec exec parallel`.
 
-   The option file contains one invocation per line and specifies all options in each invocation.
+   The option file contains one invocation on each line and specifies all options in each invocation.
 
    ```text
    # five-servers.txt
@@ -63,7 +66,7 @@ Chef InSpec invokes `inspec parallel` on each non-commented and non-blank line.
 
 The only requirement is that every invocation in an option file must have a `--reporter` option.
 The reporter option must write to a file or use the `automate` reporter to send an API post to a Chef Automate service.
-For details of the available reporters and the full syntax of the reporter option, see the [Chef InSpec Reporter documentation](/reporters).
+For details of the available reporters and the full syntax of the reporter option, see the [Chef InSpec Reporter documentation](/configure/reporters).
 
 The simplest option file might look like this:
 
@@ -111,7 +114,7 @@ InSpec Parallel accepts options from the subcommand that it's managing. It also 
 : The `--bg` option silences all output from the command and runs it in the background. InSpec Parallel will still write log files with the `--bg` option.
 
 `--dry-run`
-: The `--dry-run` option interprets the option file but does not execute it. Chef InSpec outputs the lines that would have been executed to the standard output. If you add `--verbose`, you can see all the CLI defaults that implicitly get added.
+: The `--dry-run` option interprets the option file but doesn't execute it. Chef InSpec outputs the lines that would have been executed to the standard output. If you add `--verbose`, you can see all the CLI defaults that implicitly get added.
 
 : {{< note >}}
 
@@ -122,7 +125,7 @@ InSpec Parallel accepts options from the subcommand that it's managing. It also 
 `-j`
 `--jobs`
 : Use the `-j` or `--jobs` option to specify how many job slots InSpec Parallel uses.
-  InSpec Parallel defaults to the number of hyperthreaded cores on your machine (for example, a dual-core machine with hyperthreading defaults to four jobs).
+  InSpec Parallel defaults to the number of hyper-threaded cores on your machine (for example, a dual-core machine with hyperthreading defaults to four jobs).
   The default is usually reasonable, but experimentation may be rewarding.
 
 `-o`
@@ -134,7 +137,7 @@ InSpec Parallel accepts options from the subcommand that it's managing. It also 
 ### Use the same options for each invocation
 
 `inspec parallel exec` accepts all options that `inspec exec` does and passes them to each invocation as defaults.
-This means that you do not have to specify repetitive options that are constant across all the invocations in an option file.
+This means that you don't have to specify repetitive options that are constant across all the invocations in an option file.
 
 For example, if all machines take the same SSH key, you can specify it once on the top-level command line.
 
@@ -153,7 +156,7 @@ inspec parallel exec profile_name -o three-servers.txt -i file_name.pem
 ### Name JSON output files with process ID
 
 In this example, the `json` reporter saves output log files in the `logs` directory and names each one after the process ID using the `pid` ERB variable.
-This technique would work with any [reporter](/reporters) that can write to a file.
+This technique would work with any [reporter](/configure/reporters) that can write to a file.
 
 ```text
 # pid-named-output.txt

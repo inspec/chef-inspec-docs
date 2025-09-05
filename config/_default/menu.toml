@@ -59,12 +59,12 @@ identifier = "install"
 title = "Profiles"
 identifier = "profiles"
 
-[[cloud]]
-title = "Cloud Platforms"
-identifier = "cloud"
+[[configure]]
+title = "Configure"
+identifier = "configure"
 
 [[chef_tools]]
-title = "Chef Tools"
+title = "Chef tools"
 identifier = "chef_tools"
 
 [[related]]
