@@ -61,7 +61,7 @@ Release:   aws-sdk-v2.10.125
 
 ### Provide credentials using Chef InSpec target option
 
-Look for a file in your home directory named `~/.aws/credentials`. If it does not exist, create it. Choose a name for your profile; here, we're using the name 'auditing'. Add your credentials as a new profile, in INI format:
+Look for a file in your home directory named `~/.aws/credentials`. If it doesn't exist, create it. Choose a name for your profile; here, we're using the name 'auditing'. Add your credentials as a new profile, in INI format:
 
 ```bash
 [auditing]
@@ -81,7 +81,3 @@ Name:      aws
 Families:  cloud, api
 Release:   aws-sdk-v2.10.125
 ```
-
-## AWS resources
-
-{{< inspec_resources platform="aws" >}}

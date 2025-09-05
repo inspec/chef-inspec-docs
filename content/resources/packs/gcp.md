@@ -70,7 +70,3 @@ Name:      gcp
 Families:  cloud, api
 Release:   google-cloud-v
 ```
-
-## GCP resources
-
-{{< inspec_resources platform="gcp" >}}

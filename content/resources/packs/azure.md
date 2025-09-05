@@ -98,7 +98,3 @@ If you have created a `~/.azure/credentials` file as above, you may also use the
 ```bash
 inspec exec my-profile -t azure://2fbdbb02-df2e-11e6-bf01-fe55135034f3
 ```
-
-## Azure resources
-
-{{< inspec_resources platform="azure" >}}

@@ -25,7 +25,3 @@ export ALICLOUD_ACCESS_KEY="anaccesskey"
 export ALICLOUD_SECRET_KEY="asecretkey"
 export ALICLOUD_REGION="eu-west-1"
 ```
-
-## Alibaba resources
-
-{{< inspec_resources platform="alicloud" >}}
