@@ -2,13 +2,11 @@
 title = "Chef InSpec Shell"
 draft = false
 
-
-[menu]
-  [menu.inspec]
-    title = "InSpec Shell"
-    identifier = "Chef InSpec Shell"
-    parent = "inspec"
-    weight = 70
+[menu.shell]
+  title = "InSpec Shell"
+  identifier = "Chef InSpec Shell"
+  parent = "inspec"
+  weight = 70
 +++
 
 The Chef InSpec interactive shell is a pry-based REPL that can be used to

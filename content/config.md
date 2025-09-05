@@ -2,7 +2,6 @@
 title = "InSpec Configuration File"
 draft = false
 
-
 [menu.config]
     title = "Configure"
     identifier = "config.md Configuration"
