@@ -10,18 +10,18 @@ summary = "Resources for auditing Kubernetes"
     parent = "resources/packs"
 +++
 
-The InSpec Kubernetes resource pack provides InSpec helpers to validate an object or resource inside Kubernetes.
+The InSpec Kubernetes resource pack lets you validate objects and resources inside Kubernetes clusters.
 
 ## Requirements
 
-- Chef Inspec 3.7+ or 4.x+
-- The InSpec [train-kubernetes](https://github.com/inspec/train-kubernetes) plugin is installed.
+- Chef InSpec version 3.7 or later
+- The InSpec [train-kubernetes](https://github.com/inspec/train-kubernetes) plugin
 
-## Add to an Inspec profile
+## Add to an InSpec profile
 
 To use the `inspec-k8s` resources in a profile, follow these steps:
 
-1. Define the `inspec-k8s` resource pack as a dependency in the `inspec.yml` file:
+1. In your `inspec.yml` file, add the resource pack as a dependency:
 
     ```yaml
     supports:
@@ -31,26 +31,26 @@ To use the `inspec-k8s` resources in a profile, follow these steps:
         url: https://github.com/inspec/inspec-k8s/archive/main.tar.gz
     ```
 
-1. Define your controls. See the examples below.
+1. Add your controls to the profile. See the examples in the next section.
 
-1. Set your `KUBECONFIG` environment variable or `~/.kube/config` to a valid Kubernetes config that points to the target cluster with valid credentials.
+1. Set your `KUBECONFIG` environment variable or `~/.kube/config` to a valid Kubernetes config that points to your target cluster and includes valid credentials.
 
-1. Execute the profile from the profile root:
+1. In the profile root directory, run:
 
     ```shell
     inspec exec . -t k8s://
     ```
 
-See the [sample inspec-k8s profile](https://github.com/inspec/inspec-k8s-sample).
+For a complete example, see the [sample inspec-k8s profile](https://github.com/inspec/inspec-k8s-sample).
 
 ## Example controls
 
-The following InSpec base resources are implemented:
+The following InSpec base resources are available:
 
-- k8sobjects
-- k8sobject
+- `k8sobjects`: Lists and filters Kubernetes objects.
+- `k8sobject`: Assesses a specific Kubernetes object.
 
-You can list and filter objects:
+To list and filter pods in the default namespace with a specific label:
 
 ```ruby
 describe k8sobjects(api: 'v1', type: 'pods', namespace: 'default', labelSelector: 'run=nginx') do
@@ -59,6 +59,8 @@ describe k8sobjects(api: 'v1', type: 'pods', namespace: 'default', labelSelector
 end
 ```
 
+To list and filter namespaces with a label:
+
 ```ruby
 describe k8sobjects(api: 'v1', type: 'namespaces', labelSelector: 'myns=prod') do
   it { should exist }
@@ -66,7 +68,7 @@ describe k8sobjects(api: 'v1', type: 'namespaces', labelSelector: 'myns=prod') d
 end
 ```
 
-And then assess the spec of a specific object:
+To assess the spec of a specific pod:
 
 ```ruby
 describe k8sobject(api: 'v1', type: 'pod', namespace: 'default', name: 'my-pod') do
@@ -76,11 +78,10 @@ describe k8sobject(api: 'v1', type: 'pod', namespace: 'default', name: 'my-pod')
 end
 ```
 
-You can test the properties of files within in a pod or container.
-This is only supported Linux-based containers.
+To test the properties of a file inside a Linux-based pod or container:
 
 ```ruby
-describe k8s_exec_file(path: 'FULLY_QUALIFIED_PATH', pod: 'POD_NAME', namespace: 'NAMESPACE_NAME') do
+describe k8s_exec_file(path: '/etc/config/settings.yaml', pod: 'nginx-pod', namespace: 'default') do
   it { should exist }
   it { should be_file }
   it { should be_readable }
@@ -93,9 +94,9 @@ end
 
 ## Troubleshooting
 
-If you run into issues installing the `train-kubernetes` plugin with `inspec plugin install train-kubernetes`, try the following:
+If you have issues installing the `train-kubernetes` plugin with `inspec plugin install train-kubernetes`, try these steps:
 
-- Run `gem install train-kubernetes` before `inspec plugin install train-kubernetes`.
-- Verify the `~/.inspec/plugins.json` has `"0.1.3"` and not `"= 0.1.3"` for the `version` value. Update it if needed.
-- Verify you can cleanly install the `k8s-client` gem version `0.10.4` or greater.  e.g. `gem install k8s-client -v 0.10.4`
-- Verify that only one version of the `excon` gem is installed. For example, `gem list | grep excon`. If you see two versions, remove the older version with `gem uninstall excon`.
+- Run `gem install train-kubernetes` before running `inspec plugin install train-kubernetes`.
+- In `~/.inspec/plugins.json`, make sure the `version` value is `"0.1.3"` (not `"= 0.1.3"`). Update it if needed.
+- Install the `k8s-client` gem version `0.10.4` or later: `gem install k8s-client -v 0.10.4`.
+- Make sure only one version of the `excon` gem is installed. Run `gem list | grep excon` and remove older versions with `gem uninstall excon`.
