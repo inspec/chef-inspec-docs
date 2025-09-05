@@ -83,7 +83,7 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
   {
     "credentials": {
       "winrm": {
-        "myconn": {
+        "connection_name": {
           "user": "Administrator",
           "host": "prod01.east.example.com",
           "disable_sspi": true,
@@ -94,9 +94,9 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
   }
   ```
 
-  Then use `-t winrm://myconn` to connect to the host, with the given extra options.
+  Then use `-t winrm://connection_name` to connect to the host, with the given extra options.
 
-  Each Train transport offers a variety of options. By using the credential set facility, you are able to set options that are not accessible via the Train URI.
+  Each Train transport offers a variety of options. By using the credential set facility, you are able to set options that aren't accessible with the Train URI.
 
   You may have as many credential sets in the config file as you require.
 
@@ -114,7 +114,7 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
 : Provide configuration settings to plugins that you use with Chef InSpec.
   Refer to the documentation of the plugin you are using for details regarding what settings are available.
 
-  Each plugin will have a key-value are that it may use as it sees fit - Chef InSpec does not specify the structure.
+  Each plugin will have a key-value are that it may use as it sees fit - Chef InSpec doesn't specify the structure.
 
   Set the config file to **version 1.2** to use this setting.
 

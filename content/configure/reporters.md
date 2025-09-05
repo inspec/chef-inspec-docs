@@ -19,11 +19,11 @@ Configure the reporter(s) using the `--reporter` option or as part of the genera
 You can use both the `--reporter` and `--config` options, in which case the options are merged.
 While you can configure multiple reporters to write to different files, only one reporter can output to the screen(stdout).
 
-### reporter option
+### Reporter options
 
 You can specify one or more reporters using the `--reporter` CLI flag. You can also specify an output by appending a path separated by a colon.
 
-**Output JSON to screen**
+To output JSON to screen, use the `--reporter json` option:
 
 ```bash
 inspec exec example_profile --reporter json
@@ -31,7 +31,7 @@ inspec exec example_profile --reporter json
 inspec exec example_profile --reporter json:-
 ```
 
-**Output YAML to screen.**
+To output YAML to screen, use the `--reporter yaml` option:
 
 ```bash
 inspec exec example_profile --reporter yaml
@@ -39,19 +39,19 @@ inspec exec example_profile --reporter yaml
 inspec exec example_profile --reporter yaml:-
 ```
 
-**Output CLI to screen and write JSON to a file.**
+To output CLI to screen and write JSON to a file, use the `--reporter` option and define :
 
 ```bash
 inspec exec example_profile --reporter cli json:/tmp/output.json
 ```
 
-**Output nothing to screen and write JUnit and HTML to a file.**
+To output nothing to screen and write JUnit and HTML to a file, use the `--reporter` option to specify the JUnit and HTML files:
 
 ```bash
 inspec exec example_profile --reporter junit2:/tmp/junit.xml html:www/index.html
 ```
 
-**Output JSON to screen and write to a file. Write JUnit to a file.**
+To output JSON to screen and write to JUnit and JSON files, use the `--reporter json` option to specify the JUnit and JSON files:
 
 ```bash
 inspec exec example_profile --reporter json junit2:/tmp/junit.xml | tee out.json
@@ -63,7 +63,7 @@ If you wish to pass the profiles directly after specifying the reporters, you mu
 inspec exec --reporter json junit2:/tmp/junit.xml -- profile1 profile2
 ```
 
-**Output real-time progress to screen with a progress bar.**
+To output the real-time progress to screen, use the `--reporter progress-bar` option:
 
 ```bash
 inspec exec example_profile --reporter progress-bar

@@ -12,7 +12,7 @@ summary = "Waivers allow you to waive controls"
 Waivers allow you to waive controls and to dictate the running and/or reporting of those controls. A waiver file identifies:
 
 - which controls are waived
-- a description of why it is waived
+- a description of why it's waived
 - (optionally) whether they should be skipped from running
 - (optionally) an expiration date for the waiver
 
@@ -38,7 +38,7 @@ Specify the following parameters in the waiver file:
 
 `run` **optional**
 : If absent, `true`, or `yes`, the control will run and be
-  reported, but failures in the control won't make the overall run fail. If `false` or `no`, the control will not run. You may use any of `yes`, `no`, `true`, or `false`. To avoid confusion, you should explicitly specify whether the control should run or not.
+  reported, but failures in the control won't make the overall run fail. If `false` or `no`, the control won't run. You may use any of `yes`, `no`, `true`, or `false`. To avoid confusion, you should explicitly specify whether the control should run or not.
 
 `justification` **required**
 : A description of the waiver. This might include a reason for the waiver or the person who signed off on the waiver.
@@ -54,7 +54,7 @@ waiver_control_1_2_3:
 
 xccdf_org.cisecurity.benchmarks_rule_1.1.1.4_Ensure_mounting_of_hfs_filesystems_is_disabled:
   expiration_date: 2020-03-01
-  justification: "This might be a bug in the test. @qateam"
+  justification: "This might be a bug in the test. @qa-team"
   run: false
 ```
 

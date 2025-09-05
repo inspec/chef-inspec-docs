@@ -129,11 +129,11 @@ The _`control`_ keyword is used to declare a _`control block`_. Here, the word '
 
 ### Core Resource
 
-A [resource](#resource) that is included with InSpec; you are not required to install additional [plugins](/configure/plugins) or depend on a [resource pack](#resource-pack) to use the resource.
+A [resource](#resource) that's included with InSpec; you aren't required to install additional [plugins](/configure/plugins) or depend on a [resource pack](#resource-pack) to use the resource.
 
 ### Custom Resource
 
-A [resource](#resource) that is _not_ included with InSpec. It may be a resource of your own creation, or one you obtain by depending on a [resource pack](#resource-pack).
+A [resource](#resource) that's _not_ included with InSpec. It may be a resource of your own creation, or one you obtain by depending on a [resource pack](#resource-pack).
 
 ### Describe
 
@@ -295,7 +295,7 @@ Operators include:
 
 ### plural resource
 
-A _`plural resource`_ is a [resource](#resource) that specializes in performing searches and represents multiple occurrences of the resource on the [target](#target) platform. Plural resources are used to audit counts, inspect group properties, and have the unique ability to enforce negative tests ("nothing like this should exist") often required by compliance standards. Plural resources are not intended to perform in-depth auditing of an individual; use [singular resources](#singular-resource) for that.
+A _`plural resource`_ is a [resource](#resource) that specializes in performing searches and represents multiple occurrences of the resource on the [target](#target) platform. Plural resources are used to audit counts, inspect group properties, and have the unique ability to enforce negative tests ("nothing like this should exist") often required by compliance standards. Plural resources aren't intended to perform in-depth auditing of an individual; use [singular resources](#singular-resource) for that.
 
 Plural resources nearly always have a name that ends in 's': `processes`, `aws_security_groups`, `cars`. Plural resources generally do not have [resource-specific matchers](#resource-specific-matcher). If they have properties, they are almost always list properties, meaning that they return a list of values, which may or may not be de-duplicated.
 
@@ -361,11 +361,11 @@ end
 
 ### Resource Pack
 
-A _resource pack_ is a type of [profile](#profile) that is used to distribute [custom resources](#custom-resource). This specialized type of profile contains no [controls](#control), but it does contain a `libraries` directory within which Ruby files define custom resources.
+A _resource pack_ is a type of [profile](#profile) that's used to distribute [custom resources](#custom-resource). This specialized type of profile contains no [controls](#control), but it does contain a `libraries` directory within which Ruby files define custom resources.
 
 ### Resource Parameter
 
-_`resource parameters`_ are information passed to the resource when they are declared. Typically, resource parameters provide identifying information or connectivity information. Resource parameters are not the same as a [filter statement](#filter-statement).
+_`resource parameters`_ are information passed to the resource when they are declared. Typically, resource parameters provide identifying information or connectivity information. Resource parameters aren't the same as a [filter statement](#filter-statement).
 
 Resource parameters vary from resource to resource; refer to the [resource documentation](/resources/) for details.
 

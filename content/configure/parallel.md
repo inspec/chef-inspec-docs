@@ -22,7 +22,7 @@ Currently, `inspec parallel` supports only the `exec` command.
 
 ## How to use InSpec Parallel
 
-The following example shows you how to execute the **Dev-Sec SSH Baseline** profile against five servers in parallel using `inpec parallel exec`.
+The following example shows you how to execute the **Dev-Sec SSH Baseline** profile against five servers in parallel using `inspec parallel exec`.
 
 To run an InSpec audit in parallel, follow these steps:
 
@@ -125,7 +125,7 @@ InSpec Parallel accepts options from the subcommand that it's managing. It also 
 `-j`
 `--jobs`
 : Use the `-j` or `--jobs` option to specify how many job slots InSpec Parallel uses.
-  InSpec Parallel defaults to the number of hyperthreaded cores on your machine (for example, a dual-core machine with hyperthreading defaults to four jobs).
+  InSpec Parallel defaults to the number of hyper-threaded cores on your machine (for example, a dual-core machine with hyperthreading defaults to four jobs).
   The default is usually reasonable, but experimentation may be rewarding.
 
 `-o`
