@@ -1,12 +1,20 @@
 +++
-title = "About Chef InSpec and Train Plugins"
+title = "Chef InSpec and Train Plugins"
 draft = false
+linkTitle = "Plugins"
 
-
-[menu.plugins]
+[menu.configure]
     title = "Plugins"
-    identifier = "Plugins"
+    identifier = "configure/plugins"
+    parent = "configure"
 +++
+
+Chef InSpec plugins extend the capabilities of InSpec.
+
+Chef InSpec supports two types of plugins:
+
+- InSpec plugins
+- Train plugins
 
 ## What are Chef InSpec plugins?
 
@@ -26,7 +34,7 @@ always begin with the prefix 'train-'.
 
 ## What can plugins do?
 
-Currently, each plugin can offer one or more of these capabilities:
+Each plugin offers one or more of these capabilities:
 
 - define new output formats ("reporters")
 - input sources

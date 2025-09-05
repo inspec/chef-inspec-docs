@@ -1,21 +1,18 @@
 +++
-title = "Chef InSpec Shell"
+title = "Chef InSpec shell"
 draft = false
 
+
 [menu.shell]
-  title = "InSpec Shell"
-  identifier = "Chef InSpec Shell"
-  parent = "inspec"
-  weight = 70
+    title = "InSpec shell"
+    identifier = "Chef InSpec shell"
 +++
 
-The Chef InSpec interactive shell is a pry-based REPL that can be used to
+The Chef InSpec interactive shell is a [pry-based REPL](https://pry.github.io/) that can be used to
 quickly run Chef InSpec controls and tests without having to write it to a
 file. Its functionality is similar to [chef-shell](https://docs.chef.io/workstation/chef_shell/) as it provides a way
 to exercise the Chef InSpec Language, its resources, tests, and plugins without
-having to create a profile or write a test file. See
-[http://pryrepl.org/](http://pryrepl.org/) for an introduction to what pry is and what it can
-do.
+having to create a profile or write a test file.
 
 For a hands-on example that uses Chef InSpec shell, see the Learn Chef tutorial [Test Expectations with Chef InSpec](https://www.chef.io/training/tutorials).
 

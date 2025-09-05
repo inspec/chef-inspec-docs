@@ -1,11 +1,13 @@
 +++
 title = "Chef InSpec audit log"
 draft = false
+linkTitle = "Audit log"
+summary = "The audit log captures activity between InSpec and the target."
 
-
-[menu.audit_log]
+[menu.configure]
     title = "Audit log"
-    identifier = "Audit Log"
+    identifier = "configure/Audit Log"
+    parent = "configure"
 +++
 
 The Chef InSpec audit log uses the Train library to capture activity between the scanning workstation and the scanned target environment.

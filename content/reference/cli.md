@@ -298,7 +298,7 @@ This subcommand has the following additional options:
 
 `--audit-log-location=AUDIT_LOG_LOCATION`
 : The directory that the audit log saves diagnostic log files to.
-  You must enable audit logging to use this feature. See the [Audit Log documentation](/audit_log/) for details.
+  You must enable audit logging to use this feature. See the [Audit Log documentation](/configure/audit_log/) for details.
 
   Default: `~/.inspec/logs`.
 
@@ -766,7 +766,7 @@ inspec nothing
 
 ## plugin
 
-Install and manage [Chef InSpec plugins](/plugins/).
+Install and manage [Chef InSpec plugins](/configure/plugins/).
 
 ### Syntax
 
@@ -813,7 +813,7 @@ This subcommand has the following additional options:
 
 `--audit-log-location=AUDIT_LOG_LOCATION`
 : The directory that the audit log saves diagnostic log files to.
-  You must enable audit logging to use this feature. See the [Audit Log documentation](/audit_log/) for details.
+  You must enable audit logging to use this feature. See the [Audit Log documentation](/configure/audit_log/) for details.
 
   Default: `~/.inspec/logs`.
 

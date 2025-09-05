@@ -1,17 +1,18 @@
 +++
-title = "InSpec Configuration File"
+title = "InSpec configuration file"
 draft = false
+summary = "A config file defines connection, reporter, and plugin options"
 
-[menu.config]
-    title = "Configure"
-    identifier = "config.md Configuration"
+[menu.configure]
+    title = "Configuration file"
+    identifier = "configure/config file"
+    parent = "configure"
 +++
 
-This documents how to create a configuration file for Chef InSpec. A config file is **optional**.
+The Chef InSpec configuration file defines Train transport connection options, reporter options, and plugin options.
+A configuration file is **optional**.
 
-There are two config file versions, 1.1 and 1.2.
-
-## Config File Location
+## Configuration file location
 
 By default, Chef InSpec looks for a config file in `~/.inspec/config.json`.
 
@@ -74,7 +75,7 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
 : Any long-form command line option, without the leading dashes.
 
 `credentials`
-: Train-transport-specific options. Store the options keyed first by transport name, then by a name you'll use later on. The combination of transport name and your chosen name can be used in the `--target` option to `inspec exec`, as `--target transport-name://connection-name`.
+: Train transport-specific options. Store the options keyed first by transport name, then by a name you'll use later on. The combination of transport name and your chosen name can be used in the `--target` option to `inspec exec`, as `--target transport-name://connection-name`.
 
   For example, if the config file contains:
 
@@ -82,7 +83,7 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
   {
     "credentials": {
       "winrm": {
-        "myconn": {
+        "connection_name": {
           "user": "Administrator",
           "host": "prod01.east.example.com",
           "disable_sspi": true,
@@ -93,9 +94,9 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
   }
   ```
 
-  Then use `-t winrm://myconn` to connect to the host, with the given extra options.
+  Then use `-t winrm://connection_name` to connect to the host, with the given extra options.
 
-  Each Train transport offers a variety of options. By using the credential set facility, you are able to set options that are not accessible via the Train URI.
+  Each Train transport offers a variety of options. By using the credential set facility, you are able to set options that aren't accessible with the Train URI.
 
   You may have as many credential sets in the config file as you require.
 
@@ -106,15 +107,15 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
   Credential sets are intended to work hand-in-hand with the underlying credentials storage facility of the transport. For example, if you have a `~/.ssh/config` file specifying that the sally-key.pem file should be used with the host `example.com`, and you have a credential set that specifies that host, then when Train tries to connect to that host, the SSH library will automatically use the SSH config file to use the indicated key.
 
 `reporter`
-: Formats and delivers the results of a Chef InSpec audit run. For information on configuring reporters, see the [InSpec reporters documentation](/reporters/).
+: Formats and delivers the results of a Chef InSpec audit run. For information on configuring reporters, see the [InSpec reporters documentation](/configure/reporters/).
 
 `plugins`
 
 : Provide configuration settings to plugins that you use with Chef InSpec.
   Refer to the documentation of the plugin you are using for details regarding what settings are available.
 
-  Each plugin will have a key-value are that it may use as it sees fit - Chef InSpec does not specify the structure.
+  Each plugin will have a key-value are that it may use as it sees fit - Chef InSpec doesn't specify the structure.
 
   Set the config file to **version 1.2** to use this setting.
 
-  For more information on plugins, see the [Chef InSpec plugins documentation](/plugins/).
+  For more information on plugins, see the [Chef InSpec plugins documentation](/configure/plugins/).
