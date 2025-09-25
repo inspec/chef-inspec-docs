@@ -33,7 +33,7 @@ Let's look at some simple examples.
 ```ruby
 describe car(owner: 'Tony Clifton') do
     it { should exist }
-    its('license_plate') { should cmp 'MOONMAN' }
+    its('license_plate') { should cmp 'MOON MAN' }
     it { should be_classy }
     it { should_not have_check_engine_light_on }
 end
@@ -51,17 +51,17 @@ _owner_ is a [resource parameter](#resource-parameter) and _'Tony Clifton'_ is a
 
 Each line within the resource block beginning with `it` or `its` is a [test](#test). Use [it](#it) to access [resource-specific matchers](#resource-specific-matcher), and use [its](#its) to access [properties](#property) of the [resource](#resource), which are in turn used with [universal matchers](#universal-matcher).
 
-#### its('_license_plate_') { should cmp 'MOONMAN' }
+#### its('_license_plate_') { should cmp 'MOON MAN' }
 
 _license_plate_ is a [property](#property) belonging to the [resource](#resource). Properties expose testable information about the resource. Some properties are numbers, some (like this one) are text, some are lists, and some are more complex objects. Properties are always used with [universal matchers](#universal-matcher).
 
-#### its('license_plate') { should _cmp_ 'MOONMAN' }
+#### its('license_plate') { should _cmp_ 'MOON MAN' }
 
-_cmp_ is a [universal matcher](#universal-matcher). `cmp` is a very flexible, loosely typed equality operator; here it checks to see if the license plate text is the same as the text 'MOONMAN'. Notice that the test operates on the license plate text (the property value) and not on the resource. You can find the full list of supported universal matchers on the [Universal Matcher page](/reference/matchers/).
+_cmp_ is a [universal matcher](#universal-matcher). `cmp` is a very flexible, loosely typed equality operator; here it checks to see if the license plate text is the same as the text 'MOON MAN'. Notice that the test operates on the license plate text (the property value) and not on the resource. You can find the full list of supported universal matchers on the [Universal Matcher page](/reference/matchers/).
 
-#### its('license_plate') { should cmp _'MOONMAN'_ }
+#### its('license_plate') { should cmp _'MOON MAN'_ }
 
-_'MOONMAN'_ is an [expected result](#expected-result). Some matchers take an expected result; others don't.
+_'MOON MAN'_ is an [expected result](#expected-result). Some matchers take an expected result; others don't.
 
 #### it { should _be_classy_ }
 
@@ -101,7 +101,7 @@ With plural resources, `exist` has a special meaning: did the filter match anyth
 
 #### its('_manufacturers_') { should include 'Cadillac' }
 
-_manufacturers_ is a [property](#property) of the [resource](#resource). Properties expose testable information about the resource. On plural resources, properties are almost always names in the plural, and almost always return a list of values. Here, the test returns a list of the car manufacturer names. Some list properties are de-duplicated; for example, you might have 10 cars, but if they're all Subarus and Cadillacs, it returns only two entries in the `manufacturers` property. Be sure to check the documentation for your resource.
+_manufacturers_ is a [property](#property) of the [resource](#resource). Properties expose testable information about the resource. On plural resources, properties are almost always names in the plural, and almost always return a list of values. Here, the test returns a list of the car manufacturer names. Some list properties are de-duplicated; for example, you might have 10 cars, but if they're all Toyotas and Cadillacs, it returns only two entries in the `manufacturers` property. Be sure to check the documentation for your resource.
 
 #### its('manufacturers') { should _include_ 'Cadillac' }
 
@@ -321,7 +321,7 @@ end
 
 A _`profile`_ is a set of related [controls](#control) in a distributable form. You might have a locally-developed profile that your organization uses to define baseline security on all machines, or you might use a pre-defined profile that implements the requirements of a specific compliance standard. For full details about the capabilities of a profile, see the [profile documentation](/profiles/).
 
-Profiles may be distributed locally as a directory tree, as a tarball or zipfile at a URL, as a git repo, and several other ways. Profiles contain metadata, including versioning, and can setup dependency relationships with other profiles.
+You can distribute profiles locally as a directory tree, as a tar file or zip file at a URL, as a git repository, and several other ways. Profiles contain metadata, including versioning, and can set up dependency relationships with other profiles.
 
 Aside from controls, profiles can also contain [custom resources](#custom-resource). If the profile contains only custom resources and no controls, we call it a [resource pack](#resource-pack).
 

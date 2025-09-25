@@ -59,7 +59,7 @@ The `device_name` property returns a string array including the device names mou
 
 ### mount_point
 
-The `mount_point` property returns a string array including the path of directories at which filesystems are configured to be mounted.
+The `mount_point` property returns a string array including the path of directories at which file systems are configured to be mounted.
 
     describe etc_fstab.where { device_name == '/dev/sr0' } do
       its('mount_point') { should cmp '/mnt/sr0' }

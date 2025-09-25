@@ -9,12 +9,14 @@ draft = false
     parent = "related"
 +++
 
+<!-- cSpell:ignore Gosuke, Miyashita -->
+
 This page looks at projects that are similar to Chef InSpec to explain how they
 relate to each other.
 
 ## RSpec
 
-RSpec is an awesome framework that is widely used by software engineers to test
+RSpec is an awesome framework that's widely used by software engineers to test
 Ruby code. It enables test-driven development (TDD) and helps developers to write
 better code every day.
 

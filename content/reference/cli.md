@@ -343,7 +343,7 @@ This subcommand has the following additional options:
 : Read configuration from the JSON file (`-` reads from stdin).
 
 `--controls=one two three`
-: A list of control names to run or a list of /regexes/ to match against control names. Ignore all other tests.
+: A list of control names to run or a list of regular expressions to match against control names. Ignore all other tests.
 
 `--create-lockfile`
 `--no-create-lockfile`

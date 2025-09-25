@@ -88,7 +88,7 @@ The `type` property returns the type of the file system.
 
 ### Test if the C:\ partition is NTFS
 
-Note that Windows filesystems (drives) are referred to without any slashes:
+Note that Windows file systems (drives) are referred to without any slashes:
 
     describe filesystem('c:') do
       its('type') { should cmp 'NTFS' }

@@ -9,6 +9,8 @@ draft = false
     parent = "related"
 +++
 
+<!-- cSpell:ignore yumrepo, ipfilter, ipnat, oneget -->
+
 ## How's Chef InSpec different from Serverspec
 
 We've written a complete blog post about that topic: [The Road to InSpec](https://www.chef.io/blog/the-road-to-inspec)

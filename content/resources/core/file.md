@@ -723,7 +723,7 @@ The `be_socket` matcher tests if the file exists as socket (`.sock`), such as `/
 
 ### be_sticky
 
-The `be_sticky` matcher tests if the 'sticky bit' permission is set on the directory. On directories, this restricts file deletion to the owner of the file, even if the permission of the parent directory would normally permit deletion by others. This is commonly used on /tmp filesystems.
+The `be_sticky` matcher tests if the 'sticky bit' permission is set on the directory. On directories, this restricts file deletion to the owner of the file, even if the permission of the parent directory would normally permit deletion by others. This is commonly used on `/tmp` file systems.
 
 ```ruby
     it { should be_sticky }
