@@ -128,35 +128,35 @@ While InSpec can use user accounts for authentication, [Google recommends using 
 1. Select **Create New Key**.
 1. Set the key type to **JSON**.
 1. Select **Create**.
-1. The Service Account Key will be downloaded. For example: `myproject-1-feb7993e8660.jsonmyproject-1-feb7993e8660.json`
+1. The Service Account Key will be downloaded. For example: `project-name-1-feb7993e8660.json-project-name-1-feb7993e8660.json`
 1. Move the key to the `~/.config/gcloud` folder. If the file gets downloaded in the `Downloads` folder, use the below command.
 
     ```bash
-    mv ~/Downloads/myproject-1-feb7993e8660.json ~/.config/gcloud/
+    mv ~/Downloads/project-name-1-feb7993e8660.json ~/.config/gcloud/
     ```
 
 1. The JSON credentials file for a service account looks like this:
 
     ```bash
-    $ cat ~/.config/gcloud/myproject-1-feb7993e8660.json
+    $ cat ~/.config/gcloud/project-name-1-feb7993e8660.json
     {
       "type": "service_account",
-      "project_id": "myproject-1",
+      "project_id": "project-name-1",
       "private_key_id": "eb45b2fc0c33ea9b6fa212aaa08b1ed814bf8660",
       "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADAN3662...fke9n6LAf268E/4EWhIzg==\n-----END PRIVATE KEY-----\n",
-      "client_email": "auto-testing@myproject-1.iam.gserviceaccount.com",
+      "client_email": "auto-testing@project-name-1.iam.gserviceaccount.com",
       "client_id": "112144174133171863632",
       "auth_uri": "https://accounts.google.com/o/oauth2/auth",
       "token_uri": "https://oauth2.googleapis.com/token",
       "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-      "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/auto-testing%40myproject-1.iam.gserviceaccount.com"
+      "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/auto-testing%40project-name-1.iam.gserviceaccount.com"
     }
     ```
 
 1. Now set up the environmental variable for the 'GOOGLE_APPLICATION_CREDENTIALS'. And InSpec can be instructed to use it by setting this ENV variable prior to running `inspec exec`:
 
     ```bash
-    $ export GOOGLE_APPLICATION_CREDENTIALS='~/.config/gcloud/myproject-1-feb7993e8660.json'
+    $ export GOOGLE_APPLICATION_CREDENTIALS='~/.config/gcloud/project-name-1-feb7993e8660.json'
     ```
 
 

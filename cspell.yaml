@@ -27,6 +27,7 @@ ignorePaths:
   - resources/**
   - node_modules/**/*
 ignoreRegExpList:
+  - Urls
   - /'s\b/
   - /'d\b/
   - /^\s*```[\s\S]*?^\s*```/gm
