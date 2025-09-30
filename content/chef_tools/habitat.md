@@ -10,9 +10,9 @@ linkTitle = "Integration with Chef Habitat"
     parent = "chef_tools"
 +++
 
-Chef InSpec provides an easy method to create an executable Chef Habitat package for a Chef InSpec profile. When run via the Chef Habitat Supervisor, the package will run Chef InSpec with your profile and write out its findings to the supervisor log. This provides the ability to ship your compliance controls alongside your Chef Habitat-packaged application and continuously run InSpec, providing you *Continuous Compliance.*
+Chef InSpec provides an easy method to create an executable Chef Habitat package for a Chef InSpec profile. When run with the Chef Habitat Supervisor, the package will run Chef InSpec with your profile and write out its findings to the supervisor log. This provides the ability to ship your compliance controls alongside your Chef Habitat-packaged application and continuously run InSpec, providing you *Continuous Compliance.*
 
-## What is Chef Habitat
+## About Chef Habitat
 
 Chef Habitat by Chef Software is our new application automation tool that aims
 to make it easy, safe, and fast to build, deploy, and manage applications. From
@@ -59,7 +59,7 @@ hab start effortless/audit-baseline
 ... more Chef Habitat output here ...
 
 hab-sup(MN): Starting effortless/audit-baseline/0.1.0/20170328173005
-hab-sup(CS): effortless/audit-baseline/0.1.0/20170328173005 is not installed
+hab-sup(CS): effortless/audit-baseline/0.1.0/20170328173005 isn't installed
 ↓ Downloading adamleff-20160617201047 public origin key
     79 B / 79 B | [===============================================================================] 100.00 % 2.64 MB/s
 ☑ Cached adamleff-20160617201047 public origin key
@@ -83,7 +83,7 @@ The above sample output shows the supervisor starting, downloading the necessary
 
 Chef InSpec will write a JSON file in the `${svc_var_path}/inspec_results` directory containing the results of the last Chef InSpec run. For example, for the `effortless/audit-baseline` package, the Chef InSpec results will be at:
 
-```
+```plain
 /hab/svc/inspec-profile-frontend1/var/inspec_results/inspec-profile-frontend1.json
 ```
 
@@ -97,17 +97,17 @@ the Chef Habitat package with a dependency on the latest InSpec. The resulting
 package will be saved to the current working directory.
 
 The package can then be manually uploaded to a Chef Habitat Depot or manually
-distributed to a host and installed via `hab pkg install`.
+distributed to a host and installed with `hab pkg install`.
 
 The package file will be named:
 
-```
+```plain
 HABITAT_ORIGIN-inspec-profile-PROFILE_NAME-PROFILE_VERSION-BUILD_ID-x86_64-linux.hart
 ```
 
 For example:
 
-```
+```plain
 adamleff-inspec-profile-frontend1-0.1.0-20170328173005-x86_64-linux.hart
 ```
 
@@ -152,7 +152,7 @@ $ habitat profile create ~/profiles/frontend1
 
 Create a Chef Habitat directory that includes a plan file in a profile directory.
 
-This is the same process that is used by `inspec habitat profile create` - but
+This is the same process that's used by `inspec habitat profile create` - but
 this adds the generated Chef Habitat directory and file to your system so that
 you can commit them to source control. If you commit these files to GitHub, you
 can connect that plan to the [Chef Habitat Builder Service](https://www.habitat.sh/docs/using-builder/).
@@ -186,7 +186,7 @@ the `inspec habitat profile create` command, Chef InSpec will validate the profi
 fetch and vendor any dependencies (if necessary), and build the Chef Habitat
 package with a dependency on the latest InSpec. However, instead of saving the
 package locally to the workstation, Chef InSpec will upload it to the depot
-defined in the `HAB_DEPOT` environment variable. If `HAB_DEPOT` is not defined,
+defined in the `HAB_DEPOT` environment variable. If `HAB_DEPOT` isn't defined,
 the package will be uploaded to the public Chef Habitat depot at
 [https://app.habitat.sh](https://app.habitat.sh).
 

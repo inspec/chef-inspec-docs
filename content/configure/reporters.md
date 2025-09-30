@@ -14,7 +14,7 @@ A Chef InSpec reporter formats and delivers the results of a Chef InSpec audit r
 
 ## Configure
 
-Configure the reporter(s) using the `--reporter` option or as part of the general configuration file using the `--config` option.
+Configure the reporters using the `--reporter` option or as part of the general configuration file using the `--config` option.
 
 You can use both the `--reporter` and `--config` options, in which case the options are merged.
 While you can configure multiple reporters to write to different files, only one reporter can output to the screen(stdout).
@@ -107,6 +107,8 @@ For guidance on creating and using a config file, see the [InSpec configuration 
 The following are CLI options that are used to modify reporter behavior.
 Many of these options allow you to limit the report size because some reporters (such as the json-automate reporter) limit on the total size of the report that can be processed.
 
+<!-- markdownlint-disable MD007 MD006 -->
+
 `--diff`, `--no-diff`
 
 : Include a `diff` comparison of textual differences in the failed test output.
@@ -162,13 +164,15 @@ Many of these options allow you to limit the report size because some reporters 
 
   Default: no truncation
 
+<!-- markdownlint-enable MD007 MD006 -->
+
 ## Reporters
 
 The following are the supported reporters.
 
 ### automate
 
-The `automate` reporter type is a special reporter which sends its results over the network to [Chef Automate](https://docs.chef.io/automate/). To use this reporter, you must pass in the correct configuration via a JSON configuration `--config`.
+The `automate` reporter type is a special reporter which sends its results over the network to [Chef Automate](https://docs.chef.io/automate/). To use this reporter, you must pass in the correct configuration with a JSON configuration `--config`.
 
 Example Configuration:
 
@@ -207,7 +211,7 @@ Example Configuration:
 : Node name which shows up in Chef Automate.
 
 `node_uuid`
-: Node UUID, which shows up in Chef Automate. Use a single static UUID per node for all your reports. You must specify a `node_uuid` in the Chef InSpec configuration file if running Chef InSpec outside of an audit cookbook or another environment where a `chef_guid` or `node_uuid` is already known to Chef InSpec.
+: Node UUID, which shows up in Chef Automate. Use a single static UUID for each node for all your reports. You must specify a `node_uuid` in the Chef InSpec configuration file if running Chef InSpec outside of an audit cookbook or another environment where a `chef_guid` or `node_uuid` is already known to Chef InSpec.
 
 `environment`
 : Sets the environment metadata for Chef Automate.
@@ -224,7 +228,7 @@ This reporter is a very minimal text-based report. It shows you which tests pass
 
 This reporter is the legacy RSpec HTML reporter retained for backward compatibility.
 The report generated is unaware of profiles or controls and only contains unsorted test information.
-Most users should migrate to the `html2` reporter for more complete data.
+Most users should migrate to the `html2` reporter for more comprehensive data.
 
 ### html2
 
@@ -250,11 +254,11 @@ For example:
 
 #### alternate_css_file
 
-Specifies the full path to the location of a CSS file that is read and inlined into the HTML report. The default CSS is not included.
+Specifies the full path to the location of a CSS file that's read and inlined into the HTML report. The default CSS isn't included.
 
 #### alternate_js_file
 
-Specifies the full path to the location of a JavaScript file that is read and inlined into the HTML report. The default JavaScript is included. The JavaScript file should implement at least a `pageLoaded()` function, which is called by the `onload` event of the HTML `body` element.
+Specifies the full path to the location of a JavaScript file that's read and inlined into the HTML report. The default JavaScript is included. The JavaScript file should implement at least a `pageLoaded()` function, which is called by the `onload` event of the HTML `body` element.
 
 ### json
 
@@ -278,7 +282,7 @@ For example:
 
 ### json-automate
 
-The `json-automate` reporter is a special reporter that prepares the data format used by the Automate reporter. `json-automate` does not communicate on the network; instead, it simply produces the JSON report format that Automate would be consuming. Notably, the report is based on the `json` reporter, with the following modifications:
+The `json-automate` reporter is a special reporter that prepares the data format used by the Automate reporter. `json-automate` doesn't communicate on the network; instead, it simply produces the JSON report format that Automate would be consuming. Notably, the report is based on the `json` reporter, with the following modifications:
 
 - Controls appearing in child profiles are de-duplicated by ID, merging into the parent profile.
 - Child profiles are deleted, flattening the report.
@@ -303,7 +307,7 @@ This reporter outputs the standard JUnit spec in XML format. New JUnit users sho
 
 ### progress
 
-This reporter is very condensed and provides you a `.`(pass), `f`(fail), or `*`(skip) character per test and a small summary at the end.
+This reporter is very condensed and provides you a `.`(pass), `f`(fail), or `*`(skip) character for each test and a small summary at the end.
 
 ### progress-bar
 

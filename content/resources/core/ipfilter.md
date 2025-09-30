@@ -22,11 +22,13 @@ Use the `ipfilter` Chef InSpec audit resource to test rules defined for `ipfilte
 
 An `ipfilter` resource block declares tests for rules defined for IP Filter:
 
-    describe ipfilter do
-      it { should have_rule("RULE") }
-    end
+```ruby
+describe ipfilter do
+  it { should have_rule("RULE") }
+end
+```
 
-where
+where:
 
 - `have_rule('RULE')` tests the active rule for ipfilter. This must match the entire line taken from `'ipfstat -io'`.
 
@@ -36,31 +38,39 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if there are no restrictions on a loopback interface
 
-    describe ipfilter do
-      it { should have_rule("pass in quick on lo0 all") }
-      it { should have_rule("pass out quick on lo0 all") }
-    end
+```ruby
+describe ipfilter do
+  it { should have_rule("pass in quick on lo0 all") }
+  it { should have_rule("pass out quick on lo0 all") }
+end
+```
 
 ### Test if there are no restrictions on inside LAN interface named xl0 for private network
 
-    describe ipfilter do
-      it { should have_rule("pass in quick on xl0 all") }
-      it { should have_rule("pass out quick on xl0 all") }
-    end
+```ruby
+describe ipfilter do
+  it { should have_rule("pass in quick on xl0 all") }
+  it { should have_rule("pass out quick on xl0 all") }
+end
+```
 
 ### Test if there is a rule allowing FTP traffic on the public interface named dc0
 
-    describe ipfilter do
-      it { should have_rule("pass out quick on dc0 proto tcp from any to any port = ftp flags S/FSRPAU keep state") }
-    end
+```ruby
+describe ipfilter do
+  it { should have_rule("pass out quick on dc0 proto tcp from any to any port = ftp flags S/FSRPAU keep state") }
+end
+```
 
 ### Test if there is a rule allowing SSH on the public interface named dc0
 
-    describe ipfilter do
-      it { should have_rule("pass out quick on dc0 proto tcp from any to any port = ssh flags S/FSRPAU keep state") }
-    end
+```ruby
+describe ipfilter do
+  it { should have_rule("pass out quick on dc0 proto tcp from any to any port = ssh flags S/FSRPAU keep state") }
+end
+```
 
-Note that the rule specification must exactly match what is in the output of `'ipfstat -io'`, which depends on how you have built your rules.
+Note that the rule specification must exactly match what's in the output of `'ipfstat -io'`, which depends on how you have built your rules.
 
 ## Matchers
 
@@ -72,4 +82,6 @@ This resource has the following special matchers.
 
 The `have_rule` matcher tests the named rule against the information in the output rule of `'ipfstat -io'`:
 
-    it { should have_rule("RULE") }
+```ruby
+it { should have_rule("RULE") }
+```

@@ -26,11 +26,13 @@ This resource first became available in v1.20.0 of InSpec.
 
 A `rabbitmq_config` resource block declares the RabbitMQ configuration data to be tested:
 
-    describe rabbitmq_config.params('rabbit', 'ssl_listeners') do
-      it { should cmp 5671 }
-    end
+```ruby
+describe rabbitmq_config.params('rabbit', 'ssl_listeners') do
+  it { should cmp 5671 }
+end
+```
 
-where
+where:
 
 - `params` is the list of parameters configured in the RabbitMQ config file
 - `{ should cmp 5671 }` tests the value of `rabbit.ssl_listeners` as read from `rabbitmq.config` versus the value declared in the test
@@ -41,9 +43,11 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test the list of TCP listeners
 
-    describe rabbitmq_config.params('rabbit', 'tcp_listeners') do
-      it { should eq [5672] }
-    end
+```ruby
+describe rabbitmq_config.params('rabbit', 'tcp_listeners') do
+  it { should eq [5672] }
+end
+```
 
 ## Matchers
 

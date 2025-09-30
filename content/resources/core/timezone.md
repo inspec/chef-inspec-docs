@@ -22,22 +22,26 @@ Use the `timezone` Chef InSpec audit resource to test timezone configurations of
 
 A `timezone` resource block fetches the time zone configuration of a system and compares the output with the test:
 
-    describe timezone do
-      its('property') { should eq 'expected value' }
-    end
+```ruby
+describe timezone do
+  its('property') { should eq 'expected value' }
+end
+```
 
-where
+where:
 
 - `'property'` is one of `identifier` , `name` and `time_offset`
 - `'expected value'` tests the output of the command run on the system versus the expected output stated in the test
 
 For example:
 
-    describe timezone do
-      its('identifier') { should eq 'Asia/Kolkata' }
-      its('name') { should eq 'IST' }
-      its('time_offset') { should eq '+0530' }
-    end
+```ruby
+describe timezone do
+  its('identifier') { should eq 'Asia/Kolkata' }
+  its('name') { should eq 'IST' }
+  its('time_offset') { should eq '+0530' }
+end
+```
 
 ## Properties
 
@@ -47,7 +51,9 @@ The `identifier` property verifies the time zone name of a system.
 
 An example of checking the **identifier** for the Asia/Kolkata time zone name:
 
-    its('identifier') { should eq 'Asia/Kolkata' }
+```ruby
+its('identifier') { should eq 'Asia/Kolkata' }
+```
 
 ### name
 
@@ -61,8 +67,9 @@ The `name` property accepts the time zone abbreviation on Linux systems and the 
 
 An example of verifying that the time zone is set to IST on a Linux system:
 
-    its('name') { should eq 'IST' }
-
+```ruby
+its('name') { should eq 'IST' }
+```
 
 {{< note >}}
 
@@ -72,7 +79,9 @@ Several time zones share the same time zone abbreviation. Use one of the other p
 
 An example of verifying that the time zone is set to India Standard Time on a Windows system:
 
-    its('name') { should eq 'India Standard Time' }
+```ruby
+its('name') { should eq 'India Standard Time' }
+```
 
 ### time_offset
 
@@ -80,7 +89,9 @@ The `time_offset` property verifies the time offset of a system from UTC (Coordi
 
 An example of verifying that the **time_offset** is UTC+05:30:
 
-    its('time_offset') { should eq '+0530' }
+```ruby
+its('time_offset') { should eq '+0530' }
+```
 
 ## Matchers
 

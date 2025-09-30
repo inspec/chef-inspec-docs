@@ -9,6 +9,8 @@ draft = false
     parent = "related"
 +++
 
+<!-- cSpell:ignore yumrepo, ipfilter, ipnat, oneget -->
+
 ## How's Chef InSpec different from Serverspec
 
 We've written a complete blog post about that topic: [The Road to InSpec](https://www.chef.io/blog/the-road-to-inspec)
@@ -51,7 +53,7 @@ The following resources are available in Chef InSpec:
 | [`yumrepo`](http://serverspec.org/resource_types.html#yumrepo)                               | [`yum`](/resources/core/yum/)                           |
 | [`zfs`](http://serverspec.org/resource_types.html#zfs)                                       | [`zfs_pool`](/resources/core/zfs_pool/)                 |
 
-Some Serverspec resources are not available yet. We will implement those resources based on user feedback. If you need a resource that is not available in InSpec, please open an [Github issue](https://github.com/chef/inspec/issues). The list of resources that are not available in InSpec:
+Some Serverspec resources aren't available yet. We will implement those resources based on user feedback. If you need a resource that's not available in InSpec, please open an [Github issue](https://github.com/chef/inspec/issues). The list of resources that aren't available in InSpec:
 
 * [`cgroup`](http://serverspec.org/resource_types.html#cgroup)
 * [`default_gateway`](http://serverspec.org/resource_types.html#default_gateway)
@@ -67,7 +69,7 @@ Some Serverspec resources are not available yet. We will implement those resourc
 * [`selinux_module`](http://serverspec.org/resource_types.html#selinux_module)
 * [`x509_private_key`](http://serverspec.org/resource_types.html#x509_private_key)
 
-In addition Chef InSpec provides additional [resources](/resources/core/) that are not available in Serverspec:
+In addition Chef InSpec provides additional [resources](/resources/core/) that aren't available in Serverspec:
 
 * [`apache_conf`](/resources/core/apache_conf/)
 * [`apt`](/resources/core/apt/)
@@ -105,7 +107,7 @@ Second, rename the directory `test/integration/default/serverspec` to
 
 Third, remove the Serverspec-specific code from the test files.
 
-```
+```ruby
 require 'serverspec'
 
 # Required by serverspec
@@ -148,7 +150,7 @@ Some general recommendations:
 
 ## Do I still need the backend configuration?
 
-Chef InSpec does not attach backend information to test files. All tests are defined independently of any backend. Therefore a Serverspec test file:
+Chef InSpec doesn't attach backend information to test files. All tests are defined independently of any backend. Therefore a Serverspec test file:
 
 ```ruby
 require 'serverspec'
@@ -193,7 +195,7 @@ As you can see, the Chef InSpec test files just focuses on tests and tries to av
 
 ## Nested describe blocks
 
-Serverspec and RSpec allow you to define nested describe blocks. We did a survey and found out that most users use nested describe blocks only to improve their output report. We believe the code structure should not change to improve the output of a report. Nevertheless we understand that nested describe blocks help you to structure test code. A sample code block looks like:
+Serverspec and RSpec allow you to define nested describe blocks. We did a survey and found out that most users use nested describe blocks only to improve their output report. We believe the code structure shouldn't change to improve the output of a report. Nevertheless we understand that nested describe blocks help you to structure test code. A sample code block looks like:
 
 ```ruby
 describe 'chef-server-directories' do
@@ -223,7 +225,7 @@ end
 
 In Chef InSpec you would split up groups into files.
 
-```
+```plain
 tests
 ├── server-directories.rb
 ├── other-tests.rb

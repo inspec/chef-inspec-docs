@@ -9,12 +9,14 @@ draft = false
     parent = "related"
 +++
 
+<!-- cSpell:ignore Gosuke, Miyashita -->
+
 This page looks at projects that are similar to Chef InSpec to explain how they
 relate to each other.
 
 ## RSpec
 
-RSpec is an awesome framework that is widely used by software engineers to test
+RSpec is an awesome framework that's widely used by software engineers to test
 Ruby code. It enables test-driven development (TDD) and helps developers to write
 better code every day.
 
@@ -45,21 +47,20 @@ control "sshd-11" do
 end
 ```
 
-That said, Chef InSpec is not RSpec. Some key differences:
+That said, Chef InSpec isn't RSpec. Some key differences:
 
-- In InSpec, `describe` blocks should not be nested; instead use `control` blocks
+- In InSpec, `describe` blocks shouldn't be nested; instead use `control` blocks
   to describe a higher-level grouping of tests.
-- The RSpec `shared_example` construct is not supported.  Instead, create a simple
+- The RSpec `shared_example` construct isn't supported. Instead, create a simple
   custom resource that executes repetitious tasks.
 - Chef InSpec is aimed at compliance practitioners and infrastructure testers, so
   our focus is providing a few, well-supported, easy-to-use [universal matchers](/reference/matchers/),
   such as `cmp`. In contrast, RSpec is a tool designed for software engineers.
   It thus supports a very large range of matchers, to enable testing of software
-  engineering constructs such as exceptions, Object Oriented Programming relationships,
-  and so on.
-- While Chef InSpec uses parts of the RSpec project and codebase, it is a
+  engineering constructs such as exceptions and object oriented programming relationships.
+- While Chef InSpec uses parts of the RSpec project and codebase, it's a
   separate project from InSpec. Rspec's release schedule and feature set are beyond
-  the control of the Chef InSpec team. While it is possible to use many of the
+  the control of the Chef InSpec team. While it's possible to use many of the
   RSpec core features within Chef InSpec profiles, Chef InSpec can only guarantee
   that the features described in the [InSpec documentation](/) will
   function correctly. Some RSpec core functionality may be removed in future
@@ -70,7 +71,7 @@ That said, Chef InSpec is not RSpec. Some key differences:
 Serverspec is the first extension of RSpec that enabled
 users to run RSpec tests on servers to verify deployed artifacts. It was
 created in March 2013 by Gosuke Miyashita and has been widely adopted.
-It is also one of the core test frameworks within test-kitchen and has
+It's also one of the core test frameworks within test-kitchen and has
 been widely used within the Chef ecosystem. Chef InSpec takes lessons learned
 implementing and using Serverspec and builds on them to make auditing
 and compliance easier.
@@ -89,7 +90,7 @@ Lessons learned from Serverspec include:
 You can also watch this [podcast](http://foodfightshow.org/2016/02/inspec.html)
 to find out more on the relationship between Chef InSpec and Serverspec.
 
-### How is Chef InSpec different from Serverspec
+### How Chef InSpec is different from Serverspec
 
 One of the key differences is that Chef InSpec targets more user groups. It
 is optimized for DevOps, Security, and Compliance professionals.
@@ -119,11 +120,11 @@ end
 
 Chef InSpec started as an extension of Serverspec. As the extension grew, it
 became clear that a new library was required. Creating and maintaining a
-fork was not practical so a new project was born.
+fork wasn't practical so a new project was born.
 
 **Will Chef InSpec only work on machines managed by Chef?**
 
-No, Chef InSpec can be used on any machine. It does not matter if that machine
+No, Chef InSpec can be used on any machine. It doesn't matter if that machine
 was configured by Chef Infra or configured lovingly by the hands of your local
 System Administrator.
 

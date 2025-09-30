@@ -38,7 +38,7 @@ describe nftables(family:'name', table:'name', set: 'name') do
 end
 ```
 
-where
+where:
 
 - `nftables()` has to specify `family` and `table`. It also has to specify one of `chain` or `set` (exclusively).
 - `family:'name'` is the name of the `family` the table belongs to, one of `ip`, `ip6`, `inet`, `arp`, `bridge`, `netdev`.
@@ -64,7 +64,7 @@ See the [NFT man page](https://www.netfilter.org/projects/nftables/manpage.html)
 : The policy type. Possible values: `accept`, `drop`.
 
 `type`
-: The chain type.  Possible values: `filter`, `nat`, and `route`.
+: The chain type. Possible values: `filter`, `nat`, and `route`.
 
 ### Set Properties
 

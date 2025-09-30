@@ -18,11 +18,11 @@ For hands-on examples, check out [Extending InSpec: InSpec Wrappers and Custom R
 
 Create custom resources in a profile's libraries directory.
 
-```bash
+```plain
 examples/profile
 ...
-├── libraries
-│   └── example_config.rb
+├──libraries
+│  └── example_config.rb
 ```
 
 ## Resource structure
@@ -185,14 +185,14 @@ Lazy loading does change the way the resource registry is handled in
 ways that might break some assumptions. Specifically,
 `inspec.<resource>` isn't pre-populated with the core resources that
 InSpec ships with. If you make a local/custom resource of the same
-name, referring to the core resource via `inspec.<resource>` will not
+name, referring to the core resource with `inspec.<resource>` won't
 resolve to the core resource.
 
-As such, overriding core resources is not recommended best practice.
+As such, overriding core resources isn't recommended best practice.
 
-If you really do need to do this, it is easiest to make a local
+If you really do need to do this, it's easiest to make a local
 resource with a new name and refer to the core resource directly.
 Otherwise, you need to ensure that the core resource you want is
-registered (via `require "inspec/resource/<name>"`) _before_ your
-profile is run to ensure it is eagerly loaded and in the global
+registered (with `require "inspec/resource/<name>"`) _before_ your
+profile is run to ensure it's eagerly loaded and in the global
 resource registry.

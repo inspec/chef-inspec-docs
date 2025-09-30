@@ -36,7 +36,7 @@ This subcommand has the following additional options:
 
 `--check`
 `--no-check`
-: Before running archive, run `inspec check`. Default: do not check.
+: Before running archive, run `inspec check`. By default, `inspec check` doesn't run.
 
 `--export`
 `--no-export`
@@ -86,7 +86,7 @@ inspec automate SUBCOMMAND
 
 ## check
 
-Verify the metadata in the `inspec.yml` file, verify that control blocks have the correct fields (title, description, impact), and define that all controls have visible tests and the controls are not using deprecated InSpec DSL code.
+Verify the metadata in the `inspec.yml` file, verify that control blocks have the correct fields (title, description, impact), and define that all controls have visible tests and the controls aren't using deprecated InSpec DSL code.
 
 ### Syntax
 
@@ -228,11 +228,11 @@ This subcommand has the following additional options:
 : Additional sudo options for a remote scan.
 
 `--sudo-password=SUDO_PASSWORD`
-: Specify a sudo password, if it is required.
+: Specify a sudo password, if it's required.
 
 `-t`
 `--target=TARGET`
-: Simple targeting option using URIs, e.g. ssh://user:pass@host:port.
+: Simple targeting option using URIs, for example, ssh://user:pass@host:port.
 
 `--target-id=TARGET_ID`
 : Provide a ID which will be included on reports.
@@ -343,7 +343,7 @@ This subcommand has the following additional options:
 : Read configuration from the JSON file (`-` reads from stdin).
 
 `--controls=one two three`
-: A list of control names to run or a list of /regexes/ to match against control names. Ignore all other tests.
+: A list of control names to run or a list of regular expressions to match against control names. Ignore all other tests.
 
 `--create-lockfile`
 `--no-create-lockfile`
@@ -364,7 +364,7 @@ This subcommand has the following additional options:
 : Filter empty profiles (profiles without controls) from the report.
 
 `--filter-waived-controls`
-: Do not execute waived controls in InSpec at all. Must use with `--waiver-file`. Ignores the `run` setting of the waiver file.
+: Don't execute waived controls in InSpec at all. Must use with `--waiver-file`. Ignores the `run` setting of the waiver file.
 
 `--host=HOST`
 : Specify a remote host which is tested.
@@ -457,14 +457,14 @@ This subcommand has the following additional options:
 : Additional sudo options for a remote scan.
 
 `--sudo-password=SUDO_PASSWORD`
-: Specify a sudo password, if it is required.
+: Specify a sudo password, if it's required.
 
 `-t`
 `--target=TARGET`
-: Simple targeting option using URIs, e.g. ssh://user:pass@host:port.
+: Simple targeting option using URIs, for example, ssh://user:pass@host:port.
 
 `--target-id=TARGET_ID`
-: Provide an ID that is included on reports - deprecated.
+: Provide an ID that's included on reports - deprecated.
 
 `--tags=one two three`
 : A list of tags or regular expressions that match tags. `exec` will run controls referenced by the listed or matching tags.
@@ -557,25 +557,25 @@ Local single test (doesn't allow inputs or custom resources):
 inspec exec /path/to/a_test.rb
 ```
 
-Git via SSH:
+Git using SSH:
 
 ```ruby
 inspec exec git@github.com:dev-sec/linux-baseline.git
 ```
 
-Git via HTTPS (.git suffix is required):
+Git using HTTPS (.git suffix is required):
 
 ```ruby
 inspec exec https://github.com/dev-sec/linux-baseline.git
 ```
 
-Private Git via HTTPS (.git suffix is required):
+Private Git using HTTPS (.git suffix is required):
 
 ```ruby
 inspec exec https://api_token@github.com/dev-sec/linux-baseline.git
 ```
 
-Private Git via HTTPS and cached credentials (.git suffix is required):
+Private Git using HTTPS and cached credentials (.git suffix is required):
 
 ```bash
 git config credential.helper cache
@@ -660,7 +660,7 @@ This subcommand has the following additional options:
 : For --what=profile, a list of controls to include. Other controls are ignored..
 
 `--format=FORMAT`
-: The output format to use: json, raw, yaml. If valid format is not provided then it will use the default for the given 'what'.
+: The output format to use: json, raw, yaml. If valid format isn't provided then it will use the default for the given 'what'.
 
 `--legacy-export`
 `--no-legacy-export`
@@ -859,7 +859,7 @@ This subcommand has the following additional options:
 
 `--distinct-exit`
 `--no-distinct-exit`
-: Exit with code 100 if any tests fail and 101 if any are skipped, but none failed (default).  If disabled, exit 0 on skips and 1 for failures.
+: Exit with code 100 if any tests fail and 101 if any are skipped, but none failed (default). If disabled, exit 0 on skips and 1 for failures.
 
 `--docker-url`
 : Provides path to Docker API endpoint (Docker). Defaults to unix:///var/run/docker.sock on Unix systems and tcp://localhost:2375 on Windows.
@@ -936,11 +936,11 @@ This subcommand has the following additional options:
 : Additional sudo options for a remote scan.
 
 `--sudo-password=SUDO_PASSWORD`
-: Specify a sudo password, if it is required.
+: Specify a sudo password, if it's required.
 
 `-t`
 `--target=TARGET`
-: Simple targeting option using URIs, e.g. ssh://user:pass@host:port.
+: Simple targeting option using URIs, for example, ssh://user:pass@host:port.
 
 `--target-id=TARGET_ID`
 : Provide a ID which will be included on reports.

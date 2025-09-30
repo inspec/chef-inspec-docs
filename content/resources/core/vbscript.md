@@ -26,11 +26,13 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `vbscript` resource block tests the output of a VBScript on the Windows platform:
 
-    describe vbscript('script contents') do
-      its('stdout') { should eq 'output' }
-    end
+```ruby
+describe vbscript('script contents') do
+  its('stdout') { should eq 'output' }
+end
+```
 
-where
+where:
 
 - `'script_name'` is the name of the VBScript to test
 - `('output')` is the expected output of the VBScript
@@ -43,21 +45,27 @@ The following examples show how to use this Chef InSpec audit resource.
 
 A VBScript file similar to:
 
-    script = <<-EOH
-      WScript.Echo "hello"
-    EOH
+```ruby
+script = <<-EOH
+  WScript.Echo "hello"
+EOH
+```
 
 may be tested for multiple lines:
 
-    describe vbscript(script) do
-      its('stdout') { should eq "hello\r\n" }
-    end
+```ruby
+describe vbscript(script) do
+  its('stdout') { should eq "hello\r\n" }
+end
+```
 
 and tested for whitespace removal from standard output:
 
-    describe vbscript(script) do
-      its('strip') { should eq "hello" }
-    end
+```ruby
+describe vbscript(script) do
+  its('strip') { should eq "hello" }
+end
+```
 
 ## Matchers
 

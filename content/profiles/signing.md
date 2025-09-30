@@ -17,7 +17,7 @@ This page documents how to make and use signed InSpec profiles.
 A signed profile, or `.iaf` file, is an InSpec profile with a digital signature that attests to its authenticity.
 Progress Chef-authored profiles are available as signed profiles starting in 2022.
 
-IAF files are not human-readable, but you can view them using `inspec export`. Support for IAF v2.0 was added to InSpec 5.
+IAF files aren't human-readable, but you can view them using `inspec export`. Support for IAF v2.0 was added to InSpec 5.
 
 ## How does profile signing work?
 
@@ -25,7 +25,7 @@ Profile signing uses a matched pair of keys. The _signing key_ is secret and is 
 
 Keypairs are first searched for in the current directory and then in the user's `~/.inspec/keys` directory.
 Progress Chef validation keys are also distributed in the `etc/keys` directory of the InSpec installation tree.
-Finally, if a validation key is not found, the profile verification system attempts to download keys from the [InSpec Github](https://github.com/inspec/inspec/tree/main/etc/keys) repository.
+Finally, if a validation key isn't found, the profile verification system attempts to download keys from the [InSpec Github](https://github.com/inspec/inspec/tree/main/etc/keys) repository.
 
 ## Execute a signed profile
 
@@ -49,7 +49,7 @@ Profile Summary: 1 successful control, 0 control failures, 0 controls skipped
 Test Summary: 2 successful, 0 failures, 0 skipped
 ```
 
-A signed profile is checked for validity before it's executed. If the profile cannot be verified, then InSpec exits with `code 5` (bad signature).
+A signed profile is checked for validity before it's executed. If the profile can't be verified, then InSpec exits with `code 5` (bad signature).
 
 ## Identify key used to sign profile
 
@@ -158,7 +158,7 @@ Use the `inspec export` command to examine a signed profile's contents. You must
 ## Mandatory profile signing
 
 **Chef InSpec 6** and above has an optional setting that requires that all profiles are signed.
-If mandatory profile signing is enabled, InSpec will not execute functions with an un-signed profile and exits with exit code 6.
+If mandatory profile signing is enabled, InSpec won't execute functions with an un-signed profile and exits with exit code 6.
 
 To enable mandatory profile signing, set the environment variable `CHEF_PREVIEW_MANDATORY_PROFILE_SIGNING` to any non-empty value.
 

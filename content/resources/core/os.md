@@ -24,11 +24,13 @@ This resource first became available in v1.0.0 of InSpec.
 
 ## Syntax
 
-An `os` resource block declares the platform to be tested. The platform may specified via matcher or control block name. For example, using a matcher:
+An `os` resource block declares the platform to be tested. The platform may specified with a matcher or control block name. For example, using a matcher:
 
-    describe os.family do
-      it { should eq 'platform_family_name' }
-    end
+```ruby
+describe os.family do
+  it { should eq 'platform_family_name' }
+end
+```
 
 - `'platform_family_name'` (a string) is one of `aix`, `bsd`, `darwin`, `debian`, `hpux`, `linux`, `redhat`, `solaris`, `suse`, `unix`, or `windows`
 
@@ -45,21 +47,27 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test for RedHat
 
-    describe os.family do
-      it { should eq 'redhat' }
-    end
+```ruby
+describe os.family do
+  it { should eq 'redhat' }
+end
+```
 
 ### Test for Ubuntu
 
-    describe os.family do
-      it { should eq 'debian' }
-    end
+```ruby
+describe os.family do
+  it { should eq 'debian' }
+end
+```
 
 ### Test for Microsoft Windows
 
-    describe os.family do
-      it { should eq 'windows' }
-    end
+```ruby
+describe os.family do
+  it { should eq 'windows' }
+end
+```
 
 ## Matchers
 
@@ -85,35 +93,43 @@ The `os` audit resource includes a collection of helpers that enable more granul
 
 For example, to test for Darwin use:
 
-    describe os.bsd? do
-       it { should eq true }
-    end
+```ruby
+describe os.bsd? do
+   it { should eq true }
+end
+```
 
 To test for Windows use:
 
-    describe os.windows? do
-       it { should eq true }
-    end
+```ruby
+describe os.windows? do
+   it { should eq true }
+end
+```
 
 and to test for Redhat use:
 
-    describe os.redhat? do
-       it { should eq true }
-    end
+```ruby
+describe os.redhat? do
+   it { should eq true }
+end
+```
 
 Use the following helpers to test for operating system names, releases, and architectures:
 
-    describe os.name do
-       it { should eq 'foo' }
-    end
+```ruby
+describe os.name do
+   it { should eq 'foo' }
+end
 
-    describe os.release do
-       it { should eq 'foo' }
-    end
+describe os.release do
+   it { should eq 'foo' }
+end
 
-    describe os.arch do
-       it { should eq 'foo' }
-    end
+describe os.arch do
+   it { should eq 'foo' }
+end
+```
 
 ### os.family names
 

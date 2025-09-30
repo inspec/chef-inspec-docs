@@ -30,11 +30,11 @@ A `linux_audit_system` Chef InSpec audit resource allows you to test the configu
     end
 ```
 
-> where
->
-> - `rules` is a property of this resource.
-> - `some_rule` is the expected rule to be included in the rules list.
-> - `be_enabled` and `be_running` are matchers of this resource.
+where:
+
+- `rules` is a property of this resource.
+- `some_rule` is the expected rule to be included in the rules list.
+- `be_enabled` and `be_running` are matchers of this resource.
 
 ## Properties
 

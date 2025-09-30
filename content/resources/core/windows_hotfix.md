@@ -26,11 +26,13 @@ This resource first became available in v1.39.1 of InSpec.
 
 A `windows_hotfix` resource block declares a hotfix to validate:
 
-    describe windows_hotfix('name') do
-      it { should be_installed }
-    end
+```ruby
+describe windows_hotfix('name') do
+  it { should be_installed }
+end
+```
 
-where
+where:
 
 - `('name')` must specify the name of a hotfix, such as `'KB4012213'`
 - `be_installed` is a valid matcher for this resource
@@ -41,15 +43,19 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if KB4012213 is installed
 
-    describe windows_hotfix('KB4012213') do
-      it { should be_installed }
-    end
+```ruby
+describe windows_hotfix('KB4012213') do
+  it { should be_installed }
+end
+```
 
-### Test that a hotfix is not installed
+### Test that a hotfix isn't installed
 
-    describe windows_hotfix('KB9999999') do
-      it { should_not be_installed }
-    end
+```ruby
+describe windows_hotfix('KB9999999') do
+  it { should_not be_installed }
+end
+```
 
 ## Matchers
 
@@ -61,4 +67,6 @@ This resource has the following special matchers.
 
 The `be_installed` matcher tests if the named hotfix is installed on the system:
 
-    it { should be_installed }
+```ruby
+it { should be_installed }
+```

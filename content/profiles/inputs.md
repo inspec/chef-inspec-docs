@@ -72,8 +72,8 @@ Profile Summary: 0 successful controls, 1 control failure, 0 controls skipped
 The control fails because the value is set to `10`, but the control expects `11`.
 That result clearly won't do.
 
-By default, inputs set using the CLI `--input` option override inputs defined in control code.
-So, you can set the `amplifier_max_volume` to `11` and the control will pass.
+By default, inputs set using the CLI `--input` option override inputs defined in control code,
+so you can set the `amplifier_max_volume` to `11` and the control will pass.
 
 ```sh
 inspec exec rock_critic --input amplifier_max_volume=11
@@ -109,7 +109,7 @@ inspec exec my_profile --input input_name1=input_value1 name2=value2
 ```
 
 If a CLI input value resembles a number, it will be converted to an Integer or
-Float. Scientific notation is not recognized.
+Float. Scientific notation isn't recognized.
 
 ```sh
 inspec exec my_profile --input amplifier_volume=-11
@@ -126,7 +126,7 @@ inspec exec my_profile --input fruits='{a: apples, b: bananas, c: cantelopes}'
 inspec exec my_profile --input json_fruit='{"a": "apples", "g": ["grape01", "grape02"] }'
 ```
 
-Do not repeat the `--input` flag; that will override the previous setting.
+Don't repeat the `--input` flag; that overrides the previous setting.
 
 As of Chef InSpec 4.12, this mechanism has the following limitations:
 
@@ -185,7 +185,7 @@ All [input options](#input-options) are supported in metadata files.
 
 Defining inputs in profile metadata has two major advantages:
 
-- The inputs and their configuration are listed explicitly in simple YAML in one place - a consumer of your profile does not need to read through the control code to find the inputs.
+- The inputs and their configuration are listed explicitly in simple YAML in one place - a consumer of your profile doesn't need to read through the control code to find the inputs.
 - You can set inputs in other profiles that you depend on using profile inheritance.
 
 #### Profile inheritance
@@ -367,7 +367,7 @@ Inspec::InputRegistry.instance.cache_inputs = false
 
   Data type: `Integer`
 
-  Allowed values: 0-100
+  Allowed values: 0--100
 
   Allowed in: control code, `inspec.yml` file
 
@@ -445,7 +445,7 @@ input('also_important', value: 42, priority: 45)
 
 ### Priority debugging
 
-If it's difficult to determine why InSpec is using a particular priority value, you can use the Event Log to determine what is happening.
+If it's difficult to determine why InSpec is using a particular priority value, you can use the Event Log to determine what's happening.
 
 First, use the `input_object()` DSL method.
 This method is like `input()` in that it looks up an input, but instead of evaluating the current value, it returns the underlying `Inspec::Input` object.

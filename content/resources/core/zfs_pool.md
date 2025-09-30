@@ -26,9 +26,11 @@ This resource first became available in v1.16.0 of InSpec.
 
 A `zfs_pool` resource block declares the ZFS pool properties that should be tested:
 
-    describe zfs_pool('pool') do
-      it { should MATCHER 'value' }
-    end
+```ruby
+describe zfs_pool('pool') do
+  it { should MATCHER 'value' }
+end
+```
 
 where:
 
@@ -46,14 +48,16 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test a pool of 'tank'
 
-    describe zfs_pool('tank') do
-      its('autoexpand') { should eq  'off' }
-      its('failmode') { should eq  'continue' }
-      its('feature@lz4_compress') { should eq  'active' }
-      its('health') { should eq  'ONLINE' }
-      its('listsnapshots') { should eq  'off' }
-      its('readonly') { should eq  'off' }
-    end
+```ruby
+describe zfs_pool('tank') do
+  its('autoexpand') { should eq  'off' }
+  its('failmode') { should eq  'continue' }
+  its('feature@lz4_compress') { should eq  'active' }
+  its('health') { should eq  'ONLINE' }
+  its('listsnapshots') { should eq  'off' }
+  its('readonly') { should eq  'off' }
+end
+```
 
 ## Matchers
 

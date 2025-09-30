@@ -68,7 +68,7 @@ Example in JSON:
   },
   "xccdf_org.cisecurity.benchmarks_rule_1.1.1.4_Ensure_mounting_of_hfs_filesystems_is_disabled": {
     "expiration_date": "2020-03-01T00:00:00.000Z",
-    "justification": "This might be a bug in the test. @qateam",
+    "justification": "This might be a bug in the test. @qa-team",
     "run": false
   }
 }
@@ -79,7 +79,7 @@ Example in CSV:
 ```plain
 control_id,justification,run,expiration_date
 waiver_control_1_2_3,Not needed until Q3,TRUE,2019-10-15T00:00:00.000Z
-xccdf_org.cisecurity.benchmarks_rule_1.1.1.4_Ensure_mounting_of_hfs_filesystems_is_disabled,This might be a bug in the test. @qateam,FALSE,2020-03-01T00:00:00.000Z
+xccdf_org.cisecurity.benchmarks_rule_1.1.1.4_Ensure_mounting_of_hfs_filesystems_is_disabled,This might be a bug in the test. @qa-team,FALSE,2020-03-01T00:00:00.000Z
 ```
 
 which looks like this:
@@ -87,4 +87,4 @@ which looks like this:
 | control_id                                                                                  | justification                            | run   | expiration_date          |
 |---------------------------------------------------------------------------------------------|------------------------------------------|-------|--------------------------|
 | waiver_control_1_2_3                                                                        | Not needed until Q3                      | TRUE  | 2019-10-15T00:00:00.000Z |
-| xccdf_org.cisecurity.benchmarks_rule_1.1.1.4_Ensure_mounting_of_hfs_filesystems_is_disabled | This might be a bug in the test. @qateam | FALSE | 2020-03-01T00:00:00.000Z |
+| xccdf_org.cisecurity.benchmarks_rule_1.1.1.4_Ensure_mounting_of_hfs_filesystems_is_disabled | This might be a bug in the test. @qa-team | FALSE | 2020-03-01T00:00:00.000Z |
