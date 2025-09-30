@@ -37,11 +37,11 @@ describe ibmdb2_session(db_name: "sample").query("select rolename from syscat.ro
 end
 ```
 
-where
+where:
 
 - `ibmdb2_session` declares a db2_executable_file_path, db_instance and db_name to connect.
-- `db2_executable_file_path` is the path of the db2 binary file. For Windows this is not required.
-- `db_instance` is the name of the database instance. For Windows this is not required.
+- `db2_executable_file_path` is the path of the db2 binary file. For Windows this isn't required.
+- `db_instance` is the name of the database instance. For Windows this isn't required.
 - `db_name` is the name of the database to query on.
 - `query('QUERY')` contains the query to be run.
 - `its('output') { should eq(/expected-result/) }` compares the results of the query against the expected result in the test.

@@ -40,7 +40,7 @@ describe ssl(port: #).filter('value') do
 end
 ```
 
-where
+where:
 
 - `ssl(port: #)` is the port number, such as `ssl(port: 443)`
 - `filter` may take any of the following arguments: `ciphers`, `protocols`, and `handshake`
@@ -117,7 +117,7 @@ control 'rc4' do
 end
 ```
 
-There are two ways to run the `ssl-baseline` example profile to test SSL via the `ssl` resource.
+You can run the `ssl-baseline` example profile to test SSL using the following methods:
 
 Clone the profile:
 
@@ -131,7 +131,7 @@ and then run:
 inspec exec ssl-baseline
 ```
 
-Or execute the profile directly via URL:
+Or execute the profile directly from a URL:
 
 ```sh
 inspec exec https://github.com/dev-sec/ssl-baseline

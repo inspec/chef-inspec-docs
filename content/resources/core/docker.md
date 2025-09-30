@@ -40,7 +40,7 @@ describe docker.containers.where { names == 'flamboyant_allen' } do
 end
 ```
 
-where
+where:
 
 - `.where()` may specify a specific item and value, to which the resource parameters are compared
 - `commands`, `ids`, `images`, `labels`, `local_volumes`, `mounts`, `names`, `networks`, `ports`, `sizes` and `status` are valid parameters for `containers`
@@ -61,7 +61,7 @@ describe docker.images.where { repository == 'ubuntu' && tag == '12.04' } do
 end
 ```
 
-where
+where:
 
 - `.where()` may specify a specific filter and expected value, against which parameters are compared
 
@@ -120,7 +120,7 @@ end
 
 ## How to run the DevSec Docker baseline profile
 
-There are two ways to run the `docker-baseline` profile to test Docker via the `docker` resource.
+You can run the `docker-baseline` profile to test Docker in two possible ways:
 
 Clone the profile:
 
@@ -134,13 +134,13 @@ and then run:
 inspec exec cis-docker-benchmark
 ```
 
-Or execute the profile directly via URL:
+Or execute the profile directly using a URL:
 
 ```sh
 inspec exec https://github.com/dev-sec/cis-docker-benchmark
 ```
 
-## Resource Parameters
+## Resource parameters
 
 - `commands`, `ids`, `images`, `labels`, `local_volumes`, `mounts`, `names`, `networks`, `ports`, `sizes` and `status` are valid parameters for `containers`
 
@@ -162,7 +162,7 @@ end
 
 ### object('id')
 
-`object` returns low-level information about Docker objects. It is calling [docker inspect](https://docs.docker.com/engine/reference/commandline/info/) under the hood.
+`object` returns low-level information about Docker objects. It's calling [docker inspect](https://docs.docker.com/engine/reference/commandline/info/) under the hood.
 
 ```ruby
 describe docker.object(id) do

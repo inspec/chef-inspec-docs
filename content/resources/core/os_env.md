@@ -32,7 +32,7 @@ describe os_env('VARIABLE') do
 end
 ```
 
-where
+where:
 
 - `('VARIABLE')` must specify an environment variable, such as `PATH`
 - `matcher` is a valid matcher for this resource
@@ -61,7 +61,7 @@ describe os_env('PATH', 'target') do
 end
 ```
 
-where
+where:
 
 - `'target'` may be either `system` or `user`
 

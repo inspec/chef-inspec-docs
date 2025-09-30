@@ -34,7 +34,7 @@ describe bsd_service('service_name') do
 end
 ```
 
-where
+where:
 
 - `('service_name')` must specify a service name
 - `be_installed`, `be_enabled`, and `be_running` are the different [matchers](#matchers) for this resource.

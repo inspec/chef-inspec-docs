@@ -32,7 +32,7 @@ describe gem('gem_package_name', 'gem_binary') do
 end
 ```
 
-where
+where:
 
 - `('gem_package_name')` must specify a Gem package, such as `'rubocop'`
 - `('gem_binary')` can specify the path to a non-default gem binary, defaults to `'gem'`
@@ -79,7 +79,7 @@ describe gem('rubocop') do
 end
 ```
 
-### Verify that a gem package is not installed
+### Verify that a gem package isn't installed
 
 ```ruby
 describe gem('rubocop') do

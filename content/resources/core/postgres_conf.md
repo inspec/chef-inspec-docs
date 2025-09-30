@@ -32,15 +32,15 @@ describe postgres_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'setting'` specifies a setting in the `postgresql.conf` file
 - `('path')` is the non-default path to the `postgresql.conf` file (optional)
-- `should eq 'value'` is the value that is expected
+- `should eq 'value'` is the value that's expected
 
 ## Properties
 
-This resource supports any of the settings listed in an postgresql.conf file as properties for e.g. max_connections
+This resource supports any of the settings listed in an postgresql.conf file as properties for example, max_connections
 
 ```ruby
 its('max_connections') { should eq '5' }

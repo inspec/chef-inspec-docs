@@ -28,7 +28,7 @@ describe ipfilter do
 end
 ```
 
-where
+where:
 
 - `have_rule('RULE')` tests the active rule for ipfilter. This must match the entire line taken from `'ipfstat -io'`.
 
@@ -70,7 +70,7 @@ describe ipfilter do
 end
 ```
 
-Note that the rule specification must exactly match what is in the output of `'ipfstat -io'`, which depends on how you have built your rules.
+Note that the rule specification must exactly match what's in the output of `'ipfstat -io'`, which depends on how you have built your rules.
 
 ## Matchers
 

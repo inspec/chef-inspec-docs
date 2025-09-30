@@ -33,7 +33,7 @@ describe apt('path') do
 end
 ```
 
-where
+where:
 
 - `apt('path')` must specify an Apt or PPA repository
 - `('path')` may be an `http://` address, a `ppa:` address, or a short `repo-name/ppa` address
@@ -61,7 +61,7 @@ describe apt('ppa:nginx/stable') do
 end
 ```
 
-### Verify that a repository is not present
+### Verify that a repository isn't present
 
 ```ruby
 describe apt('ubuntu-wine/ppa') do

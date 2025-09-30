@@ -44,7 +44,7 @@ describe etc_hosts('path/to/hosts').where { ip_address == 'value' } do
 end
 ```
 
-where
+where:
 
 - `ip_address` is the IP address of the hostname in either ipv4 or ipv6 format.
 - `primary_name` is the name associated with the IP address.

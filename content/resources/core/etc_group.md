@@ -42,7 +42,7 @@ describe etc_group.where(item: 'value', item: 'value') do
 end
 ```
 
-where
+where:
 
 - `('path')` is the non-default path to the `\etc\group` file
 - `.where()` filters for a specific item and value, to which the parameter are compared

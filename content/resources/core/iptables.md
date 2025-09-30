@@ -32,7 +32,7 @@ describe iptables(rule:'name', table:'name', chain: 'name', ignore_comments: tru
 end
 ```
 
-where
+where:
 
 - `iptables()` may specify any combination of `rule`, `table`, or `chain`
 - `rule:'name'` is the name of a rule that matches a set of packets

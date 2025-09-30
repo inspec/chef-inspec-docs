@@ -33,7 +33,7 @@ describe ppa('PATH') do
 end
 ```
 
-where
+where:
 
 - `ppa('PATH')` represents PPA repository
 - `exist` and `be_enabled` are a valid matchers for this resource.

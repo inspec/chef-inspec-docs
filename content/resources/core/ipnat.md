@@ -28,7 +28,7 @@ describe ipnat do
 end
 ```
 
-where
+where:
 
 - `have_rule('RULE')` tests the active rule for IP NAT. This must match the entire line taken from `ipnat -l`.
 

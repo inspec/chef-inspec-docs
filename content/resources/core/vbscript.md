@@ -32,7 +32,7 @@ describe vbscript('script contents') do
 end
 ```
 
-where
+where:
 
 - `'script_name'` is the name of the VBScript to test
 - `('output')` is the expected output of the VBScript

@@ -10,7 +10,7 @@ platform = "os"
     parent = "resources/core"
 +++
 
-Use the `command` Chef InSpec audit resource to test an arbitrary command that is run on the system.
+Use the `command` Chef InSpec audit resource to test an arbitrary command that's run on the system.
 
 ## Availability
 
@@ -33,7 +33,7 @@ describe command('command') do
 end
 ```
 
-where
+where:
 
 - `'command'` must specify a command to be run
 - `'property'` is one of `exit_status`, `stderr`, or `stdout`
@@ -107,10 +107,10 @@ describe command('/bin/sh').exist? do
 end
 ```
 
-### Test for a command that should not exist
+### Test for a command that shouldn't exist
 
 ```ruby
-describe command('this is not existing').exist? do
+describe command('this isn't existing').exist? do
   it { should eq false }
 end
 ```
@@ -177,15 +177,15 @@ Currently supported target platforms include:
 
 - Local Unix-like OSes, including macOS
 - SSH targets
-- Windows targets via WinRM
+- Windows targets using WinRM
 
-Any target platforms not listed are not supported at this time.
+Any target platforms not listed aren't supported at this time.
 
 On unsupported platforms, the timeout value is ignored and the command will run indefinitely.
 
 ### Redacting Sensitive Commands
 
-By default the command that is ran is shown in the Chef InSpec output. This can be problematic if the command contains sensitive arguments such as a password. These sensitive parts can be redacted by passing in `redact_regex` and a regular expression to redact. Optionally, you can use 2 capture groups to fine tune what is redacted.
+By default the command that's ran is shown in the Chef InSpec output. This can be problematic if the command contains sensitive arguments such as a password. These sensitive parts can be redacted by passing in `redact_regex` and a regular expression to redact. Optionally, you can use 2 capture groups to fine tune what's redacted.
 
 The following examples show how to use `redact_regex`:
 
@@ -201,7 +201,7 @@ Command: `myapp REDACTED no_redact`
 
 # Example with capture groups
 # Each set of parenthesis is a capture group.
-# Anything in the two capture groups will not be 'REDACTED'
+# Anything in the two capture groups won't be 'REDACTED'
 describe command('myapp -p secret_password -d no_redact', redact_regex: /(-p ).*( -d)/) do
   its('exit_status') { should cmp 0 }
 end

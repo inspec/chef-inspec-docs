@@ -20,7 +20,7 @@ Use the `apache_conf` Chef InSpec audit resource to test the configuration setti
 
 ### Requirements
 
-`ServerRoot` must be included in an Apache configuration file. If not present, the included configurations will not be accessible to the resource.
+`ServerRoot` must be included in an Apache configuration file. If not present, the included configurations won't be accessible to the resource.
 
 ### Version
 
@@ -36,11 +36,11 @@ describe apache_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'setting_name'` is a configuration setting defined in the Apache configuration file
 - `('path')` is the non-default path to the Apache configuration file
-- `{ should eq 'value' }` is the value that is expected
+- `{ should eq 'value' }` is the value that's expected
 
 ## Examples
 
@@ -74,7 +74,7 @@ end
 
 {{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
 
-This Chef InSpec audit resource matches any service that is listed in the Apache configuration file:
+This Chef InSpec audit resource matches any service that's listed in the Apache configuration file:
 
 ```ruby
 its('PidFile') { should_not eq '/var/run/httpd.pid' }

@@ -65,11 +65,11 @@ _'MOON MAN'_ is an [expected result](#expected-result). Some matchers take an ex
 
 #### it { should _be_classy_ }
 
-_be_classy_ is a [resource-specific matcher](#resource-specific-matcher). It returns a yes-or-no value, based on whether Tony's car is classy or not. (It is. Tony is a classy guy.)
+_be_classy_ is a [resource-specific matcher](#resource-specific-matcher). It returns a yes or no value, based on whether Tony's car is classy or not. (It is. Tony is a classy guy.)
 
 #### it { _should_not_ have_check_engine_light_on }
 
-_should_not_ indicates this is a negated test, so this test passes if the matcher says "no".
+_should_not_ indicates this is a negated test, so this test passes if the matcher returns false.
 
 ### Plural Resource Example
 

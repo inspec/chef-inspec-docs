@@ -32,7 +32,7 @@ describe mysql_session('username', 'password').query('QUERY') do
 end
 ```
 
-where
+where:
 
 - `mysql_session` declares a username and password, connecting locally, with permission to run the query
 - `query('QUERY')` contains the query to be run

@@ -28,10 +28,10 @@ describe security_identifier(group: 'Everyone') do
 end
 ```
 
-where
+where:
 
 - `group:` specifies that `'Everyone'` should be a group. `user:` can be used to specify a user account.
-  \*\* It is necessary to declare the type of the trustee because Windows allows users, groups and other entities to share names. If you really need to not specify the type, `unspecified:` can be used. This will attempt to match the name to a group and then a user account. This may take longer to execute and comes with the risk of Chef InSpec matching the name to an unintended trustee.
+  \*\* It's necessary to declare the type of the trustee because Windows allows users, groups and other entities to share names. If you really need to not specify the type, `unspecified:` can be used. This will attempt to match the name to a group and then a user account. This may take longer to execute and comes with the risk of Chef InSpec matching the name to an unintended trustee.
 
 ## Examples
 

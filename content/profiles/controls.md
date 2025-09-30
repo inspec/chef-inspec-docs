@@ -137,8 +137,8 @@ end
 `describe.one` has the following conditions:
 
 - A `describe.one` block passes if one of its nested `describe` blocks has all assertions passing. A `describe.one` block needs an entire `describe` block to pass and not just a single assertion.
-- Chef InSpec will always evaluate all the tests contained within `describe.one`. It does not short-circuit upon evaluating a passing `describe` block.
-- Nesting a `describe.one` block inside another `describe.one` block is not supported.
+- Chef InSpec will always evaluate all the tests contained within `describe.one`. It doesn't short-circuit upon evaluating a passing `describe` block.
+- Nesting a `describe.one` block inside another `describe.one` block isn't supported.
 
 ### Sensitive resources
 
@@ -173,7 +173,7 @@ end
 
 ### Test if PostgreSQL passwords are empty
 
-The following test shows how to audit machines running PostgreSQL to ensure that passwords are not empty.
+The following test shows how to audit machines running PostgreSQL to ensure that passwords aren't empty.
 
 ```ruby
 control 'postgres-7' do
@@ -187,12 +187,12 @@ end
 
 ### Test if MySQL passwords are in ENV
 
-The following test shows how to audit machines running MySQL to ensure that passwords are not stored in `ENV`:
+The following test shows how to audit machines running MySQL to ensure that passwords aren't stored in `ENV`:
 
 ```ruby
 control 'mysql-3' do
   impact 1.0
-  title 'Do not store your MySQL password in your ENV'
+  title 'Don't store your MySQL password in your ENV'
   desc '
     Storing credentials in your ENV may easily expose
     them to an attacker. Prevent this at all costs.
@@ -243,7 +243,7 @@ The following test shows how to audit machines for insecure packages:
 ```ruby
 control 'cis-os-services-5.1.3' do
   impact 0.7
-  title '5.1.3 Ensure rsh client is not installed'
+  title '5.1.3 Ensure rsh client isn't installed'
   describe package('rsh') do
     it { should_not be_installed }
   end
@@ -273,9 +273,9 @@ end
 
 ### Use `only_if` to exclude a specific control
 
-This example shows how to allow skipping certain controls if conditions are not
-met by using `only_if`. In this example, the control will not be performed if
-the `redis-cli` command does not exist. A optional message can say why it was skipped.
+This example shows how to allow skipping certain controls if conditions aren't
+met by using `only_if`. In this example, the control won't be performed if
+the `redis-cli` command doesn't exist. A optional message can say why it was skipped.
 
 ```ruby
 control 'nutcracker-connect-redis-001' do
@@ -283,7 +283,7 @@ control 'nutcracker-connect-redis-001' do
   title 'Check if nutcracker can pass commands to redis'
   desc 'execute redis-cli set key command, to check connectivity of the service'
 
-  only_if('redis is not installed.') do
+  only_if('redis isn't installed.') do
     command('redis-cli').exist?
   end
 
@@ -327,7 +327,7 @@ control 'gnome-destkop-settings' do
   desc 'fix', 'set the good things in the file /etc/gnome/settings'
   tag nist: 'CM-6'
 
-  only_if("The Gnome Desktop is not installed, this control is Not Applicable", impact: 0) {
+  only_if("The Gnome Desktop isn't installed, this control isn't Applicable", impact: 0) {
     package('gnome-desktop').installed?
   }
 
@@ -341,26 +341,26 @@ Some notes about `only_if`:
 
 - `only_if` applies to the entire `control`. If the results of the `only_if`
   block evaluate to false, any Chef InSpec resources mentioned as part of a
-  `describe` block will not be run. Additionally, the contents of the describe
-  blocks will not be run. However, bare Ruby expressions and bare Chef InSpec
+  `describe` block won't be run. Additionally, the contents of the describe
+  blocks won't be run. However, bare Ruby expressions and bare Chef InSpec
   resources (not associated with a describe block) preceding the `only_if` statement
   will run
-- `only_if` also accepts hash with impact key to reset the impact value of the control. Control's impact is helpful in determining it is enhanced outcome.
+- `only_if` also accepts a hash with impact key to reset the impact value of the control. The control's impact is helpful in determining its enhanced outcome.
 
 To illustrate:
 
 ```ruby
 control "whatruns" do
   command("do_something") # This will ALWAYS run
-  describe command("do_another_thing") do # This will not run
-    command("do_yet_another_thing") # This will not run
+  describe command("do_another_thing") do # This won't run
+    command("do_yet_another_thing") # This won't run
   end
   only_if { false }
-  command("do_something_else") # This will not run
+  command("do_something_else") # This won't run
 end
 ```
 
-- Only one `only_if` is permitted per `control` block. If multiple `only_if` blocks are present, only the last `only_if` block will be honored
+- Only one `only_if` is permitted for each `control` block. If multiple `only_if` blocks are present, only the last `only_if` block will be honored
 - If used outside a control block, `only_if` skips all controls in the current file
 - To implement complex logic, use Ruby 'or' (`||`) and 'and' (`&&`) inside your `only_if` block:
 
@@ -374,7 +374,7 @@ end
 
 The `only_applicable_if` block allows to test if a control is applicable or not. In this example, the control with `only_applicable_if` block checks the condition and marks the control as not applicable (N/A) if the results of the `only_applicable_if` block evaluates to `false`.
 
-If **gnome-desktop** is not installed, the following control to test gnome settings marks control as **not applicable**.
+If **gnome-desktop** isn't installed, the following control to test gnome settings marks control as **not applicable**.
 
 ```ruby
 control 'gnome-destkop-settings' do
@@ -384,7 +384,7 @@ control 'gnome-destkop-settings' do
   desc 'fix', 'set the good things in the file /etc/gnome/settings'
   tag nist: 'CM-6'
 
-  only_applicable_if("The Gnome Desktop is not installed, this control is Not Applicable") {
+  only_applicable_if("The Gnome Desktop isn't installed, this control isn't Applicable") {
     package('gnome-desktop').installed?
   }
 
@@ -406,7 +406,7 @@ Target ID: fa3923b9-f806-4cc2-960d-1ddefb4c7654
 
   N/A  gnome-destkop-settings: No-op
      ×  No-op
-     N/A control due to only_applicable_if condition: The Gnome Desktop is not installed, this control is Not Applicable
+     N/A control due to only_applicable_if condition: The Gnome Desktop isn't installed, this control isn't Applicable
 
 Profile Summary: 0 successful controls, 0 control failure, 0 controls not reviewed, 1 controls not applicable, 0 controls have error
 Test Summary: 0 successful, 1 failures, 0 skipped
@@ -414,7 +414,7 @@ Test Summary: 0 successful, 1 failures, 0 skipped
 
 Some notes about `only_applicable_if`:
 
-- `only_applicable_if` applies to the entire `control`. If the results of the `only_applicable_if` block evaluates to `false`, any Chef InSpec resources mentioned as part of a `describe` block will not be run. Additionally, the contents of the describe blocks will not be run.
+- `only_applicable_if` applies to the entire `control`. If the results of the `only_applicable_if` block evaluates to `false`, any Chef InSpec resources mentioned as part of a `describe` block won't be run. Additionally, the contents of the describe blocks won't be run.
 - If the results of the `only_applicable_if` block evaluates to `false`, it will invoke a failing test which will state the reason for N/A.
 
 ### Additional metadata
@@ -539,7 +539,7 @@ inspec> help command
 Name: command
 
 Description:
-Use the command InSpec audit resource to test an arbitrary command that is run on the system.
+Use the command InSpec audit resource to test an arbitrary command that's run on the system.
 
 Example:
 describe command('ls -al /') do

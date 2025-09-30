@@ -40,7 +40,7 @@ describe csv('file', false).params do
 end
 ```
 
-where
+where:
 
 - `'file'` is the path to a CSV file
 - `true` or `false` tests a CSV file with or without headers. Default value: `true`.

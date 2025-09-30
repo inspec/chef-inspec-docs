@@ -36,7 +36,7 @@ describe security_policy(translate_sid: true) do
 end
 ```
 
-where
+where:
 
 - `'policy_name'` must specify a security policy
 - `{ should eq 'value' }` tests the value of `policy_name` against the value declared in the test
@@ -44,7 +44,7 @@ where
 
 ## Properties
 
-This resource supports any of the security policy name as properties for e.g. `SeNetworkLogonRight`, `SeRemoteInteractiveLogonRight` etc.
+This resource supports any of the security policy name as properties for example, `SeNetworkLogonRight`, `SeRemoteInteractiveLogonRight` etc.
 
 ```ruby
 its('SeNetworkLogonRight') { should eq '*S-1-5-11' }

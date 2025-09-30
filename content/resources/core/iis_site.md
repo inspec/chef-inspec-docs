@@ -36,7 +36,7 @@ describe iis_site('site_name') do
 end
 ```
 
-where
+where:
 
 - `'site_name'` is the name of the site, such as `'Default Web Site'`
 - `('app_pool_name')` is the name of the application pool in which the site's root application is run, such as `'DefaultAppPool'`

@@ -10,12 +10,14 @@ platform = "linux"
     parent = "resources/core"
 +++
 
+<!-- vale chef.inclusive = NO -->
+
 Use the `kernel_module` Chef InSpec audit resource to test kernel modules on Linux
 platforms. These parameters are located under `/lib/modules`. Any submodule may
 be tested using this resource.
 
 The `kernel_module` resource can also verify if a kernel module is `blacklisted`
-or if a module is disabled via a fake install using the `bin_true` or `bin_false`
+or if a module is disabled with a fake install using the `bin_true` or `bin_false`
 method.
 
 ## Availability
@@ -31,7 +33,7 @@ This resource first became available in v1.0.0 of InSpec.
 ## Syntax
 
 A `kernel_module` resource block declares a module name, and then tests if that
-module is a loaded kernel module, if it is enabled, disabled or if it is
+module is a loaded kernel module, if it's enabled, disabled or if it's
 blacklisted:
 
 ```ruby
@@ -42,12 +44,12 @@ describe kernel_module('module_name') do
 end
 ```
 
-where
+where:
 
 - `'module_name'` must specify a kernel module, such as `'bridge'`
 - `{ should be_loaded }` tests if the module is a loaded kernel module
-- `{ should be_blacklisted }` tests if the module is blacklisted or if the module is disabled via a fake install using /bin/false or /bin/true
-- `{ should be_disabled }` tests if the module is disabled via a fake install using /bin/false or /bin/true
+- `{ should be_blacklisted }` tests if the module is blacklisted or if the module is disabled with a fake install using /bin/false or /bin/true
+- `{ should be_disabled }` tests if the module is disabled with a fake install using /bin/false or /bin/true
 
 ## Examples
 
@@ -88,7 +90,7 @@ describe kernel_module('floppy') do
 end
 ```
 
-### Check if a kernel module is _not_ blacklisted and is loaded
+### Check if a kernel module isn't blacklisted and is loaded
 
 ```ruby
 describe kernel_module('video') do
@@ -97,7 +99,7 @@ describe kernel_module('video') do
 end
 ```
 
-### Check if a kernel module is disabled via 'bin_false'
+### Check if a kernel module is disabled with `bin_false`
 
 ```ruby
 describe kernel_module('sstfb') do
@@ -106,7 +108,7 @@ describe kernel_module('sstfb') do
 end
 ```
 
-### Check if a kernel module is 'blacklisted'/'disabled' via 'bin_true'
+### Check if a kernel module is 'blacklisted'/'disabled' with 'bin_true'
 
 ```ruby
 describe kernel_module('nvidiafb') do
@@ -115,7 +117,7 @@ describe kernel_module('nvidiafb') do
 end
 ```
 
-### Check if a kernel module is not loaded
+### Check if a kernel module isn't loaded
 
 ```ruby
 describe kernel_module('dhcp') do

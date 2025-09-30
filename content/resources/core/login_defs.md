@@ -32,7 +32,7 @@ describe login_defs do
 end
 ```
 
-where
+where:
 
 - `name` is a configuration setting in `login.defs`
 - `{ should include('foo') }` tests the value of `name` as read from `login.defs` versus the value declared in the test

@@ -24,7 +24,7 @@ This resource first became available in v1.0.0 of InSpec.
 
 ## Syntax
 
-A `yum` resource block declares a package repo, tests if the package repository is present, and if it that package repository is a valid package source (i.e. "is enabled"):
+A `yum` resource block declares a package repository, tests if the package repository is present, and if it that package repository is a valid package source using `be_enabled`:
 
 ```ruby
 describe yum.repo('name') do
@@ -33,7 +33,7 @@ describe yum.repo('name') do
 end
 ```
 
-where
+where:
 
 - `repo('name')` is the (optional) name of a package repo, using either a full identifier (`'updates/7/x86_64'`) or a short identifier (`'updates'`)
 
@@ -120,7 +120,7 @@ its('repos') { should include 'some_repo' }
 
 ### shortname
 
-The `shortname` matcher names a specific package repository's group identifier. For example, if a repository's group name is "Directory Server", the corresponding group identifier is typically "directory-server":
+The `shortname` matcher names a specific package repository's group identifier. For example, if a repository's group name is _Directory Server_, the corresponding group identifier is typically `directory-server`:
 
 ```ruby
 describe yum.repo('Directory Server') do

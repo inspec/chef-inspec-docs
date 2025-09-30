@@ -10,7 +10,7 @@ platform = "os"
     parent = "resources/core"
 +++
 
-Use the `opa_cli` Chef InSpec audit resource to query Open Policy Agent (OPA) using an OPA policy file, a data file, and a query.
+Use the `opa_cli` Chef InSpec audit resource to query Open Policy Agent (OPA) using an OPA Rego file, a data file, and a query.
 
 ## Availability
 
@@ -28,10 +28,10 @@ describe opa_cli(policy: "example.rego", data: "input.json", query: "data.exampl
 end
 ```
 
-where
+where:
 
 - `data` specifies the json formatted input data or file path.
-- `policy` the path to policy file.
+- `policy` the path to Rego file.
 - `query` specifies the query to be run.
 - `its(["result"]) { should eq "value" }` compares the results of the query against the expected result in the test
 
@@ -41,7 +41,7 @@ The `opa_cli` resource InSpec resource accepts `policy`, `data`, `query`, and `o
 
 ### `policy` _(required)_
 
-The path to the OPA policy file.
+The path to the OPA Rego file.
 
 ### `data` _(required)_
 
@@ -67,7 +67,7 @@ its('result') { should be nil }
 
 ### allow
 
-The `allow` property checks if specific input matches the policy defined in OPA. This matcher will not work if `allow` is not defined in the policy file.
+The `allow` property checks if specific input matches the policy defined in OPA. This matcher won't work if `allow` isn't defined in the Rego file.
 
 ```ruby
 its('allow') { should eq 'value' }

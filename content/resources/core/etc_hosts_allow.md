@@ -44,7 +44,7 @@ describe etc_hosts_allow(hosts_path).where { daemon == 'value' } do
 end
 ```
 
-where
+where:
 
 - `daemon` is a filter that will be allowed to pass traffic in.
 - `client_list`, `options` are the valid resource properties that test the list of clients who will be allowed to pass traffic in, and a list of tasks that are to be done with the rule when traffic is found respectively.
@@ -53,7 +53,7 @@ where
 
 ### daemon
 
-The `daemon` property returns a string containing the daemon that is allowed in the rule.
+The `daemon` property returns a string containing the daemon that's allowed in the rule.
 
 ```ruby
 describe etc_hosts_allow.where { client_list == ['127.0.1.154',  '[:fff:fAb0::]'] } do

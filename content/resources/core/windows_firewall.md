@@ -28,7 +28,7 @@ describe windows_firewall('name') do
 end
 ```
 
-where
+where:
 
 * `('name')` must specify the name of a firewall profile, such as `'Public'`, `'Private'` or `'Domain'`
 * `be_enabled` is a valid matcher for this resource
@@ -74,7 +74,7 @@ Each of these properties can be used in two distinct ways:
 its('default_inbound_action') { should cmp 'Allow' }
 ```
 
-or via matcher:
+or with a matcher:
 
 ```ruby
 it { should have_default_inbound_action 'Allow' }

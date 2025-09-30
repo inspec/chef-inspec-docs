@@ -24,7 +24,7 @@ This resource first became available in v1.0.0 of InSpec.
 
 ## Syntax
 
-An `os` resource block declares the platform to be tested. The platform may specified via matcher or control block name. For example, using a matcher:
+An `os` resource block declares the platform to be tested. The platform may specified with a matcher or control block name. For example, using a matcher:
 
 ```ruby
 describe os.family do

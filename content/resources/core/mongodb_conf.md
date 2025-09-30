@@ -28,11 +28,11 @@ describe mongodb_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'setting'` specifies a setting in the `mongodb.conf` file
 - `('path')` is the non-default path to the `mongodb.conf` file (optional)
-- `should eq 'value'` is the value that is expected
+- `should eq 'value'` is the value that's expected
 
 ## Examples
 

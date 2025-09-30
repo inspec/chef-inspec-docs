@@ -35,7 +35,7 @@ describe sybase_session('config item', server: 'SYBASE', password: 'PASSWORD') d
 end
 ```
 
-where
+where:
 
 - `sybase_conf` declares a configuration item, server, and password with permission to run `sp_configure`.
 - `its('run_value') { should cmp 'expected' }` compares the current running value of the configuration item against an expected value.

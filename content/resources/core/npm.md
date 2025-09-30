@@ -32,7 +32,7 @@ describe npm('npm_package_name') do
 end
 ```
 
-where
+where:
 
 - `('npm_package_name')` must specify an NPM package, such as `'bower'` or `'statsd'`
 - `be_installed` is a valid matcher for this resource
@@ -60,7 +60,7 @@ describe npm('bower') do
 end
 ```
 
-### Verify that statsd is not installed
+### Verify that statsd isn't installed
 
 ```ruby
 describe npm('statsd') do

@@ -180,7 +180,7 @@ its('link_path') { should eq '/some/path/to/file' }
 
 ### shallow_link_path
 
-The `shallow_link_path` property returns the path that the file refers to, only resolving it once (that is, it performs a readlink operation). If the file is not a symlink, **nil** is returned.
+The `shallow_link_path` property returns the path that the file refers to, only resolving it once (that is, it performs a readlink operation). If the file isn't a symlink, **nil** is returned.
 
 ```ruby
 its('shallow_link_path') { should eq '/some/path/to/file' }
@@ -228,7 +228,7 @@ not
 { should cmp '1775' }
 ```
 
-Without the zero prefix for the octal value, the Chef InSpec interprets it as the _decimal_ value 644, which is octal 1024 or `-----w-r-T`, and any test for a file that is `-rw-r--r--` will fail.
+Without the zero prefix for the octal value, the Chef InSpec interprets it as the _decimal_ value 644, which is octal 1024 or `-----w-r-T`, and any test for a file that's `-rw-r--r--` will fail.
 
 {{< note >}}
 
@@ -337,7 +337,7 @@ The `type` property tests for the file type. The available types are:
 `door`
 : the object is a door device
 
-The `type` method usually returns the type as a Ruby "symbol". We recommend using the `cmp` matcher to match either by symbol or string.
+The `type` method usually returns the type as a Ruby symbol. We recommend using the `cmp` matcher to match either by symbol or string.
 
 For example:
 
@@ -346,7 +346,7 @@ its('type') { should eq :file }
 its('type') { should cmp 'file' }
 ```
 
-or,
+or:
 
 ```ruby
 its('type') { should eq :socket }
@@ -371,7 +371,7 @@ describe file('/tmp') do
 end
 ```
 
-### Test that a file does not exist
+### Test that a file doesn't exist
 
 ```ruby
 describe file('/tmpest') do
@@ -635,7 +635,7 @@ it { should be_executable.by_user('user') }
 
 ### be_file
 
-The `be_file` matcher tests if the file exists as a file. This can be useful with configuration files like `/etc/passwd` where there typically is not an associated file extension---`passwd.txt`.
+The `be_file` matcher tests if the file exists as a file. This can be useful with configuration files like `/etc/passwd` where there typically isn't an associated file extension---`passwd.txt`.
 
 ```ruby
 it { should be_file }
@@ -667,7 +667,7 @@ it { should be_owned_by 'root' }
 
 ### be_pipe
 
-The `be_pipe` matcher tests if the file exists as first-in, first-out special file (`.fifo`) that is typically used to define a named pipe, such as `/var/log/nginx/access.log.fifo`.
+The `be_pipe` matcher tests if the file exists as first-in, first-out special file (`.fifo`) that's typically used to define a named pipe, such as `/var/log/nginx/access.log.fifo`.
 
 ```ruby
 it { should be_pipe }

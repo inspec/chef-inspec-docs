@@ -32,11 +32,11 @@ describe auditd_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'keyword'` is a configuration setting defined in the `auditd.conf` configuration file
 - `('path')` is the non-default path to the `auditd.conf` configuration file
-- `{ should cmp 'value' }` is the value that is expected
+- `{ should cmp 'value' }` is the value that's expected
 
 ## Properties
 

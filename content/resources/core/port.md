@@ -43,11 +43,11 @@ describe port.where { protocol =~ /tcp/ && port > 22 && port < 80 } do
 end
 ```
 
-where
+where:
 
 - `.where{}` specifies a block in which one (or more) attributes---`port`, `address`, `protocol`, `process`, `pid`, or `listening?`----scope the test to ports that match those attributes
 
-For example, to test if the SSH daemon is available on a Linux machine via the default port (22):
+For example, to test if the SSH daemon is available on a Linux machine with the default port (22):
 
 ```ruby
 describe port(22) do
@@ -159,7 +159,7 @@ describe port(443) do
 end
 ```
 
-### Verify port 65432 is not listening
+### Verify port 65432 isn't listening
 
 ```ruby
 describe port(22) do

@@ -32,11 +32,11 @@ describe postgres_hba_conf.where { type == 'local' } do
 end
 ```
 
-where
+where:
 
 - `'attribute'` is a attribute in the pg hba configuration file
-- `'filter_value'` is the value that is to be filtered for
-- `'value'` is the value that is to be matched expected
+- `'filter_value'` is the value that's to be filtered for
+- `'value'` is the value that's to be matched expected
 
 ## Properties
 

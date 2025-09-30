@@ -32,11 +32,11 @@ describe processes('NAME') do
 end
 ```
 
-> where
->
-> - `process_name` specifies the name of the process to test. If the value is a string, it is converted to a `Regexp`. You can pass a `Regexp` directly for more accurate results. If left blank returns all processes.
-> - `property_name` is a valid property of this resource.
-> - `property_value` is the expected value for the specified property.
+where:
+
+- `process_name` specifies the name of the process to test. If the value is a string, it's converted to a `Regexp`. You can pass a `Regexp` directly for more accurate results. If left blank returns all processes.
+- `property_name` is a valid property of this resource.
+- `property_value` is the expected value for the specified property.
 
 ## Properties
 
@@ -136,7 +136,7 @@ end
 
 Sometimes there is no direct comparison between different operating systems and system properties. Most of the `property_name` do align between the various operating systems.
 
-However, there are some exceptions. For example, within Linux operating system, `states` offer multiple properties. Windows operating systems do not have a direct comparison on a single property. Hence, `states` is mapped to the property of `Responding` and determines a boolean (true/false) flag if the process is hung.
+However, there are some exceptions. For example, within Linux operating system, `states` offer multiple properties. Windows operating systems don't have a direct comparison on a single property. Hence, `states` is mapped to the property of `Responding` and determines a boolean (true/false) flag if the process is hung.
 
 The following mapping table aids you in understanding the Unix field property mapping to the Windows `Get-Process` property:
 

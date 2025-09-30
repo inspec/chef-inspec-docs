@@ -61,7 +61,7 @@ The `count` property returns an Integer describing how many interfaces matched.
 
 ### ipv4_address
 
-Attempts to guess the "first" "real" IPv4 address on any interface. Looks for interfaces that are up and have IPv4 addresses assigned, then tries to filter out loopback, management (10/8) and local (192.168/16) IP addresses, returning the best of of those that it can; you may still get nil, or a loopback address.  Note that if the machine is behind NAT this will not be the external IP address; use the `http` resource to query an IP lookup service for that.
+Attempts to guess the "first" "real" IPv4 address on any interface. Looks for interfaces that are up and have IPv4 addresses assigned, then tries to filter out loopback, management (10/8) and local (192.168/16) IP addresses, returning the best of of those that it can; you may still get nil, or a loopback address. Note that if the machine is behind NAT this won't be the external IP address; use the `http` resource to query an IP lookup service for that.
 
   its('ipv4_address') { should_not eq '127.0.0.1' }
 

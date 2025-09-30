@@ -34,14 +34,14 @@ describe nginx_conf.params['pid'].flatten do
 end
 ```
 
-where
+where:
 
 - `nginx_conf` is the resource to reference your NGINX configuration
 - `params` accesses all its parameters
 - `params['pid']` selects the `pid` entry from the global NGINX configuration
-- `{ should cmp 'logs/nginx.pid' }` tests if the PID is set to `logs/nginx.pid` (via `cmp` matcher)
+- `{ should cmp 'logs/nginx.pid' }` tests if the PID is set to `logs/nginx.pid` (with `cmp` matcher)
 
-Parameters can be accessed either via `params` or via the `its` syntax:
+Parameters can be accessed either with `params` or the `its` syntax:
 
 ```ruby
 describe nginx_conf do
@@ -173,7 +173,7 @@ location.params
 
 ### configuration file path
 
-If the NGINX configuration file is not located at the default path, `/etc/nginx/nginx.conf`, the path can specified as the first parameter of the describe block:
+If the NGINX configuration file isn't located at the default path, `/etc/nginx/nginx.conf`, the path can specified as the first parameter of the describe block:
 
 ```ruby
 describe nginx_conf('/opt/nginx/nginx.conf').params['pid'] do

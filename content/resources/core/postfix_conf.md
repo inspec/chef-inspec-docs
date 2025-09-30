@@ -30,7 +30,7 @@ describe postfix_conf do
 end
 ```
 
-where
+where:
 
 - `'setting_name'` is a setting key defined in main.cf
 - `{ should cmp 'value' }` is the value to be expected
@@ -43,7 +43,7 @@ describe postfix_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'path'` is the path to your Postfix configuration (ex. '/etc/path/to/postfix/main.cf')
 

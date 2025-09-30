@@ -44,7 +44,7 @@ describe etc_hosts_deny(hosts_path).where { daemon == 'value' } do
 end
 ```
 
-where
+where:
 
 - `daemon` is a daemon that will be rejected to pass traffic in.
 - `client_list` is a list of clients that will be rejected to pass traffic in.
@@ -54,7 +54,7 @@ where
 
 ### daemon
 
-The `daemon` property returns a string containing the daemon that is allowed in the rule.
+The `daemon` property returns a string containing the daemon that's allowed in the rule.
 
 ```ruby
 describe etc_hosts_deny.where { client_list == ['127.0.1.154',  '[:fff:fAb0::]'] } do

@@ -36,7 +36,7 @@ describe powershell(script) do
 end
 ```
 
-where
+where:
 
 - `'script'` must specify a Powershell script to be run
 - `'matcher'` is one of `exit_status`, `stderr`, or `stdout`

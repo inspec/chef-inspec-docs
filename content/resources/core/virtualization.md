@@ -32,9 +32,9 @@ describe virtualization do
 end
 ```
 
-where
+where:
 
-- `('system')` is the name of the system information of the virtualization platform (e.g. docker, lxc, vbox, kvm, etc)
+- `('system')` is the name of the system information of the virtualization platform (for example, docker, lxc, vbox, kvm, etc)
 - `MATCHER` is a valid matcher for this resource
 - `'value'` is the value to be tested
 
@@ -116,4 +116,4 @@ Can be either
 - `guest`
 - `host`
 
-Please see the documentation on `virtualization.system` to check supported roles per platform.
+Please see the documentation on `virtualization.system` to check supported roles for each platform.

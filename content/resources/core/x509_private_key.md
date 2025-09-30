@@ -30,12 +30,12 @@ An `x509_private_key` Chef InSpec audit resource allows you to test the x509 pri
     end
 ```
 
-> where
->
-> - `"/home/x509_private_key.pem"` is the path of the private key.
-> - `"key_password"` is the password of the private key. This is optional for private keys without password.
-> - `be_valid`, `be_encrypted`, and `have_matching_certificate` are matchers of this resource
-> - `"/home/x509_certificate.crt"` is a x509 certificate generated using the specified private key.
+where:
+
+- `"/home/x509_private_key.pem"` is the path of the private key.
+- `"key_password"` is the password of the private key. This is optional for private keys without password.
+- `be_valid`, `be_encrypted`, and `have_matching_certificate` are matchers of this resource
+- `"/home/x509_certificate.crt"` is a x509 certificate generated using the specified private key.
 
 ## Matchers
 

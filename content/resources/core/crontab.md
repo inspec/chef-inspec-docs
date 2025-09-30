@@ -38,7 +38,7 @@ The `include` matcher in this context specifies the entire list of commands that
 
 {{< /note >}}
 
-The path to the system crontab can also be supplied via:
+The path to the system crontab can also be supplied with:
 
 ```ruby
 describe crontab(path: '/etc/cron.d/some_crontab') do
@@ -85,7 +85,7 @@ describe crontab.where { command =~ /a partial command string/ } do
 end
 ```
 
-### Test a special time string (i.e., @yearly /root/annual_report.sh)
+### Test a special time string
 
 ```ruby
 describe crontab.commands('/root/annual_report.sh') do

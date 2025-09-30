@@ -12,7 +12,7 @@ platform = "linux"
 
 {{< warning >}}
 
-This resource is deprecated and should not be used. It was removed in Chef InSpec 4.0. The documentation below is preserved as a reference. Replacement functionality is available in the [`apache_conf`](/resources/core/apache_conf/) resource.
+This resource is deprecated and shouldn't be used. It was removed in Chef InSpec 4.0. The documentation below is preserved as a reference. Replacement functionality is available in the [`apache_conf`](/resources/core/apache_conf/) resource.
 
 {{< /warning >}}
 
@@ -38,10 +38,10 @@ describe apache do
 end
 ```
 
-where
+where:
 
 - `'setting_name'` is description of the Apache configuration file
-- `{ should cmp 'value' }` is the value that is expected
+- `{ should cmp 'value' }` is the value that's expected
 
 ## Properties
 

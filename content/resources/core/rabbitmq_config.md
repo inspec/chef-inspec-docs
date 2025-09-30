@@ -32,7 +32,7 @@ describe rabbitmq_config.params('rabbit', 'ssl_listeners') do
 end
 ```
 
-where
+where:
 
 - `params` is the list of parameters configured in the RabbitMQ config file
 - `{ should cmp 5671 }` tests the value of `rabbit.ssl_listeners` as read from `rabbitmq.config` versus the value declared in the test

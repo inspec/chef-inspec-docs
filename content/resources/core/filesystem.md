@@ -41,7 +41,7 @@ describe filesystem('/') do
 end
 ```
 
-where
+where:
 
 - `filesystem('/')` states that the resource will look at the root (/) partition.
 - `size_kb` is the total partition size and is measured in kilobytes (KB).

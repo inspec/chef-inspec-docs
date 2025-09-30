@@ -23,7 +23,7 @@ The format for `/etc/shadow` includes:
 - The number of days a user must be inactive before the user account is disabled
 - The date on which a user account was disabled, as the number of days since Jan 1, 1970
 
-These entries are defined as a colon-delimited row in the file, one row per user:
+These entries are defined as a colon-delimited row in the file, one row for each user:
 
 ```plain
 username:Gb7crrO5CDF.:10063:0:99999:7:::
@@ -62,7 +62,7 @@ end
 A `shadow` resource block uses `where` to filter entries from the shadow file. If `where` is omitted, all entries are selected.
 
 ```ruby
-# Select all users. Among them, there should not be a user with the name 'forbidden_user'.
+# Select all users. Among them, there shouldn't be a user with the name 'forbidden_user'.
 describe shadow do
   its('users') { should_not include 'forbidden_user' }
 end
@@ -101,7 +101,7 @@ end
 Use `where` with [expect syntax](/profiles/style/#should-vs-expect-syntax) to show all users (that aren't disabled or locked) without SHA512 hashed passwords.
 
 ```ruby
-# Users with password fields that are not *, !, or don't begin with $6$
+# Users with password fields that aren't *, !, or don't begin with $6$
 bad_users = inspec.shadow.where { password !~ /^[*!]$|^\$6\$.*/ }.users
 
 describe 'Password hashes in /etc/shadow' do
@@ -128,7 +128,7 @@ end
 
 ### passwords
 
-A list of strings, representing the encrypted password strings for entries matched by the `where` filter. Each string may not be an encrypted password, but rather a `*` or similar which indicates that direct logins are not allowed. Different operating systems use different flags here (such as `*LK*` to indicate the account is locked).
+A list of strings, representing the encrypted password strings for entries matched by the `where` filter. Each string may not be an encrypted password, but rather a `*` or similar which indicates that direct logins aren't allowed. Different operating systems use different flags here (such as `*LK*` to indicate the account is locked).
 
 ```ruby
 # Use uniq to remove duplicates, then determine
@@ -144,7 +144,7 @@ end
 A list of integers, indicating the number of days since Jan 1, 1970 since the password for each matching entry was changed.
 
 ```ruby
-# Ensure all entries have changed their password in the last 90 days.  (Probably want a filter on that)
+# Ensure all entries have changed their password in the last 90 days. (Probably want a filter on that)
 describe shadow do
   its('last_changes.min') { should be < Date.today - 90 - Date.new(1970,1,1)   }
 end
@@ -155,7 +155,7 @@ end
 A list of integers reflecting the minimum number of days a password must exist, before it may be changed, for the users that matched the filter.
 
 ```ruby
-# min_days seems crazy today; make sure it is zero for everyone
+# min_days seems crazy today; make sure it's zero for everyone
 describe shadow do
   its('min_days.uniq') { should eq [0] }
 end
@@ -197,7 +197,7 @@ end
 
 ### expiry_dates
 
-A list of integers reflecting the number of days since Jan 1, 1970 that a user account has been disabled, for each user matching the filter. Value is `nil` if the account has not expired.
+A list of integers reflecting the number of days since Jan 1, 1970 that a user account has been disabled, for each user matching the filter. Value is `nil` if the account hasn't expired.
 
 ```ruby
 # No one should have an expired account.
@@ -219,14 +219,14 @@ end
 
 ## Filter Criteria
 
-You may use any of these filter criteria with the `where` function. They are named after the columns in the shadow file. Each has a related list [property](#properties).
+You may use any of these filter criteria with the `where` function. They're named after the columns in the shadow file. Each has a related list [property](#properties).
 
 ### user
 
 The string username of a user. Always present. Not required to be unique.
 
 ```ruby
-# Expect all users whose name ends in adm to have a disabled password via the '*' flag
+# Expect all users whose name ends in adm to have a disabled password with the '*' flag
 describe shadow.where(user: /adm$/) do
   its('password.uniq') { should eq ['*'] }
 end
@@ -234,7 +234,7 @@ end
 
 ### password
 
-The encrypted password strings, or an account status string. Each string may not be an encrypted password, but rather a `*` or similar which indicates that direct logins are not allowed. Different operating systems use other flags here (such as `*LK*` to indicate the account is locked).
+The encrypted password strings, or an account status string. Each string may not be an encrypted password, but rather a `*` or similar which indicates that direct logins aren't allowed. Different operating systems use other flags here (such as `*LK*` to indicate the account is locked).
 
 ```ruby
 # Find 'locked' accounts and ensure 'nobody' is on the list
@@ -290,7 +290,7 @@ end
 
 ### inactive_days
 
-An integer reflecting the number of days that must pass before a user who has not logged in will be disabled.
+An integer reflecting the number of days that must pass before a user who hasn't logged in will be disabled.
 
 ```ruby
 # Ensure everyone has a stale policy of no more than 14 days.

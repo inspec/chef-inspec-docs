@@ -32,7 +32,7 @@ describe mssql_session(user: 'username', password: 'password').query('QUERY').ro
 end
 ```
 
-where
+where:
 
 - `mssql_session` declares a username and password with permission to run the query. Omitting the username or password parameters results in the use of Windows authentication as the user Chef InSpec is executing as. You may also optionally pass a host and instance name. If omitted, they will default to host: localhost and the default instance.
 - `query('QUERY')` contains the query to be run

@@ -32,7 +32,7 @@ describe windows_hotfix('name') do
 end
 ```
 
-where
+where:
 
 - `('name')` must specify the name of a hotfix, such as `'KB4012213'`
 - `be_installed` is a valid matcher for this resource
@@ -49,7 +49,7 @@ describe windows_hotfix('KB4012213') do
 end
 ```
 
-### Test that a hotfix is not installed
+### Test that a hotfix isn't installed
 
 ```ruby
 describe windows_hotfix('KB9999999') do

@@ -30,7 +30,7 @@ describe sshd_active_config do
 end
 ```
 
-where
+where:
 
 - `name` is a configuration setting in `sshd_config`
 - `{ should include('foo') }` tests the value of `name` as read from `sshd_active_config` versus the value declared in the test

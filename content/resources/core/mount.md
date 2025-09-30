@@ -32,7 +32,7 @@ describe mount('path') do
 end
 ```
 
-where
+where:
 
 - `('path')` is the path to the mounted directory
 - `MATCHER` is a valid matcher for this resource

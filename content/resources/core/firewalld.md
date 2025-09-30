@@ -140,7 +140,7 @@ it { should be_running }
 
 ### `have_zone`
 
-`have_zone` returns true or false if the zone is set on firewalld. It does not mean the zone is active.
+`have_zone` returns true or false if the zone is set on firewalld. It doesn't mean the zone is active.
 
 ```ruby
 it { should have_zone('public') }
@@ -170,7 +170,7 @@ it { should have_port_enabled_in_zone('22/tcp', 'public') }
 it { should have_rule_enabled('family=ipv4 source address=192.168.0.14 accept', 'public') }
 ```
 
-It is not necessary to add the "rule" string, and you can start with the optional flags that are used in firewalld and end with the action.
+It isn't necessary to add the "rule" string, and you can start with the optional flags that are used in firewalld and end with the action.
 
 ### `have_icmp_block_inversion_enabled`
 

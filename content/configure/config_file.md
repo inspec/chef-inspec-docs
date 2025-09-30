@@ -16,11 +16,11 @@ A configuration file is **optional**.
 
 By default, Chef InSpec looks for a config file in `~/.inspec/config.json`.
 
-You may also specify the location using `--config`.  For example, to run the shell using a config file in `/etc/inspec`, use `inspec shell --config /etc/inspec/config.json`.
+You may also specify the location using `--config`. For example, to run the shell using a config file in `/etc/inspec`, use `inspec shell --config /etc/inspec/config.json`.
 
 ## Versions
 
-There are two possible versions for this config file, `1.1` or `1.2`. Only version `1.2` accepts the `plugins` setting.
+The config file has two possible versions, `1.1` or `1.2`. Only version `1.2` accepts the `plugins` setting.
 
 ## Example
 
@@ -100,7 +100,7 @@ There are two possible versions for this config file, `1.1` or `1.2`. Only versi
 
   You may have as many credential sets in the config file as you require.
 
-  If you use a target URI and the portion after the `://` cannot be matched to credential set name, Chef InSpec will send the URI to Train to be parsed as a Train URI.  Thus, you can still do `ssh://someuser@example.com`.
+  If you use a target URI and the portion after the `://` can't be matched to credential set name, Chef InSpec will send the URI to Train to be parsed as a Train URI. Thus, you can still do `ssh://someuser@example.com`.
 
   You can use a credential set, and then override individual options using command line options.
 

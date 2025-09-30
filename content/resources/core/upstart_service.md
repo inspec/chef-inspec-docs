@@ -34,7 +34,7 @@ describe upstart_service('service_name') do
 end
 ```
 
-where
+where:
 
 - `('service_name')` must specify a service name
 - `be_installed`, `be_enabled`, and `be_running` are valid matchers for this resource; all matchers available to the `service` resource may be used

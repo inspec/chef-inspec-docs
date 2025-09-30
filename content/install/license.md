@@ -145,7 +145,7 @@ if no license key is already set and it doesn't detect an automated method of se
    ```
 
 Chef InSpec validates the license key, displays information about the license entitlements, and then runs `inspec shell` as requested.
-Chef InSpec stores license keys for future use and will not prompt you for the license key for the duration of your license.
+Chef InSpec stores license keys for future use and won't prompt you for the license key for the duration of your license.
 
 ### Command line option
 
@@ -160,7 +160,7 @@ inspec exec <PROFILE_NAME> --chef-license-key <LICENSE_KEY>
 
 You can set the license key using the `CHEF_LICENSE_KEY` environment variable.
 Chef InSpec will read the license key from the variable and attempt to validate the key.
-If successful, InSpec saves the key and will not prompt you for it the next time you run InSpec.
+If successful, InSpec saves the key and won't prompt you for it the next time you run InSpec.
 
 ```bash
 export CHEF_LICENSE_KEY=<LICENSE_KEY>
@@ -170,11 +170,11 @@ inspec exec <PROFILE_NAME>
 ## Chef Local License Service
 
 For large or isolated (air-gapped) fleets, Chef InSpec can retrieve a license key from a [Chef Local License Service](https://docs.chef.io/licensing/local_license_service/).
-With Chef Local License Service, InSpec users do not need to know a license key---only the service URL(s).
+With Chef Local License Service, InSpec users don't need to know a license key---only the service URL(s).
 
 Chef InSpec sends a request to the Local License Service for a list of license keys and then uses that response to license itself during execution.
-InSpec will not prompt you for a license key.
-Chef InSpec does not store license keys for long-term use when they are retrieved from a Chef Local License Service.
+InSpec won't prompt you for a license key.
+Chef InSpec doesn't store license keys for long-term use when they're retrieved from a Chef Local License Service.
 
 Use one of the following methods to set a Local License Service URL.
 

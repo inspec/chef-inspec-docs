@@ -73,7 +73,7 @@ its('id') { should eq 'sha256:4a415e3663882fbc554ee830889c68a33b3585503892cc718a
 
 ### image
 
-The `image` property tests the value of the image. It is a combination of `repository/tag`.
+The `image` property tests the value of the image. It's a combination of `repository/tag`.
 
 ```ruby
 its('image') { should eq 'ALPINE:LATEST' }
@@ -149,7 +149,7 @@ it { should exist }
 
 ## Examples
 
-### Test if a docker image exists and verifies the image properties: ID, image, repo, and tag
+Test if a docker image exists and verifies the image properties: ID, image, repo, and tag:
 
 ```ruby
 describe docker_image('ALPINE:LATEST') do
@@ -161,7 +161,7 @@ describe docker_image('ALPINE:LATEST') do
 end
 ```
 
-### Test if a docker image exists and verifies the low-level information: Architecture, Config.Cmd, and GraphDriver
+Test if a docker image exists and verifies the low-level information: Architecture, `Config.Cmd`, and GraphDriver:
 
 ```ruby
 describe docker_image('ubuntu:latest') do

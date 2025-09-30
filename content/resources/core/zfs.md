@@ -29,11 +29,11 @@ A `zfs` Chef InSpec audit resource allows you to test if the ZFS Pool is present
     end
 ```
 
-> where
->
-> - `'zfs_pool_name'` is the name of a ZFS Pool,
-> - `exist` and `have_property` are matchers of this resource,
-> - `{ "key1" => "value1", "key2" => "value2" }` are properties of the ZFS Pool to test.
+where:
+
+- `'zfs_pool_name'` is the name of a ZFS Pool,
+- `exist` and `have_property` are matchers of this resource,
+- `{ "key1" => "value1", "key2" => "value2" }` are properties of the ZFS Pool to test.
 
 ## Matchers
 

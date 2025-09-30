@@ -10,7 +10,7 @@ platform = "linux"
     parent = "resources/core"
 +++
 
-Use the `bash` Chef InSpec audit resource to test an arbitrary command that is run on the system using a Bash script.
+Use the `bash` Chef InSpec audit resource to test an arbitrary command that's run on the system using a Bash script.
 
 ## Availability
 
@@ -33,7 +33,7 @@ describe bash('command') do
 end
 ```
 
-where
+where:
 
 - `'command'` must specify a command to be run
 - `'property'` is one of `exit_status`, `stderr`, or `stdout`

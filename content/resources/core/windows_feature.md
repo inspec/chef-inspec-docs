@@ -10,7 +10,7 @@ platform = "windows"
     parent = "resources/core"
 +++
 
-Use the `windows_feature` Chef InSpec audit resource to test features on Windows via the `Get-WindowsFeature` cmdlet.
+Use the `windows_feature` Chef InSpec audit resource to test features on Windows using the `Get-WindowsFeature` cmdlet.
 
 ## Availability
 
@@ -32,7 +32,7 @@ describe windows_feature('feature_name') do
 end
 ```
 
-where
+where:
 
 - `('feature_name')` must specify a Windows feature name, such as `DHCP Server` or `IIS-Webserver`
 - `be_installed` is a valid matcher for this resource

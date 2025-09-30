@@ -32,12 +32,12 @@ A `php_config` Chef InSpec audit resource allows to test PHP configuration param
     end
 ```
 
-> where
->
-> - `config_param` is a valid parameter of php configuration.
-> - `value` is a property of this resource.
-> - `some_value` is the value of the specified `config_param`.
-> - `path_to_ini_file` is the path for custom php configuration file.
+where:
+
+- `config_param` is a valid parameter of php configuration.
+- `value` is a property of this resource.
+- `some_value` is the value of the specified `config_param`.
+- `path_to_ini_file` is the path for custom php configuration file.
 
 ## Properties
 

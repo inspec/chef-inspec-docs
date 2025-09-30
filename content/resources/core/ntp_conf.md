@@ -32,11 +32,11 @@ describe ntp_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'setting_name'` is a synchronization setting defined in the `ntp.conf` file
 - `('path')` is the non-default path to the `ntp.conf` file
-- `{ should eq 'value' }` is the value that is expected
+- `{ should eq 'value' }` is the value that's expected
 
 ## Properties
 

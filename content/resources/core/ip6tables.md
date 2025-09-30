@@ -32,7 +32,7 @@ describe ip6tables(rule:'name', table:'name', chain: 'name') do
 end
 ```
 
-where
+where:
 
 - `ip6tables()` may specify any combination of `rule`, `table`, or `chain`
 - `rule:'name'` is the name of a rule that matches a set of packets

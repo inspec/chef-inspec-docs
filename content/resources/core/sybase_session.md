@@ -32,7 +32,7 @@ describe sybase_session(database: 'pubs2', server: 'SYBASE', username: 'USERNAME
 end
 ```
 
-where
+where:
 
 - `sybase_session` declares a server, database, username, and password with permission to run the query.
 - `query('QUERY')` contains the query to be run.

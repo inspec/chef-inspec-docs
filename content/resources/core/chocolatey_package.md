@@ -32,7 +32,7 @@ describe chocolatey_package('name') do
 end
 ```
 
-where
+where:
 
 - `('name')` must specify the (case-sensitive) name of a package, such as `'nssm'`
 - `be_installed` is a valid matcher for this resource
@@ -76,4 +76,4 @@ You can also use the `cmp OPERATOR` matcher to perform comparisons using the ver
 its('version') { should cmp >= '1.93.4-13debug84' }
 ```
 
-`cmp` understands version numbers using Gem::Version, and can use the operators `==, <, <=, >=, and >`. It will compare versions by each segment, not as a string - so '7.4' is smaller than '7.30', for example.
+`cmp` understands version numbers using Gem::Version, and can use the operators `==, <, <=, >=, and >`. It compares versions by each segment, not as a string, so `7.4` is smaller than `7.30`.

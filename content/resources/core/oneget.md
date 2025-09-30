@@ -32,7 +32,7 @@ describe oneget('name') do
 end
 ```
 
-where
+where:
 
 - `('name')` must specify the name of a package, such as `'VLC'`
 - `be_installed` is a valid matcher for this resource

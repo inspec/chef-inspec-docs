@@ -69,7 +69,7 @@ aws_access_key_id = AKIA....
 aws_secret_access_key = 1234....abcd
 ```
 
-You may now run Chef InSpec using the `--target` / `-t` option, using the format `-t aws://region/profile`.  For example, to connect to the Ohio region using a profile named 'auditing', use `-t aws://us-east-2/auditing`.
+You may now run Chef InSpec using the `--target` / `-t` option, using the format `-t aws://region/profile`. For example, to connect to the Ohio region using a profile named 'auditing', use `-t aws://us-east-2/auditing`.
 
 To verify your credentials, run:
 

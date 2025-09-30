@@ -37,7 +37,7 @@ describe iis_app('application_path', 'site_name') do
 end
 ```
 
-where
+where:
 
 - `'application_path'` is the path to the application, such as `'/myapp'`
 - `have_application_pool`, `have_protocol`, `have_site_name`, `have_physical_path` and `have_path` are the different [matchers](#matchers) for this resource.
@@ -83,7 +83,7 @@ its('physical_path') { should eq 'C:\\inetpub\\wwwroot\\myapp' }
 
 ### protocols
 
-`protocols` property returns an array of protocols i.e. the binding for the site, such as `'http'`. A site may have multiple bindings.
+`protocols` property returns an array of protocols that are the binding for the site, such as `'http'`. A site may have multiple bindings.
 
 ```ruby
 its('protocols') { should include 'http' }

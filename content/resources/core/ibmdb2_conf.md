@@ -38,11 +38,11 @@ describe ibmdb2_conf do
 end
 ```
 
-where
+where:
 
 - `ibmdb2_session` declares a db2_executable_file_path, db_instance and db_name to connect.
-- `db2_executable_file_path` is the path of the db2 binary file. For Windows this is not required.
-- `db_instance` is the name of the database instance. For Windows this is not required.
+- `db2_executable_file_path` is the path of the db2 binary file. For Windows this isn't required.
+- `db_instance` is the name of the database instance. For Windows this isn't required.
 - `its("output") { should include("expected_settings")}` compares the results of the output against the expected result in the test.
 
 ## Examples

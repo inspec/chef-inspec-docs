@@ -42,12 +42,12 @@ describe mysql_conf do
 end
 ```
 
-where
+where:
 
 - `'setting'` specifies a setting in the `my.cnf` file, such as `max_connections`
   - when checking a setting within sections, such as `[mysqld]`, the section name must be included
 - `('path')` is the non-default path to the `my.cnf` file
-- `should eq 'value'` is the value that is expected
+- `should eq 'value'` is the value that's expected
 
 ## Properties
 

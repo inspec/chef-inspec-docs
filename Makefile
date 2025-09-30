@@ -72,7 +72,7 @@ vale:
 	vale --glob='!{node_modules/**/*,archetypes/**/*,**/README.md,tools/**/*}' *
 
 vale_error:
-	vale --filter=error.expr --glob='!{node_modules/**/*,archetypes/**/*,**/README.md,tools/**/*}' *
+	vale --no-wrap --filter=error.expr --glob='!{node_modules/**/*,archetypes/**/*,**/README.md,tools/**/*}' *
 
 ##
 # Hugo Audit

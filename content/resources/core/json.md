@@ -49,7 +49,7 @@ describe json('/path/to/name.json') do
 end
 ```
 
-where
+where:
 
 - `name` is a configuration setting in a JSON file
 - `should eq 'foo'` tests a value of `name` as read from a JSON file versus the value declared in the test
@@ -85,7 +85,7 @@ The `name` matcher tests the value of the filename as read from a JSON file vers
 its('name') { should eq '/tmp/example.json' }
 ```
 
-### Test a cookbook version in a policyfile.lock.json file
+### Test a cookbook version in a `policyfile.lock.json` file
 
 ```ruby
 describe json('policyfile.lock.json') do

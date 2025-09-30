@@ -33,11 +33,11 @@ describe xinetd_conf.services('service_name') do
 end
 ```
 
-where
+where:
 
 - `'service_name'` is a service located under `/etc/xinet.d`
 - `('setting')` is a setting in the `xinetd.conf` file
-- `should eq 'value'` is the value that is expected
+- `should eq 'value'` is the value that's expected
 
 ## Properties
 
@@ -135,7 +135,7 @@ end
 
 ### Test a service type
 
-The type of service: `INTERNAL` (a service provided by xinetd), `RPC` (an RPC-based service), `TCPMUX` (a service that is started on a well-known TCPMUX port), or `UNLISTED` (a service that is not listed in a standard system file location).
+The type of service: `INTERNAL` (a service provided by xinetd), `RPC` (an RPC-based service), `TCPMUX` (a service that's started on a well-known TCPMUX port), or `UNLISTED` (a service that's not listed in a standard system file location).
 
 ```ruby
 describe xinetd_conf.services('service_name') do

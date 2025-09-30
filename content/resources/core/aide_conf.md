@@ -32,11 +32,11 @@ describe aide_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'selection_lines'` refers to all selection lines found in the aide.conf file
 - `('path')` is the non-default path to the `aide.conf` file (optional)
-- `should include 'value'` is the value that is expected
+- `should include 'value'` is the value that's expected
 
 Use the where clause to match a selection_line to one rule or a particular set of rules found in the aide.conf file:
 
@@ -62,7 +62,7 @@ its('rules') { should include ['r', 'sha512'] }
 
 ### `all_have_rule`
 
-The `all_have_rule` property returns the all selected lines from `aide.conf` file e.g. 'p', 'i' etc.
+The `all_have_rule` property returns the all selected lines from `aide.conf` file for example, 'p', 'i' etc.
 
 ```ruby
 aide_conf.all_have_rule('sha512')

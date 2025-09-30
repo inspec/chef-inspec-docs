@@ -28,7 +28,7 @@ describe opa_api(url: "localhost:8181/v1/data/example/violation", data: "input.j
 end
 ```
 
-where
+where:
 
 - `'url'` specifies the url of the OPA server on which OPA is running.
 - `'data'` specifies the json formatted data or json file.
@@ -58,7 +58,7 @@ its('result') { should be nil }
 
 ### allow
 
-The `allow` property checks if a specific input matches the policy defined in OPA. This matcher will not work if `allow` is not defined in the policy file.
+The `allow` property checks if a specific input matches the policy defined in OPA. This matcher won't work if `allow` isn't defined in the OPA Rego file.
 
 ```ruby
 its('allow') { should eq 'value' }

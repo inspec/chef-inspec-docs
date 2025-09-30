@@ -32,11 +32,11 @@ describe ini('path') do
 end
 ```
 
-where
+where:
 
 - `'setting_name'` is a setting key defined in the INI file
 - `('path')` is the path to the INI file
-- `{ should eq 'value' }` is the value that is expected
+- `{ should eq 'value' }` is the value that's expected
 
 For example:
 

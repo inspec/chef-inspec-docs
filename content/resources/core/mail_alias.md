@@ -28,11 +28,11 @@ A `mail_alias` Chef InSpec audit resource allows testing the mail alias present 
     end
 ```
 
-> where
->
-> - `'daemon'` is an alias present in `/etc/aliases` of the target system
-> - `'root'` is the value assigned to the alias
-> - `be_aliased_to` is a matcher of this resource
+where:
+
+- `'daemon'` is an alias present in `/etc/aliases` of the target system
+- `'root'` is the value assigned to the alias
+- `be_aliased_to` is a matcher of this resource
 
 ## Matchers
 

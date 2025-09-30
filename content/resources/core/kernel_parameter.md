@@ -33,7 +33,7 @@ describe kernel_parameter('path.to.parameter') do
 end
 ```
 
-where
+where:
 
 - `'kernel.parameter'` must specify a kernel parameter, such as `'net.ipv4.conf.all.forwarding'`
 - `{ should eq 0 }` states the value to be tested

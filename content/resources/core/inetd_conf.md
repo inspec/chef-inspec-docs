@@ -32,15 +32,15 @@ describe inetd_conf('path') do
 end
 ```
 
-where
+where:
 
 - `'service_name'` is a service listed in the `inetd.conf` file
 - `('path')` is the non-default path to the `inetd.conf` file
-- `should eq 'value'` is the value that is expected
+- `should eq 'value'` is the value that's expected
 
 ## Properties
 
-This resource supports any of the properties listed as services in the `inetd.conf` file. You may want to ensure that specific services do not listen via `inetd.conf`.
+This resource supports any of the properties listed as services in the `inetd.conf` file. You may want to ensure that specific services don't listen using `inetd.conf`.
 
 ## Examples
 

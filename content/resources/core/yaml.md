@@ -42,7 +42,7 @@ describe yaml('filename.yml') do
 end
 ```
 
-where
+where:
 
 - `name` is a configuration setting in a Yaml file
 - `should eq 'foo'` tests a value of `name` as read from a Yaml file versus the value declared in the test

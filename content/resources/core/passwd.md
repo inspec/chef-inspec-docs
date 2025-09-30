@@ -20,7 +20,7 @@ Use the `passwd` Chef InSpec audit resource to test the contents of `/etc/passwd
 - That user's home directory
 - That user's default command shell
 
-These entries are defined as a colon-delimited row in the file, one row per user:
+These entries are defined as a colon-delimited row in the file, one row for each user:
 
 ```ruby
 root:x:1234:5678:additional_info:/home/dir/:/bin/bash
@@ -51,7 +51,7 @@ describe passwd.uids(filter) do
 end
 ```
 
-where
+where:
 
 - `homes`, `gids`, `passwords`, `shells`, `uids`, and `users` are valid accessors for `passwd`
 - `filter` one (or more) arguments, for example: `passwd.users(/name/)` used to define filtering

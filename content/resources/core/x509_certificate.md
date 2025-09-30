@@ -56,7 +56,7 @@ The `content` value is used if the `content` and `filepath` are specified.
 
 ## Properties
 
-### subject.XX
+### subject
 
 The `subject` (string) property accesses the individual subject elements.
 
@@ -78,7 +78,7 @@ describe x509_certificate('/etc/pki/www.example.com.pem') do
 end
 ```
 
-### issuer.XX
+### issuer
 
 The `issuer` (string) property accesses the individual issuer elements.
 

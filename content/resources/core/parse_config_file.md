@@ -52,12 +52,12 @@ where each test
 - May run a command to `stdout`, and then run the test against that output
 - May use options to define how configuration data is to be parsed
 
-### Option Names Containing Periods
+### Option names containing periods
 
-A possible behavior may occur when attempting to access option names containing periods with `its()`. There are two ways to work around it:
+A possible behavior may occur when attempting to access option names containing periods with `its()`. You can work around it using the following methods:
 
 - Access the option by using the `params` attribute of the returned resource object
-- Since 4.24.5, `its` can be used by passing the option name in a single-element array. See the `parse config file` examples.
+- `its` can be used by passing the option name in a single-element array. See the `parse config file` examples.
 
 ## Options
 

@@ -46,7 +46,7 @@ describe limits_conf('path') do
 end
 ```
 
-where
+where:
 
 - `('path')` is the non-default path to the `inetd.conf` file
 - `'domain'` is a user or group name, such as `grantmc`

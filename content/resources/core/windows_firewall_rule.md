@@ -28,9 +28,9 @@ describe windows_firewall_rule('name') do
 end
 ```
 
-where
+where:
 
-* `('name')` must specify the name of a firewall rule, which is not the firewall rule's display name
+* `('name')` must specify the name of a firewall rule, which isn't the firewall rule's display name
 * `be_enabled` is a valid matcher for this resource
 
 ## Examples
@@ -76,7 +76,7 @@ Each of these properties can be used in two distinct ways:
 its('remote_address') { should cmp '192.0.2.42' }
 ```
 
-or via matcher:
+or with a matcher:
 
 ```ruby
 it { should have_remote_address '192.0.2.42' }

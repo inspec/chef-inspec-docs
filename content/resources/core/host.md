@@ -34,12 +34,12 @@ describe host('example.com', port: 80, protocol: 'tcp') do
 end
 ```
 
-> where
->
-> - `host()` must specify a host name. The port number and protocol are optional values.
-> - `example.com` is the host name.
-> - `port` is the port number.
-> - `protocol` is the internet protocol, TCP (`protocol: 'tcp'`), UDP (`protocol: 'udp'`), and ICMP (`protocol: 'icmp'`)
+where:
+
+- `host()` must specify a host name. The port number and protocol are optional values.
+- `example.com` is the host name.
+- `port` is the port number.
+- `protocol` is the internet protocol, TCP (`protocol: 'tcp'`), UDP (`protocol: 'udp'`), and ICMP (`protocol: 'icmp'`)
 
 ## Properties
 
@@ -105,7 +105,7 @@ it { should be_reachable }
 
 ### be_resolvable
 
-The `be_resolvable` matcher tests for host name resolution. For example, "resolvable to an IP address".
+The `be_resolvable` matcher tests for host name resolution. For example, is a host name resolvable to an IP address.
 
 ```ruby
 it { should be_resolvable }

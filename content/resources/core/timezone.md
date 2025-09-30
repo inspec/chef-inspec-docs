@@ -28,7 +28,7 @@ describe timezone do
 end
 ```
 
-where
+where:
 
 - `'property'` is one of `identifier` , `name` and `time_offset`
 - `'expected value'` tests the output of the command run on the system versus the expected output stated in the test

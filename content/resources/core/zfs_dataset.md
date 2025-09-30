@@ -32,7 +32,7 @@ describe zfs_dataset('dataset') do
 end
 ```
 
-where
+where:
 
 - `('dataset')` is the name of the ZFS dataset (eg: `'tank/tmp'`)
 - `MATCHER` is a valid matcher for this resource

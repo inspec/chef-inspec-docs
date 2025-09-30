@@ -32,7 +32,7 @@ describe ssh_config('path') do
 end
 ```
 
-where
+where:
 
 - `name` is a configuration setting in `ssh_config`
 - `('path')` is the non-default `/path/to/ssh_config`

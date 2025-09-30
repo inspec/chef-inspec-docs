@@ -32,7 +32,7 @@ describe audit_policy do
 end
 ```
 
-where
+where:
 
 - `'parameter'` must specify a parameter
 - `'value'` must be one of `No Auditing`, `Not Specified`, `Success`, `Success and Failure`, or `Failure`
@@ -41,7 +41,7 @@ where
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Test that a parameter is not set to "No Auditing"
+### Test that a parameter isn't set to "No Auditing"
 
 ```ruby
 describe audit_policy do

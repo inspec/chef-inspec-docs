@@ -65,7 +65,7 @@ describe xml('/path/to/name.xml') do
 end
 ```
 
-where
+where:
 
 - `root/name` and `root/array[2]/element/@value` is an XPath expression
 - `should eq ['foo']` tests a value of `root/name` as read from an XML file versus the value declared in the test

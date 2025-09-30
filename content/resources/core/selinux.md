@@ -177,7 +177,7 @@ it { should be_enabled }
 
 `modules` returns information about SELinux modules using the [semodule -lfull](https://man7.org/linux/man-pages/man8/semodule.8.html) command.
 
-Note: The `semodule -l` command [does not provide version information](https://access.redhat.com/solutions/2760071) for newer versions of Linux-based systems like RHEL8 and Centos8, so we do not support that option.
+Note: The `semodule -l` command [doesn't provide version information](https://access.redhat.com/solutions/2760071) for newer versions of Linux-based systems like RHEL8 and Centos8, so we don't support that option.
 
 ```ruby
 describe selinux.modules do

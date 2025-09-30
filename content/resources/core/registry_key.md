@@ -56,7 +56,7 @@ end
 
 ### Registry Key Path Separators
 
-A Windows registry key can be used as a string in Ruby code, such as when a registry key is used as the name of a recipe. In Ruby, when a registry key is enclosed in a double-quoted string (`" "`), the same backslash character (`\`) that is used to define the registry key path separator is also used in Ruby to define an escape character. Therefore, the registry key path separators must be escaped when they are enclosed in a double-quoted string. For example, the following registry key:
+A Windows registry key can be used as a string in Ruby code, such as when a registry key is used as the name of a recipe. In Ruby, when a registry key is enclosed in a double-quoted string (`" "`), the same backslash character (`\`) that's used to define the registry key path separator is also used in Ruby to define an escape character. Therefore, the registry key path separators must be escaped when they're enclosed in a double-quoted string. For example, the following registry key:
 
 ```plain
 HKCU\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Themes
@@ -74,10 +74,10 @@ or may be enclosed in a double-quoted string with an extra backslash as an escap
 "HKCU\\SOFTWARE\\path\\to\\key\\Themes"
 ```
 
-**Warning**: Please make sure that you use backslashes instead of forward slashes. Forward slashes will not work for registry keys.
+**Warning**: Please make sure that you use backslashes instead of forward slashes. Forward slashes won't work for registry keys.
 
 ```ruby
-# The following will not work:
+# The following won't work:
 # describe registry_key('HKLM/SOFTWARE/Microsoft/NET Framework Setup/NDP/v4/Full/1033') do
 #   its('Release') { should eq 378675 }
 # end

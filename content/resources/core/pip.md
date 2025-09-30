@@ -32,7 +32,7 @@ describe pip('package_name') do
 end
 ```
 
-where
+where:
 
 - `'package_name'` is the name of the package, such as `'Jinja2'`
 - `be_installed` tests to see if the package described above is installed
@@ -68,7 +68,7 @@ describe pip('Jinja2') do
 end
 ```
 
-### Test packages installed into a non-default location (e.g. virtualenv) by passing a custom path to pip executable
+### Test packages installed into a non-default location (for example, virtualenv) by passing a custom path to pip executable
 
 ```ruby
 describe pip('Jinja2', '/path/to/bin/pip') do

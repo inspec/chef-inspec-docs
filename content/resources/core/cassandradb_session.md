@@ -28,7 +28,7 @@ describe cassandradb_session(user: 'USERNAME', password: 'PASSWORD', host: 'loca
 end
 ```
 
-where
+where:
 
 - `cassandradb_session` declares a username, password, host and port to run the query.
 - `query('QUERY')` contains the query to be run.

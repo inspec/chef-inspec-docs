@@ -22,15 +22,13 @@ Use the `mongodb_session` Chef InSpec audit resource to run MongoDB command agai
 
 A `mongodb_session` resource block declares the `user`, `password`, and `database` to use for the session and then the command to be run:
 
-  describe mongodb_session(user: "username", password: "password", database: "test").query(key: value) do
-
 ```ruby
-its("params") { should match(/expected-result/) }
+describe mongodb_session(user: "username", password: "password", database: "test").query(key: value) do
+  its("params") { should match(/expected-result/) }
+end
 ```
 
-  end
-
-where
+where:
 
 - `mongodb_session` declares a user, password, and database, connecting locally, with permission to run the query.
 - `query` contains the query to be run.
@@ -58,11 +56,11 @@ See the MongoDB documentation on [Ruby driver authentication](https://docs.mongo
 
 #### `auth_source`
 
-The database where the user’s authentication credentials are stored. The default value is the database name that is passed as a parameter to the resource.
+The database where the user’s authentication credentials are stored. The default value is the database name that's passed as a parameter to the resource.
 
 #### `ssl`
 
-Whether to use the SSL security protocol or not. Set to `true` to use SSL transport, default value: `false`.  See the MongoDB documentation on [Ruby Driver authentication](https://docs.mongodb.com/ruby-driver/current/reference/authentication/#client-certificate-x-509) for more information.
+Whether to use the SSL security protocol or not. Set to `true` to use SSL transport, default value: `false`. See the MongoDB documentation on [Ruby Driver authentication](https://docs.mongodb.com/ruby-driver/current/reference/authentication/#client-certificate-x-509) for more information.
 
 #### 'ssl_cert'
 

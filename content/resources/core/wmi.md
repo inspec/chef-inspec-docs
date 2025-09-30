@@ -37,12 +37,12 @@ describe wmi({
 end
 ```
 
-where
+where:
 
 - `class`, `namespace`, `filter`, and `query` comprise a Ruby Hash of the WMI object
 - `('class')` is the WMI class to which the setting belongs, such as `win32_service`
 - `('namespace')` is path to that object, such as `root\\cimv2`
-- Use `('filter')` fine-tune the information defined by the WMI class, such as to find a specific service (`filter: "name like '%winrm%'")`, to find a specific setting (`filter: 'KeyName = \'MinimumPasswordAge\' And precedence=1'`), and so on
+- Use `('filter')` fine-tune the information defined by the WMI class, such as to find a specific service (`filter: "name like '%winrm%'")` or to find a specific setting (`filter: 'KeyName = \'MinimumPasswordAge\' And precedence=1'`)
 - Use `('query')` to run a query that returns data to be tested, such as `"SELECT Setting FROM RSOP_SecuritySettingBoolean WHERE KeyName='LSAAnonymousNameLookup' AND Precedence=1"`
 - `('setting_name')` is a setting in the WMI object to be tested, and then `should eq ''` is the expected value for that setting
 

@@ -32,10 +32,10 @@ describe oracledb_session(user: 'username', PASSWORD: 'PASSWORD', service: 'ORCL
 end
 ```
 
-where
+where:
 
 - `oracledb_session` declares a username and PASSWORD with permission to run the query (required), and an optional parameters for host (default: `localhost`), system identifier (SID) (default: `nil`), which uses the default SID, and path to the sqlplus binary (default: `sqlplus`).
-- it is possible to run queries as sysdba/sysoper by using `as_db_role option`, see examples
+- it's possible to run queries as sysdba/sysoper by using `as_db_role option`, see examples
 - SQLcl can be used in place of sqlplus. Use the `sqlcl_bin` option to set the sqlcl binary path instead of `sqlplus_bin`.
 - `query('QUERY')` contains the query to be run
 - `its('value') { should eq('') }` compares the results of the query against the expected result in the test

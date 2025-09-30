@@ -38,10 +38,10 @@ describe nginx('path to nginx') do
 end
 ```
 
-where
+where:
 
 - `'attribute'` is a configuration parsed from result of the command 'nginx -V'
-- `'value'` is the value that is expected of the attribute
+- `'value'` is the value that's expected of the attribute
 
 ## Properties
 

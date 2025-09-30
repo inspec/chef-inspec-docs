@@ -32,7 +32,7 @@ describe sshd_config('path') do
 end
 ```
 
-where
+where:
 
 - `name` is a configuration setting in `sshd_config`
 - `('path')` is the non-default `/path/to/sshd_config`

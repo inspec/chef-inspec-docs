@@ -32,7 +32,7 @@ describe package('name') do
 end
 ```
 
-where
+where:
 
 - `('name')` must specify the name of a package, such as `'nginx'`
 - `be_installed` is a valid matcher for this resource
@@ -53,7 +53,7 @@ You can also use the `cmp` matcher to perform comparisons using the version attr
 its('version') { should cmp >= '7.35.0-1ubuntu3.10' }
 ```
 
-`cmp` understands version numbers using Gem::Version, and can use the operators `==, <, <=, >=, and >`. It will compare versions by each segment, not as a string - so '7.4' is smaller than '7.30', for example.
+`cmp` understands version numbers using Gem::Version, and can use the operators `==, <, <=, >=, and >`. It compares versions by each segment, not as a string, so `7.4` is smaller than `7.30`.
 
 ## Examples
 
@@ -68,7 +68,7 @@ describe package('nginx') do
 end
 ```
 
-### Test that a package is not installed
+### Test that a package isn't installed
 
 ```ruby
 describe package('some_package') do
@@ -76,7 +76,7 @@ describe package('some_package') do
 end
 ```
 
-### Test that telnet is not installed
+### Test that telnet isn't installed
 
 ```ruby
 describe package('telnetd') do
@@ -141,8 +141,8 @@ This resource has the following special matchers.
 
 ### be_held
 
-The `be_held` matcher tests if the named package is "held". On dpkg platforms, a "held" package
-will not be upgraded to a later version.
+The `be_held` matcher tests if the named package is held. On dpkg platforms, a held package
+won't be upgraded to a later version.
 
 ```ruby
 it { should be_held }
@@ -158,7 +158,7 @@ it { should be_installed }
 
 ### be_latest
 
-The `be_latest` matcher tests if the named installed package is latest on the system. It is not supported in Oracle Solaris, IBM AIX and HP UX operating systems.
+The `be_latest` matcher tests if the named installed package is latest on the system. It isn't supported in Oracle Solaris, IBM AIX and HP UX operating systems.
 
 ```ruby
 it { should be_latest }

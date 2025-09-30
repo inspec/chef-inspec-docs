@@ -34,9 +34,9 @@ describe windows_task('task name uri') do
 end
 ```
 
-where
+where:
 
-- `'parameter'` must be a valid parameter defined within this resource ie `logon_mode`, `last_result`, `task_to_run`, `run_as_user`
+- `'parameter'` must be a valid parameter defined within this resource. For example, `logon_mode`, `last_result`, `task_to_run`, `run_as_user`
 - `'value'` will be used to compare the value gather from your chosen parameter
 - `'be_enabled'` is an example of a valid matcher that checks the state of a task, other examples are `exist` or `be_disabled`
 

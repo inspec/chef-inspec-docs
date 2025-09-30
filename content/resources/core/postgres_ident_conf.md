@@ -32,11 +32,11 @@ describe postgres_ident_conf.where { pg_username == 'filter_value' } do
 end
 ```
 
-where
+where:
 
 - `'attribute'` is a attribute in the pg ident configuration file
-- `'filter_value'` is the value that is to be filtered for
-- `'value'` is the value that is to be matched expected
+- `'filter_value'` is the value that's to be filtered for
+- `'value'` is the value that's to be matched expected
 
 ## Properties
 

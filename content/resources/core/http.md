@@ -34,7 +34,7 @@ describe http('url', auth: {user: 'user', pass: 'test'}, params: {params}, metho
 end
 ```
 
-where
+where:
 
 - `('url')` is the url to test
 - `auth: { user: 'user', pass: 'test' }` may be specified for basic auth request
@@ -179,7 +179,7 @@ its('headers.Content-Type') { should cmp 'text/html' }
 
 ### data
 
-`data` may be specified for http request body. When working with remote Windows target use single quotes around data that you are passing for e.g. `data: '{ "a" : "1", "b" : "five" }'`
+`data` may be specified for http request body. When working with remote Windows target use single quotes around data that you are passing for example, `data: '{ "a" : "1", "b" : "five" }'`
 
 ```ruby
 describe http('http://localhost:8080/ping',

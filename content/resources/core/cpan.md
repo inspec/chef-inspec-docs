@@ -32,7 +32,7 @@ describe cpan('package_name') do
 end
 ```
 
-where
+where:
 
 - `'package_name'` is the name of the package, such as `'DBD::Pg'`
 - `be_installed` tests to see if the package described above is installed
