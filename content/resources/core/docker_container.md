@@ -151,6 +151,8 @@ The below test passes if the container `trusting_williams` exists as part of the
 
 The below test passes if the container `quizzical_williamson` exists as part of the Docker instances, the status is running, and has mounted volume on `/app` in the container from the source path of `/var/lib/docker/volumes/myvol2/_data`
 
-    describe docker_container('quizzical_williamson') do
-      it { should have_volume('/app', '/var/lib/docker/volumes/myvol2/_data') }
-    end
+```ruby
+describe docker_container('quizzical_williamson') do
+  it { should have_volume('/app', '/var/lib/docker/volumes/myvol2/_data') }
+end
+```

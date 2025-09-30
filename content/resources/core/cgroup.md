@@ -20,13 +20,16 @@ This resource is distributed with Chef InSpec.
 
 ## Syntax
 
-    describe cgroup("CARROTKING") do
-      its("cpuset.cpus") { should eq 0 }
-    end
-where
+```ruby
+describe cgroup("group-name") do
+  its("cpuset.cpus") { should eq 0 }
+end
+```
+
+where:
 
 - `cpuset.cpus` is a property of this resource and a parameter of the *cpuset* resource controller.
-- `CARROTKING` is the name of cgroup directory.
+- `group-name` is the name of cgroup directory.
 
 ## Properties
 
@@ -57,22 +60,28 @@ The following examples show how to use this Chef InSpec audit resource.
 
 Use `eq` to test for parameters that have a single line integer value. The value considered is the output obtained on `cgget -n -r [subsystem.parameters] [cgroup-name]`.
 
-    describe cgroup("CARROTKING") do
-      its("cpuset.cpus") { should eq 0 }
-    end
+```ruby
+describe cgroup("group-name") do
+  its("cpuset.cpus") { should eq 0 }
+end
+```
 
 ### Example 2
 
 Use `cmp` to test for parameters with less-restrictive comparisons and has a single line integer value. The value considered is the output obtained on `cgget -n -r [subsystem.parameters] [cgroup-name]`.
 
-    describe cgroup("CARROTKING") do
-      its("memory.limit_in_bytes") { should cmp 9223372036854771712 }
-    end
+```ruby
+describe cgroup("group-name") do
+  its("memory.limit_in_bytes") { should cmp 9223372036854771712 }
+end
+```
 
 ### Example 3
 
 Use `match` to test for parameters that have multi-line values and can be passed as *regex*. The value considered is the output obtained on `cgget -n -r [subsystem.parameters] [cgroup-name]`.
 
-    describe cgroup("CARROTKING") do
-      its("memory.stat") { should match /\bhierarchical_memory_limit 9223372036854771712\b/ }
-    end
+```ruby
+describe cgroup("group-name") do
+  its("memory.stat") { should match /\bhierarchical_memory_limit 9223372036854771712\b/ }
+end
+```

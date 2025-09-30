@@ -104,7 +104,7 @@ its('content_as_json') { should include('key') }
 its('content_as_json') { should include('key' => 'value') }
 ```
 
-Assuming the file `helloworld.json` has the following content
+Assuming the file `hello-world.json` has the following content
 
 ```json
 {
@@ -118,7 +118,7 @@ Assuming the file `helloworld.json` has the following content
 The syntax to test for the content is as follows:
 
 ```ruby
-describe file('/home/helloworld.json') do
+describe file('/home/hello-world.json') do
   its('content_as_json') { should include('name') }
   its('content_as_json') { should include('name' => 'InSpec') }
   its('content_as_json') { should include('technology' => { 'language' => 'Ruby' }) }
@@ -134,7 +134,7 @@ its('content_as_yaml') { should include('key') }
 its('content_as_yaml') { should include('key' => 'value') }
 ```
 
-Assuming the file `helloworld.yml` has the following content
+Assuming the file `hello-world.yml` has the following content
 
 ```yaml
 name: "InSpec"
@@ -145,7 +145,7 @@ technology:
 The syntax to test for the content is as follows:
 
 ```ruby
-describe file('/home/helloworld.yml') do
+describe file('/home/hello-world.yml') do
   its('content_as_yaml') { should include('name') }
   its('content_as_yaml') { should include('name' => 'InSpec') }
   its('content_as_yaml') { should include('technology' => { 'language' => 'Ruby' }) }

@@ -339,7 +339,7 @@ Some notes about `only_if`:
   block evaluate to false, any Chef InSpec resources mentioned as part of a
   `describe` block will not be run. Additionally, the contents of the describe
   blocks will not be run. However, bare Ruby expressions and bare Chef InSpec
-  resources (not assocated with a describe block) preceding the only_if statement
+  resources (not associated with a describe block) preceding the `only_if` statement
   will run
 - `only_if` also accepts hash with impact key to reset the impact value of the control. Control's impact is helpful in determining it is enhanced outcome.
 

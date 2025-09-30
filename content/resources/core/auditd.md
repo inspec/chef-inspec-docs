@@ -57,7 +57,7 @@ For `audit` >= 2.3:
       it { should cmp 0 }
     end
 
-### Query properties of rules targeting specific syscalls or files - uniq is used to handle multiple rules for the same syscall with redundant field values
+### Query properties of rules targeting specific system calls or files - uniq is used to handle multiple rules for the same system call with redundant field values
 
     describe auditd.syscall('open') do
       its('action.uniq') { should eq ['always'] }

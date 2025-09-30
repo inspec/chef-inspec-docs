@@ -59,7 +59,7 @@ supports:
   - platform-family: redhat
 ```
 
-To target the entire Windows 2019 platform family, including Datacenter and Core Servers, use:
+To target the entire Windows 2019 platform family, including data center and core servers, use:
 
 ```yaml
 name: ssh
