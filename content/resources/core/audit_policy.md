@@ -26,11 +26,13 @@ This resource first became available in v1.0.0 of InSpec.
 
 An `audit_policy` resource block declares a parameter that belongs to an audit policy category or subcategory:
 
-    describe audit_policy do
-      its('parameter') { should eq 'value' }
-    end
+```ruby
+describe audit_policy do
+  its('parameter') { should eq 'value' }
+end
+```
 
-where
+where:
 
 - `'parameter'` must specify a parameter
 - `'value'` must be one of `No Auditing`, `Not Specified`, `Success`, `Success and Failure`, or `Failure`
@@ -39,17 +41,21 @@ where
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Test that a parameter is not set to "No Auditing"
+### Test that a parameter isn't set to "No Auditing"
 
-    describe audit_policy do
-      its('Other Account Logon Events') { should_not eq 'No Auditing' }
-    end
+```ruby
+describe audit_policy do
+  its('Other Account Logon Events') { should_not eq 'No Auditing' }
+end
+```
 
 ### Test that a parameter is set to "Success"
 
-    describe audit_policy do
-      its('User Account Management') { should eq 'Success' }
-    end
+```ruby
+describe audit_policy do
+  its('User Account Management') { should eq 'Success' }
+end
+```
 
 ## Matchers
 

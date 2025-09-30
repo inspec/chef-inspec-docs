@@ -26,12 +26,14 @@ This resource first became available in v1.0.0 of InSpec.
 
 An `apt` resource block tests the contents of Apt and PPA repositories:
 
-    describe apt('path') do
-      it { should exist }
-      it { should be_enabled }
-    end
+```ruby
+describe apt('path') do
+  it { should exist }
+  it { should be_enabled }
+end
+```
 
-where
+where:
 
 - `apt('path')` must specify an Apt or PPA repository
 - `('path')` may be an `http://` address, a `ppa:` address, or a short `repo-name/ppa` address
@@ -43,24 +45,30 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if apt repository exists and is enabled
 
-    describe apt('http://ppa.launchpad.net/juju/stable/ubuntu') do
-      it { should exist }
-      it { should be_enabled }
-    end
+```ruby
+describe apt('http://ppa.launchpad.net/juju/stable/ubuntu') do
+  it { should exist }
+  it { should be_enabled }
+end
+```
 
 ### Verify that a PPA repository exists and is enabled
 
-    describe apt('ppa:nginx/stable') do
-      it { should exist }
-      it { should be_enabled }
-    end
+```ruby
+describe apt('ppa:nginx/stable') do
+  it { should exist }
+  it { should be_enabled }
+end
+```
 
-### Verify that a repository is not present
+### Verify that a repository isn't present
 
-    describe apt('ubuntu-wine/ppa') do
-      it { should_not exist }
-      it { should_not be_enabled }
-    end
+```ruby
+describe apt('ubuntu-wine/ppa') do
+  it { should_not exist }
+  it { should_not be_enabled }
+end
+```
 
 ## Matchers
 
@@ -72,10 +80,14 @@ This resource has the following special matchers.
 
 The `be_enabled` matcher tests if a repository is enabled on the system:
 
-    it { should be_enabled }
+```ruby
+it { should be_enabled }
+```
 
 ### exist
 
 The `exist` matcher tests if a repository exists on the system:
 
-    it { should exist }
+```ruby
+it { should exist }
+```

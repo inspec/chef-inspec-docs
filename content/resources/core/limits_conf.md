@@ -17,11 +17,13 @@ Use the `limits_conf` Chef InSpec audit resource to test configuration settings 
 
 Entries in the `limits.conf` file are similar to:
 
-    grantmc     soft   nofile   4096
-    grantmc     hard   nofile   63536
+```plain
+grantmc     soft   nofile   4096
+grantmc     hard   nofile   63536
 
-    ^^^^^^^^^   ^^^^   ^^^^^^   ^^^^^
-    domain      type    item    value
+^^^^^^^^^   ^^^^   ^^^^^^   ^^^^^
+domain      type    item    value
+```
 
 ## Availability
 
@@ -37,12 +39,14 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `limits_conf` resource block declares a domain to be tested, along with associated type, item, and value:
 
-    describe limits_conf('path') do
-      its('domain') { should include ['type', 'item', 'value'] }
-      its('domain') { should eq ['type', 'item', 'value'] }
-    end
+```ruby
+describe limits_conf('path') do
+  its('domain') { should include ['type', 'item', 'value'] }
+  its('domain') { should eq ['type', 'item', 'value'] }
+end
+```
 
-where
+where:
 
 - `('path')` is the non-default path to the `inetd.conf` file
 - `'domain'` is a user or group name, such as `grantmc`
@@ -56,19 +60,24 @@ where
 
 The `domain` property tests the domain in the `limits.conf` file, along with associated type, item, and value:
 
-    its('domain') { should include ['type', 'item', 'value'] }
-
+```ruby
+its('domain') { should include ['type', 'item', 'value'] }
+```
 
 For example:
 
-    its('grantmc') { should include ['hard', 'nofile', '63536'] }
+```ruby
+its('grantmc') { should include ['hard', 'nofile', '63536'] }
+```
 
 ### Test limits
 
-    describe limits_conf('path') do
-      its('*') { should include ['soft', 'core', '0'], ['hard', 'rss', '10000'] }
-      its('ftp') { should eq ['hard', 'nproc', '0'] }
-    end
+```ruby
+describe limits_conf('path') do
+  its('*') { should include ['soft', 'core', '0'], ['hard', 'rss', '10000'] }
+  its('ftp') { should eq ['hard', 'nproc', '0'] }
+end
+```
 
 ## Matchers
 

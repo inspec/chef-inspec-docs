@@ -26,18 +26,20 @@ This resource is available from InSpec version 1.0.
 
 A `host` resource block declares a host name, a port, and a protocol.
 
-    describe host('example.com', port: 80, protocol: 'tcp') do
-      it { should be_reachable }
-      it { should be_resolvable }
-      its('ipaddress') { should include '12.34.56.78' }
-    end
+```ruby
+describe host('example.com', port: 80, protocol: 'tcp') do
+  it { should be_reachable }
+  it { should be_resolvable }
+  its('ipaddress') { should include '12.34.56.78' }
+end
+```
 
-> where
->
-> - `host()` must specify a host name. The port number and protocol are optional values.
-> - `example.com` is the host name.
-> - `port` is the port number.
-> - `protocol` is the internet protocol, TCP (`protocol: 'tcp'`), UDP (`protocol: 'udp'`), and ICMP (`protocol: 'icmp'`)
+where:
+
+- `host()` must specify a host name. The port number and protocol are optional values.
+- `example.com` is the host name.
+- `port` is the port number.
+- `protocol` is the internet protocol, TCP (`protocol: 'tcp'`), UDP (`protocol: 'udp'`), and ICMP (`protocol: 'icmp'`)
 
 ## Properties
 
@@ -45,35 +47,47 @@ A `host` resource block declares a host name, a port, and a protocol.
 
 The `ipaddress` property returns the IP addresses of the host.
 
-    its('ipaddress') { should include '93.184.216.34' }
+```ruby
+its('ipaddress') { should include '93.184.216.34' }
+```
 
 ### ipv4_address
 
 The `ipv4_address` property returns the IPv4 address of the host.
 
-    its('ipv4_address') { should include '93.184.216.34' }
+```ruby
+its('ipv4_address') { should include '93.184.216.34' }
+```
 
 ### ipv6_address
 
 The `ipv6_address` property returns the IPv6 addresses of the host.
 
-    its('ipv6_address') { should include '2404:6800:4009:82a::200e' }
+```ruby
+its('ipv6_address') { should include '2404:6800:4009:82a::200e' }
+```
 
 ### connection
 
 The `connection` property returns the connection string.
 
-    its('connection') { should match /connection refused/ }
+```ruby
+its('connection') { should match /connection refused/ }
+```
 
 ### protocol
 
 The `protocol` property returns the protocol the specified host uses.
 
-    its('protocol') { should eq 'TCP' }
+```ruby
+its('protocol') { should eq 'TCP' }
+```
 
 ### socket property returns the socket value of the specified host
 
-    its('socket') { should match /STATUS_OK/ }
+```ruby
+its('socket') { should match /STATUS_OK/ }
+```
 
 ## Matchers
 
@@ -85,51 +99,67 @@ This resource has the following special matchers.
 
 The `be_reachable` matcher tests if the host name is available.
 
-    it { should be_reachable }
+```ruby
+it { should be_reachable }
+```
 
 ### be_resolvable
 
-The `be_resolvable` matcher tests for host name resolution. For example, "resolvable to an IP address".
+The `be_resolvable` matcher tests for host name resolution. For example, is a host name resolvable to an IP address.
 
-    it { should be_resolvable }
+```ruby
+it { should be_resolvable }
+```
 
 ## Examples
 
 ### Verify host name is resolvable to a specific IP address
 
-    describe host('example.com') do
-      its('ipaddress') { should include '93.184.216.34' }
-    end
+```ruby
+describe host('example.com') do
+  its('ipaddress') { should include '93.184.216.34' }
+end
+```
 
 ### Verify host name is resolvable to a specific IPv4 address
 
-    describe host('example.com') do
-      its('ipv4_address') { should include '93.184.216.34' }
-    end
+```ruby
+describe host('example.com') do
+  its('ipv4_address') { should include '93.184.216.34' }
+end
+```
 
 ### Verify host name is resolvable to a specific IPv6 address
 
-    describe host('example.com') do
-      its('ipv6_address') { should include '2404:6800:4009:82a::200e' }
-    end
+```ruby
+describe host('example.com') do
+  its('ipv6_address') { should include '2404:6800:4009:82a::200e' }
+end
+```
 
 ### Verify a specific IP address can be resolved
 
-    describe host('example.com') do
-      it { should be_resolvable }
-      its('ipaddress') { should include '93.184.216.34' }
-    end
+```ruby
+describe host('example.com') do
+  it { should be_resolvable }
+  its('ipaddress') { should include '93.184.216.34' }
+end
+```
 
 ### Verify host name is reachable over a specific protocol and port number
 
-    describe host('example.com', port: 80, protocol: 'tcp') do
-      it { should be_reachable }
-    end
+```ruby
+describe host('example.com', port: 80, protocol: 'tcp') do
+  it { should be_reachable }
+end
+```
 
 ### Review the connection setup and socket contents when checking reachability
 
-    describe host('example.com', port: 12345, protocol: 'tcp') do
-      it { should be_reachable }
-      its('connection') { should_not match /connection refused/ }
-      its('socket') { should match /STATUS_OK/ }
-    end
+```ruby
+describe host('example.com', port: 12345, protocol: 'tcp') do
+  it { should be_reachable }
+  its('connection') { should_not match /connection refused/ }
+  its('socket') { should match /STATUS_OK/ }
+end
+```

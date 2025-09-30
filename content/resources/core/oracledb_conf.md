@@ -24,9 +24,11 @@ You must have access to a database user with `DBA` role.
 
 A `oracledb_conf` resource block declares user and password to use. It fetches system parameters which are defined in the `V$SYSTEM_PARAMETER` database view, and then compares those parameters to the values stated in the test:
 
-    describe oracledb_conf(user: 'USER', password: 'PASSWORD') do
-      its("config item") { should cmp "value" }
-    end
+```ruby
+describe oracledb_conf(user: 'USER', password: 'PASSWORD') do
+  its("config item") { should cmp "value" }
+end
+```
 
 ### Optional Parameters
 
@@ -38,10 +40,12 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test parameters set within the database view
 
-    describe oracledb_conf(user: 'USER', password: 'PASSWORD') do
-      its("audit_sys_operations") { should cmp "true" }
-      its("sql92_security") { should cmp "true" }
-    end
+```ruby
+describe oracledb_conf(user: 'USER', password: 'PASSWORD') do
+  its("audit_sys_operations") { should cmp "true" }
+  its("sql92_security") { should cmp "true" }
+end
+```
 
 ## Matchers
 

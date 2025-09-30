@@ -36,17 +36,17 @@ See the relevant resource pack readme for instructions:
 - [inspec-azure README](https://github.com/inspec/inspec-azure#use-the-resources)
 - [inspec-gcp README](https://github.com/inspec/inspec-gcp#use-the-resources)
 
-## License is not entitled to use InSpec
+## License isn't entitled to use InSpec
 
-The license key set with Chef InSpec is not entitled to use Chef InSpec. Each license key is entitled to one or more Chef products. To view the products that your key is entitled to, run the `inspec license list` command, which will list your license entitlements.
+The license key set with Chef InSpec isn't entitled to use Chef InSpec. Each license key is entitled to one or more Chef products. To view the products that your key is entitled to, run the `inspec license list` command, which will list your license entitlements.
 
-To resolve this issue, set a license key that is entitled to Chef InSpec.
+To resolve this issue, set a license key that's entitled to Chef InSpec.
 
 See the [Chef Licensing documentation](/install/license/) for more information.
 
 ## Unable to connect to the licensing server. InSpec requires server communication to operate
 
-Chef InSpec cannot connect to Chef's licensing service or a user-deployed Chef Local License Service.
+Chef InSpec can't connect to Chef's licensing service or a user-deployed Chef Local License Service.
 This service is responsible for validating the Chef license key set with Chef InSpec.
 
 Check the following possible causes of this issue:

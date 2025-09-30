@@ -26,11 +26,13 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `oneget` resource block declares a package and (optionally) a package version:
 
-    describe oneget('name') do
-      it { should be_installed }
-    end
+```ruby
+describe oneget('name') do
+  it { should be_installed }
+end
+```
 
-where
+where:
 
 - `('name')` must specify the name of a package, such as `'VLC'`
 - `be_installed` is a valid matcher for this resource
@@ -41,7 +43,9 @@ where
 
 The `version` property tests if the named package version is on the system:
 
-    its('version') { should eq '1.2.3' }
+```ruby
+its('version') { should eq '1.2.3' }
+```
 
 ## Examples
 
@@ -49,9 +53,11 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if VLC is installed
 
-    describe oneget('VLC') do
-      it { should be_installed }
-    end
+```ruby
+describe oneget('VLC') do
+  it { should be_installed }
+end
+```
 
 ## Matchers
 
@@ -63,5 +69,6 @@ This resource has the following special matchers.
 
 The `be_installed` matcher tests if the named package is installed on the system:
 
-    it { should be_installed }
-
+```ruby
+it { should be_installed }
+```

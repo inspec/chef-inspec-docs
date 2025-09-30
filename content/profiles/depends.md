@@ -19,7 +19,7 @@ For hands-on examples, check out [Extending InSpec: InSpec Wrappers and Custom R
 ## Define dependencies
 
 Before a profile can use controls from another profile, the to-be-included profile
-needs to be specified in the including profile’s `inspec.yml` file in the `depends`
+needs to be specified in the including profile's `inspec.yml` file in the `depends`
 section. For each profile to be included, a location for the profile from where
 to be fetched and a name for the profile should be included. For example:
 
@@ -35,7 +35,7 @@ Chef InSpec supports a number of dependency sources.
 
 ### path
 
-The `path` setting defines a profile that is located on disk. This setting is
+The `path` setting defines a profile that's located on disk. This setting is
 typically used during development of profiles and when debugging profiles.
 
 ```yaml
@@ -48,8 +48,8 @@ depends:
 
 ### url
 
-The `url` setting specifies a profile that is located at an HTTP- or HTTPS-based
-URL. The profile must be accessible via a HTTP GET operation and must be a valid
+The `url` setting specifies a profile that's located at an HTTP- or HTTPS-based
+URL. The profile must be accessible with a HTTP GET operation and must be a valid
 profile archive (zip, tar, or tar.gz format).
 
 ```yaml
@@ -72,10 +72,10 @@ depends:
 
 ### git
 
-A `git` setting specifies a profile that is located in a Git repository, with
+A `git` setting specifies a profile that's located in a Git repository, with
 optional settings for `branch`, `tag`, `commit`, `version`, and `relative_path`. The source
 location is translated into a URL upon resolution. This type of dependency supports
-version constraints via semantic versioning as Git tags.
+version constraints with semantic versioning as Git tags.
 
 ```yaml
 depends:
@@ -90,7 +90,7 @@ depends:
 
 ### supermarket
 
-A `supermarket` setting specifies a profile that is located in a cookbook hosted
+A `supermarket` setting specifies a profile that's located in a cookbook hosted
 on Chef Supermarket. The source location is translated into a URL upon resolution.
 
 For example:
@@ -105,7 +105,7 @@ Available Supermarket profiles can be listed with `inspec supermarket profiles`.
 
 ### compliance
 
-A `compliance` setting specifies a profile that is located on the Chef Automate
+A `compliance` setting specifies a profile that's located on the Chef Automate
 or Chef Compliance server.
 
 For example:
@@ -192,8 +192,8 @@ is helpful to avoid confusion when including controls from other profiles!
 
 ### Skip a control
 
-What if one of the controls from the included profile does not apply to your environment?
-Luckily, it is not necessary to maintain a slightly-modified copy of the included profile just to delete a control.
+What if one of the controls from the included profile doesn't apply to your environment?
+Luckily, it isn't necessary to maintain a slightly-modified copy of the included profile just to delete a control.
 The `skip_control` command tells Chef InSpec to not run a particular control.
 
 For example, if you have a profile called `baseline-profile` with the following controls:
@@ -294,7 +294,7 @@ Every time you execute `app-profile`, InSpec executes the controls `app-profile`
 - baseline-2
 - baseline-4
 
-Controls `baseline-1`, `baseline-3`, and `baseline-5` are not run, just as if they were manually skipped.
+Controls `baseline-1`, `baseline-3`, and `baseline-5` aren't run, just as if they were manually skipped.
 This method of including specific controls ensures only the controls specified are executed; if new controls are added to a later version of `baseline-profile`, they would not be run.
 
 And, just the way its possible to modify controls when using `include_controls`,

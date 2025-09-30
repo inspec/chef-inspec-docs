@@ -28,11 +28,11 @@ A `mail_alias` Chef InSpec audit resource allows testing the mail alias present 
     end
 ```
 
-> where
->
-> - `'daemon'` is an alias present in `/etc/aliases` of the target system
-> - `'root'` is the value assigned to the alias
-> - `be_aliased_to` is a matcher of this resource
+where:
+
+- `'daemon'` is an alias present in `/etc/aliases` of the target system
+- `'root'` is the value assigned to the alias
+- `be_aliased_to` is a matcher of this resource
 
 ## Matchers
 
@@ -58,7 +58,7 @@ The following examples show how to use this Chef InSpec audit resource.
     end
 ```
 
-### Check if the mail admin alias is mapped to inspecadmin@chef.io and chefadmin@chef.io
+### Check if the mail admin alias is mapped to <inspecadmin@chef.io> and <chefadmin@chef.io>
 
 ```ruby
     describe mail_alias("mailadmin") do

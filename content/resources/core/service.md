@@ -36,10 +36,10 @@ A `service` resource block declares the name of a service and one or more matche
     end
 ```
 
-> where
->
-> - `('service_name')` must specify a service name
-> - `be_installed`, `be_enabled`, and `be_running` are valid matchers for this resource
+where:
+
+- `('service_name')` must specify a service name
+- `be_installed`, `be_enabled`, and `be_running` are valid matchers for this resource
 
 ## Examples
 
@@ -104,7 +104,7 @@ It may be required to override the logic to select the right service manager. Fo
     end
 ```
 
-This is also possible with `systemd_service`, `runit_service`, `sysv_service`, `bsd_service`, and `launchd_service`. If not found at the default location, provide the **control** command. For example, if the `sv` command for services managed by `runit` is not in the `PATH`.
+This is also possible with `systemd_service`, `runit_service`, `sysv_service`, `bsd_service`, and `launchd_service`. If not found at the default location, provide the **control** command. For example, if the `sv` command for services managed by `runit` isn't in the `PATH`.
 
 ```ruby
     describe runit_service('SERVICE', '/opt/chef/embedded/sbin/sv') do

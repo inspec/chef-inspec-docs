@@ -26,11 +26,13 @@ The `isql` command line tool must be installed on the target system.
 
 A `sybase_session` resource block declares the server, database, username and password to use for the session, and then the command to be run:
 
-    describe sybase_session(database: 'pubs2', server: 'SYBASE', username: 'USERNAME', password: 'PASSWORD').query('QUERY').row(0).column('RESULT') do
-      its('value') { should eq('EXPECTED') }
-    end
+```ruby
+describe sybase_session(database: 'pubs2', server: 'SYBASE', username: 'USERNAME', password: 'PASSWORD').query('QUERY').row(0).column('RESULT') do
+  its('value') { should eq('EXPECTED') }
+end
+```
 
-where
+where:
 
 - `sybase_session` declares a server, database, username, and password with permission to run the query.
 - `query('QUERY')` contains the query to be run.
