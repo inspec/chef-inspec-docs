@@ -23,9 +23,11 @@ Use the `mongodb_session` Chef InSpec audit resource to run MongoDB command agai
 A `mongodb_session` resource block declares the `user`, `password`, and `database` to use for the session and then the command to be run:
 
   describe mongodb_session(user: "username", password: "password", database: "test").query(key: value) do
+
 ```ruby
 its("params") { should match(/expected-result/) }
 ```
+
   end
 
 where

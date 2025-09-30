@@ -26,8 +26,6 @@ This resource first became available in v1.37.6 of InSpec.
 
 An etc/hosts rule specifies an IP address and what its hostname is along with optional aliases it can have.
 
-## Syntax
-
 Use the `.where` clause to match a property to one or more rules in the hosts file:
 
 ```ruby

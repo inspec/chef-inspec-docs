@@ -111,24 +111,6 @@ describe gem('knife-backup', :chef_server) do
 end
 ```
 
-## Properties
-
-### version (String)
-
-The `version` property returns a string of the default version on the system:
-
-```ruby
-its('version') { should eq '1.22.0' }
-```
-
-### versions
-
-The `versions` property returns an array of strings of all the versions of the gem installed on the system:
-
-```ruby
-its('versions') { should include /1.22/ }
-```
-
 ## Matchers
 
 {{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}

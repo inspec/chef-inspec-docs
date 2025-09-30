@@ -83,7 +83,7 @@ The above sample output shows the supervisor starting, downloading the necessary
 
 Chef InSpec will write a JSON file in the `${svc_var_path}/inspec_results` directory containing the results of the last Chef InSpec run. For example, for the `effortless/audit-baseline` package, the Chef InSpec results will be at:
 
-```
+```plain
 /hab/svc/inspec-profile-frontend1/var/inspec_results/inspec-profile-frontend1.json
 ```
 
@@ -101,13 +101,13 @@ distributed to a host and installed via `hab pkg install`.
 
 The package file will be named:
 
-```
+```plain
 HABITAT_ORIGIN-inspec-profile-PROFILE_NAME-PROFILE_VERSION-BUILD_ID-x86_64-linux.hart
 ```
 
 For example:
 
-```
+```plain
 adamleff-inspec-profile-frontend1-0.1.0-20170328173005-x86_64-linux.hart
 ```
 

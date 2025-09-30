@@ -12,7 +12,7 @@ platform = "linux"
 
 Use the `nginx_conf` Chef InSpec resource to test configuration data for the NGINX server located at `/etc/nginx/nginx.conf` on Linux and Unix platforms.
 
-**Stability: Experimental**
+This resource is experimental.
 
 ## Availability
 

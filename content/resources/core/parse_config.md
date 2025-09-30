@@ -148,7 +148,6 @@ Use `standalone_comments: false`, to parse the following:
 params['key'] = 'value'
 ```
 
-
 ## Examples
 
 This resource is based on the `parse_config_file` resource. See the [`parse_config_file`](/resources/core/parse_config_file) resource for examples.

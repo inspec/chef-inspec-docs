@@ -33,7 +33,6 @@ where
 * `('name')` must specify the name of a firewall profile, such as `'Public'`, `'Private'` or `'Domain'`
 * `be_enabled` is a valid matcher for this resource
 
-
 ## Examples
 
 The following example shows how to use this Chef InSpec audit resource.

@@ -36,8 +36,7 @@ where:
 
 - `'setting_name'` is a setting key defined in the TOML file.
 - `('path')` is the path to the TOML file.
-- `{ should eq 'value' }` is the value that is expected.
-
+- `{ should eq 'value' }` is the value that's expected.
 
 ## Properties
 

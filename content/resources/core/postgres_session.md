@@ -51,8 +51,8 @@ end
 
 where:
 
-  - `its('output') { should eq '' }` compares the results of the query against the expected result in the test
-  - `socketpath` is an optional parameter. Use `socketpath` to establish a socket connection with Postgres by specifying one of the Postgres Unix domain socket paths. Only supported on Unix-based platforms.
+- `its('output') { should eq '' }` compares the results of the query against the expected result in the test
+- `socketpath` is an optional parameter. Use `socketpath` to establish a socket connection with Postgres by specifying one of the Postgres Unix domain socket paths. Only supported on Unix-based platforms.
 
 ## Properties
 

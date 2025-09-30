@@ -55,7 +55,6 @@ its('version') { should cmp >= '7.35.0-1ubuntu3.10' }
 
 `cmp` understands version numbers using Gem::Version, and can use the operators `==, <, <=, >=, and >`. It will compare versions by each segment, not as a string - so '7.4' is smaller than '7.30', for example.
 
-
 ## Examples
 
 The following examples show how to use this Chef InSpec audit resource.

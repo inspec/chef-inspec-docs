@@ -64,7 +64,6 @@ The `domain` property tests the domain in the `limits.conf` file, along with ass
 its('domain') { should include ['type', 'item', 'value'] }
 ```
 
-
 For example:
 
 ```ruby

@@ -137,7 +137,7 @@ it { should have_binding('net.pipe *') }
 
 A site may have multiple bindings; use a `have_binding` matcher for each unique site binding to be tested.
 
-##### Binding Attributes
+#### Binding attributes
 
 The `have_binding` matcher can also test attributes that are defined for a site binding. For example, the `sslFlags` attribute defines if SSL is enabled, and (when enabled) what level of SSL is applied to the site.
 

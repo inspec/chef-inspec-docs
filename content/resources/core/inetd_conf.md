@@ -46,7 +46,7 @@ This resource supports any of the properties listed as services in the `inetd.co
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Basic tests for inetd_conf services:
+### Basic tests for inetd_conf services
 
 ```ruby
 its('shell') { should eq nil }

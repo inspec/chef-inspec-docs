@@ -82,7 +82,6 @@ end
 
 ### Test tablespace exists as sysdba
 
-
 The check will change user (with su) to specified user and run 'sqlplus / as sysdba' (sysoper, sysasm)
 
 ```ruby

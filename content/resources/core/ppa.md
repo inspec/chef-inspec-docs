@@ -32,6 +32,7 @@ describe ppa('PATH') do
   it { should be_enabled }
 end
 ```
+
 where
 
 - `ppa('PATH')` represents PPA repository

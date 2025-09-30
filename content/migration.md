@@ -107,7 +107,7 @@ Second, rename the directory `test/integration/default/serverspec` to
 
 Third, remove the Serverspec-specific code from the test files.
 
-```
+```ruby
 require 'serverspec'
 
 # Required by serverspec
@@ -225,7 +225,7 @@ end
 
 In Chef InSpec you would split up groups into files.
 
-```
+```plain
 tests
 ├── server-directories.rb
 ├── other-tests.rb

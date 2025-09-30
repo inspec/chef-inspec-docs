@@ -107,6 +107,8 @@ For guidance on creating and using a config file, see the [InSpec configuration 
 The following are CLI options that are used to modify reporter behavior.
 Many of these options allow you to limit the report size because some reporters (such as the json-automate reporter) limit on the total size of the report that can be processed.
 
+<!-- markdownlint-disable MD007 MD006 -->
+
 `--diff`, `--no-diff`
 
 : Include a `diff` comparison of textual differences in the failed test output.
@@ -162,13 +164,15 @@ Many of these options allow you to limit the report size because some reporters 
 
   Default: no truncation
 
+<!-- markdownlint-enable MD007 MD006 -->
+
 ## Reporters
 
 The following are the supported reporters.
 
 ### automate
 
-The `automate` reporter type is a special reporter which sends its results over the network to [Chef Automate](https://docs.chef.io/automate/). To use this reporter, you must pass in the correct configuration via a JSON configuration `--config`.
+The `automate` reporter type is a special reporter which sends its results over the network to [Chef Automate](https://docs.chef.io/automate/). To use this reporter, you must pass in the correct configuration with a JSON configuration `--config`.
 
 Example Configuration:
 

@@ -90,4 +90,3 @@ The `be_installed` matcher tests if the named package is installed on the system
 ```ruby
 it { should be_installed }
 ```
-

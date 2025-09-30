@@ -55,6 +55,8 @@ end
 
 ### Control properties
 
+<!-- markdownlint-disable MD006 MD007 -->
+
 Name
 
 : The name of the control is a unique control ID that's initialized at the beginning of the control block.
@@ -110,6 +112,8 @@ Name
 
 `describe`
 : A describe block invokes an [InSpec resource](/resources/) or [custom resource](/profiles/custom_resources/) and encloses tests that apply to that resource. Group multiple related describe blocks under one control.
+
+<!-- markdownlint-enable MD006 MD007 -->
 
 ## Advanced concepts
 

@@ -122,7 +122,7 @@ There are two ways to run the `ssl-baseline` example profile to test SSL via the
 Clone the profile:
 
 ```sh
-$ git clone https://github.com/dev-sec/ssl-baseline
+git clone https://github.com/dev-sec/ssl-baseline
 ```
 
 and then run:

@@ -47,7 +47,7 @@ where
 - `ssl_verify` may be specified to enable or disable verification of SSL certificates (default to `true`)
 - `max_redirects` may be specified to control how many HTTP Redirects to follow (defaults to `0`)
 
-## Example
+## Examples
 
 The following examples show how to use this Chef InSpec audit resource. An `http` resource block declares the configuration settings to be tested:
 
@@ -76,13 +76,40 @@ describe http('http://localhost:8080/ping',
 end
 ```
 
-## Local vs. Remote
+### Remote testing
 
-Beginning with Chef InSpec 1.41, you can enable the ability to have the HTTP test execute on the remote target:
+You can enable the ability to have the HTTP test execute on the remote target.
+The HTTP test automatically executes remotely whenever Chef InSpec is testing a remote node.
 
-## Parameters
+```ruby
+describe http('http://www.example.com', enable_remote_worker: true) do
+  its('body') { should cmp 'awesome' }
+end
+```
 
-## Parameter Examples
+### body
+
+The `body` property tests body content of http response:
+
+```ruby
+its('body') { should eq 'hello\n' }
+```
+
+### http_method
+
+The `http_method` property returns the http method of the http request.
+
+```ruby
+its('http_method') { should eq 'GET'}
+```
+
+### status
+
+The `status` property tests status of the http response:
+
+```ruby
+its('status') { should eq 200 }
+```
 
 ### url
 
@@ -136,6 +163,18 @@ describe http('http://localhost:8080/ping',
               headers: {'Content-Type' => 'application/json'}) do
   ...
 end
+```
+
+The `headers` property returns an hash of all http headers:
+
+```ruby
+its('headers') { should eq {} }
+```
+
+Individual headers can be tested with:
+
+```ruby
+its('headers.Content-Type') { should cmp 'text/html' }
 ```
 
 ### data
@@ -223,7 +262,7 @@ end
 
 {{< note >}}
 
-Windows remote targets do not accept username and password values in a string; use the hash format instead.
+Windows remote targets don't accept username and password values in a string; use the hash format instead.
 
 {{< /note >}}
 
@@ -234,87 +273,6 @@ Special characters in the URI must be converted to their UTF-8 equivalent when p
 Special characters may be passed into the hash format without conversion to UTF-8 characters.
 
 {{< /note >}}
-
-## Properties
-
-### body
-
-The `body` property tests body content of http response:
-
-```ruby
-its('body') { should eq 'hello\n' }
-```
-
-### headers
-
-The `headers` property returns an hash of all http headers:
-
-```ruby
-its('headers') { should eq {} }
-```
-
-Individual headers can be tested via:
-
-```ruby
-its('headers.Content-Type') { should cmp 'text/html' }
-```
-
-### http_method
-
-The `http_method` property returns the http method of the http request.
-
-```ruby
-its('http_method') { should eq 'GET'}
-```
-
-### status
-
-The `status` property tests status of the http response:
-
-```ruby
-its('status') { should eq 200 }
-```
-
-## Example
-
-The following examples show how to use this Chef InSpec audit resource. An `http` resource block declares the configuration settings to be tested:
-
-### Simple http test
-
-For example, a service is listening on default http port can be tested like this:
-
-```ruby
-describe http('http://localhost') do
-  its('status') { should cmp 200 }
-end
-```
-
-### Complex http test
-
-```ruby
-describe http('http://localhost:8080/ping',
-              auth: {user: 'user', pass: 'test'},
-              params: {format: 'html'},
-              method: 'POST',
-              headers: {'Content-Type' => 'application/json'},
-              data: '{"data":{"a":"1","b":"five"}}') do
-  its('status') { should cmp 200 }
-  its('body') { should cmp 'pong' }
-  its('headers.Content-Type') { should cmp 'text/html' }
-end
-```
-
-## Local vs. Remote
-
-Beginning with Chef InSpec 1.41, you can enable the ability to have the HTTP test execute on the remote target:
-
-```ruby
-describe http('http://www.example.com', enable_remote_worker: true) do
-  its('body') { should cmp 'awesome' }
-end
-```
-
-In Chef InSpec 2.0, the HTTP test will automatically execute remotely whenever Chef InSpec is testing a remote node.
 
 ## Matchers
 

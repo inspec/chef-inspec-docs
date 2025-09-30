@@ -9,6 +9,7 @@ platform = "linux"
     parent = "resources/core"
 +++
 Use the `sshd_active_config` Chef InSpec audit resource to find and test configuration data for the OpenSSH daemon. By default, this configuration data is located at `/etc/ssh/sshd_config` on Linux and Unix platforms. However, this resource is designed to retrieve the active configuration file by the sshd process itself. sshd---the OpenSSH daemon---listens on dedicated ports, starts a daemon for each incoming connection, and then handles encryption, authentication, key exchanges, command execution, and data exchanges.
+
 ## Availability
 
 ### Install

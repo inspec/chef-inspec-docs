@@ -71,7 +71,6 @@ An example of verifying that the time zone is set to IST on a Linux system:
 its('name') { should eq 'IST' }
 ```
 
-
 {{< note >}}
 
 Several time zones share the same time zone abbreviation. Use one of the other properties to verify a specific time zone with a common abbreviation.

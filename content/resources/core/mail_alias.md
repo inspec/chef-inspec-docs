@@ -58,7 +58,7 @@ The following examples show how to use this Chef InSpec audit resource.
     end
 ```
 
-### Check if the mail admin alias is mapped to inspecadmin@chef.io and chefadmin@chef.io
+### Check if the mail admin alias is mapped to <inspecadmin@chef.io> and <chefadmin@chef.io>
 
 ```ruby
     describe mail_alias("mailadmin") do

@@ -56,8 +56,8 @@ where each test
 
 A possible behavior may occur when attempting to access option names containing periods with `its()`. There are two ways to work around it:
 
-* Access the option by using the `params` attribute of the returned resource object
-* Since 4.24.5, `its` can be used by passing the option name in a single-element array. See the `parse config file` examples.
+- Access the option by using the `params` attribute of the returned resource object
+- Since 4.24.5, `its` can be used by passing the option name in a single-element array. See the `parse config file` examples.
 
 ## Options
 

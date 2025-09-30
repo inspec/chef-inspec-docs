@@ -97,7 +97,6 @@ its('protocols') { should include 'http' }
 its('site_name') { should eq 'Default Web Site' }
 ```
 
-
 ## Examples
 
 ### Test a default IIS web application
@@ -159,7 +158,7 @@ it { should have_protocol('https') }
 
 A web application may have multiple bindings; use a `have_protocol` matcher for each unique web application binding to be tested.
 
-##### Protocol Attributes
+#### Protocol attributes
 
 The `have_protocol` matcher can also test attributes that are defined for a web application enabledProtocols.
 

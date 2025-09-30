@@ -156,13 +156,14 @@ While InSpec can use user accounts for authentication, [Google recommends using 
 1. Now set up the environmental variable for the 'GOOGLE_APPLICATION_CREDENTIALS'. And InSpec can be instructed to use it by setting this ENV variable prior to running `inspec exec`:
 
     ```bash
-    $ export GOOGLE_APPLICATION_CREDENTIALS='~/.config/gcloud/project-name-1-feb7993e8660.json'
+    export GOOGLE_APPLICATION_CREDENTIALS='~/.config/gcloud/project-name-1-feb7993e8660.json'
     ```
-
 
 If you get an error, check your IAM roles and permissions.
 
-### Enable the appropriate APIs that you want to use:
+### Enable AWS APIs
+
+Enable the appropriate APIs that you want to use:
 
 - [Enable Compute Engine API](https://console.cloud.google.com/apis/library/compute.googleapis.com/)
 - [Enable Kubernetes Engine API](https://console.cloud.google.com/apis/library/container.googleapis.com)
@@ -171,7 +172,7 @@ If you get an error, check your IAM roles and permissions.
 
 Since this is an InSpec resource pack, it only defines InSpec resources. It includes example tests only. To easily use the GCP resources in your tests do the following:
 
-###  Create an InSpec profile for GCP
+### Create an InSpec profile for GCP
 
 1. Create a new InSpec profile:
 

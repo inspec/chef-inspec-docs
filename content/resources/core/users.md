@@ -177,7 +177,7 @@ These settings will reset to `0` depending on your operating system configuratio
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Use a regular expression to find users:
+Use a regular expression to find users:
 
 ```ruby
 describe users.where { uid =~ /S\-1\-5\-21\-\d+\-\d+\-\d+\-500/ } do
@@ -185,7 +185,7 @@ describe users.where { uid =~ /S\-1\-5\-21\-\d+\-\d+\-\d+\-500/ } do
 end
 ```
 
-### Test that only allowed users exist:
+Test that only allowed users exist:
 
 ```ruby
 allowed_users = %w(user1 user2 user3)

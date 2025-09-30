@@ -187,6 +187,7 @@ describe selinux.modules do
   its("priorities") { should include "100" }
 end
 ```
+
 ### booleans
 
 `booleans` returns information about SELinux booleans using the [semanage boolean -l -n](https://man7.org/linux/man-pages/man8/semanage-boolean.8.html) command.

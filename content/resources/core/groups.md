@@ -89,17 +89,8 @@ its('members') { should include 'Administrator' }
 
 where `members` returns:
 
-- an array of group members for **Windows Platform**.
-
-```
-Example: `["member1", "member2"]`
-```
-
-- a single element array that contains a CSV string of group members for **Non-Windows Platforms**.
-
-```
-Example: `["member1,member2"]`
-```
+- an array of group members for **Windows Platform**. For example, `["member1", "member2"]`
+- a single element array that contains a CSV string of group members for **Non-Windows Platforms**. For example, `["member1,member2"]`
 
 ### members_array
 

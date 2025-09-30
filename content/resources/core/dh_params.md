@@ -98,7 +98,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test example using multi-line string
+Test example using multi-line string:
 
 ```ruby
 describe dh_params('/path/to/file.dh_pem') do
@@ -144,7 +144,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test example using multi-line string
+Test example using multi-line string:
 
 ```ruby
 describe dh_params('/path/to/file.dh_pem') do
@@ -164,7 +164,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test via `openssl dhparam` command
+Test with the `openssl dhparam` command:
 
 ```sh
 $ openssl dhparam -in /path/to/file.dh_pem
@@ -186,7 +186,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test example using multi-line string
+Test example using multi-line string:
 
 ```ruby
 describe dh_params('/path/to/file.dh_pem') do
@@ -219,7 +219,7 @@ describe dh_params('/path/to/file.dh_pem') do
 end
 ```
 
-### Test via `openssl dhparam` command
+Test with the `openssl dhparam` command:
 
 ```shell
 $ openssl dhparam -in /path/to/file.dh_pem -noout -text

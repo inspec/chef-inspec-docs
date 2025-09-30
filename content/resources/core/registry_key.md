@@ -210,7 +210,7 @@ registry_key('HKEY_USERS\S-1-5-20\Software\Policies\Microsoft\Windows\Control Pa
 end
 ```
 
-**Warning**: Any name with a dot will not work as expected: <code>its('explorer.exe') { should eq 'test' }</code>. For details, see <a href="https://github.com/inspec/inspec/issues/1281">https://github.com/inspec/inspec/issues/1281</a>
+**Warning**: Any name with a dot won't work as expected. For example, `its('explorer.exe') { should eq 'test' }`. For details, see the following [InSpec issue](https://github.com/inspec/inspec/issues/1281).
 
 ```ruby
 # instead of:
