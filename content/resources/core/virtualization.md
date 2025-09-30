@@ -26,9 +26,11 @@ This resource first became available in v1.28.0 of InSpec.
 
 An `virtualization` resource block declares the virtualization platform that should be tested:
 
-    describe virtualization do
-      its('system') { should MATCHER 'value' }
-    end
+```ruby
+describe virtualization do
+  its('system') { should MATCHER 'value' }
+end
+```
 
 where
 
@@ -42,24 +44,30 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test for Docker
 
-    describe virtualization do
-      its('system') { should eq 'docker' }
-    end
+```ruby
+describe virtualization do
+  its('system') { should eq 'docker' }
+end
+```
 
 ### Test for VirtualBox
 
-    describe virtualization do
-      its('system') { should eq 'vbox' }
-      its('role') { should eq 'guest' }
-    end
+```ruby
+describe virtualization do
+  its('system') { should eq 'vbox' }
+  its('role') { should eq 'guest' }
+end
+```
 
 ### Detect the virtualization platform
 
-    if virtualization.system == 'vbox'
-      describe package('name') do
-        it { should be_installed }
-      end
-    end
+```ruby
+if virtualization.system == 'vbox'
+  describe package('name') do
+    it { should be_installed }
+  end
+end
+```
 
 ## Matchers
 

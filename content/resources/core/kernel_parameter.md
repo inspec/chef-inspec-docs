@@ -27,9 +27,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `kernel_parameter` resource block declares a parameter and then a value to be tested:
 
-    describe kernel_parameter('path.to.parameter') do
-      its('value') { should eq 0 }
-    end
+```ruby
+describe kernel_parameter('path.to.parameter') do
+  its('value') { should eq 0 }
+end
+```
 
 where
 
@@ -42,21 +44,27 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if global forwarding is enabled for an IPv4 address
 
-    describe kernel_parameter('net.ipv4.conf.all.forwarding') do
-      its('value') { should eq 1 }
-    end
+```ruby
+describe kernel_parameter('net.ipv4.conf.all.forwarding') do
+  its('value') { should eq 1 }
+end
+```
 
 ### Test if global forwarding is disabled for an IPv6 address
 
-    describe kernel_parameter('net.ipv6.conf.all.forwarding') do
-      its('value') { should eq 0 }
-    end
+```ruby
+describe kernel_parameter('net.ipv6.conf.all.forwarding') do
+  its('value') { should eq 0 }
+end
+```
 
 ### Test if an IPv6 address accepts redirects
 
-    describe kernel_parameter('net.ipv6.conf.interface.accept_redirects') do
-      its('value') { should cmp 'true' }
-    end
+```ruby
+describe kernel_parameter('net.ipv6.conf.interface.accept_redirects') do
+  its('value') { should cmp 'true' }
+end
+```
 
 ## Matchers
 

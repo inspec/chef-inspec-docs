@@ -188,7 +188,7 @@ Since this is an InSpec resource pack, it only defines InSpec resources. It incl
     * Create file libraries/.gitkeep
     ```
 
-    This generates a new directory with an InSpec GCP
+    This generates a new directory with an InSpec GCP profile.
 
 1. Update the `inputs.yml` to point to your project
 

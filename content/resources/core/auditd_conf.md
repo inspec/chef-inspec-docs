@@ -26,9 +26,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `auditd_conf` resource block declares configuration settings that should be tested:
 
-    describe auditd_conf('path') do
-      its('keyword') { should cmp 'value' }
-    end
+```ruby
+describe auditd_conf('path') do
+  its('keyword') { should cmp 'value' }
+end
+```
 
 where
 
@@ -48,27 +50,29 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test the auditd.conf file
 
-    describe auditd_conf do
-      its('log_file') { should cmp '/full/path/to/file' }
-      its('log_format') { should cmp 'raw' }
-      its('flush') { should cmp 'none' }
-      its('freq') { should cmp 1 }
-      its('num_logs') { should cmp 0 }
-      its('max_log_file') { should cmp 6 }
-      its('max_log_file_action') { should cmp 'email' }
-      its('space_left') { should cmp 2 }
-      its('action_mail_acct') { should cmp 'root' }
-      its('space_left_action') { should cmp 'email' }
-      its('admin_space_left') { should cmp 1 }
-      its('admin_space_left_action') { should cmp 'halt' }
-      its('disk_full_action') { should cmp 'halt' }
-      its('disk_error_action') { should cmp 'halt' }
-    end
+```ruby
+describe auditd_conf do
+  its('log_file') { should cmp '/full/path/to/file' }
+  its('log_format') { should cmp 'raw' }
+  its('flush') { should cmp 'none' }
+  its('freq') { should cmp 1 }
+  its('num_logs') { should cmp 0 }
+  its('max_log_file') { should cmp 6 }
+  its('max_log_file_action') { should cmp 'email' }
+  its('space_left') { should cmp 2 }
+  its('action_mail_acct') { should cmp 'root' }
+  its('space_left_action') { should cmp 'email' }
+  its('admin_space_left') { should cmp 1 }
+  its('admin_space_left_action') { should cmp 'halt' }
+  its('disk_full_action') { should cmp 'halt' }
+  its('disk_error_action') { should cmp 'halt' }
+end
 
-    describe file(auditd_conf.conf_path) do
-      its('group') { should cmp 'root' }
-    end
-  
+describe file(auditd_conf.conf_path) do
+  its('group') { should cmp 'root' }
+end
+```
+
 ## Matchers
 
 {{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
@@ -79,4 +83,6 @@ This resource has the following special matchers.
 
 The `cmp` matcher compares values across types.
 
-    its('freq') { should cmp 1 }
+```ruby
+its('freq') { should cmp 1 }
+```

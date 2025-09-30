@@ -26,9 +26,11 @@ This resource first became available in v1.43.5 of InSpec.
 
 A `cran` resource block declares a package and (optionally) a package version:
 
-    describe cran('package_name') do
-      it { should be_installed }
-    end
+```ruby
+describe cran('package_name') do
+  it { should be_installed }
+end
+```
 
 where
 
@@ -41,16 +43,20 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if DBI is installed on the system
 
-    describe cran('DBI') do
-      it { should be_installed }
-    end
+```ruby
+describe cran('DBI') do
+  it { should be_installed }
+end
+```
 
 ### Test if DBI 0.5.1 is installed on the system
 
-    describe cran('DBI') do
-      it { should be_installed }
-      its('version') { should eq '0.5.1' }
-    end
+```ruby
+describe cran('DBI') do
+  it { should be_installed }
+  its('version') { should eq '0.5.1' }
+end
+```
 
 ## Property Examples
 
@@ -58,7 +64,9 @@ The following examples show how to use this Chef InSpec audit resource.
 
 The `version` property tests if the named package version is on the system:
 
-    its('version') { should eq '1.2.3' }
+```ruby
+its('version') { should eq '1.2.3' }
+```
 
 ## Matchers
 
@@ -68,4 +76,6 @@ This Chef InSpec audit resource has the following matchers:
 
 The `be_installed` matcher tests if the named package is installed on the system:
 
-    it { should be_installed }
+```ruby
+it { should be_installed }
+```

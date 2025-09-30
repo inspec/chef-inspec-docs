@@ -26,9 +26,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `iptables` resource block declares tests for rules in IP tables:
 
-    describe iptables(rule:'name', table:'name', chain: 'name', ignore_comments: true) do
-      it { should have_rule('RULE') }
-    end
+```ruby
+describe iptables(rule:'name', table:'name', chain: 'name', ignore_comments: true) do
+  it { should have_rule('RULE') }
+end
+```
 
 where
 
@@ -45,27 +47,35 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if the INPUT chain is in default ACCEPT mode
 
-    describe iptables do
-      it { should have_rule('-P INPUT ACCEPT') }
-    end
+```ruby
+describe iptables do
+  it { should have_rule('-P INPUT ACCEPT') }
+end
+```
 
 ### Test if the INPUT chain from the mangle table is in ACCEPT mode
 
-    describe iptables(table:'mangle', chain: 'INPUT') do
-      it { should have_rule('-P INPUT ACCEPT') }
-    end
+```ruby
+describe iptables(table:'mangle', chain: 'INPUT') do
+  it { should have_rule('-P INPUT ACCEPT') }
+end
+```
 
 ### Test if there is a rule allowing Postgres (5432/TCP) traffic
 
-    describe iptables do
-      it { should have_rule('-A INPUT -p tcp -m tcp -m multiport --dports 5432 -m comment --comment "postgres" -j ACCEPT') }
-    end
+```ruby
+describe iptables do
+  it { should have_rule('-A INPUT -p tcp -m tcp -m multiport --dports 5432 -m comment --comment "postgres" -j ACCEPT') }
+end
+```
 
 ### Test a rule without comments
 
-    describe iptables(ignore_comments: true) do
-      it { should have_rule('-A INPUT -p tcp -m tcp -m multiport --dports 5432 -j ACCEPT') }
-    end
+```ruby
+describe iptables(ignore_comments: true) do
+  it { should have_rule('-A INPUT -p tcp -m tcp -m multiport --dports 5432 -j ACCEPT') }
+end
+```
 
 Note that the rule specification must exactly match what's in the output of `iptables -S INPUT`, which will depend on how you've built your rules.
 
@@ -79,4 +89,6 @@ This resource has the following special matchers.
 
 The `have_rule` matcher tests the named rule against the information in the `iptables` file:
 
-    it { should have_rule('RULE') }
+```ruby
+it { should have_rule('RULE') }
+```

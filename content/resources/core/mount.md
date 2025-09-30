@@ -26,9 +26,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 An `mount` resource block declares the synchronization settings that should be tested:
 
-    describe mount('path') do
-      it { should MATCHER 'value' }
-    end
+```ruby
+describe mount('path') do
+  it { should MATCHER 'value' }
+end
+```
 
 where
 
@@ -42,12 +44,14 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test a the mount point on '/'
 
-    describe mount('/') do
-      it { should be_mounted }
-      its('device') { should eq  '/dev/mapper/VolGroup-lv_root' }
-      its('type') { should eq  'ext4' }
-      its('options') { should eq ['rw', 'mode=620'] }
-    end
+```ruby
+describe mount('/') do
+  it { should be_mounted }
+  its('device') { should eq  '/dev/mapper/VolGroup-lv_root' }
+  its('type') { should eq  'ext4' }
+  its('options') { should eq ['rw', 'mode=620'] }
+end
+```
 
 ## Matchers
 
@@ -59,22 +63,30 @@ This resource has the following special matchers.
 
 The `be_mounted` matcher tests if the file is accessible from the file system:
 
-    it { should be_mounted }
+```ruby
+it { should be_mounted }
+```
 
 ### device
 
 The `device` matcher tests the device from the `fstab` table:
 
-    its('device') { should eq  '/dev/mapper/VolGroup-lv_root' }
+```ruby
+its('device') { should eq  '/dev/mapper/VolGroup-lv_root' }
+```
 
 ### options
 
 The `options` matcher tests the mount options for the file system from the `fstab` table:
 
-    its('options') { should eq ['rw', 'mode=620'] }
+```ruby
+its('options') { should eq ['rw', 'mode=620'] }
+```
 
 ### type
 
 The `type` matcher tests the file system type:
 
-    its('type') { should eq  'ext4' }
+```ruby
+its('type') { should eq  'ext4' }
+```

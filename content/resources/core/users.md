@@ -26,11 +26,13 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `users` resource block declares a user name, and then one (or more) matchers:
 
-    describe users.where(uid: 0).entries do
-      it { should eq ['root'] }
-      its('uids') { should eq [1234] }
-      its('gids') { should eq [1234] }
-    end
+```ruby
+describe users.where(uid: 0).entries do
+  it { should eq ['root'] }
+  its('uids') { should eq [1234] }
+  its('gids') { should eq [1234] }
+end
+```
 
 where
 
@@ -39,15 +41,19 @@ where
 
 For example:
 
-    describe users.where { username =~ /.*/ } do
-      it { should exist }
-    end
+```ruby
+describe users.where { username =~ /.*/ } do
+  it { should exist }
+end
+```
 
 or:
 
-    describe users.where { uid =~ /^S-1-5-[0-9-]+-501$/ } do
-      it { should exist }
-    end
+```ruby
+describe users.where { uid =~ /^S-1-5-[0-9-]+-501$/ } do
+  it { should exist }
+end
+```
 
 ## Properties
 
@@ -55,7 +61,9 @@ or:
 
 The `gid` property tests the group identifier:
 
-    its('gid') { should eq 1234 } }
+```ruby
+its('gid') { should eq 1234 } }
+```
 
 where `1234` represents the user identifier.
 
@@ -63,7 +71,9 @@ where `1234` represents the user identifier.
 
 The `group` property tests the group to which the user belongs:
 
-    its('group') { should eq 'root' }
+```ruby
+its('group') { should eq 'root' }
+```
 
 where `root` represents the group.
 
@@ -71,19 +81,25 @@ where `root` represents the group.
 
 The `groups` property tests two (or more) groups to which the user belongs:
 
-    its('groups') { should eq ['root', 'other']}
+```ruby
+its('groups') { should eq ['root', 'other']}
+```
 
 ### home
 
 The `home` property tests the home directory path for the user:
 
-    its('home') { should eq '/root' }
+```ruby
+its('home') { should eq '/root' }
+```
 
 ### maxdays
 
 The `maxdays` property tests the maximum number of days between password changes:
 
-    its('maxdays') { should eq 99 }
+```ruby
+its('maxdays') { should eq 99 }
+```
 
 where `99` represents the maximum number of days.
 
@@ -91,7 +107,9 @@ where `99` represents the maximum number of days.
 
 The `mindays` property tests the minimum number of days between password changes:
 
-    its('mindays') { should eq 0 }
+```ruby
+its('mindays') { should eq 0 }
+```
 
 where `0` represents the maximum number of days.
 
@@ -99,13 +117,17 @@ where `0` represents the maximum number of days.
 
 The `shell` property tests the path to the default shell for the user:
 
-    its('shells') { should eq ['/bin/bash'] }
+```ruby
+its('shells') { should eq ['/bin/bash'] }
+```
 
 ### uid
 
 The `uid` property tests the user identifier:
 
-    its('uid') { should eq 1234 } }
+```ruby
+its('uid') { should eq 1234 } }
+```
 
 where `1234` represents the user identifier.
 
@@ -113,7 +135,9 @@ where `1234` represents the user identifier.
 
 The `warndays` property tests the number of days a user is warned before a password must be changed:
 
-    its('warndays') { should eq 5 }
+```ruby
+its('warndays') { should eq 5 }
+```
 
 where `5` represents the number of days a user is warned.
 
@@ -121,7 +145,9 @@ where `5` represents the number of days a user is warned.
 
 The `passwordage` property tests the number of days a user changed its password:
 
-    its('passwordage') { should_be <= 365 }
+```ruby
+its('passwordage') { should_be <= 365 }
+```
 
 where `365` represents the number of days since the last password change.
 
@@ -129,7 +155,9 @@ where `365` represents the number of days since the last password change.
 
 The `maxbadpasswords` property tests the count of max badpassword settings for a specific user.
 
-    its('maxbadpasswords') { should eq 7 }
+```ruby
+its('maxbadpasswords') { should eq 7 }
+```
 
 where `7` is the count of maximum bad password attempts.
 
@@ -137,7 +165,9 @@ where `7` is the count of maximum bad password attempts.
 
 The `badpasswordattempts` property tests the count of bad password attempts for a user.
 
-    its('badpasswordattempts') { should eq 0 }
+```ruby
+its('badpasswordattempts') { should eq 0 }
+```
 
 where `0` is the count of bad passwords for a user.
 On Linux based operating systems it relies on `lastb` and for Windows it uses information stored for the user object.
@@ -149,23 +179,27 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Use a regular expression to find users:
 
-    describe users.where { uid =~ /S\-1\-5\-21\-\d+\-\d+\-\d+\-500/ } do
-      it { should exist }
-    end
+```ruby
+describe users.where { uid =~ /S\-1\-5\-21\-\d+\-\d+\-\d+\-500/ } do
+  it { should exist }
+end
+```
 
 ### Test that only allowed users exist:
 
-    allowed_users = %w(user1 user2 user3)
+```ruby
+allowed_users = %w(user1 user2 user3)
 
-    users.where { uid > 1000 && uid < 65534 }.usernames.sort.each do |u|
-      describe user(u) do
-        if allowed_users.include?(u)
-          it { should exist }
-        else
-          it { should_not exist }
-        end
-      end
+users.where { uid > 1000 && uid < 65534 }.usernames.sort.each do |u|
+  describe user(u) do
+    if allowed_users.include?(u)
+      it { should exist }
+    else
+      it { should_not exist }
     end
+  end
+end
+```
 
 ## Matchers
 
@@ -177,4 +211,6 @@ This resource has the following special matchers.
 
 The `exist` matcher tests if the named user exists:
 
-    it { should exist }
+```ruby
+it { should exist }
+```

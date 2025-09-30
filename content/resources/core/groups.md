@@ -32,14 +32,16 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `groups` resource block uses `where` to filter entries from the systems groups. If `where` is omitted, all entries are selected.
 
-    describe groups do
-      its('names') { should eq ['wheel', 'daemon', 'sys', 'adm'] }
-      its('names') { should include 'wheel' }
-    end
+```ruby
+describe groups do
+  its('names') { should eq ['wheel', 'daemon', 'sys', 'adm'] }
+  its('names') { should include 'wheel' }
+end
 
-    describe groups.where { members =~ /root/ } do
-      its('names') { should eq ['wheel', 'daemon', 'sys', 'adm'] }
-    end
+describe groups.where { members =~ /root/ } do
+  its('names') { should eq ['wheel', 'daemon', 'sys', 'adm'] }
+end
+```
 
 ## Examples
 
@@ -47,10 +49,12 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test the group identifier for the wheel group
 
-    describe groups.where { name == 'wheel' } do
-      it { should exist }
-      its('members') { should include 'root' }
-    end
+```ruby
+describe groups.where { name == 'wheel' } do
+  it { should exist }
+  its('members') { should include 'root' }
+end
+```
 
 ## Properties
 
@@ -58,7 +62,9 @@ The following examples show how to use this Chef InSpec audit resource.
 
 The `gids` property tests the named group identifier:
 
-    its('gids') { should eq 1234 }
+```ruby
+its('gids') { should eq 1234 }
+```
 
 ### names
 
@@ -76,26 +82,34 @@ its('domains') { should include 'WIN-CIV7VMLVHLD' }
 
 The `members` property tests the members that belong to a group:
 
-    its('members') { should include 'root' }
-    its('members') { should include 'Administrator' }
+```ruby
+its('members') { should include 'root' }
+its('members') { should include 'Administrator' }
+```
 
 where `members` returns:
 
 - an array of group members for **Windows Platform**.
 
-    Example: `["member1", "member2"]`
+```
+Example: `["member1", "member2"]`
+```
 
 - a single element array that contains a CSV string of group members for **Non-Windows Platforms**.
 
-    Example: `["member1,member2"]`
+```
+Example: `["member1,member2"]`
+```
 
 ### members_array
 
 The `members_array` property tests the group members just like the `members` property,
 but the value returned by this property is always an array of group members.
 
-    its('members_array') { should include 'root' }
-    its('members_array') { should include 'Administrator' }
+```ruby
+its('members_array') { should include 'root' }
+its('members_array') { should include 'Administrator' }
+```
 
 ## Matchers
 
@@ -107,4 +121,6 @@ This resource has the following special matchers.
 
 The `exist` matcher tests if the named user exists:
 
-    it { should exist }
+```ruby
+it { should exist }
+```

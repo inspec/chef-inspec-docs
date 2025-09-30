@@ -27,10 +27,12 @@ This resource first became available in v1.10.0 of InSpec.
 
 A `windows_task` resource block declares the name of the task (as its full path) and tests its configuration:
 
-    describe windows_task('task name uri') do
-      its('parameter') { should eq 'value' }
-      it { should be_enabled }
-    end
+```ruby
+describe windows_task('task name uri') do
+  its('parameter') { should eq 'value' }
+  it { should be_enabled }
+end
+```
 
 where
 
@@ -44,50 +46,60 @@ The following examples show how to use this Chef InSpec resource.
 
 ### Tests that a task is enabled
 
-    describe windows_task('\Microsoft\Windows\Time Synchronization\SynchronizeTime') do
-      it { should be_enabled }
-    end
+```ruby
+describe windows_task('\Microsoft\Windows\Time Synchronization\SynchronizeTime') do
+  it { should be_enabled }
+end
+```
 
 ### Tests that a task is disabled
 
-    describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
-      it { should be_disabled }
-    end
+```ruby
+describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
+  it { should be_disabled }
+end
+```
 
 ### Tests the configuration parameters of a task
 
-    describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
-      its('logon_mode') { should eq 'Interactive/Background' }
-      its('last_result') { should eq '1' }
-      its('task_to_run') { should cmp '%Windir%\system32\appidpolicyconverter.exe' }
-      its('run_as_user') { should eq 'LOCAL SERVICE' }
-    end
+```ruby
+describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
+  its('logon_mode') { should eq 'Interactive/Background' }
+  its('last_result') { should eq '1' }
+  its('task_to_run') { should cmp '%Windir%\system32\appidpolicyconverter.exe' }
+  its('run_as_user') { should eq 'LOCAL SERVICE' }
+end
+```
 
 ### Tests that a task is defined
 
-    describe windows_task('\Microsoft\Windows\Defrag\ScheduledDefrag') do
-      it { should exist }
-    end
+```ruby
+describe windows_task('\Microsoft\Windows\Defrag\ScheduledDefrag') do
+  it { should exist }
+end
+```
 
 ## Gathering Task Names
 
-Rather than use the GUI, you can use the `schtasks.exe` to output a full list of tasks available on the system
+Rather than use the GUI, you can use the `schtasks.exe` to output a full list of tasks available on the system rather than use the `list` output you can use `CSV` if it's easier.
 
-`schtasks /query /FO list`
+```ps1
+schtasks /query /FO list
+```
 
-rather than use the `list` output you can use `CSV` if it is easier.
+Use the full TaskName (include the prefix `\`) within your control:
 
-Please make sure you use the full TaskName (include the prefix `\`) within your control
-
-    C:\>schtasks /query /FO list
-    ...
-    Folder: \Microsoft\Windows\Diagnosis
-    HostName:      XPS15
-    TaskName:      \Microsoft\Windows\Diagnosis\Scheduled
-    Next Run Time: N/A
-    Status:        Ready
-    Logon Mode:    Interactive/Background
-    ...
+```ps1
+C:\>schtasks /query /FO list
+...
+Folder: \Microsoft\Windows\Diagnosis
+HostName:      XPS15
+TaskName:      \Microsoft\Windows\Diagnosis\Scheduled
+Next Run Time: N/A
+Status:        Ready
+Logon Mode:    Interactive/Background
+...
+```
 
 ## Matchers
 

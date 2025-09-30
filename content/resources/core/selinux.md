@@ -28,27 +28,33 @@ This resource first became available in v4.35.1 of InSpec.
 
 The `selinux` Chef InSpec resource block tests the state and mode of SELinux policy.
 
-    describe selinux do
-      it { should be_installed }
-      it { should_not be_disabled }
-      it { should be_enforcing }
-      it { should_not be_permissive }
-    end
+```ruby
+describe selinux do
+  it { should be_installed }
+  it { should_not be_disabled }
+  it { should be_enforcing }
+  it { should_not be_permissive }
+end
+```
 
 The `selinux` resource block also allows you to write tests for multiple modules:
 
-    describe selinux.modules.where("zebra") do
-      it { should exist }
-      it { should be_installed }
-      it { should be_enabled }
-    end
+```ruby
+describe selinux.modules.where("zebra") do
+  it { should exist }
+  it { should be_installed }
+  it { should be_enabled }
+end
+```
 
 or:
 
-    describe selinux.modules.where(status: "installed") do
-      it { should exist }
-      its('count') { should cmp 404 }
-    end
+```ruby
+describe selinux.modules.where(status: "installed") do
+  it { should exist }
+  its('count') { should cmp 404 }
+end
+```
 
 where:
 
@@ -57,16 +63,20 @@ where:
 
 The `selinux` resource block also allows you to write tests for multiple booleans:
 
-    describe selinux.booleans.where(name: "httpd_enable_homedirs") do
-      it { should_not be_on }
-    end
+```ruby
+describe selinux.booleans.where(name: "httpd_enable_homedirs") do
+  it { should_not be_on }
+end
+```
 
 or:
 
-    describe selinux.booleans.where(name: "xend_run_blktap", state: "on") do
-      it { should exist }
-      its('defaults') { should cmp "on" }
-    end
+```ruby
+describe selinux.booleans.where(name: "xend_run_blktap", state: "on") do
+  it { should exist }
+  its('defaults') { should cmp "on" }
+end
+```
 
 - `.where()` specifies the parameter and expected value.
 - `name`, `state`, and `default` are valid parameters for `booleans`.
@@ -77,23 +87,29 @@ The following examples show how to use this Chef InSpec selinux resource.
 
 ### Test if SELinux is installed and enabled
 
-    describe selinux do
-      it { should be_installed }
-      it { should_not be_disabled }
-    end
+```ruby
+describe selinux do
+  it { should be_installed }
+  it { should_not be_disabled }
+end
+```
 
 ### Test if SELinux is enabled and running in enforcing mode
 
-    describe selinux do
-      it { should_not be_disabled }
-      it { should be_enforcing }
-    end
+```ruby
+describe selinux do
+  it { should_not be_disabled }
+  it { should be_enforcing }
+end
+```
 
 ### Test the selinux policy type
 
-    describe selinux do
-      its('policy') { should eq "targeted"}
-    end
+```ruby
+describe selinux do
+  its('policy') { should eq "targeted"}
+end
+```
 
 ## Matchers
 
@@ -105,37 +121,49 @@ This resource has the following special matchers.
 
 The `be_installed` matcher tests if the SElinux policy or SElinux modules are installed on the system:
 
-    it { should be_installed }
+```ruby
+it { should be_installed }
+```
 
 ### be_disabled
 
 The `be_disabled` matcher tests if the SELinux is disabled on the system:
 
-    it { should be_disabled }
+```ruby
+it { should be_disabled }
+```
 
 ### be_enforcing
 
 The `be_enforcing` matcher tests if the SELinux mode is set to enforcing:
 
-    it { should be_enforcing }
+```ruby
+it { should be_enforcing }
+```
 
 ### be_permissive
 
 The `be_permissive` matcher tests if the SELinux mode is set to permissive:
 
-    it { should be_permissive }
+```ruby
+it { should be_permissive }
+```
 
 ### be_on
 
 The `be_on` matcher tests if the SELinux boolean is on:
 
-    it { should be_on }
+```ruby
+it { should be_on }
+```
 
 ### be_enabled
 
 The `be_enabled` matcher tests if the SElinux module is enabled:
 
-    it { should be_enabled }
+```ruby
+it { should be_enabled }
+```
 
 ## Resource Parameters
 

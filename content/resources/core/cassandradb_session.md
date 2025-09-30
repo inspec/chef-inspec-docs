@@ -22,9 +22,11 @@ Use the `cassandradb_session` Chef InSpec audit resource to test Cassandra Query
 
 A `cassandradb_session` resource block declares the username, password, host, and port to use for the session, and then the command to be run:
 
-    describe cassandradb_session(user: 'USERNAME', password: 'PASSWORD', host: 'localhost', port: 9042).query('QUERY') do
-      its('value') { should eq('EXPECTED') }
-    end
+```ruby
+describe cassandradb_session(user: 'USERNAME', password: 'PASSWORD', host: 'localhost', port: 9042).query('QUERY') do
+  its('value') { should eq('EXPECTED') }
+end
+```
 
 where
 

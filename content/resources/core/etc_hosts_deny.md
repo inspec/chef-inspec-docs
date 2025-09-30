@@ -28,17 +28,21 @@ An `etc_hosts_deny` rule specifies one or more daemons mapped to one or more cli
 
 Use the where clause to match a property to one or more rules in the hosts.deny file:
 
-    describe etc_hosts_deny.where { daemon == 'value' } do
-      its ('client_list') { should include ['values'] }
-      its ('options') { should include ['values'] }
-    end
+```ruby
+describe etc_hosts_deny.where { daemon == 'value' } do
+  its ('client_list') { should include ['values'] }
+  its ('options') { should include ['values'] }
+end
+```
 
 Use the optional constructor parameter to give an alternative path to hosts.deny:
 
-    describe etc_hosts_deny(hosts_path).where { daemon == 'value' } do
-      its ('client_list') { should include ['values'] }
-      its ('options') { should include ['values'] }
-    end
+```ruby
+describe etc_hosts_deny(hosts_path).where { daemon == 'value' } do
+  its ('client_list') { should include ['values'] }
+  its ('options') { should include ['values'] }
+end
+```
 
 where
 
@@ -52,25 +56,31 @@ where
 
 The `daemon` property returns a string containing the daemon that is allowed in the rule.
 
-    describe etc_hosts_deny.where { client_list == ['127.0.1.154',  '[:fff:fAb0::]'] } do
-      its('daemon') { should eq ['vsftpd', 'sshd'] }
-    end
+```ruby
+describe etc_hosts_deny.where { client_list == ['127.0.1.154',  '[:fff:fAb0::]'] } do
+  its('daemon') { should eq ['vsftpd', 'sshd'] }
+end
+```
 
 ### client_list
 
 The `client_list` property returns a 2d string array where each entry contains the clients specified for the rule.
 
-    describe etc_hosts_deny.where { daemon == 'sshd' } do
-      its('client_list') { should include ['192.168.0.0/16', '[abcd::0000:1234]'] }
-    end
+```ruby
+describe etc_hosts_deny.where { daemon == 'sshd' } do
+  its('client_list') { should include ['192.168.0.0/16', '[abcd::0000:1234]'] }
+end
+```
 
 ### options
 
 The `options` property returns a 2d string array where each entry contains any options specified for the rule.
 
-    describe etc_hosts_deny.where { daemon == 'sshd' } do
-      its('options') { should include ['deny', 'echo "REJECTED"'] }
-    end
+```ruby
+describe etc_hosts_deny.where { daemon == 'sshd' } do
+  its('options') { should include ['deny', 'echo "REJECTED"'] }
+end
+```
 
 ## Matchers
 

@@ -26,10 +26,12 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `bridge` resource block declares the bridge to be tested and what interface it should be associated with:
 
-    describe bridge('br0') do
-      it { should exist }
-      it { should have_interface 'eth0' }
-    end
+```ruby
+describe bridge('br0') do
+  it { should exist }
+  it { should have_interface 'eth0' }
+end
+```
 
 - On Linux platforms, any value in the `/sys/class/net/{interface}/bridge` directory may be tested
 - On the Windows platform, the `Get-NetAdapter` cmdlet is associated with the `Get-NetAdapterBinding` cmdlet and returns the `ComponentID ms_bridge` value as a JSON object
@@ -40,7 +42,9 @@ A `bridge` resource block declares the bridge to be tested and what interface it
 
 The `interfaces` property returns the named interfaces.
 
-    its('interfaces') { should include('foo') }
+```ruby
+its('interfaces') { should include('foo') }
+```
 
 ## Matchers
 
@@ -52,10 +56,14 @@ This resource has the following special matchers.
 
 The `exist` matcher tests if the network bridge is available:
 
-    it { should exist }
+```ruby
+it { should exist }
+```
 
 ### have_interface
 
 The `have_interface` matcher tests if the named interface is defined for the network bridge:
 
-    it { should have_interface 'eth0' }
+```ruby
+it { should have_interface 'eth0' }
+```

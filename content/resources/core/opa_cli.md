@@ -22,9 +22,11 @@ Use the `opa_cli` Chef InSpec audit resource to query Open Policy Agent (OPA) us
 
 An `opa_cli` resource block declares OPA policy configurations that can be tested.
 
-    describe opa_cli(policy: "example.rego", data: "input.json", query: "data.example.allow") do
-      its(["result"]) { should eq "value" }
-    end
+```ruby
+describe opa_cli(policy: "example.rego", data: "input.json", query: "data.example.allow") do
+  its(["result"]) { should eq "value" }
+end
+```
 
 where
 
@@ -59,23 +61,29 @@ This is the full path to the OPA binary or EXE file used for running the OPA CLI
 
 The `result` property checks whether the resource query returns an empty result.
 
-    its('result') { should be nil }
+```ruby
+its('result') { should be nil }
+```
 
 ### allow
 
 The `allow` property checks if specific input matches the policy defined in OPA. This matcher will not work if `allow` is not defined in the policy file.
 
-    its('allow') { should eq 'value' }
+```ruby
+its('allow') { should eq 'value' }
+```
 
 ## Examples
 
 The following examples show how to use this Chef InSpec audit resource:
 
-    describe opa_cli(query: "data.example.allow", policy: "example.rego", data: "input.json", opa_executable_path: "./opa") do
-      its("result") { shoule_not be nil }
-      its(["result", 0, "expressions", 0, "value"]) { should eq true }
-      its("allow") { should eq "true" }
-    end
+```ruby
+describe opa_cli(query: "data.example.allow", policy: "example.rego", data: "input.json", opa_executable_path: "./opa") do
+  its("result") { shoule_not be nil }
+  its(["result", 0, "expressions", 0, "value"]) { should eq true }
+  its("allow") { should eq "true" }
+end
+```
 
 The above example shows how the `allow` value can be fetched in two ways.
 

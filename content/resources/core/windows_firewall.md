@@ -22,9 +22,11 @@ Use the `windows_firewall` Chef InSpec audit resource to test if a firewall prof
 
 A `windows_firewall` resource block specifies which profile to validate:
 
-    describe windows_firewall('name') do
-      it { should be_enabled }
-    end
+```ruby
+describe windows_firewall('name') do
+  it { should be_enabled }
+end
+```
 
 where
 
@@ -38,11 +40,13 @@ The following example shows how to use this Chef InSpec audit resource.
 
 ### Test if the firewall has the appropriate amount of rules and default Accept
 
-    describe windows_firewall('Public') do
-      it { should be_enabled }
-      it { should have_default_inbound_allowed }
-      its('num_rules') { should eq 219 }
-    end
+```ruby
+describe windows_firewall('Public') do
+  it { should be_enabled }
+  it { should have_default_inbound_allowed }
+  its('num_rules') { should eq 219 }
+end
+```
 
 ## Properties
 
@@ -67,11 +71,15 @@ The resource compiles the following list of firewall profile properties:
 
 Each of these properties can be used in two distinct ways:
 
-    its('default_inbound_action') { should cmp 'Allow' }
+```ruby
+its('default_inbound_action') { should cmp 'Allow' }
+```
 
 or via matcher:
 
-    it { should have_default_inbound_action 'Allow' }
+```ruby
+it { should have_default_inbound_action 'Allow' }
+```
 
 Shortcuts are defined for:
 
@@ -88,4 +96,6 @@ This resource has the following special matchers.
 
 The `be_enabled` matcher tests if the Profile is enabled:
 
-    it { should be_enabled }
+```ruby
+it { should be_enabled }
+```

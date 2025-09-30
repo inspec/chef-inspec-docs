@@ -26,15 +26,17 @@ This resource first became available in v1.19.0 of InSpec.
 
 A `dh_params` resource block declares a parameter file to be tested.
 
-    describe dh_params('/path/to/file.dh_pem') do
-      it { should be_dh_params }
-      it { should be_valid }
-      its('generator') { should eq 2 }
-      its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
-      its('prime_length') { should eq 2048 }
-      its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
-      its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  it { should be_dh_params }
+  it { should be_valid }
+  its('generator') { should eq 2 }
+  its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
+  its('prime_length') { should eq 2048 }
+  its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
+  its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
+end
+```
 
 ## Properties
 
@@ -42,45 +44,59 @@ A `dh_params` resource block declares a parameter file to be tested.
 
 The `generator` property returns generator used for the Diffie-Hellman operation.
 
-    its('generator') { should eq 2 }
+```ruby
+its('generator') { should eq 2 }
+```
 
 ### modulus (String)
 
 The `modulus` property returns the prime modulus used for the Diffie-Hellman operation.
 
-    its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
+```ruby
+its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
+```
 
 ### prime_length (Integer)
 
 The `prime_length` property returns the length of prime modulus used for the Diffie-Hellman operation.
 
-    its('prime_length') { should eq 2048 }
+```ruby
+its('prime_length') { should eq 2048 }
+```
 
 ### pem (String)
 
 The `pem` property returns the pem formatted value of DH parameters.
 
-    its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
+```ruby
+its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
+```
 
 ### text (String)
 
 The `text` property returns the value of DH parameters in text format.
 
-    its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
+```ruby
+its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
+```
 
 ## Examples
 
 ### Test generator used for the Diffie-Hellman operation
 
-    describe dh_params('/path/to/file.dh_pem') do
-      its('generator') { should eq 2 }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  its('generator') { should eq 2 }
+end
+```
 
 ### Test prime modulus used for the Diffie-Hellman operation
 
-    describe dh_params('/path/to/file.dh_pem') do
-      its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  its('modulus') { should eq '00:91:a0:15:89:e5:bc:38:93:12:02:fc:...' }
+end
+```
 
 ### Test example using multi-line string
 
@@ -114,15 +130,19 @@ end
 
 ### Test length of prime modulus used for the Diffie-Hellman operation
 
-    describe dh_params('/path/to/file.dh_pem') do
-      its('prime_length') { should eq 2048 }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  its('prime_length') { should eq 2048 }
+end
+```
 
 ### Test `pem` output of DH parameters
 
-    describe dh_params('/path/to/file.dh_pem') do
-      its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  its('pem') { should eq '-----BEGIN DH PARAMETERS...' }
+end
+```
 
 ### Test example using multi-line string
 
@@ -146,21 +166,25 @@ end
 
 ### Test via `openssl dhparam` command
 
-    $ openssl dhparam -in /path/to/file.dh_pem
-    -----BEGIN DH PARAMETERS-----
-    MIIBCAKCAQEAkaAVieW8OJMSAvyRooX39yljLtNOeob37oT+QtBIvJyR1VT4eB3A
-    QXiixKwaJIudiFWYC6ynI+vCqisuqfmv1I5OEbx/NaKs2jrv8CVsmqT9ACh2hixX
-    h2cwXbHWWyKPcqHq3ovvnjMaQJJohQJUAgn6wGDBPE4oJtvtJY44IVZA3MDAZh8r
-    MsO0eKkmlOr3QSiy9VsBOAxGCYUmTWkSjZUPNeLmTkc6ht2Ksv5FFSfYWcI89GL/
-    X3Tpd5JQRzYrBVdg7nuhYMwceit3GIo398cxPhXLFX97Zpb7xr591gNeDWB1K1ti
-    KqM3tjT5/pZM9sXjoVKvAcFPx0Kgvu3NEwIBAg==
-    -----END DH PARAMETERS-----
+```sh
+$ openssl dhparam -in /path/to/file.dh_pem
+-----BEGIN DH PARAMETERS-----
+MIIBCAKCAQEAkaAVieW8OJMSAvyRooX39yljLtNOeob37oT+QtBIvJyR1VT4eB3A
+QXiixKwaJIudiFWYC6ynI+vCqisuqfmv1I5OEbx/NaKs2jrv8CVsmqT9ACh2hixX
+h2cwXbHWWyKPcqHq3ovvnjMaQJJohQJUAgn6wGDBPE4oJtvtJY44IVZA3MDAZh8r
+MsO0eKkmlOr3QSiy9VsBOAxGCYUmTWkSjZUPNeLmTkc6ht2Ksv5FFSfYWcI89GL/
+X3Tpd5JQRzYrBVdg7nuhYMwceit3GIo398cxPhXLFX97Zpb7xr591gNeDWB1K1ti
+KqM3tjT5/pZM9sXjoVKvAcFPx0Kgvu3NEwIBAg==
+-----END DH PARAMETERS-----
+```
 
 ### Test human-readable text output of DH parameters
 
-    describe dh_params('/path/to/file.dh_pem') do
-      its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  its('text') { should eq 'PKCS#3 DH Parameters: (2048 bit)...' }
+end
+```
 
 ### Test example using multi-line string
 
@@ -232,12 +256,16 @@ This resource has the following special matchers.
 
 Verify whether DH parameters are valid:
 
-    describe dh_params('/path/to/file.dh_pem') do
-      it { should be_valid }
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+  it { should be_valid }
+end
+```
 
 ### be_dh_params
 
-    describe dh_params('/path/to/file.dh_pem') do
-        it { should be_dh_params}
-    end
+```ruby
+describe dh_params('/path/to/file.dh_pem') do
+    it { should be_dh_params}
+end
+```

@@ -26,13 +26,15 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `security_policy` resource block declares the name of a security policy and the value to be tested:
 
-    describe security_policy do
-      its('policy_name') { should eq 'value' }
-    end
+```ruby
+describe security_policy do
+  its('policy_name') { should eq 'value' }
+end
 
-    describe security_policy(translate_sid: true) do
-      its('policy_name') { should include 'sid_name' }
-    end
+describe security_policy(translate_sid: true) do
+  its('policy_name') { should include 'sid_name' }
+end
+```
 
 where
 
@@ -44,7 +46,9 @@ where
 
 This resource supports any of the security policy name as properties for e.g. `SeNetworkLogonRigth`, `SeRemoteInteractiveLogonRight` etc.
 
-    its('SeNetworkLogonRight') { should eq '*S-1-5-11' }
+```ruby
+its('SeNetworkLogonRight') { should eq '*S-1-5-11' }
+```
 
 ## Examples
 
@@ -52,9 +56,11 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Verify that only the Administrators group has remote access
 
-    describe security_policy do
-      its('SeRemoteInteractiveLogonRight') { should eq '*S-1-5-32-544' }
-    end
+```ruby
+describe security_policy do
+  its('SeRemoteInteractiveLogonRight') { should eq '*S-1-5-32-544' }
+end
+```
 
 ## Matchers
 

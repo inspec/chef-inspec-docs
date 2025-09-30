@@ -22,9 +22,11 @@ Use the `mongodb_conf` Chef InSpec audit resource to test the contents of the co
 
 A `mongodb_conf` resource block declares one (or more) settings in the `mongodb.conf` file, and then compares the setting in the configuration file to the value stated in the test:
 
-    describe mongodb_conf('path') do
-      its('setting') { should eq 'value' }
-    end
+```ruby
+describe mongodb_conf('path') do
+  its('setting') { should eq 'value' }
+end
+```
 
 where
 
@@ -38,21 +40,27 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test the key management configuration options
 
-    describe mongodb_conf do
-      its(["security", "enableEncryption"]) { should eq true }
-    end
+```ruby
+describe mongodb_conf do
+  its(["security", "enableEncryption"]) { should eq true }
+end
+```
 
 ### Test the port on which MongoDB listens
 
-    describe mongodb_conf do
-      its(["net", "port"]) { should eq 27017 }
-    end
+```ruby
+describe mongodb_conf do
+  its(["net", "port"]) { should eq 27017 }
+end
+```
 
 ### Test the security configuration options
 
-    describe mongodb_conf do
-      its(["security", "authorization"]) { should eq "enabled" }
-    end
+```ruby
+describe mongodb_conf do
+  its(["security", "authorization"]) { should eq "enabled" }
+end
+```
 
 ## Matchers
 

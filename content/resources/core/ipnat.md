@@ -22,9 +22,11 @@ Use the `ipnat` Chef InSpec audit resource to test rules that are defined for `I
 
 An `ipnat` resource block declares tests for rules set for IP NAT:
 
-    describe ipnat do
-      it { should have_rule("RULE") }
-    end
+```ruby
+describe ipnat do
+  it { should have_rule("RULE") }
+end
+```
 
 where
 
@@ -36,15 +38,19 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test to ensure mapping rule of the internally used IP address with ISP provided 8-bit subnet at 10.9.0.1
 
-    describe ipnat do
-      it { should have_rule("map en0 192.0.0.0/8 -> 10.9.0.1/24") }
-    end
+```ruby
+describe ipnat do
+  it { should have_rule("map en0 192.0.0.0/8 -> 10.9.0.1/24") }
+end
+```
 
 ### Test to ensure if there is a NAT rule to use the builtin ftp-proxy
 
-    describe ipnat do
-      it { should have_rule("map en0 192.0.0.0/8 -> 10.9.0.1/32 proxy port ftp ftp/tcp") }
-    end
+```ruby
+describe ipnat do
+  it { should have_rule("map en0 192.0.0.0/8 -> 10.9.0.1/32 proxy port ftp ftp/tcp") }
+end
+```
 
 {{< note >}}
 
@@ -62,4 +68,6 @@ This resource has the following special matchers.
 
 The `have_rule` matcher tests the named rule against the information in the output rule of `ipnat -l`:
 
-    it { should have_rule("RULE") }
+```ruby
+it { should have_rule("RULE") }
+```

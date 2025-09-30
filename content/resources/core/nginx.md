@@ -28,13 +28,15 @@ This resource first became available in v1.37.6 of InSpec.
 
 An `nginx` Chef InSpec audit resource block extracts configuration settings that should be tested:
 
-    describe nginx do
-      its('attribute') { should eq 'value' }
-    end
+```ruby
+describe nginx do
+  its('attribute') { should eq 'value' }
+end
 
-    describe nginx('path to nginx') do
-      its('attribute') { should eq 'value' }
-    end
+describe nginx('path to nginx') do
+  its('attribute') { should eq 'value' }
+end
+```
 
 where
 
@@ -51,38 +53,48 @@ where
 
 `version` returns a string of the version of the running nginx instance
 
-    describe nginx do
-      its('version') { should eq '1.12.0' }
-    end
+```ruby
+describe nginx do
+  its('version') { should eq '1.12.0' }
+end
+```
 
 ### modules(String)
 
 `modules` returns a array modules in the running nginx instance
 
-    describe nginx do
-      its('modules') { should include 'my_module' }
-    end
+```ruby
+describe nginx do
+  its('modules') { should include 'my_module' }
+end
+```
 
 ### openssl_version(Hash)
 
 `openssl_version` returns a hash with 'version' and 'date' as keys
 
-    describe nginx do
-      its('openssl_version.date') { should eq '11 Feb 2013' }
-    end
+```ruby
+describe nginx do
+  its('openssl_version.date') { should eq '11 Feb 2013' }
+end
+```
 
 ### compiler_info(Hash)
 
 `compiler_info` returns a hash with 'compiler' , version' and 'date' as keys
 
-    describe nginx do
-      its('compiler_info.compiler') { should eq 'gcc' }
-    end
+```ruby
+describe nginx do
+  its('compiler_info.compiler') { should eq 'gcc' }
+end
+```
 
 ### support_info(String)
 
 `support_info` returns a string containing supported protocols
 
-    describe nginx do
-      its('support_info') { should match /TLS/ }
-    end
+```ruby
+describe nginx do
+  its('support_info') { should match /TLS/ }
+end
+```

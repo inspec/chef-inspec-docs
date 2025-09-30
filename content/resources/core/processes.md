@@ -26,9 +26,11 @@ This resource is available from InSpec 1.0 version.
 
 A `processes` resource block declares the process name that must be tested and defines one or more property and value pairs.
 
-    describe processes('NAME') do
-      its('property_name') { should eq ['VALUE'] }
-    end
+```ruby
+describe processes('NAME') do
+  its('property_name') { should eq ['VALUE'] }
+end
+```
 
 > where
 >
@@ -42,7 +44,9 @@ The specific properties of this resource are: `labels`, `pids`, `cpus`, `mem`, `
 
 Usage of these properties is as follows:
 
-    its('property_name') { should eq ['VALUE'] }
+```ruby
+its('property_name') { should eq ['VALUE'] }
+```
 
 ## Matchers
 
@@ -54,7 +58,9 @@ The specific matcher of this resource is: `be_running`.
 
 The `be_running` matcher tests if the named process is running:
 
-    it { should be_running }
+```ruby
+it { should be_running }
+```
 
 ## Examples
 
@@ -62,55 +68,69 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test if the mysqld process list length is 1
 
-    describe processes('SQLD') do
-      its('list.length') { should eq 1 }
-    end
+```ruby
+describe processes('SQLD') do
+  its('list.length') { should eq 1 }
+end
+```
 
 ### Test if the mysqld process count is 1
 
-    describe processes('SQLD') do
-      its('count') { should eq 1 }
-    end
+```ruby
+describe processes('SQLD') do
+  its('count') { should eq 1 }
+end
+```
 
 ### Test if the user owns the process
 
-    describe processes('init') do
-      its('users') { should eq ['ROOT'] }
-    end
+```ruby
+describe processes('init') do
+  its('users') { should eq ['ROOT'] }
+end
 
-    describe processes('winlogon') do
-      its('users') { should cmp "NT AUTHORITY\\SYSTEM" }
-    end
+describe processes('winlogon') do
+  its('users') { should cmp "NT AUTHORITY\\SYSTEM" }
+end
+```
 
 ### Test if a high-priority process is running
 
-    describe processes('linux_process') do
-      its('states') { should eq ['R<'] }
-    end
+```ruby
+describe processes('linux_process') do
+  its('states') { should eq ['R<'] }
+end
 
-    describe processes('windows_process') do
-      its('labels') { should cmp "HIGH" }
-    end
+describe processes('windows_process') do
+  its('labels') { should cmp "HIGH" }
+end
+```
 
 ### Test if a process exists on the system
 
-    describe processes('some_process') do
-      it { should exist }
-    end
+```ruby
+describe processes('some_process') do
+  it { should exist }
+end
+```
 
 ### Test if a process is running on the system
 
-    describe processes('some_process') do
-      it { should be_running }
-    end
+```ruby
+describe processes('some_process') do
+  it { should be_running }
+end
+```
 
 ### Test for a process using a specific Regexp
 
 Use `regexp` if the process name is too common for a string to find it uniquely. You may need to include whitespace characters.
 
-    describe processes(Regexp.new("/usr/local/bin/swap -d")) do
-      its('list.length') { should eq 1 }
-    end
+```ruby
+describe processes(Regexp.new("/usr/local/bin/swap -d")) do
+  its('list.length') { should eq 1 }
+end
+```
 
 ### Notes for auditing Windows systems
 

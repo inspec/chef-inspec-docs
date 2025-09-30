@@ -26,9 +26,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `login_defs` resource block declares the `login.defs` configuration data to be tested:
 
-    describe login_defs do
-      its('name') { should include('foo') }
-    end
+```ruby
+describe login_defs do
+  its('name') { should include('foo') }
+end
+```
 
 where
 
@@ -47,29 +49,37 @@ The following examples show how to use this Chef InSpec audit resource.
 
 The `name` matcher tests the value of `name` as read from `login.defs` versus the value declared in the test:
 
-    its('name') { should eq 'foo' }
+```ruby
+its('name') { should eq 'foo' }
+```
 
 ### Test password expiration settings
 
-    describe login_defs do
-      its('PASS_MAX_DAYS') { should eq '180' }
-      its('PASS_MIN_DAYS') { should eq '1' }
-      its('PASS_MIN_LEN') { should eq '15' }
-      its('PASS_WARN_AGE') { should eq '30' }
-    end
+```ruby
+describe login_defs do
+  its('PASS_MAX_DAYS') { should eq '180' }
+  its('PASS_MIN_DAYS') { should eq '1' }
+  its('PASS_MIN_LEN') { should eq '15' }
+  its('PASS_WARN_AGE') { should eq '30' }
+end
+```
 
 ### Test the encryption method
 
-    describe login_defs do
-      its('ENCRYPT_METHOD') { should eq 'SHA512' }
-    end
+```ruby
+describe login_defs do
+  its('ENCRYPT_METHOD') { should eq 'SHA512' }
+end
+```
 
 ### Test umask setting
 
-    describe login_defs do
-      its('UMASK') { should eq '077' }
-      its('PASS_MAX_DAYS') { should eq '90' }
-    end
+```ruby
+describe login_defs do
+  its('UMASK') { should eq '077' }
+  its('PASS_MAX_DAYS') { should eq '90' }
+end
+```
 
 ## Matchers
 

@@ -26,9 +26,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `postgres_conf` resource block declares one (or more) settings in the `postgresql.conf` file, and then compares the setting in the configuration file to the value stated in the test:
 
-    describe postgres_conf('path') do
-      its('setting') { should eq 'value' }
-    end
+```ruby
+describe postgres_conf('path') do
+  its('setting') { should eq 'value' }
+end
+```
 
 where
 
@@ -40,7 +42,9 @@ where
 
 This resource supports any of the settings listed in an postgresql.conf file as properties for e.g. max_connections
 
-    its('max_connections') { should eq '5' }
+```ruby
+its('max_connections') { should eq '5' }
+```
 
 ## Examples
 
@@ -48,35 +52,43 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test the maximum number of allowed client connections
 
-    describe postgres_conf do
-      its('max_connections') { should eq '5' }
-    end
+```ruby
+describe postgres_conf do
+  its('max_connections') { should eq '5' }
+end
+```
 
 ### Test system logging
 
-    describe postgres_conf do
-      its('logging_collector') { should eq 'on' }
-      its('log_connections') { should eq 'on' }
-      its('log_disconnections') { should eq 'on' }
-      its('log_duration') { should eq 'on' }
-      its('log_hostname') { should eq 'on' }
-      its('log_line_prefix') { should eq '%t %u %d %h' }
-      its(['pgaudit.log_parameter']) { should cmp 'on' }
-    end
+```ruby
+describe postgres_conf do
+  its('logging_collector') { should eq 'on' }
+  its('log_connections') { should eq 'on' }
+  its('log_disconnections') { should eq 'on' }
+  its('log_duration') { should eq 'on' }
+  its('log_hostname') { should eq 'on' }
+  its('log_line_prefix') { should eq '%t %u %d %h' }
+  its(['pgaudit.log_parameter']) { should cmp 'on' }
+end
+```
 
 ### Test the port on which PostgreSQL listens
 
-    describe postgres_conf do
-      its('port') { should eq '5432' }
-    end
+```ruby
+describe postgres_conf do
+  its('port') { should eq '5432' }
+end
+```
 
 ### Test the Unix socket settings
 
-    describe postgres_conf do
-      its('unix_socket_directories') { should eq '.s.PGSQL.5432' }
-      its('unix_socket_group') { should eq nil }
-      its('unix_socket_permissions') { should eq '0770' }
-    end
+```ruby
+describe postgres_conf do
+  its('unix_socket_directories') { should eq '.s.PGSQL.5432' }
+  its('unix_socket_group') { should eq nil }
+  its('unix_socket_permissions') { should eq '0770' }
+end
+```
 
 where `unix_socket_group` is set to the PostgreSQL default setting (the group to which the server user belongs).
 

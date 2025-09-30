@@ -26,9 +26,11 @@ This resource first became available in v1.16.0 of InSpec.
 
 A `zfs_dataset` resource block declares the ZFS dataset properties that should be tested:
 
-    describe zfs_dataset('dataset') do
-      it { should MATCHER 'value' }
-    end
+```ruby
+describe zfs_dataset('dataset') do
+  it { should MATCHER 'value' }
+end
+```
 
 where
 
@@ -42,14 +44,16 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test a dataset of 'tank/tmp'
 
-    describe zfs_dataset('tank/tmp') do
-      it { should be_mounted }
-      its('atime') { should eq  'on' }
-      its('compression') { should eq  'lz4' }
-      its('exec') { should eq  'off' }
-      its('readonly') { should eq  'off' }
-      its('setuid') { should eq  'off' }
-    end
+```ruby
+describe zfs_dataset('tank/tmp') do
+  it { should be_mounted }
+  its('atime') { should eq  'on' }
+  its('compression') { should eq  'lz4' }
+  its('exec') { should eq  'off' }
+  its('readonly') { should eq  'off' }
+  its('setuid') { should eq  'off' }
+end
+```
 
 ## Matchers
 
@@ -61,4 +65,6 @@ This resource has the following special matchers.
 
 The `be_mounted` matcher tests if the dataset is accessible from the file system:
 
-    it { should be_mounted }
+```ruby
+it { should be_mounted }
+```

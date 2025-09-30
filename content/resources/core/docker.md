@@ -230,39 +230,51 @@ end
 
 ### id
 
-    describe docker_container(name: 'an-echo-server') do
-      its('id') { should_not eq '' }
-    end
+```ruby
+describe docker_container(name: 'an-echo-server') do
+  its('id') { should_not eq '' }
+end
+```
 
 ### image
 
-    describe docker_container(name: 'an-echo-server') do
-      its('image') { should eq 'busybox:latest' }
-    end
+```ruby
+describe docker_container(name: 'an-echo-server') do
+  its('image') { should eq 'busybox:latest' }
+end
+```
 
 ### repo
 
-    describe docker_container(name: 'an-echo-server') do
-      its('repo') { should eq 'busybox' }
-    end
+```ruby
+describe docker_container(name: 'an-echo-server') do
+  its('repo') { should eq 'busybox' }
+end
+```
 
 ### tag
 
-    describe docker_container(name: 'an-echo-server') do
-      its('tag') { should eq 'latest' }
-    end
+```ruby
+describe docker_container(name: 'an-echo-server') do
+  its('tag') { should eq 'latest' }
+end
+```
 
 ### ports
 
-    describe docker_container(name: 'an-echo-server') do
-      its('ports') { should eq '0.0.0.0:1234->1234/tcp' }
-    end
+```ruby
+describe docker_container(name: 'an-echo-server') do
+  its('ports') { should eq '0.0.0.0:1234->1234/tcp' }
+end
+```
 
 ### command
 
-    describe docker_container(name: 'an-echo-server') do
-      its('command') { should eq 'nc -ll -p 1234 -e /bin/cat' }
-    end
+```ruby
+describe docker_container(name: 'an-echo-server') do
+  its('command') { should eq 'nc -ll -p 1234 -e /bin/cat' }
+end
+```
 
 ## Matchers
 

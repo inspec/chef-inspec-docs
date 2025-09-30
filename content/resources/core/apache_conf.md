@@ -30,9 +30,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 An `apache_conf` Chef InSpec audit resource block declares configuration settings that should be tested:
 
-    describe apache_conf('path') do
-      its('setting_name') { should eq 'value' }
-    end
+```ruby
+describe apache_conf('path') do
+  its('setting_name') { should eq 'value' }
+end
+```
 
 where
 
@@ -46,21 +48,27 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test for blocking .htaccess files on CentOS
 
-    describe apache_conf do
-      its('AllowOverride') { should cmp 'None' }
-    end
+```ruby
+describe apache_conf do
+  its('AllowOverride') { should cmp 'None' }
+end
+```
 
 ### Test ports for SSL
 
-    describe apache_conf do
-      its('Listen') { should cmp '443' }
-    end
+```ruby
+describe apache_conf do
+  its('Listen') { should cmp '443' }
+end
+```
 
 ### Test multiple ports are listening
 
-    describe apache_conf do
-      its('Listen') { should =~ [ '80', '443' ] }
-    end
+```ruby
+describe apache_conf do
+  its('Listen') { should =~ [ '80', '443' ] }
+end
+```
 
 ## Matchers
 
@@ -68,15 +76,21 @@ The following examples show how to use this Chef InSpec audit resource.
 
 This Chef InSpec audit resource matches any service that is listed in the Apache configuration file:
 
-    its('PidFile') { should_not eq '/var/run/httpd.pid' }
+```ruby
+its('PidFile') { should_not eq '/var/run/httpd.pid' }
+```
 
 or:
 
-    its('Timeout') { should cmp '300' }
+```ruby
+its('Timeout') { should cmp '300' }
+```
 
 For example:
 
-    describe apache_conf do
-      its('MaxClients') { should cmp '100' }
-      its('Listen') { should cmp '443' }
-    end
+```ruby
+describe apache_conf do
+  its('MaxClients') { should cmp '100' }
+  its('Listen') { should cmp '443' }
+end
+```

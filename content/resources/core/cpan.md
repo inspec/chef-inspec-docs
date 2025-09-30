@@ -26,9 +26,11 @@ This resource first became available in v1.43.5 of InSpec.
 
 A `cpan` resource block declares a package and (optionally) a package version:
 
-    describe cpan('package_name') do
-      it { should be_installed }
-    end
+```ruby
+describe cpan('package_name') do
+  it { should be_installed }
+end
+```
 
 where
 
@@ -43,25 +45,31 @@ This resource uses package names and perl library paths as resource parameters.
 
 ### Test if DBD::Pg is installed on the system
 
-    describe cpan('DBD:Pg') do
-      it { should be_installed }
-    end
+```ruby
+describe cpan('DBD:Pg') do
+  it { should be_installed }
+end
+```
 
 ### Test if DBD::Pg 3.7.0 is installed on the system
 
-    describe cpan('DBD::Pg') do
-      it { should be_installed }
-      its('version') { should eq '3.7.0' }
-    end
+```ruby
+describe cpan('DBD::Pg') do
+  it { should be_installed }
+  its('version') { should eq '3.7.0' }
+end
+```
 
 ### Test if DBD::Pg is installed within a custom PERL5LIB path on the system
 
 Hint: You can pass multiple paths separated with a colon
 `/path/to/perl5/lib:/usr/share/perl5/vendor_perl/lib/perl5`
 
-    describe cpan('DBD::Pg', '/home/username/perl5/lib/perl5') do
-      it { should be_installed }
-    end
+```ruby
+describe cpan('DBD::Pg', '/home/username/perl5/lib/perl5') do
+  it { should be_installed }
+end
+```
 
 ## Property Examples
 
@@ -71,7 +79,9 @@ The following examples show how to use this Chef InSpec audit resource.
 
 The `version` property tests if the named package version is on the system:
 
-    its('version') { should eq '1.2.3' }
+```ruby
+its('version') { should eq '1.2.3' }
+```
 
 ## Matchers
 
@@ -83,4 +93,6 @@ This resource has the following special matchers.
 
 The `be_installed` matcher tests if the named package is installed on the system:
 
-    it { should be_installed }
+```ruby
+it { should be_installed }
+```
