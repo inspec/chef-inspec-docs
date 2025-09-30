@@ -18,11 +18,11 @@ For hands-on examples, check out [Extending InSpec: InSpec Wrappers and Custom R
 
 Create custom resources in a profile's libraries directory.
 
-```bash
+```plain
 examples/profile
 ...
-├── libraries
-│   └── example_config.rb
+├──libraries
+│  └── example_config.rb
 ```
 
 ## Resource structure

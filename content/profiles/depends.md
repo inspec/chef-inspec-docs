@@ -19,7 +19,7 @@ For hands-on examples, check out [Extending InSpec: InSpec Wrappers and Custom R
 ## Define dependencies
 
 Before a profile can use controls from another profile, the to-be-included profile
-needs to be specified in the including profile’s `inspec.yml` file in the `depends`
+needs to be specified in the including profile's `inspec.yml` file in the `depends`
 section. For each profile to be included, a location for the profile from where
 to be fetched and a name for the profile should be included. For example:
 

@@ -56,7 +56,7 @@ See the MongoDB documentation on [Ruby driver authentication](https://docs.mongo
 
 #### `auth_source`
 
-The database where the user’s authentication credentials are stored. The default value is the database name that's passed as a parameter to the resource.
+The database where the user's authentication credentials are stored. The default value is the database name that's passed as a parameter to the resource.
 
 #### `ssl`
 

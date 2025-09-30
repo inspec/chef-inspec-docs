@@ -49,7 +49,7 @@ where:
 
 - `('root')` is the user to be tested.
 - `it { should exist }` tests if the user exists.
-- `gid`, `group`, `groups`, `home`, `maxdays`, `mindays`, `shell`, `uid`, `warndays`´, `passwordage`, `maxbadpasswords`, `badpasswordattempts`, and `lastlogin` are valid matchers for this resource.
+- `gid`, `group`, `groups`, `home`, `maxdays`, `mindays`, `shell`, `uid`, `warndays`, `passwordage`, `maxbadpasswords`, `badpasswordattempts`, and `lastlogin` are valid matchers for this resource.
 
 ## Properties
 
