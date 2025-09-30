@@ -44,7 +44,7 @@ where
 
 ## Properties
 
-This resource supports any of the security policy name as properties for e.g. `SeNetworkLogonRigth`, `SeRemoteInteractiveLogonRight` etc.
+This resource supports any of the security policy name as properties for e.g. `SeNetworkLogonRight`, `SeRemoteInteractiveLogonRight` etc.
 
 ```ruby
 its('SeNetworkLogonRight') { should eq '*S-1-5-11' }

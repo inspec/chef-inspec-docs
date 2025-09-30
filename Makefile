@@ -53,7 +53,7 @@ update_theme:
 ## - https://cspell.org/configuration/
 ## - and cspell.yaml file.
 spellcheck:
-	cspell --no-progress **/*.md
+	cspell lint **/**/*.md
 
 ##
 # markdownlint-cli

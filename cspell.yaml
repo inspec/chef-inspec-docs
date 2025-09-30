@@ -26,10 +26,18 @@ ignorePaths:
   - public/**
   - resources/**
   - node_modules/**/*
+patterns:
+  - name: markdown_code_links
+    pattern: \]\([\w|\/|#|\.|_|\-]+\)
 ignoreRegExpList:
+  - href
   - Urls
   - /'s\b/
   - /'d\b/
   - /^\s*```[\s\S]*?^\s*```/gm
   - "{{(.+)(?=}})"
 words: []
+languageSettings:
+  - languageId: markdown
+    ignoreRegExpList:
+      - markdown_code_links

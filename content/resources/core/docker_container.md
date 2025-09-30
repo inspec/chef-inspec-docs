@@ -177,10 +177,10 @@ end
 
 ### Ensures container has mounted volumes
 
-The below test passes if the container `quizzical_williamson` exists as part of the Docker instances, the status is running, and has mounted volume on `/app` in the container from the source path of `/var/lib/docker/volumes/myvol2/_data`
+The below test passes if the container `quizzical_williamson` exists as part of the Docker instances, the status is running, and has mounted volume on `/app` in the container from the source path of `/var/lib/docker/volumes/volume_2/_data`
 
 ```ruby
 describe docker_container('quizzical_williamson') do
-  it { should have_volume('/app', '/var/lib/docker/volumes/myvol2/_data') }
+  it { should have_volume('/app', '/var/lib/docker/volumes/volume_2/_data') }
 end
 ```
