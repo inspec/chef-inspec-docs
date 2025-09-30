@@ -14,7 +14,7 @@ A Chef InSpec reporter formats and delivers the results of a Chef InSpec audit r
 
 ## Configure
 
-Configure the reporter(s) using the `--reporter` option or as part of the general configuration file using the `--config` option.
+Configure the reporters using the `--reporter` option or as part of the general configuration file using the `--config` option.
 
 You can use both the `--reporter` and `--config` options, in which case the options are merged.
 While you can configure multiple reporters to write to different files, only one reporter can output to the screen(stdout).

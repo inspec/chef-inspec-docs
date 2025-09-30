@@ -170,7 +170,7 @@ inspec exec <PROFILE_NAME>
 ## Chef Local License Service
 
 For large or isolated (air-gapped) fleets, Chef InSpec can retrieve a license key from a [Chef Local License Service](https://docs.chef.io/licensing/local_license_service/).
-With Chef Local License Service, InSpec users don't need to know a license key---only the service URL(s).
+With Chef Local License Service, InSpec users don't need to know a license key---only the service URLs.
 
 Chef InSpec sends a request to the Local License Service for a list of license keys and then uses that response to license itself during execution.
 InSpec won't prompt you for a license key.
