@@ -39,10 +39,10 @@ A `group` resource block declares a group and the details to be tested, such as 
     end
 ```
 
-> where
->
-> - `group_name` must specify the group's name to be tested on the system.
-> - `exist` and `gid` are valid matchers for this resource.
+where:
+
+- `group_name` must specify the group's name to be tested on the system.
+- `exist` and `gid` are valid matchers for this resource.
 
 ## Properties
 
@@ -62,15 +62,10 @@ The `members` property returns the members that belong to the group.
     its('members') { should include 'root' }
 ```
 
-> where `members` returns:
->
-> - an array of group members for **Windows Platform**.
->
-> For example, ["member1", "member2"]
->
-> - a CSV formatted string of group members for **Non-Windows Platforms**.
->
-> For example, `"member1,member2"`
+where `members` returns:
+
+- an array of group members for **Windows Platform**. For example, `["member1", "member2"]`
+- a CSV formatted string of group members for **Non-Windows Platforms**. For example, `"member1,member2"`
 
 ### members_array
 

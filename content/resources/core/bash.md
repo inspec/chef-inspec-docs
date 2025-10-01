@@ -10,7 +10,7 @@ platform = "linux"
     parent = "resources/core"
 +++
 
-Use the `bash` Chef InSpec audit resource to test an arbitrary command that is run on the system using a Bash script.
+Use the `bash` Chef InSpec audit resource to test an arbitrary command that's run on the system using a Bash script.
 
 ## Availability
 
@@ -26,12 +26,14 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `command` resource block declares a command to be run, one (or more) expected outputs, and the location to which that output is sent:
 
-    describe bash('command') do
-      it { should exist }
-      its('property') { should eq 'expected value' }
-    end
+```ruby
+describe bash('command') do
+  it { should exist }
+  its('property') { should eq 'expected value' }
+end
+```
 
-where
+where:
 
 - `'command'` must specify a command to be run
 - `'property'` is one of `exit_status`, `stderr`, or `stdout`
@@ -39,11 +41,13 @@ where
 
 For example:
 
-    describe bash('ls -al /') do
-      its('stdout') { should match /bin/ }
-      its('stderr') { should eq '' }
-      its('exit_status') { should eq 0 }
-    end
+```ruby
+describe bash('ls -al /') do
+  its('stdout') { should match /bin/ }
+  its('stderr') { should eq '' }
+  its('exit_status') { should eq 0 }
+end
+```
 
 ## Properties
 
@@ -51,19 +55,25 @@ For example:
 
 The `exit_status` property returns the exit status for the command.
 
-    its('exit_status') { should eq 0 }
+```ruby
+its('exit_status') { should eq 0 }
+```
 
 ### stderr
 
 The `stderr` property returns results of the command as returned in standard error (stderr).
 
-    its('stderr') { should eq '' }
+```ruby
+its('stderr') { should eq '' }
+```
 
 ### stdout
 
 The `stdout` property returns the results of the command as returned in standard output (stdout).
 
-    its('stdout') { should match /bin/ }
+```ruby
+its('stdout') { should match /bin/ }
+```
 
 ## Matchers
 
@@ -75,4 +85,6 @@ This resource has the following special matchers.
 
 If an absolute path is provided, the `exist` matcher tests if the command exists on the filesystem at the specified location. Otherwise, the `exist` matcher tests if the command is found in the PATH.
 
-    it { should exist }
+```ruby
+it { should exist }
+```

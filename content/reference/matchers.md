@@ -20,7 +20,7 @@ Chef InSpec uses **matchers**, a testing framework based on [RSpec](https://rspe
 - [`include`](#include) - looks for an expected value in a list-valued property.
 - [`match`](#match) - looks for patterns in text using regular expressions.
 
-You can use any matcher provided by [RSpec::Expectations](https://relishapp.com/rspec/rspec-expectations/docs); however, these matchers are not [supported by InSpec](/inspec_and_friends/#rspec).
+You can use any matcher provided by [RSpec::Expectations](https://relishapp.com/rspec/rspec-expectations/docs); however, these matchers aren't [supported by InSpec](/inspec_and_friends/#rspec).
 
 ## be
 
@@ -74,7 +74,7 @@ The `cmp` matcher compares values in the following ways:
   end
   ```
 
-- `cmp` comparisons are not case sensitive:
+- `cmp` comparisons aren't case sensitive:
 
   ```ruby
   describe auditd_conf do
@@ -130,7 +130,7 @@ describe sshd_config do
 end
 ```
 
-`eq` fails if types do not match. When comparing configuration entries that take numerical values, do not use quotes as it becomes a string.
+`eq` fails if types don't match. When comparing configuration entries that take numerical values, don't use quotes as it becomes a string.
 
 ```ruby
 its('Port') { should eq '22' }

@@ -26,40 +26,46 @@ This resource first became available in v1.37.6 of InSpec.
 
 An `xml` resource block declares the data to be tested. Assume the following XML file:
 
-    <root>
-      <name>hello</name>
-      <meta>
-        <creator>John Doe</creator>
-      </meta>
-      <array>
-        <element>one</element>
-        <element>two</element>
-      </array>
-      <array>
-        <element value="one"></element>
-        <element value="two"></element>
-      </array>
-    </root>
+```xml
+<root>
+  <name>hello</name>
+  <meta>
+    <creator>John Doe</creator>
+  </meta>
+  <array>
+    <element>one</element>
+    <element>two</element>
+  </array>
+  <array>
+    <element value="one"></element>
+    <element value="two"></element>
+  </array>
+</root>
+```
 
 This file can be queried for elements using:
 
-    describe xml('/path/to/name.xml') do
-      its('root/name') { should eq ['hello'] }
-      its('root/meta/creator') { should eq ['John Doe'] }
-      its('root/array[2]/element') { should eq ['two'] }
-    end
+```ruby
+describe xml('/path/to/name.xml') do
+  its('root/name') { should eq ['hello'] }
+  its('root/meta/creator') { should eq ['John Doe'] }
+  its('root/array[2]/element') { should eq ['two'] }
+end
+```
 
 This file can be queried for attributes using:
 
-    describe xml('/path/to/name.xml') do
-      its('root/array[2]/element/@value') { should eq ['one', 'two'] }
-      its('root/array[2]/element/attribute::value') { should eq ['one', 'two'] }
-      its('root/array[2]/element[2]/attribute::value') { should eq ['two'] }
-      its('count(//*)') { should eq [42] }
-      its('boolean(root/array[2]/element[2]/@valid)') { should eq [false] }
-    end
+```ruby
+describe xml('/path/to/name.xml') do
+  its('root/array[2]/element/@value') { should eq ['one', 'two'] }
+  its('root/array[2]/element/attribute::value') { should eq ['one', 'two'] }
+  its('root/array[2]/element[2]/attribute::value') { should eq ['two'] }
+  its('count(//*)') { should eq [42] }
+  its('boolean(root/array[2]/element[2]/@valid)') { should eq [false] }
+end
+```
 
-where
+where:
 
 - `root/name` and `root/array[2]/element/@value` is an XPath expression
 - `should eq ['foo']` tests a value of `root/name` as read from an XML file versus the value declared in the test
@@ -68,7 +74,9 @@ In the above example, you see the use of `@` and `attribute::` which are both me
 
 In the event the path contains an element which contains periods, the alternate syntax can be used:
 
-    its(['root/name.with.a.period']) { should cmp 'so_many_dots' }
+```ruby
+its(['root/name.with.a.period']) { should cmp 'so_many_dots' }
+```
 
 ## Examples
 
@@ -76,14 +84,16 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test an AppPool's presence in an applicationHost.config file or the default site under applicationHost.sites
 
-    describe xml('applicationHost.config') do
-      # using the alternate syntax as described above because of the . in the key name
-      its(['configuration/system.applicationHost/applicationPools/add@name']) { should contain('my_pool') }
-    end
+```ruby
+describe xml('applicationHost.config') do
+  # using the alternate syntax as described above because of the . in the key name
+  its(['configuration/system.applicationHost/applicationPools/add@name']) { should contain('my_pool') }
+end
 
-    describe xml('applicationHost.sites') do
-      its('site[@name="Default Web Site"]/application/virtualDirectory/@path') { should eq ['/'] }
-    end
+describe xml('applicationHost.sites') do
+  its('site[@name="Default Web Site"]/application/virtualDirectory/@path') { should eq ['/'] }
+end
+```
 
 ## Matchers
 
@@ -95,4 +105,6 @@ This resource has the following special matchers.
 
 The `name` matcher tests the value of `name` as read from a JSON file versus the value declared in the test:
 
-    its('name') { should eq 'foo' }
+```ruby
+its('name') { should eq 'foo' }
+```

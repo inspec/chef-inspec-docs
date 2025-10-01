@@ -75,7 +75,7 @@ inspec exec <PROFILE_NAME> -t azure://
 
 ### Provide credentials using environment variables
 
-You may also set the Azure credentials via environment variables:
+You may also set the Azure credentials using environment variables:
 
 - `AZURE_SUBSCRIPTION_ID`
 - `AZURE_CLIENT_ID`
@@ -93,7 +93,7 @@ AZURE_TENANT_ID="6ad89b58-df2e-11e6-bf01-fe55135034f3" inspec exec my-profile -t
 
 ### Provide credentials using Chef InSpec target option
 
-If you have created a `~/.azure/credentials` file as above, you may also use the Chef InSpec command line `--target` / `-t` option to select a subscription ID.  For example:
+If you have created a `~/.azure/credentials` file as above, you may also use the Chef InSpec command line `--target` / `-t` option to select a subscription ID. For example:
 
 ```bash
 inspec exec my-profile -t azure://2fbdbb02-df2e-11e6-bf01-fe55135034f3

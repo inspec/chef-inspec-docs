@@ -12,7 +12,7 @@ platform = "linux"
 
 {{< warning >}}
 
-This resource is deprecated and should not be used. It was removed in Chef InSpec 4.0. The documentation below is preserved as a reference. Replacement functionality is available in the [`apache_conf`](/resources/core/apache_conf/) resource.
+This resource is deprecated and shouldn't be used. It was removed in Chef InSpec 4.0. The documentation below is preserved as a reference. Replacement functionality is available in the [`apache_conf`](/resources/core/apache_conf/) resource.
 
 {{< /warning >}}
 
@@ -32,14 +32,16 @@ This resource first became available in v1.51.15 of InSpec and was removed in ve
 
 An `apache` Chef InSpec audit resource block declares settings that should be tested:
 
-    describe apache do
-      its('setting_name') { should cmp 'value' }
-    end
+```ruby
+describe apache do
+  its('setting_name') { should cmp 'value' }
+end
+```
 
-where
+where:
 
 - `'setting_name'` is description of the Apache configuration file
-- `{ should cmp 'value' }` is the value that is expected
+- `{ should cmp 'value' }` is the value that's expected
 
 ## Properties
 
@@ -51,27 +53,35 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test the service name
 
-    describe apache do
-      its ('service') { should cmp 'apache2' }
-    end
+```ruby
+describe apache do
+  its ('service') { should cmp 'apache2' }
+end
+```
 
 ### Test the configuration location
 
-    describe apache do
-      its ('conf_dir') { should cmp '/etc/apache2' }
-    end
+```ruby
+describe apache do
+  its ('conf_dir') { should cmp '/etc/apache2' }
+end
+```
 
 ### Test the path of the configuration file
 
-    describe apache do
-      its ('conf_path') { should cmp '/etc/apache2/apache2.conf' }
-    end
+```ruby
+describe apache do
+  its ('conf_path') { should cmp '/etc/apache2/apache2.conf' }
+end
+```
 
 ### Test the apache user
 
-    describe apache do
-      its ('user') { should cmp 'www-data' }
-    end
+```ruby
+describe apache do
+  its ('user') { should cmp 'www-data' }
+end
+```
 
 ## Matchers
 

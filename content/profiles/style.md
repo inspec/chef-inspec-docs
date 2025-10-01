@@ -19,7 +19,7 @@ This is a set of recommended Chef InSpec rules you should use when writing contr
 Users familiar with the RSpec testing framework may know that there are two ways
 to write test statements: `should` and `expect`. The RSpec community decided that
 `expect` is the preferred syntax. However, Chef InSpec recommends the `should`
-syntax as it tends to read more easily to those users who are not as technical.
+syntax as it tends to read more easily to those users who aren't as technical.
 
 Chef InSpec will continue to support both methods of writing tests. Consider
 this `file` test:
@@ -100,8 +100,8 @@ Use:
 
 ### Avoid unnecessary parentheses in matchers
 
-Adding additional parentheses is not required and provides more readability if
-it is not used:
+Adding additional parentheses isn't required and provides more readability if
+it isn't used:
 
 Avoid:
 
@@ -118,10 +118,10 @@ The exception are matchers that require additional arguments or named arguments.
 ### Avoid wrapping controls in conditional statements
 
 This will create dynamic profiles whose controls depend on the execution. The
-problem here is that we cannot render the profile or provide its information
+problem here is that we can't render the profile or provide its information
 before scanning a system. We want to be able to inform users of the contents of
-their profiles before they run them. It is valid to skip controls that are not
-necessary for a system, as long as you do it via `only_if` conditions. Ruby's
+their profiles before they run them. It's valid to skip controls that aren't
+necessary for a system, as long as you do it with `only_if` conditions. Ruby's
 internal conditionals will hide parts of the profile to static analysis and
 should thus be avoided.
 
@@ -263,7 +263,7 @@ In addition to avoiding system-level gems and modules you should also limit the
 use of external dependencies to resource packs or plugins. Gems need to be
 resolved, installed, vendored, and protected from conflicts. We aim to avoid
 exposing this complexity to users of InSpec, to make it a great tool even if you
-are not a developer.
+aren't a developer.
 
 Plugins should declare gem dependencies in their gemspec, and then rely on the
 plugin installation facility to install and manage dependencies.
@@ -295,7 +295,7 @@ Inspec::Log.info('Hi')
 #### 9. Favor `cmp` over `eq`
 
 The `cmp` matcher handles type conversions, case insensitive comparisons,
-converting strings to versions (e.g. '7.35.0-1ubuntu2.10'), and many other
+converting strings to versions (for example, '7.35.0-1ubuntu2.10'), and many other
 troublesome things. Unless you want an exact match (if so use the `eq` matcher)
 then the `cmp` matcher should be used.
 

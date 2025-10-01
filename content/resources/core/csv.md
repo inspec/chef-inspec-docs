@@ -26,17 +26,21 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `csv` resource block declares the configuration data to be tested:
 
-    describe csv('file', true) do
-      its('name') { should cmp 'foo' }
-    end
+```ruby
+describe csv('file', true) do
+  its('name') { should cmp 'foo' }
+end
+```
 
 Test `csv` file without headers
 
-    describe csv('file', false).params do
-      its([0]) { should cmp 'name' }
-    end
+```ruby
+describe csv('file', false).params do
+  its([0]) { should cmp 'name' }
+end
+```
 
-where
+where:
 
 - `'file'` is the path to a CSV file
 - `true` or `false` tests a CSV file with or without headers. Default value: `true`.
@@ -51,15 +55,19 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test a CSV file without headers
 
-    describe csv('some_file.csv', false).params do
-      its([0]) { should eq ["name"] }
-    end
+```ruby
+describe csv('some_file.csv', false).params do
+  its([0]) { should eq ["name"] }
+end
+```
 
 ### Test a CSV file
 
-    describe csv('some_file.csv') do
-      its('setting') { should eq 1 }
-    end
+```ruby
+describe csv('some_file.csv') do
+  its('setting') { should eq 1 }
+end
+```
 
 ## Property Examples
 
@@ -67,7 +75,9 @@ The following examples show how to use this Chef InSpec audit resource.
 
 The `name` property tests the value of `name` as read from a CSV file compared to the value declared in the test.
 
-    its('name') { should cmp 'foo' }
+```ruby
+its('name') { should cmp 'foo' }
+```
 
 ## Matchers
 

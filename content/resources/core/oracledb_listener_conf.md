@@ -25,9 +25,11 @@ Use the `oracledb_listener_conf` Chef InSpec audit resource to test the listener
 
 A `oracledb_listener_conf` resource block fetches listeners settings in the `listener.ora` file, and then compares them with the value stated in the test:
 
-    describe oracledb_listener_conf do
-      its('config item') { should eq 'value' }
-    end
+```ruby
+describe oracledb_listener_conf do
+  its('config item') { should eq 'value' }
+end
+```
 
 ## Examples
 
@@ -35,10 +37,12 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test parameters set within the listener file
 
-    describe oracledb_listener_conf do
-      its('DEFAULT_SERVICE_LISTENER') { should eq 'XE' }
-      its('EM_EXPRESS_PORT') { should eq '5500' }
-    end
+```ruby
+describe oracledb_listener_conf do
+  its('DEFAULT_SERVICE_LISTENER') { should eq 'XE' }
+  its('EM_EXPRESS_PORT') { should eq '5500' }
+end
+```
 
 ## Matchers
 

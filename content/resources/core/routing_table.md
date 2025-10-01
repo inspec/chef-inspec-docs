@@ -28,10 +28,10 @@ A `routing_table` Chef InSpec audit resource tests if an entry of destination, g
     end
 ```
 
-> where
->
-> - `destination`, `interface`, and `gateway` are parameters of the routing table.
-> - `have_entry` is a matcher of this resource.
+where:
+
+- `destination`, `interface`, and `gateway` are parameters of the routing table.
+- `have_entry` is a matcher of this resource.
 
 ## Matchers
 

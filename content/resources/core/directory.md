@@ -26,9 +26,11 @@ This resource first became available in v1.0.0 of InSpec.
 
 A `directory` resource block declares the location of the directory to be tested, and then one (or more) matchers.
 
-    describe directory('path') do
-      its('property') { should cmp 'value' }
-    end
+```ruby
+describe directory('path') do
+  its('property') { should cmp 'value' }
+end
+```
 
 ## Properties
 

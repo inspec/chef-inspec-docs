@@ -37,7 +37,7 @@ where:
 
 - `'setting_name'` is a synchronization setting defined in the `chrony.conf` file.
 - `('path')` is the non-default path to the `chrony.conf` file (default path is `/etc/chrony.conf`).
-- `{ should eq 'value' }` is the value that is expected.
+- `{ should eq 'value' }` is the value that's expected.
 
 ## Examples
 

@@ -30,12 +30,14 @@ This resource first became available in v1.0.0 of Chef InSpec.
 
 An `interface` resource block declares network interface properties to be tested:
 
-    describe interface('eth0') do
-      it { should be_up }
-      its('speed') { should eq 1000 }
-      its('name') { should eq eth0 }
-      its('ipv4_addresses') { should include '10.0.0.5' }
-    end
+```ruby
+describe interface('eth0') do
+  it { should be_up }
+  its('speed') { should eq 1000 }
+  its('name') { should eq eth0 }
+  its('ipv4_addresses') { should include '10.0.0.5' }
+end
+```
 
 ## Properties
 
@@ -43,55 +45,73 @@ An `interface` resource block declares network interface properties to be tested
 
 Returns the first `ipv4_addresses` entry as a String. Note: this property is incompatible with ServerSpec, which returns the value including the CIDR range, such as '10.0.0.5/32'.
 
-    its('ipv4_address') { should eq '10.0.0.5' }
+```ruby
+its('ipv4_address') { should eq '10.0.0.5' }
+```
 
 ### ipv4_addresses
 
 The `ipv4_addresses` property returns an Array of IPv4 addresses as Strings. You may then test if the specified address exists on the named network interface:
 
-    its('ipv4_addresses') { should include '127.0.0.1' }
+```ruby
+its('ipv4_addresses') { should include '127.0.0.1' }
+```
 
 ### ipv4_addresses_netmask
 
 The `ipv4_addresses_netmask` property returns an Array of Strings with each containing the IPv4 address, a slash, and the netmask. You may then test if the specified address and netmask exists on the named network interface:
 
-    its('ipv4_addresses_netmask') { should include '127.0.0.1/255.0.0.0' }
+```ruby
+its('ipv4_addresses_netmask') { should include '127.0.0.1/255.0.0.0' }
+```
 
 ### ipv6_address
 
 Returns the first `ipv6_address` entry. Note: this property is incompatible with ServerSpec, which returns the value including the CIDR range.
 
-    its('ipv6_address') { should eq '2089:98b::faeb' }
+```ruby
+its('ipv6_address') { should eq '2089:98b::faeb' }
+```
 
 ### ipv6_addresses
 
 The `ipv6_addresses` property returns an Array of Strings and tests if the specified address exists on the named network interface:
 
-    its('ipv6_addresses') { should include '::1' }
+```ruby
+its('ipv6_addresses') { should include '::1' }
+```
 
 ### ipv4_cidrs
 
 The `ipv4_cidrs` property returns an Array of Strings and tests if the specified address and netmask combination exists on the named network interface:
 
-    its('ipv4_cidrs') { should include '127.0.0.1/8' }
+```ruby
+its('ipv4_cidrs') { should include '127.0.0.1/8' }
+```
 
 ### ipv6_cidrs
 
 The `ipv6_cidrs` property returns an Array of Strings and tests if the specified address and netmask combination exists on the named network interface:
 
-    its('ipv6_cidrs') { should include '::1/128' }
+```ruby
+its('ipv6_cidrs') { should include '::1/128' }
+```
 
 ### name
 
 The `name` property returns the name of the interface:
 
-    its('name') { should eq 'eth0' }
+```ruby
+its('name') { should eq 'eth0' }
+```
 
 ### speed
 
 The `speed` property tests the speed of the network interface, in MB/sec. Note: On BSD and MacOS platforms, this value may be nil, because it difficult to obtain reliably.
 
-    its('speed') { should eq 1000 }
+```ruby
+its('speed') { should eq 1000 }
+```
 
 ## Matchers
 
@@ -103,22 +123,30 @@ This resource has the following special matchers.
 
 The `be_up` matcher tests if the network interface is available:
 
-    it { should be_up }
+```ruby
+it { should be_up }
+```
 
 ### exist
 
 The `exist` matcher tests if the network interface exists:
 
-    it { should exist }
+```ruby
+it { should exist }
+```
 
 ### have_an_ipv4_address
 
 The `have_an_ipv4_address` matcher tests if the network interface has any IPv4 addresses assigned:
 
-    it { should have_an_ipv4_address }
+```ruby
+it { should have_an_ipv4_address }
+```
 
 ### have_an_ipv6_address
 
 The `have_an_ipv6_address` matcher tests if the network interface has any IPv6 addresses assigned:
 
-    it { should have_an_ipv6_address }
+```ruby
+it { should have_an_ipv6_address }
+```

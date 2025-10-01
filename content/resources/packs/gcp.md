@@ -53,10 +53,10 @@ While InSpec can use user accounts for authentication, [Google Cloud documentati
 
 ### Provide credentials using environment variables
 
-You may also set the GCP credentials json file via the `GOOGLE_APPLICATION_CREDENTIALS` environment variable.
+You may also set the GCP credentials json file using the `GOOGLE_APPLICATION_CREDENTIALS` environment variable.
 
 ```bash
-export GOOGLE_APPLICATION_CREDENTIALS='/Users/me/.config/gcloud/myproject-1-feb7993e8660.json'
+export GOOGLE_APPLICATION_CREDENTIALS='/Users/me/.config/gcloud/project-name-1-feb7993e8660.json'
 ```
 
 Once you have your environment variables set, you can verify your credentials by running:

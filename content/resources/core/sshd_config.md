@@ -26,11 +26,13 @@ This resource first became available in v1.0.0 of InSpec.
 
 An `sshd_config` resource block declares the OpenSSH daemon configuration data to be tested:
 
-    describe sshd_config('path') do
-      its('name') { should include('foo') }
-    end
+```ruby
+describe sshd_config('path') do
+  its('name') { should include('foo') }
+end
+```
 
-where
+where:
 
 - `name` is a configuration setting in `sshd_config`
 - `('path')` is the non-default `/path/to/sshd_config`
@@ -42,42 +44,52 @@ The following examples show how to use this Chef InSpec audit resource.
 
 ### Test which variables may be sent to the server
 
-    describe sshd_config do
-      its('AcceptEnv') { should include('CI_ENABLE_COVERAGE') }
-    end
+```ruby
+describe sshd_config do
+  its('AcceptEnv') { should include('CI_ENABLE_COVERAGE') }
+end
+```
 
 ### Test for IPv6-only addresses
 
-    describe sshd_config do
-      its('AddressFamily') { should cmp 'inet6' }
-    end
+```ruby
+describe sshd_config do
+  its('AddressFamily') { should cmp 'inet6' }
+end
+```
 
 ### Test the Protocol setting
 
-    describe sshd_config do
-      its('Protocol') { should cmp 2 }
-    end
+```ruby
+describe sshd_config do
+  its('Protocol') { should cmp 2 }
+end
+```
 
 ### Test for approved, strong ciphers
 
-    describe sshd_config do
-      its('Ciphers') { should cmp('chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr') }
-    end
+```ruby
+describe sshd_config do
+  its('Ciphers') { should cmp('chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr') }
+end
+```
 
 ### Test SSH protocols
 
-    describe sshd_config do
-      its('Port') { should cmp  22 }
-      its('UsePAM') { should eq 'yes' }
-      its('ListenAddress') { should eq nil }
-      its('HostKey') do
-        should eq [
-          '/etc/ssh/ssh_host_rsa_key',
-          '/etc/ssh/ssh_host_dsa_key',
-          '/etc/ssh/ssh_host_ecdsa_key',
-        ]
-      end
-    end
+```ruby
+describe sshd_config do
+  its('Port') { should cmp  22 }
+  its('UsePAM') { should eq 'yes' }
+  its('ListenAddress') { should eq nil }
+  its('HostKey') do
+    should eq [
+      '/etc/ssh/ssh_host_rsa_key',
+      '/etc/ssh/ssh_host_dsa_key',
+      '/etc/ssh/ssh_host_ecdsa_key',
+    ]
+  end
+end
+```
 
 ## Matchers
 
@@ -89,8 +101,12 @@ This resource has the following special matchers.
 
 The `name` matcher tests the value of `name` as read from `sshd_config` versus the value declared in the test:
 
-    its('name') { should cmp 'foo' }
+```ruby
+its('name') { should cmp 'foo' }
+```
 
 or:
 
-    its('name') {should include('bar') }
+```ruby
+its('name') {should include('bar') }
+```

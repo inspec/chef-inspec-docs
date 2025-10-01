@@ -53,7 +53,7 @@ update_theme:
 ## - https://cspell.org/configuration/
 ## - and cspell.yaml file.
 spellcheck:
-	cspell --no-progress "**/*.{md, html, js, yml, yaml, toml, json}"
+	cspell lint **/**/*.md
 
 ##
 # markdownlint-cli
@@ -72,7 +72,7 @@ vale:
 	vale --glob='!{node_modules/**/*,archetypes/**/*,**/README.md,tools/**/*}' *
 
 vale_error:
-	vale --filter=error.expr --glob='!{node_modules/**/*,archetypes/**/*,**/README.md,tools/**/*}' *
+	vale --no-wrap --filter=error.expr --glob='!{node_modules/**/*,archetypes/**/*,**/README.md,tools/**/*}' *
 
 ##
 # Hugo Audit

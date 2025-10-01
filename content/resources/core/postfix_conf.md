@@ -24,22 +24,26 @@ Use the `postfix_conf` Chef InSpec audit resource to test the main configuration
 
 A `postfix_conf` resource block declares the configuration settings to be tested:
 
-    describe postfix_conf do
-      its('setting_name') { should cmp 'value' }
-    end
+```ruby
+describe postfix_conf do
+  its('setting_name') { should cmp 'value' }
+end
+```
 
-where
+where:
 
 - `'setting_name'` is a setting key defined in main.cf
 - `{ should cmp 'value' }` is the value to be expected
 
 When using `postfix_conf` with a custom configuration directory, the following syntax can be used:
 
-    describe postfix_conf('path') do
-      ...
-    end
+```ruby
+describe postfix_conf('path') do
+  ...
+end
+```
 
-where
+where:
 
 - `'path'` is the path to your Postfix configuration (ex. '/etc/path/to/postfix/main.cf')
 
@@ -55,18 +59,22 @@ The following examples show how to use this Chef InSpec audit resource.
 
 For example, the following Postfix configuration:
 
-    /etc/postfix/main.cf:
-    	myorigin = $myhostname
-    	myhostname = host.local.domain
-    	mynetworks = 127.0.0.0/8
+```plain
+/etc/postfix/main.cf:
+	myorigin = $myhostname
+	myhostname = host.local.domain
+	mynetworks = 127.0.0.0/8
+```
 
 can be tested like this:
 
-    describe postfix_conf do
-      its('myorigin') { should cmp '$myhostname' }
-      its('myhostname') { should cmp 'host.local.domain' }
-      its('mynetworks') { should cmp '127.0.0.0/8' }
-    end
+```ruby
+describe postfix_conf do
+  its('myorigin') { should cmp '$myhostname' }
+  its('myhostname') { should cmp 'host.local.domain' }
+  its('mynetworks') { should cmp '127.0.0.0/8' }
+end
+```
 
 ## Matchers
 
