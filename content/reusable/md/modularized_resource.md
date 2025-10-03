@@ -1,0 +1,1 @@
+This resource is no released as a part of InSpec core and is now released separately in an InSpec resource pack. For more information, see the [InSpec resource pack documentation](https://docs.chef.io/inspec/resource_packs/).
