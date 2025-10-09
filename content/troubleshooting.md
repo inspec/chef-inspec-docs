@@ -8,17 +8,22 @@ draft = false
     identifier = "Troubleshooting"
 +++
 
+<!-- vale Microsoft.HeadingColons = NO -->
+<!-- vale Microsoft.Headings = NO -->
+
 ## Unable to resolve dependency: user requested inspec-<RESOURCE_NAME>-resources
 
-Starting in Chef InSpec 7, Chef InSpec profiles can include dependencies on gem-based resource packs. If this error occurs, it can be resolved through the following steps:
+<!-- vale Microsoft.HeadingColons = YES -->
 
-1. Verification that you have the correct gem name and version in the `inspec.yml` file.
+Starting in Chef InSpec 7, Chef InSpec profiles can include dependencies on gem-based resource packs. If this error occurs, you can resolve it through the following steps:
 
-1. Confirm the gem's presence on [RubyGems](https://rubygems.org/), or if you're using Chef's private RubyGem server, contact the Customer Success Manager or Support Team to verify that it's available.
+1. Verify that you have the correct gem name and version in the `inspec.yml` file.
+
+1. Confirm the gem's presence on [RubyGems](https://rubygems.org/).
 
 1. Test your internet connection to ensure access to the gem sources.
 
-1. If you're using Chef's RubyGem server, verify your credentials and access permissions.
+1. If you're fetching gems from Chef's private gem server, verify your credentials and access permissions, and contact the Customer Success Manager or Support Team to verify that it's available.
 
 ## Exit code 5
 
