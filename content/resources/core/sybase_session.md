@@ -4,4 +4,4 @@ draft = false
 
 +++
 
-{{< readfile file="content/reusable/md/modularized_resource.md" >}}
+This resource is no longer released as part of InSpec core.
