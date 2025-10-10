@@ -24,8 +24,8 @@ You can [request a trial license](https://www.chef.io/licensing/inspec/license-g
 
 You must accept the [Chef End User License Agreement (EULA)](https://www.chef.io/end-user-license-agreement) before you run Chef InSpec. You can accept the EULA in two ways:
 
-- Use a command line option
-- Set an environment variable
+- [Use a command line option](#use-a-command-line-option)
+- [Set an environment variable](#set-an-environment-variable)
 
 If you don't set either, Chef InSpec prompts you to accept the EULA interactively. If the prompt can't be displayed, Chef InSpec exits with code 172.
 
@@ -74,9 +74,9 @@ Replace `<value>` with one of these options:
 
 You can add a license key to Chef InSpec in three ways:
 
-- [interactive license dialog](#interactive-license-dialog)
-- [command line option](#command-line-option-1)
-- [environment variable](#environment-variable-1)
+- [Use the interactive license dialog](#use-the-interactive-license-dialog)
+- [command line option](#use-a-command-line-option-1)
+- [environment variable](#set-an-environment-variable-1)
 
 {{< note >}}
 If you're a commercial customer, you can use an asset serial number from the [Progress support portal](https://community.progress.com/s/products/chef) as your license key.
@@ -123,8 +123,8 @@ Chef InSpec requests license keys from the Local License Service and uses them d
 
 You can set a Local License Service URL in two ways:
 
-- [command line option](#command-line-option-2)
-- [environment variable](#environment-variable-2)
+- [Use a command line option](#use-a-command-line-option-2)
+- [Set an environment variable](#set-an-environment-variable-2)
 
 ### Use a command line option
 
