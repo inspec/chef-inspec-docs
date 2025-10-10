@@ -18,7 +18,7 @@ Chef InSpec accepts a license key in two ways:
 
 For more details, see [Chef's licensing documentation](https://docs.chef.io/licensing/).
 
-You can [request a trial license](https://www.chef.io/licensing/inspec/license-generation-free-trial) to try Chef InSpec.
+If you'd like to try out Chef InSpec, you can [request a trial license](https://www.chef.io/licensing/inspec/license-generation-free-trial).
 
 ## Accept the Chef EULA
 
