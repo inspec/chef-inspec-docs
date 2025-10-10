@@ -14,7 +14,7 @@ To run Chef InSpec 6, you need to accept the Chef EULA and add a license key.
 Chef InSpec accepts a license key in two ways:
 
 - Set a license key with an [environment variable or the InSpec CLI](#license-key)
-- Retrieve a license key from a [Chef Local License Service URL](#chef-local-license-service)
+- Retrieve a license key from a [Chef Local License Service URL](#use-chef-local-license-service)
 
 For more details, see [Chef's licensing documentation](https://docs.chef.io/licensing/).
 
