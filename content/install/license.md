@@ -9,16 +9,16 @@ draft = false
     weight = 30
 +++
 
-To run Chef InSpec 6, you need to accept the Chef EULA and add a license key.
+To use Chef InSpec 7, you need to [accept the Chef EULA](#accept-the-chef-eula). Depending on the InSpec distribution you install, you may also need a [license](#license-key):
 
-Chef InSpec accepts a license key in two ways:
+- Official distributions, such as the Chef Habitat package for InSpec 7, don't require a license.
+- If you install InSpec through an undistributed package, such as the inspec gem, you must add a license.
 
-- Set a license key with an [environment variable or the InSpec CLI](#license-key)
-- Retrieve a license key from a [Chef Local License Service URL](#use-chef-local-license-service)
-
-For more details, see [Chef's licensing documentation](https://docs.chef.io/licensing/).
+You can't manually enable or disable licensing. The licensing requirements are determined by the distribution.
 
 If you'd like to try out Chef InSpec, you can [request a trial license](https://www.chef.io/licensing/inspec/license-generation-free-trial).
+
+For more information, see [Chef's licensing documentation](https://docs.chef.io/licensing/).
 
 ## Accept the Chef EULA
 
@@ -72,7 +72,7 @@ Replace `<value>` with one of these options:
 
 ## License key
 
-You can add a license key to Chef InSpec in three ways:
+Chef InSpec accepts a license key in three ways:
 
 - [Use the interactive license dialog](#use-the-interactive-license-dialog)
 - [command line option](#use-a-command-line-option-1)
