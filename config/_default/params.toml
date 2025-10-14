@@ -100,17 +100,17 @@ errorLevel = 'warning'
 #######
 
 [versions.this_version]
-swiftype_search_products = [ "inspec-6" ]
+swiftype_search_products = [ "inspec-7.0" ]
 #release_date = ""
 
 [versions.version_selector]
 enabled = true
-this_version_text = "Chef InSpec 6"
+this_version_text = "Chef InSpec 7.0"
 
 [[versions.version_selector.versions]]
-link_text = "Chef InSpec v 2.0"
-base_url = "https://docs.chef.io/inspec/2.0"
+link_text = "Chef InSpec v 7.0"
+base_url = "https://docs.chef.io/inspec/7.0"
 
 [[versions.version_selector.versions]]
-link_text = "Chef InSpec v 1.6"
-base_url = "https://docs.chef.io/inspec/1.6"
+link_text = "Chef InSpec v 6.8"
+base_url = "https://docs.chef.io/inspec/6.8"
