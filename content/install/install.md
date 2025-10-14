@@ -9,85 +9,86 @@ draft = false
     weight = 20
 +++
 
-Use [Chef Downloads](https://www.chef.io/downloads), an installer, script, or package manager to install Chef InSpec.
+This page documents how to install Chef InSpec from a Chef Habitat package.
 
-To see which platforms and platform versions Chef InSpec is supported on, see the [InSpec's platforms documentation](/install/platforms/).
+## Prerequisites
 
-## macOS
+- [A Progress Chef license to access Chef Habitat Builder](https://docs.chef.io/licensing/license_key/)
+- [Chef Habitat installed on your workstation](https://docs.chef.io/habitat/install_habitat/)
+- [Chef Habitat set up on your workstation](https://docs.chef.io/habitat/hab_setup/)
+- [A Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/)
 
-### CLI
+## Install Chef InSpec
 
-You can install Chef InSpec using a curl script.
+Install the Chef InSpec Habitat package:
 
-```bash
-curl -L https://chefdownload-commercial.chef.io/install.sh?license_id=<LICENSE_ID> | sudo bash -s -- -P inspec
+```sh
+sudo hab pkg install chef/inspec --channel base-2025 --binlink
 ```
 
-Replace `<LICENSE_ID>` with your license ID.
+The following CLI flags are optional:
 
-For more information about the install script, see the [Chef Install Script documentation](https://docs.chef.io/chef_install_script/).
+- `--auth <HAB_BUILDER_TOKEN>`: Specifies a Habitat Builder personal access token if one isn't set as an environment variable.
+- `--binlink` or `-b`: Links the installed package binary to `/bin` for system-wide access.
+- `--force`. Overwrites existing binlinks.
 
-## Windows
+For more information, see the [Habitat CLI documentation](https://docs.chef.io/habitat/habitat_cli/#hab-pkg-install).
 
-### Installer
+## Verify installation
 
-Download a Windows Chef InSpec package from [Chef Downloads](https://www.chef.io/downloads),
-then double-click on the `.msi` file to launch the installer and follow the prompts.
+Use the following commands to verify that Chef InSpec is installed:
 
-### Powershell
+- Get the `inspec` package from the list of installed Habitat packages:
 
-You can install Chef InSpec using the following Powershell script.
+  ```sh
+  hab pkg list | grep inspec
+  ```
 
-```powershell
-. { iwr -useb https://chefdownload-commercial.chef.io/install.ps1?license_id=<LICENSE_ID> } | iex; install -project inspec
+- Check the installed InSpec version using the Habitat CLI:
+
+  ```sh
+  hab pkg exec chef/inspec inspec version
+  ```
+
+- If you binlinked the InSpec package during installation, check the installed InSpec version:
+
+  ```sh
+  inspec version
+  ```
+
+## Manage the Chef InSpec package
+
+### Upgrade Chef InSpec
+
+To upgrade to a newer version in the same channel, re-run the install command with `--force`:
+
+```sh
+sudo hab pkg install chef/inspec --channel base-2025 --binlink --force
 ```
 
-Replace `<LICENSE_ID>` with your license ID.
+### Uninstall the InSpec package
 
-For more information about the install script, see the [Chef Install Script documentation](https://docs.chef.io/chef_install_script/).
-
-Once you have installed Chef InSpec, run `inspec version` to verify that the installation
-was successful.
-
-## Linux
-
-### CLI
-
-The following curl script will install Chef InSpec for Ubuntu and Red Hat Enterprise Linux:
-
-```bash
-curl https://chefdownload-commercial.chef.io/install.sh?license_id=<LICENSE_ID> | sudo bash -s -- -P inspec
+```sh
+sudo hab pkg uninstall chef/inspec
 ```
 
-Replace `<LICENSE_ID>` with your license ID.
+## Troubleshooting
 
-For more information about the install script, see the [Chef Install Script documentation](https://docs.chef.io/chef_install_script/).
+### Authentication errors
 
-If you prefer, you can use a package manager to install Chef InSpec.
-Once you downloaded the latest [Chef InSpec package](https://www.chef.io/downloads)
-relevant to your Linux-based platform, use the command for the respective package
-manager listed below. Replace the example file path with the file path leading to
-your downloaded package.
+While installing Chef InSpec, if you see an error like this:
 
-For Ubuntu, use the following command to install Chef InSpec:
-
-```bash
-sudo dpkg -i /path/to/inspec.deb
+```sh
+✗✗✗ When applicable, we try once, then re-attempt 5 times to
+✗✗✗ download a package. Unfortunately, we failed to download
+✗✗✗ chef/inspec/7.*.**/2025****** for x86_64-linux.
+✗✗✗ Last error: [401 Unauthorized] Please check that you have specified a valid Personal Access Token.
 ```
 
-For Red Hat Enterprise Linux, use the following command to install Chef InSpec:
+This indicates that Habitat CLI can't authenticate with Builder due to a missing or invalid personal access token.
 
-```bash
-sudo rpm -U /path-to/inspec.rpm
+To resolve this issue, use the `--auth <TOKEN>` flag to pass the authentication token explicitly. For example:
+
+```sh
+sudo hab pkg install chef/inspec --channel base-2025 --binlink --auth $HAB_AUTH_TOKEN
 ```
-
-For SUSE Linux Enterprise Server, use the following command to install Chef InSpec:
-
-```bash
-sudo zypper install /path-to/inspec.rpm
-```
-
-## Next steps
-
-After installing Chef InSpec, you must accept the Chef EULA and---starting with **Chef InSpec 6**---add a license key.
-See the [Chef InSpec license documentation](license) to complete these tasks.
