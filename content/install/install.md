@@ -9,6 +9,8 @@ draft = false
     weight = 20
 +++
 
+<!-- cSpell:ignore binlink, binlinks, binlinked -->
+
 This page documents how to install Chef InSpec from a Chef Habitat package.
 
 ## Prerequisites
