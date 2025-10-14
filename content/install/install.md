@@ -85,10 +85,11 @@ While installing Chef InSpec, if you see an error like this:
 ✗✗✗ Last error: [401 Unauthorized] Please check that you have specified a valid Personal Access Token.
 ```
 
-This indicates that Habitat CLI can't authenticate with Builder due to a missing or invalid personal access token.
+This indicates that Habitat CLI can't authenticate with Chef Habitat Builder due to a missing or invalid personal access token.
 
-To resolve this issue, use the `--auth <TOKEN>` flag to pass the authentication token explicitly. For example:
+- [Verify your token or create a new personal access token](https://docs.chef.io/habitat/builder_profile/#create-a-personal-access-token) in Chef Habitat Builder.
+- Use the `--auth <TOKEN>` flag to pass the authentication token explicitly. For example:
 
-```sh
-sudo hab pkg install chef/inspec --channel base-2025 --binlink --auth $HAB_AUTH_TOKEN
-```
+  ```sh
+  sudo hab pkg install chef/inspec --channel base-2025 --binlink --auth <HAB_AUTH_TOKEN>
+  ```
