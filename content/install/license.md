@@ -9,10 +9,11 @@ draft = false
     weight = 30
 +++
 
-To use Chef InSpec 7, you need to [accept the Chef EULA](#accept-the-chef-eula). Depending on the InSpec distribution you install, you may also need a [license](#license-key):
+To use Chef InSpec 7, you need to [accept the Chef EULA](#accept-the-chef-eula).
+Depending on the InSpec distribution you install, you need a [license](#add-a-license) to execute InSpec:
 
-- Official distributions, such as the Chef Habitat package for InSpec 7, don't require a license.
-- If you install InSpec through an undistributed package, such as the inspec gem, you must add a license.
+- Official distributions, such as the Chef Habitat package for InSpec 7, don't require a license to execute InSpec.
+- Undistributed packages, such as the `inspec` gem, require a license to execute InSpec.
 
 You can't manually enable or disable licensing. The licensing requirements are determined by the distribution.
 
@@ -70,16 +71,19 @@ Replace `<value>` with one of these options:
 `accept-no-persist`
 : Similar to `accept-silent`, but doesn't persist a marker file. You'll need to accept the license again for future runs.
 
-## License key
+## Add a license
 
-Chef InSpec accepts a license key in three ways:
+Undistributed packages of Chef InSpec, such as the `inspec` gem, require a license to execute.
+You can add a license key in three ways:
 
 - [Use the interactive license dialog](#use-the-interactive-license-dialog)
 - [command line option](#use-a-command-line-option-1)
 - [environment variable](#set-an-environment-variable-1)
 
 {{< note >}}
+
 If you're a commercial customer, you can use an asset serial number from the [Progress support portal](https://community.progress.com/s/products/chef) as your license key.
+
 {{< /note >}}
 
 ### Use the interactive license dialog
@@ -115,10 +119,9 @@ export CHEF_LICENSE_KEY=<LICENSE_KEY>
 inspec exec <PROFILE_NAME>
 ```
 
-## Use Chef Local License Service
+## Add a license with Chef's Local License Service
 
 For large or air-gapped fleets, you can retrieve a license key from a [Chef Local License Service](https://docs.chef.io/licensing/local_license_service/). With this service, you only need the service URLs.
-
 Chef InSpec requests license keys from the Local License Service and uses them during execution. Chef InSpec doesn't store these keys long-term.
 
 You can set a Local License Service URL in two ways:
