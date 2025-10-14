@@ -13,6 +13,13 @@ draft = false
 
 This page documents how to install Chef InSpec from a Chef Habitat package.
 
+## Supported platforms
+
+Chef InSpec is supported on the following platforms:
+
+- Windows x86-64
+- Linux x86-64
+
 ## Prerequisites
 
 - [A Progress Chef license to access Chef Habitat Builder](https://docs.chef.io/licensing/license_key/)
