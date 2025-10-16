@@ -12,8 +12,8 @@ draft = false
 To use Chef InSpec 7, you need to [accept the Chef EULA](#accept-the-chef-eula).
 Depending on the InSpec distribution you install, you need a [license](#add-a-license) to execute InSpec:
 
-- Official distributions, such as the Chef Habitat package for InSpec 7, don't require a license to execute InSpec.
-- Undistributed packages, such as the `inspec` gem, require a license to execute InSpec.
+- The Chef Habitat package for InSpec 7 doesn't require a license to execute InSpec.
+- The `inspec` gem requires a license to execute InSpec.
 
 You can't manually enable or disable licensing. The licensing requirements are determined by the distribution.
 
@@ -73,7 +73,7 @@ Replace `<value>` with one of these options:
 
 ## Add a license
 
-Undistributed packages of Chef InSpec, such as the `inspec` gem, require a license to execute.
+The `inspec` gem requires a license to execute.
 You can add a license key in three ways:
 
 - [Use the interactive license dialog](#use-the-interactive-license-dialog)
