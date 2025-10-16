@@ -22,9 +22,7 @@ Chef InSpec is supported on the following platforms:
 
 ## Prerequisites
 
-- [A Progress Chef license to access Chef Habitat Builder](https://docs.chef.io/licensing/license_key/)
 - [Chef Habitat installed on your workstation](https://docs.chef.io/habitat/install_habitat/)
-- [Chef Habitat set up on your workstation](https://docs.chef.io/habitat/hab_setup/)
 - [A Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/)
 
 ## Install Chef InSpec
