@@ -30,32 +30,14 @@ Chef InSpec is supported on the following platforms:
 Install the Chef InSpec Habitat package:
 
 ```sh
-sudo hab pkg install chef/inspec --channel base-2025 --binlink
+sudo hab pkg install chef/inspec --channel base-2025 --binlink --force --auth <HAB_BUILDER_TOKEN>
 ```
-
-The following CLI flags are optional:
-
-- `--auth <HAB_BUILDER_TOKEN>`: Specifies a Habitat Builder personal access token if one isn't set as an environment variable.
-- `--binlink` or `-b`: Links the installed package binary to `/bin` for system-wide access.
-- `--force`. Overwrites existing binlinks.
 
 For more information, see the [Habitat CLI documentation](https://docs.chef.io/habitat/habitat_cli/#hab-pkg-install).
 
 ## Verify installation
 
 Use the following commands to verify that Chef InSpec is installed:
-
-- Get the `inspec` package from the list of installed Habitat packages:
-
-  ```sh
-  hab pkg list | grep inspec
-  ```
-
-- Check the installed InSpec version using the Habitat CLI:
-
-  ```sh
-  hab pkg exec chef/inspec inspec version
-  ```
 
 - If you binlinked the InSpec package during installation, check the installed InSpec version:
 
@@ -92,11 +74,6 @@ While installing Chef InSpec, if you see an error like this:
 ✗✗✗ Last error: [401 Unauthorized] Please check that you have specified a valid Personal Access Token.
 ```
 
-This indicates that Habitat CLI can't authenticate with Chef Habitat Builder due to a missing or invalid personal access token.
+This indicates that Habitat CLI can't authenticate with Chef Habitat Builder due to a invalid personal access token.
 
 - [Verify your token or create a new personal access token](https://docs.chef.io/habitat/builder_profile/#create-a-personal-access-token) in Chef Habitat Builder.
-- Use the `--auth <TOKEN>` flag to pass the authentication token explicitly. For example:
-
-  ```sh
-  sudo hab pkg install chef/inspec --channel base-2025 --binlink --auth <HAB_AUTH_TOKEN>
-  ```
