@@ -80,12 +80,6 @@ title = "Resources"
 identifier = "resources"
 
     [[resources]]
-    title = "Resource packs"
-    identifier = "resources/packs"
-    parent = "resources"
-    weight = 20
-
-    [[resources]]
     title = "Core resources"
     identifier = "resources/core"
     parent = "resources"

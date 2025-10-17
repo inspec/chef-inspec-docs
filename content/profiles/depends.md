@@ -116,7 +116,7 @@ depends:
   compliance: base/linux
 ```
 
-## Gem dependencies
+## Ruby gem dependencies
 
 Any profile with Ruby gem dependencies that need to be installed can be specified using the `gem_dependencies` settings in the `inspec.yml` metadata file.
 

@@ -2,9 +2,6 @@
 title = "Chef InSpec Profile Style Guide"
 draft = false
 
-
-aliases = ['/inspec/style/']
-
 [menu.profiles]
     title = "Profile Style Guide"
     identifier = "profiles/style"
