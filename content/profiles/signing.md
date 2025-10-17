@@ -2,9 +2,6 @@
 title = "Signed InSpec Profiles"
 draft = false
 
-
-aliases = ['/inspec/signing/']
-
 [menu.profiles]
     title = "Signed Profiles"
     identifier = "profiles/Signed profiles"
