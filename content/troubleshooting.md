@@ -2,7 +2,6 @@
 title = "Chef InSpec Troubleshooting"
 draft = false
 
-
 [menu.troubleshooting]
     title = "Troubleshooting"
     identifier = "Troubleshooting"
@@ -21,7 +20,7 @@ For more information, see the [profile signing documentation](/profiles/signing/
 ## Exit code 174
 
 Exit code 174 comes from running Chef InSpec 6 or greater without setting a Chef License key.
-See the [InSpec install documentation](/install/install/) for setting a Chef License key.
+See the [InSpec install documentation](/install/) for setting a Chef License key.
 See the [Chef License documentation](/install/license/) for more information about Chef licensing.
 
 ## Undefined Local Variable or Method Error for Cloud Resource
