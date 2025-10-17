@@ -2,9 +2,6 @@
 title = "inspec.yml File"
 draft = false
 
-
-aliases = ["/inspec/profiles/inspec_yaml"]
-
 [menu.profiles]
     title = "inspec.yml"
     identifier = "profiles/inspec.yml"
@@ -84,7 +81,7 @@ The `inspec.yml` file defines the following information:
   Optional
 
 `gem_dependencies`
-: A list of profile [gem dependencies](/profiles/depends/#gem-dependencies) that must be installed for the profile to function correctly.
+: A list of profile [gem dependencies](/profiles/depends/#ruby-gem-dependencies) that must be installed for the profile to function.
 
   Optional
 
