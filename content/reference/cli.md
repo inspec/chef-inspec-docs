@@ -284,25 +284,8 @@ inspec exec LOCATIONS
 
 This subcommand has the following additional options:
 
-`--allow-unsigned-profiles`
-: Allow InSpec to execute unsigned profiles if mandatory profile signing is enabled. Defaults to false.
-
-  **Chef InSpec 6** and greater has an optional setting that requires signed profiles.
-  If you try to execute an unsigned profile with this feature enabled, InSpec won't execute the profile and returns exit code 6.
-  Use `--allow-unsigned-profiles` to execute unsigned profiles if mandatory profile signing is enabled.
-
-  For more information, see [Signed InSpec Profiles](/profiles/signing/).
-
 `--attrs=one two three`
 : Legacy name for `--input-file` - deprecated.
-
-`--audit-log-location=AUDIT_LOG_LOCATION`
-: The directory that the audit log saves diagnostic log files to.
-  You must enable audit logging to use this feature. See the [Audit Log documentation](/configure/audit_log/) for details.
-
-  Default: `~/.inspec/logs`.
-
-  InSpec creates log files in the set directory using the following format: `inspec-audit-TIMESTAMP-PID.log`.
 
 `--auto-install-gems`
 : Auto installs gem dependencies of the profile or resource pack.
@@ -509,17 +492,11 @@ This subcommand has the following additional options:
 `5`
 : invalid profile signature
 
-`6`
-: mandatory profile signing mode enabled and no signature found
-
 `100`
 : normal exit, at least one test failed
 
 `101`
 : normal exit, at least one test skipped but none failed
-
-`172`
-: Chef license not accepted
 
 ### Examples
 
@@ -695,15 +672,6 @@ inspec json PATH
 
 This subcommand has the following additional options:
 
-`--allow-unsigned-profiles`
-: Allow InSpec to read unsigned profiles if [mandatory profile signing](/profiles/signing/) is enabled. Defaults to false.
-
-  **Chef InSpec 6** and greater has an optional setting that requires signed profiles.
-  If you try to read an unsigned profile with this feature enabled, InSpec won't read the profile and returns exit code 6.
-  Use `--allow-unsigned-profiles` to read unsigned profiles if mandatory profile signing is enabled.
-
-  For more information, see [Signed InSpec Profiles](/profiles/signing/).
-
 `--controls=one two three`
 : A list of controls to include. Ignore all other tests.
 
@@ -810,14 +778,6 @@ inspec shell
 ### Options
 
 This subcommand has the following additional options:
-
-`--audit-log-location=AUDIT_LOG_LOCATION`
-: The directory that the audit log saves diagnostic log files to.
-  You must enable audit logging to use this feature. See the [Audit Log documentation](/configure/audit_log/) for details.
-
-  Default: `~/.inspec/logs`.
-
-  InSpec creates log files in the set directory using the following format: `inspec-audit-TIMESTAMP-PID.log`.
 
 `-b`
 `--backend=BACKEND`

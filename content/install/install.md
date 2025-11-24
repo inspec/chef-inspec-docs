@@ -86,8 +86,3 @@ For SUSE Linux Enterprise Server, use the following command to install Chef InSp
 ```bash
 sudo zypper install /path-to/inspec.rpm
 ```
-
-## Next steps
-
-After installing Chef InSpec, you must accept the Chef EULA and---starting with **Chef InSpec 6**---add a license key.
-See the [Chef InSpec license documentation](license) to complete these tasks.
