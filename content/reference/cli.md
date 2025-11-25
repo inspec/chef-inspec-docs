@@ -180,6 +180,12 @@ This subcommand has the following additional options:
 `--key-files=one two three`
 : Login key or certificate file for a remote scan.
 
+`--kerberos-realm=KERBEROS_REALM`
+: The Kerberos realm used for authentication (WinRM). This option can only be run from Linux workstations.
+
+`--kerberos-service=KERBEROS_SERVICE`
+: The Kerberos service principal name (such as HTTP or HOST) (WinRM). This option can only be run from Linux workstations.
+
 `--password=PASSWORD`
 : Login password for a remote scan, if required.
 
@@ -209,6 +215,15 @@ This subcommand has the following additional options:
 
 `--shell-options=SHELL_OPTIONS`
 : Additional shell options.
+
+`--socks-password=SOCKS_PASSWORD`
+: The password for authenticating with a SOCKS5 proxy (WinRM). This option can only be run from Linux workstations.
+
+`--socks-proxy=SOCKS_PROXY`
+: The SOCKS5H proxy URL to tunnel the WinRM connection (for example, `<URL_OR_IP_ADDRESS>:1080`) (WinRM). This option can only be run from Linux workstations.
+
+`--socks-user=SOCKS_USER`
+: The username for authenticating with a SOCKS5 proxy (WinRM). This option can only be run from Linux workstations.
 
 `--ssl`
 `--no-ssl`
@@ -284,25 +299,8 @@ inspec exec LOCATIONS
 
 This subcommand has the following additional options:
 
-`--allow-unsigned-profiles`
-: Allow InSpec to execute unsigned profiles if mandatory profile signing is enabled. Defaults to false.
-
-  **Chef InSpec 6** and greater has an optional setting that requires signed profiles.
-  If you try to execute an unsigned profile with this feature enabled, InSpec won't execute the profile and returns exit code 6.
-  Use `--allow-unsigned-profiles` to execute unsigned profiles if mandatory profile signing is enabled.
-
-  For more information, see [Signed InSpec Profiles](/profiles/signing/).
-
 `--attrs=one two three`
 : Legacy name for `--input-file` - deprecated.
-
-`--audit-log-location=AUDIT_LOG_LOCATION`
-: The directory that the audit log saves diagnostic log files to.
-  You must enable audit logging to use this feature. See the [Audit Log documentation](/configure/audit_log/) for details.
-
-  Default: `~/.inspec/logs`.
-
-  InSpec creates log files in the set directory using the following format: `inspec-audit-TIMESTAMP-PID.log`.
 
 `--auto-install-gems`
 : Auto installs gem dependencies of the profile or resource pack.
@@ -383,6 +381,12 @@ This subcommand has the following additional options:
 `--key-files=one two three`
 : Login key or certificate file for a remote scan.
 
+`--kerberos-realm=KERBEROS_REALM`
+: The Kerberos realm used for authentication (WinRM). This option can only be run from Linux workstations.
+
+`--kerberos-service=KERBEROS_SERVICE`
+: The Kerberos service principal name (such as HTTP or HOST) (WinRM). This option can only be run from Linux workstations.
+
 `--password=PASSWORD`
 : Login password for a remote scan, if required.
 
@@ -435,6 +439,15 @@ This subcommand has the following additional options:
 
 `--silence-deprecations=all|GROUP GROUP...`
 : Suppress deprecation warnings. See install_dir/etc/deprecations.json for a list of GROUPs or use 'all'.
+
+`--socks-password=SOCKS_PASSWORD`
+: The password for authenticating with a SOCKS5 proxy (WinRM). This option can only be run from Linux workstations.
+
+`--socks-proxy=SOCKS_PROXY`
+: The SOCKS5H proxy URL to tunnel the WinRM connection (for example, `<URL_OR_IP_ADDRESS>:1080`) (WinRM). This option can only be run from Linux workstations.
+
+`--socks-user=SOCKS_USER`
+: The username for authenticating with a SOCKS5 proxy (WinRM). This option can only be run from Linux workstations.
 
 `--ssh-config-file=one two three`
 : A list of paths to the SSH configuration file, for example: `~/.ssh/config` or `/etc/ssh/ssh_config`.
@@ -509,17 +522,11 @@ This subcommand has the following additional options:
 `5`
 : invalid profile signature
 
-`6`
-: mandatory profile signing mode enabled and no signature found
-
 `100`
 : normal exit, at least one test failed
 
 `101`
 : normal exit, at least one test skipped but none failed
-
-`172`
-: Chef license not accepted
 
 ### Examples
 
@@ -695,15 +702,6 @@ inspec json PATH
 
 This subcommand has the following additional options:
 
-`--allow-unsigned-profiles`
-: Allow InSpec to read unsigned profiles if [mandatory profile signing](/profiles/signing/) is enabled. Defaults to false.
-
-  **Chef InSpec 6** and greater has an optional setting that requires signed profiles.
-  If you try to read an unsigned profile with this feature enabled, InSpec won't read the profile and returns exit code 6.
-  Use `--allow-unsigned-profiles` to read unsigned profiles if mandatory profile signing is enabled.
-
-  For more information, see [Signed InSpec Profiles](/profiles/signing/).
-
 `--controls=one two three`
 : A list of controls to include. Ignore all other tests.
 
@@ -811,14 +809,6 @@ inspec shell
 
 This subcommand has the following additional options:
 
-`--audit-log-location=AUDIT_LOG_LOCATION`
-: The directory that the audit log saves diagnostic log files to.
-  You must enable audit logging to use this feature. See the [Audit Log documentation](/configure/audit_log/) for details.
-
-  Default: `~/.inspec/logs`.
-
-  InSpec creates log files in the set directory using the following format: `inspec-audit-TIMESTAMP-PID.log`.
-
 `-b`
 `--backend=BACKEND`
 : Choose a backend: local, ssh, winrm, docker.
@@ -867,6 +857,9 @@ This subcommand has the following additional options:
 `--enable-password=ENABLE_PASSWORD`
 : Password for enable mode on Cisco IOS devices.
 
+`--enhanced-outcomes`
+: Includes enhanced outcome of controls in report data.
+
 `--host=HOST`
 : Specify a remote host which is tested.
 
@@ -881,6 +874,12 @@ This subcommand has the following additional options:
 `-i`
 `--key-files=one two three`
 : Login key or certificate file for a remote scan.
+
+`--kerberos-realm=KERBEROS_REALM`
+: Kerberos realm used for authentication (WinRM). This option can only be run from Linux workstations.
+
+`--kerberos-service=KERBEROS_SERVICE`
+: Kerberos service principal name (for example, HTTP, HOST) (WinRM). This option can only be run from Linux workstations.
 
 `--password=PASSWORD`
 : Login password for a remote scan, if required.
@@ -917,6 +916,15 @@ This subcommand has the following additional options:
 
 `--ssh-config-file=one two three`
 : A list of paths to the SSH configuration file, for example: `~/.ssh/config` or `/etc/ssh/ssh_config`.
+
+`--socks-password=SOCKS_PASSWORD`
+: The password for authenticating with a SOCKS5 proxy (WinRM). This option can only be run from Linux workstations.
+
+`--socks-proxy=SOCKS_PROXY`
+: The SOCKS5H proxy URL to tunnel the WinRM connection (for example, `<URL_OR_IP_ADDRESS>:1080`) (WinRM). This option can only be run from Linux workstations.
+
+`--socks-user=SOCKS_USER`
+: The username for authenticating with a SOCKS5 proxy (WinRM). This option can only be run from Linux workstations.
 
 `--ssl`
 `--no-ssl`

@@ -152,15 +152,6 @@ Use the `inspec export` command to examine a signed profile's contents. You must
     platform: os
   ```
 
-## Mandatory profile signing
-
-**Chef InSpec 6** and above has an optional setting that requires that all profiles are signed.
-If mandatory profile signing is enabled, InSpec won't execute functions with an un-signed profile and exits with exit code 6.
-
-To enable mandatory profile signing, set the environment variable `CHEF_PREVIEW_MANDATORY_PROFILE_SIGNING` to any non-empty value.
-
-If you need to bypass mandatory profile signing, use the `--allow-unsigned-profiles` CLI option or set the `CHEF_ALLOW_UNSIGNED_PROFILES` environment variable.
-
 ## Advanced Usage
 
 ### Create a signing and validation keys
