@@ -112,5 +112,9 @@ link_text = "Chef InSpec v 7.0"
 base_url = "https://docs.chef.io/inspec/7.0"
 
 [[versions.version_selector.versions]]
-link_text = "Chef InSpec v 5/6"
+link_text = "Chef InSpec v 6.8"
 base_url = "https://docs.chef.io/inspec/6.8"
+
+[[versions.version_selector.versions]]
+link_text = "Chef InSpec v 5.23"
+base_url = "https://docs.chef.io/inspec/5.23"
