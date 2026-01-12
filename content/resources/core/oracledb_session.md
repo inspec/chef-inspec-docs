@@ -10,7 +10,7 @@ platform = "os"
     parent = "resources/core"
 +++
 
-Use the `oracledb_session` Chef InSpec audit resource to test SQL commands run against a Oracle database.
+Use the `oracledb_session` Chef InSpec audit resource to test SQL commands run against an Oracle database.
 
 ## Availability
 
@@ -39,21 +39,21 @@ where:
   - `port` (default: `1521`)
   - `service`: the Oracle service name or SID
   - `tns_alias`: TNS alias from tnsnames.ora (recommended for TCPS/SSL connections)
-  - `env`: hash of environment variables (e.g., TNS_ADMIN, LD_LIBRARY_PATH, ORACLE_HOME)
-  - `as_db_role`: database role (e.g., sysdba, sysoper)
+  - `env`: hash of environment variables (for example, TNS_ADMIN, LD_LIBRARY_PATH, ORACLE_HOME)
+  - `as_db_role`: database role (for example, sysdba, sysoper)
   - `as_os_user`: OS user to switch to before running queries (Unix/Linux only)
   - `sqlplus_bin`: path to sqlplus binary (default: `sqlplus`)
   - `sqlcl_bin`: path to sqlcl binary (if using SQLcl instead of sqlplus)
-- it's possible to run queries as sysdba/sysoper by using `as_db_role option`, see examples
+- To run queries as sysdba/sysoper, use the `as_db_role` option. See examples.
 - SQLcl can be used in place of sqlplus. Use the `sqlcl_bin` option to set the sqlcl binary path instead of `sqlplus_bin`.
 - `query('QUERY')` contains the query to be run
 - `its('value') { should eq('') }` compares the results of the query against the expected result in the test
 
 ## oracledb_session(...).query method Properties
 
-- rows the query result as array of hashes
-- row(number) selected row from query result, where number is just a row number in the query result
-- column(name) array with values from selected column
+- `rows` - the query result as an array of hashes
+- `row(number)` - selected row from query result, where number is a row number in the query result
+- `column(name)` - array with values from selected column
 
 ## Examples
 
@@ -101,7 +101,7 @@ describe sql.query('SELECT tablespace_name AS name FROM dba_tablespaces;').colum
 end
 ```
 
-The option `as_os_user` is available only on unix-like systems and not supported on Windows. Also this option requires that you are running inspec as `root` or with `--sudo`
+The `as_os_user` option is available only on Unix-like systems and isn't supported on Windows. This option also requires that you're running InSpec as `root` or with `--sudo`.
 
 ### Test number of rows in the query result
 
