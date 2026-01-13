@@ -36,7 +36,9 @@ ignoreRegExpList:
   - /'d\b/
   - /^\s*```[\s\S]*?^\s*```/gm
   - "{{(.+)(?=}})"
-words: []
+words:
+  - TCPS
+  - tnsnames
 languageSettings:
   - languageId: markdown
     ignoreRegExpList:
