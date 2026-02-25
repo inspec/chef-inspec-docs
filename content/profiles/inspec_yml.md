@@ -90,9 +90,9 @@ The `inspec.yml` file defines the following information:
 ```yaml
 name: ssh
 title: Basic SSH
-maintainer: Chef Software, Inc.
-copyright: Copyright (c) 2025-2026 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.
-copyright_email: support@chef.io
+maintainer: Example Organization, Inc.
+copyright: Example Organization, Inc.
+copyright_email: support@example.com
 license: Proprietary, All rights reserved
 summary: Verify that SSH Server and SSH Client are configured securely
 version: 1.0.0
