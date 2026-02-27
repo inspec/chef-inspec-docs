@@ -38,13 +38,13 @@ where:
 - `query('QUERY')` contains the query to be run
 - `its('value') { should eq('') }` compares the results of the query against the expected result in the test
 
-### Optional Parameters
+### Optional parameters
 
 The `mssql_session` resource accepts `user`, `password`, `pass`, `host`, `port`, `instance`, `db_name`, `local_mode`, and `trust_server_certificate`.
 
 #### `user`
 
-The SQL Server user name for SQL authentication.
+The SQL Server username for SQL authentication.
 
 If `user` or `password` is omitted, `mssql_session` uses Windows authentication as the user running Chef InSpec.
 
@@ -76,7 +76,7 @@ The database name to connect to before running the query.
 
 Set to `true` to run in local mode.
 
-In local mode, the resource doesn't pass host or port to `sqlcmd`.
+In local mode, the resource doesn't pass the host or port to `sqlcmd`.
 
 #### `trust_server_certificate`
 
@@ -84,7 +84,7 @@ Set `trust_server_certificate: true` to pass `-C` to the underlying `sqlcmd`.
 
 Use this when you need encrypted connectivity, but certificate validation would otherwise fail due to missing certificate-chain configuration (for example, SQL Server uses a self-signed certificate or a private CA that isn't available in the runner trust store).
 
-This option is less secure than full certificate validation because it trusts the server certificate without strict verification. Use it only when necessary, and prefer installing the correct CA/server certificates on the target system when possible.
+This option is less secure than full certificate validation because it trusts the server certificate without strict verification. Only use it when necessary. Instead, you should install the correct CA/server certificates on the target system when possible.
 
 ## Examples
 
