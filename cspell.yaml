@@ -39,6 +39,7 @@ ignoreRegExpList:
 words:
   - TCPS
   - tnsnames
+  - sqlcmd
 languageSettings:
   - languageId: markdown
     ignoreRegExpList:
