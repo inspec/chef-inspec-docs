@@ -34,57 +34,48 @@ end
 
 where:
 
-- `mssql_session` declares credentials and connection settings with permission to run the query.
+- `mssql_session` declares credentials and connection settings used to connect to Microsoft SQL Server
 - `query('QUERY')` contains the query to be run
 - `its('value') { should eq('') }` compares the results of the query against the expected result in the test
 
 ### Optional parameters
 
-The `mssql_session` resource accepts `user`, `password`, `pass`, `host`, `port`, `instance`, `db_name`, `local_mode`, and `trust_server_certificate`.
+This resource has the following parameters:
 
-#### `user`
+`user`
+: The SQL Server username for SQL authentication.
 
-The SQL Server username for SQL authentication.
+  If `user` or `password` is omitted, `mssql_session` uses Windows authentication as the user running Chef InSpec.
 
-If `user` or `password` is omitted, `mssql_session` uses Windows authentication as the user running Chef InSpec.
+`password`
+: The SQL Server password for SQL authentication.
 
-#### `password`
+`pass` (deprecated)
+: Deprecated alias for `password`. Use `password` instead.
 
-The SQL Server password for SQL authentication.
+`host`
+: The SQL Server host name. Default value: `localhost`.
 
-#### `pass` (deprecated)
+`port`
+: The SQL Server port. By default, no explicit port is passed.
 
-Deprecated alias for `password`. Use `password` instead.
+`instance`
+: The SQL Server instance name. By default, the server's default instance is used.
 
-#### `host`
+`db_name`
+: The database name to connect to before running the query.
 
-The SQL Server host name. Default value: `localhost`.
+`local_mode`
+: Set to `true` to run in local mode.
 
-#### `port`
+  In local mode, the resource doesn't pass the host or port to `sqlcmd`.
 
-The SQL Server port. By default, no explicit port is passed.
+`trust_server_certificate`
+: Set `trust_server_certificate: true` to pass `-C` to the underlying `sqlcmd`.
 
-#### `instance`
+  Use this when you need encrypted connectivity, but certificate validation would otherwise fail due to missing certificate-chain configuration (for example, SQL Server uses a self-signed certificate or a private CA that isn't available in the runner's trust store).
 
-The SQL Server instance name. By default, the server's default instance is used.
-
-#### `db_name`
-
-The database name to connect to before running the query.
-
-#### `local_mode`
-
-Set to `true` to run in local mode.
-
-In local mode, the resource doesn't pass the host or port to `sqlcmd`.
-
-#### `trust_server_certificate`
-
-Set `trust_server_certificate: true` to pass `-C` to the underlying `sqlcmd`.
-
-Use this when you need encrypted connectivity, but certificate validation would otherwise fail due to missing certificate-chain configuration (for example, SQL Server uses a self-signed certificate or a private CA that isn't available in the runner trust store).
-
-This option is less secure than full certificate validation because it trusts the server certificate without strict verification. Only use it when necessary. Instead, you should install the correct CA/server certificates on the target system when possible.
+  This option is less secure than full certificate validation because it trusts the server certificate without strict verification. Use this only if necessary. Instead, install the correct CA certificate or SQL Server certificate on the target system when possible.
 
 ## Examples
 
