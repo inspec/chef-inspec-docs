@@ -76,7 +76,7 @@ The database name to connect to before running the query.
 
 Set to `true` to run in local mode.
 
-In local mode, the resource does not pass host or port to `sqlcmd`.
+In local mode, the resource doesn't pass host or port to `sqlcmd`.
 
 #### `trust_server_certificate`
 
