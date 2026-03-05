@@ -15,7 +15,7 @@ To use Chef InSpec 7, you must [accept the Chef EULA](#accept-the-chef-eula).
 
 Chef InSpec 7 introduces an updated licensing model designed to simplify usage while maintaining compliance across distribution channels.
 
-For software downloaded from official Progress distribution channels, license enforcement does not occur at runtime. Instead, license verification may occur during the download process.
+For software downloaded from official Progress distribution channels, a license key is not required when running InSpec.
 
 Official distribution channels include:
 
@@ -27,19 +27,6 @@ When InSpec is obtained from these official sources, a license key is not requir
 ### Software obtained from non-official sources
 
 If InSpec is installed from sources outside the official Progress distribution channels—such as public Ruby gems or other external repositories—a valid license may be required to execute the software.
-
-### Workflows that download binaries
-
-Some workflows may download Chef binaries as part of their execution. Examples include:
-
-- `knife bootstrap`
-- `kitchen converge`
-
-If these workflows download binaries from Chef APIs or official Progress distribution services, a license key may be required to complete the download.
-
-If the binaries are downloaded from an internal or user-managed source, license enforcement does not apply.
-
-You can't manually enable or disable licensing. The licensing requirements are determined by the distribution.
 
 If you'd like to try out Chef InSpec, you can [request a trial license](https://www.chef.io/licensing/inspec/license-generation-free-trial).
 
