@@ -1,17 +1,18 @@
 +++
-title = "Install Chef InSpec"
+title = "Install Chef InSpec with a native installer"
 draft = false
 
 [menu.install]
-    title = "Install InSpec"
-    identifier = "install/install"
+    title = "Install with native installer"
+    identifier = "install/installer"
     parent = "install"
-    weight = 10
+    weight = 20
 +++
 
-<!-- cSpell:ignore binlink, binlinks, binlinked -->
+<!-- cSpell:ignore dpkg deb rpm Uvh msiexec qn amd el8 x86 chefdownload eol -->
 
-This page documents how to install Chef InSpec from a Chef Habitat package.
+The Chef InSpec native installers provide an efficient way to install Chef InSpec 7 on Windows, Debian, or RPM-based Linux distributions.
+You can download and install the pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools, simplifying the deployment process for compliance automation.
 
 ## Supported platforms
 
@@ -22,58 +23,199 @@ Chef InSpec is supported on the following platforms:
 
 ## Prerequisites
 
-- [Chef Habitat installed on your workstation](https://docs.chef.io/habitat/install_habitat/)
-- [A Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/)
+This installation process has the following prerequisites:
+
+- Chef Automate isn't installed on the target system.
+- Chef Workstation isn't installed on the target system.
+- On Windows systems, `tar` is installed on the target system.
+- On Debian-based systems, the `dpkg` package manager is installed on the target system.
+- On RPM-based systems, the `rpm` and either the `dnf` or `yum` package managers are installed on the target system.
+
+  For Amazon Linux 2, use the `rpm` and `yum` package managers.
+
+- You have a valid Progress Chef license key.
+- The target system is connected to the internet.
+
+## Uninstall an older version of Chef InSpec
+
+If an older version of Chef InSpec is already installed, uninstall it before installing a newer version to avoid package conflicts.
+
+### Uninstall on Debian-based distributions
+
+```sh
+sudo apt-get remove inspec
+```
+
+Verify that the package has been removed:
+
+```sh
+dpkg -l inspec
+```
+
+The command returns no output if the package is removed successfully.
+
+### Uninstall on RPM-based distributions
+
+Using `dnf`:
+
+```sh
+sudo dnf remove inspec
+```
+
+For Amazon Linux 2 or systems using `yum`:
+
+```sh
+sudo yum remove inspec
+```
+
+Verify that the package has been removed:
+
+```sh
+rpm -qa inspec
+```
+
+The command returns no output if the package is removed successfully.
+
+### Uninstall on Windows
+
+To uninstall using the Windows UI:
+
+1. Open **Settings > Apps > Installed apps**.
+2. Search for **Chef InSpec**.
+3. Select **Uninstall**, then follow the on-screen prompts.
+
+To uninstall from the command line, run the following command in an elevated PowerShell or Command Prompt session:
+
+```powershell
+msiexec /x inspec-<version>-x64.msi /qn
+```
+
+Replace `<version>` with the version number of the currently installed package.
 
 ## Install Chef InSpec
 
-Install the Chef InSpec Habitat package:
+To install Chef InSpec, follow these steps:
+
+### Step 1: Download the Chef InSpec installer
+
+Download the installer package from the [Chef downloads page](https://www.chef.io/downloads).
+Select **Chef InSpec**, then choose the target platform and version.
+
+To download programmatically, use the following commands.
+Replace `<VERSION>` with the version number to install and `<LICENSE_ID>` with your Chef license ID.
+
+#### Download the Debian-based installer
+
+Using `wget`:
 
 ```sh
-sudo hab pkg install chef/inspec --channel base-2025 --binlink --force --auth <HAB_BUILDER_TOKEN>
+wget -O "inspec-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
 ```
 
-For more information, see the [Habitat CLI documentation](https://docs.chef.io/habitat/habitat_cli/#hab-pkg-install).
+Using `curl`:
 
-## Verify installation
+```sh
+curl -o "inspec-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
+```
 
-Use the following commands to verify that Chef InSpec is installed:
+#### Download the RPM-based installer
 
-- If you binlinked the InSpec package during installation, check the installed InSpec version:
+Using `wget`:
 
-  ```sh
-  inspec version
-  ```
+```sh
+wget -O "inspec-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
+```
 
-## Manage the Chef InSpec package
+Using `curl`:
+
+```sh
+curl -o "inspec-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
+```
+
+#### Download the Windows installer
+
+Run the following command in an elevated PowerShell session:
+
+```powershell
+Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-<VERSION>-windows.msi"
+```
+
+### Step 2: Install the package
+
+Navigate to the directory containing the downloaded installer and run the appropriate install command for your platform.
+
+#### Install on Debian-based distributions
+
+```sh
+sudo dpkg -i inspec_<version>_amd64.deb
+```
+
+Replace `<version>` with the version number of the downloaded package, for example:
+
+```sh
+sudo dpkg -i inspec_7.6.0-1_amd64.deb
+```
+
+#### Install on RPM-based distributions
+
+Using `rpm`:
+
+```sh
+sudo rpm -Uvh inspec-<version>.x86_64.rpm
+```
+
+Using `dnf`:
+
+```sh
+sudo dnf install ./inspec-<version>.x86_64.rpm
+```
+
+For Amazon Linux 2 or systems using `yum`:
+
+```sh
+sudo yum install ./inspec-<version>.x86_64.rpm
+```
+
+Replace `<version>` with the version number of the downloaded package, for example `inspec-7.6.0-1.el8.x86_64.rpm`.
+
+#### Install on Windows
+
+Run the following command in an elevated PowerShell or Command Prompt session:
+
+```powershell
+msiexec /i inspec-<version>-x64.msi /qn
+```
+
+Replace `<version>` with the version number of the downloaded package, for example `inspec-7.6.0-x64.msi`.
+
+Alternatively, double-click the `.msi` file and follow the on-screen installation wizard.
+
+### Step 3: Verify the installation
+
+```sh
+inspec version
+```
+
+The output displays the installed version of Chef InSpec, for example:
+
+```sh
+7.6.0
+```
+
+## Manage Chef InSpec
 
 ### Upgrade Chef InSpec
 
-To upgrade to a newer version in the same channel, re-run the install command with `--force`:
+To upgrade Chef InSpec to a newer version:
 
-```sh
-sudo hab pkg install chef/inspec --channel base-2025 --binlink --force
-```
+1. [Uninstall the current version](#uninstall-an-older-version-of-chef-inspec) using the steps for your platform.
+2. [Download and install the new version](#install-chef-inspec) using the steps for your platform.
 
-### Uninstall the InSpec package
+### Uninstall Chef InSpec
 
-```sh
-sudo hab pkg uninstall chef/inspec
-```
+To remove Chef InSpec from your system, follow the steps in [Uninstall an older version of Chef InSpec](#uninstall-an-older-version-of-chef-inspec).
 
-## Troubleshooting
+## More information
 
-### Authentication errors
-
-While installing Chef InSpec, if you see an error like this:
-
-```sh
-✗✗✗ When applicable, we try once, then re-attempt 5 times to
-✗✗✗ download a package. Unfortunately, we failed to download
-✗✗✗ chef/inspec/7.*.**/2025****** for x86_64-linux.
-✗✗✗ Last error: [401 Unauthorized] Please check that you have specified a valid Personal Access Token.
-```
-
-This indicates that Habitat CLI can't authenticate with Chef Habitat Builder due to an invalid personal access token.
-
-- [Verify your token or create a new personal access token](https://docs.chef.io/habitat/builder_profile/#create-a-personal-access-token) in Chef Habitat Builder.
+- [Chef Download API documentation](https://docs.chef.io/download/)
+- [Chef InSpec documentation](https://docs.chef.io/inspec/7.0/)
