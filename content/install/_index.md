@@ -87,7 +87,7 @@ To uninstall using the Windows UI:
 To uninstall from the command line, run the following command in an elevated PowerShell or Command Prompt session:
 
 ```powershell
-msiexec /x inspec-<version>-x64.msi /qn
+msiexec /x inspec-ie-<version>-x64.msi /qn
 ```
 
 Replace `<version>` with the version number of the currently installed package.
@@ -109,13 +109,13 @@ Replace `<VERSION>` with the version number to install and `<LICENSE_ID>` with y
 Using `wget`:
 
 ```sh
-wget -O "inspec-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
+wget -O "inspec-ie-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
 ```
 
 Using `curl`:
 
 ```sh
-curl -o "inspec-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
+curl -o "inspec-ie-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
 ```
 
 #### Download the RPM-based installer
@@ -123,13 +123,13 @@ curl -o "inspec-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/st
 Using `wget`:
 
 ```sh
-wget -O "inspec-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
+wget -O "inspec-ie-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
 ```
 
 Using `curl`:
 
 ```sh
-curl -o "inspec-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
+curl -o "inspec-ie-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
 ```
 
 #### Download the Windows installer
@@ -137,7 +137,7 @@ curl -o "inspec-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/st
 Run the following command in an elevated PowerShell session:
 
 ```powershell
-Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-<VERSION>-windows.msi"
+Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-ie-<VERSION>-windows.msi"
 ```
 
 ### Step 2: Install the package
@@ -147,13 +147,13 @@ Navigate to the directory containing the downloaded installer and run the approp
 #### Install on Debian-based distributions
 
 ```sh
-sudo dpkg -i inspec_<version>_amd64.deb
+sudo dpkg -i inspec-ie-<version>_amd64.deb
 ```
 
 Replace `<version>` with the version number of the downloaded package, for example:
 
 ```sh
-sudo dpkg -i inspec_7.6.0-1_amd64.deb
+sudo dpkg -i inspec-ie-7.6.0-1_amd64.deb
 ```
 
 #### Install on RPM-based distributions
@@ -161,32 +161,32 @@ sudo dpkg -i inspec_7.6.0-1_amd64.deb
 Using `rpm`:
 
 ```sh
-sudo rpm -Uvh inspec-<version>.x86_64.rpm
+sudo rpm -Uvh inspec-ie-<version>.x86_64.rpm
 ```
 
 Using `dnf`:
 
 ```sh
-sudo dnf install ./inspec-<version>.x86_64.rpm
+sudo dnf install ./inspec-ie-<version>.x86_64.rpm
 ```
 
 For Amazon Linux 2 or systems using `yum`:
 
 ```sh
-sudo yum install ./inspec-<version>.x86_64.rpm
+sudo yum install ./inspec-ie-<version>.x86_64.rpm
 ```
 
-Replace `<version>` with the version number of the downloaded package, for example `inspec-7.6.0-1.el8.x86_64.rpm`.
+Replace `<version>` with the version number of the downloaded package, for example `inspec-ie-7.6.0-1.el8.x86_64.rpm`.
 
 #### Install on Windows
 
 Run the following command in an elevated PowerShell or Command Prompt session:
 
 ```powershell
-msiexec /i inspec-<version>-x64.msi /qn
+msiexec /i inspec-ie-<version>-x64.msi /qn
 ```
 
-Replace `<version>` with the version number of the downloaded package, for example `inspec-7.6.0-x64.msi`.
+Replace `<version>` with the version number of the downloaded package, for example `inspec-ie-7.6.0-x64.msi`.
 
 Alternatively, double-click the `.msi` file and follow the on-screen installation wizard.
 
@@ -201,8 +201,6 @@ The output displays the installed version of Chef InSpec, for example:
 ```sh
 7.6.0
 ```
-
-## Manage Chef InSpec
 
 ### Upgrade Chef InSpec
 
