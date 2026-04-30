@@ -1,9 +1,9 @@
 +++
-title = "Install Chef InSpec with a native installer"
+title = "Install Chef InSpec"
 draft = false
 
 [menu.install]
-    title = "Install with native installer"
+    title = "Install Chef InSpec"
     identifier = "install/install"
     parent = "install"
     weight = 10
@@ -11,7 +11,7 @@ draft = false
 
 <!-- cSpell:ignore dpkg deb rpm Uvh msiexec qn amd el8 x86 chefdownload eol -->
 
-The Chef InSpec native installers provide an efficient way to install Chef InSpec 7 on Windows, Debian, or RPM-based Linux distributions.
+The Chef InSpec installers provide an efficient way to install Chef InSpec 7 on Windows, Debian, or RPM-based Linux distributions.
 You can download and install the pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools, simplifying the deployment process for compliance automation.
 
 ## Supported platforms
