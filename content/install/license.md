@@ -15,18 +15,18 @@ To use Chef InSpec 7, you must [accept the Chef EULA](#accept-the-chef-eula).
 
 Chef InSpec 7 introduces an updated licensing model designed to simplify usage while maintaining compliance across distribution channels.
 
-For software downloaded from official Progress distribution channels, a license key is not required when running InSpec.
+For software downloaded from official Progress distribution channels, a license key isn't required when running InSpec.
 
 Official distribution channels include:
 
 - The Progress Download Portal
 - Habitat-based package distribution
 
-When InSpec is obtained from these official sources, a license key is not required to execute the software after installation.
+When InSpec is obtained from these official sources, a license key isn't required to execute the software after installation.
 
 ### Software obtained from non-official sources
 
-If InSpec is installed from sources outside the official Progress distribution channels—such as public Ruby gems or other external repositories—a valid license may be required to execute the software.
+If InSpec is installed from sources outside the official Progress distribution channels---such as public Ruby gems or other external repositories---a valid license may be required to execute the software.
 
 If you'd like to try out Chef InSpec, you can [request a trial license](https://www.chef.io/licensing/inspec/license-generation-free-trial).
 
