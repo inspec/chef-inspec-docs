@@ -142,7 +142,7 @@ Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/do
 
 ### Step 2: Install the package
 
-Navigate to the directory containing the downloaded installer and run the appropriate install command for your platform.
+Go to the directory containing the downloaded installer and run the appropriate install command for your platform.
 
 #### Install on Debian-based distributions
 
