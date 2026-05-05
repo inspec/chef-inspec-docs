@@ -9,10 +9,10 @@ draft = false
     weight = 10
 +++
 
-<!-- cSpell:ignore dpkg deb rpm Uvh msiexec qn amd el8 x86 chefdownload eol -->
+<!-- cSpell:ignore -->
 
-The Chef InSpec installers provide an efficient way to install Chef InSpec 7 on Windows, Debian, or RPM-based Linux distributions.
-You can download and install the pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools, simplifying the deployment process for compliance automation.
+Chef InSpec 7 installers are available for Windows, Debian, and RPM-based Linux distributions.
+You can download and install pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools.
 
 ## Supported platforms
 
@@ -25,14 +25,10 @@ Chef InSpec is supported on the following platforms:
 
 This installation process has the following prerequisites:
 
-- Chef Automate isn't installed on the target system.
-- Chef Workstation isn't installed on the target system.
-- On Windows systems, `tar` is installed on the target system.
-- On Debian-based systems, the `dpkg` package manager is installed on the target system.
-- On RPM-based systems, the `rpm` and either the `dnf` or `yum` package managers are installed on the target system.
-
-  For Amazon Linux 2, use the `rpm` and `yum` package managers.
-
+- Chef InSpec, Chef Automate, and Chef Workstation aren't installed on the target system.
+- On Windows systems, `tar` is installed.
+- On Debian-based systems, the `dpkg` package manager is installed.
+- On RPM-based systems, `rpm` and either `dnf` or `yum` are installed. For Amazon Linux 2, use `rpm` and `yum`.
 - You have a valid Progress Chef license key.
 - The target system is connected to the internet.
 
@@ -42,61 +38,65 @@ If an older version of Chef InSpec is already installed, uninstall it before ins
 
 ### Uninstall on Debian-based distributions
 
-```sh
-sudo apt-get remove inspec
-```
+1. Remove the package:
 
-Verify that the package has been removed:
+   ```sh
+   sudo apt-get remove inspec
+   ```
 
-```sh
-dpkg -l inspec
-```
+1. Verify that the package has been removed:
 
-The command returns no output if the package is removed successfully.
+   ```sh
+   dpkg -l inspec
+   ```
+
+   The command returns no output if the package is removed successfully.
 
 ### Uninstall on RPM-based distributions
 
-Using `dnf`:
+1. Remove the package.
 
-```sh
-sudo dnf remove inspec
-```
+   Using `dnf`:
 
-For Amazon Linux 2 or systems using `yum`:
+   ```sh
+   sudo dnf remove inspec
+   ```
 
-```sh
-sudo yum remove inspec
-```
+   For Amazon Linux 2 or systems using `yum`:
 
-Verify that the package has been removed:
+   ```sh
+   sudo yum remove inspec
+   ```
 
-```sh
-rpm -qa inspec
-```
+1. Verify that the package has been removed:
 
-The command returns no output if the package is removed successfully.
+   ```sh
+   rpm -qa inspec
+   ```
+
+   The command returns no output if the package is removed successfully.
 
 ### Uninstall on Windows
 
 To uninstall using the Windows UI:
 
 1. Open **Settings > Apps > Installed apps**.
-2. Search for **Chef InSpec**.
-3. Select **Uninstall**, then follow the on-screen prompts.
+1. Search for **Chef InSpec**.
+1. Select **Uninstall**, then follow the on-screen prompts.
 
 To uninstall from the command line, run the following command in an elevated PowerShell or Command Prompt session:
 
 ```powershell
-msiexec /x inspec-enterprise-<version>-x64.msi /qn
+msiexec /x inspec-enterprise-<VERSION>-x64.msi /qn
 ```
 
-Replace `<version>` with the version number of the currently installed package.
+Replace `<VERSION>` with the version number of the currently installed package.
 
 ## Install Chef InSpec
 
 To install Chef InSpec, follow these steps:
 
-### Step 1: Download the Chef InSpec installer
+### Download the Chef InSpec installer
 
 Download the installer package from the [Chef downloads page](https://www.chef.io/downloads).
 Select **Chef InSpec**, then choose the target platform and version.
@@ -140,17 +140,17 @@ Run the following command in an elevated PowerShell session:
 Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-enterprise-<VERSION>-windows.msi"
 ```
 
-### Step 2: Install the package
+### Install the package
 
 Go to the directory containing the downloaded installer and run the appropriate install command for your platform.
 
 #### Install on Debian-based distributions
 
 ```sh
-sudo dpkg -i inspec-enterprise-<version>_amd64.deb
+sudo dpkg -i inspec-enterprise-<VERSION>_amd64.deb
 ```
 
-Replace `<version>` with the version number of the downloaded package, for example:
+Replace `<VERSION>` with the version number of the downloaded package, for example:
 
 ```sh
 sudo dpkg -i inspec-enterprise-7.6.0-1_amd64.deb
@@ -161,55 +161,51 @@ sudo dpkg -i inspec-enterprise-7.6.0-1_amd64.deb
 Using `rpm`:
 
 ```sh
-sudo rpm -Uvh inspec-enterprise-<version>.x86_64.rpm
+sudo rpm -Uvh inspec-enterprise-<VERSION>.x86_64.rpm
 ```
 
 Using `dnf`:
 
 ```sh
-sudo dnf install ./inspec-enterprise-<version>.x86_64.rpm
+sudo dnf install ./inspec-enterprise-<VERSION>.x86_64.rpm
 ```
 
 For Amazon Linux 2 or systems using `yum`:
 
 ```sh
-sudo yum install ./inspec-enterprise-<version>.x86_64.rpm
+sudo yum install ./inspec-enterprise-<VERSION>.x86_64.rpm
 ```
 
-Replace `<version>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-1.el8.x86_64.rpm`.
+Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-1.el8.x86_64.rpm`.
 
 #### Install on Windows
 
 Run the following command in an elevated PowerShell or Command Prompt session:
 
 ```powershell
-msiexec /i inspec-enterprise-<version>-x64.msi /qn
+msiexec /i inspec-enterprise-<VERSION>-x64.msi /qn
 ```
 
-Replace `<version>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-x64.msi`.
+Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-x64.msi`.
 
 Alternatively, double-click the `.msi` file and follow the on-screen installation wizard.
 
-### Step 3: Verify the installation
+### Verify the installation
 
 ```sh
 inspec version
 ```
 
-The output displays the installed version of Chef InSpec, for example:
+The output displays the installed version of Chef InSpec.
 
-```sh
-7.6.0
-```
-
-### Upgrade Chef InSpec
+## Upgrade Chef InSpec
 
 To upgrade Chef InSpec to a newer version:
 
 1. [Uninstall the current version](#uninstall-an-older-version-of-chef-inspec) using the steps for your platform.
-2. [Download and install the new version](#install-chef-inspec) using the steps for your platform.
+1. [Download and install the new version](#install-chef-inspec) using the steps for your platform.
 
-### Uninstall Chef InSpec
+## Uninstall Chef InSpec
 
 To remove Chef InSpec from your system, follow the steps in [Uninstall an older version of Chef InSpec](#uninstall-an-older-version-of-chef-inspec).
 
