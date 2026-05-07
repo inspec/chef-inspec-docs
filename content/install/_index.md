@@ -137,9 +137,7 @@ To install Chef InSpec on an RPM-based system, follow these steps:
 
 To install Chef InSpec on Windows, follow these steps:
 
-1. Download the Windows-based installer using one of the following methods:
-
-    - Download the installer in an elevated PowerShell session:
+1. Download the installer in an elevated PowerShell session:
 
       ```powershell
       Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-enterprise-<VERSION>-windows.msi"
