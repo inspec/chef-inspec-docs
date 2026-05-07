@@ -68,7 +68,7 @@ To install Chef InSpec on a Debian-based system, follow these steps:
     sudo dpkg -i inspec-enterprise-<VERSION>_amd64.deb
     ```
 
-    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-1_amd64.deb`.
+    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1_amd64.deb`.
 
 1. Verify that Chef InSpec is installed:
 
@@ -125,7 +125,7 @@ To install Chef InSpec on an RPM-based system, follow these steps:
       sudo yum install ./inspec-enterprise-<VERSION>.x86_64.rpm
       ```
 
-    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-1.el8.x86_64.rpm`.
+    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1.amzn2.x86_64.rpm`.
 
 1. Verify that Chef InSpec is installed:
 
@@ -159,7 +159,7 @@ To install Chef InSpec on Windows, follow these steps:
       msiexec /i inspec-enterprise-<VERSION>-x64.msi /qn
       ```
 
-      Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.6.0-x64.msi`.
+      Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1_x64.msi`.
 
     - Double-click the `.msi` file and follow the on-screen installation wizard.
 
