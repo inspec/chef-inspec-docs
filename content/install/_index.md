@@ -43,8 +43,6 @@ To install Chef InSpec on a Debian-based system, follow these steps:
 
 1. Download the Debian-based installer using one of the following methods:
 
-    - In [Chef Downloads](https://www.chef.io/downloads), select the download portal based on your user type, then select **Chef InSpec**, and choose the target platform and version.
-
     - Download using `wget`:
 
       ```sh
@@ -85,8 +83,6 @@ To install Chef InSpec on a Debian-based system, follow these steps:
 To install Chef InSpec on an RPM-based system, follow these steps:
 
 1. Download the RPM-based installer using one of the following methods:
-
-    - In [Chef Downloads](https://www.chef.io/downloads), select the download portal based on your user type, then select **Chef InSpec**, and choose the target platform and version.
 
     - Download using `wget`:
 
@@ -142,8 +138,6 @@ To install Chef InSpec on an RPM-based system, follow these steps:
 To install Chef InSpec on Windows, follow these steps:
 
 1. Download the Windows-based installer using one of the following methods:
-
-    - In [Chef Downloads](https://www.chef.io/downloads), select the download portal based on your user type, then select **Chef InSpec**, and choose the target platform and version.
 
     - Download the installer in an elevated PowerShell session:
 
