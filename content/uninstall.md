@@ -17,6 +17,8 @@ sudo hab pkg uninstall chef/inspec
 
 ## Uninstall Chef InSpec on Debian-based distributions
 
+To uninstall Chef InSpec, follow these steps:
+
 1. Remove the package:
 
    ```sh
@@ -33,19 +35,21 @@ sudo hab pkg uninstall chef/inspec
 
 ## Uninstall Chef InSpec on RPM-based distributions
 
+To uninstall Chef InSpec, follow these steps:
+
 1. Remove the package.
 
-   Using `dnf`:
+    - Using `dnf`:
 
-   ```sh
-   sudo dnf remove inspec
-   ```
+      ```sh
+      sudo dnf remove inspec
+      ```
 
-   For Amazon Linux 2 or systems using `yum`:
+    - For Amazon Linux 2 or systems using `yum`:
 
-   ```sh
-   sudo yum remove inspec
-   ```
+      ```sh
+      sudo yum remove inspec
+      ```
 
 1. Verify that the package has been removed:
 
