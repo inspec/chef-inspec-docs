@@ -108,6 +108,10 @@ enabled = true
 this_version_text = "Chef InSpec 5.23"
 
 [[versions.version_selector.versions]]
+link_text = "Chef InSpec v 7.1"
+base_url = "https://docs.chef.io/inspec/7.1"
+
+[[versions.version_selector.versions]]
 link_text = "Chef InSpec v 7.0"
 base_url = "https://docs.chef.io/inspec/7.0"
 
