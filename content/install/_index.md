@@ -20,6 +20,7 @@ Chef InSpec is supported on the following platforms:
 
 - Windows x86-64
 - Linux x86-64
+- Linux ARM-64
 
 ## Prerequisites
 
@@ -60,6 +61,8 @@ To install Chef InSpec on a Debian-based system, follow these steps:
     - `<VERSION>` with the version number to install.
     - `<LICENSE_ID>` with your Chef license ID.
 
+    On ARM-64 systems, replace `m=x86_64` with `m=aarch64` in the download URL.
+
 1. Install Chef InSpec:
 
     ```sh
@@ -67,6 +70,8 @@ To install Chef InSpec on a Debian-based system, follow these steps:
     ```
 
     Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1_amd64.deb`.
+
+    On ARM-64 systems, the package name uses the `_arm64.deb` suffix instead of `_amd64.deb`.
 
 1. Verify that Chef InSpec is installed:
 
@@ -101,6 +106,8 @@ To install Chef InSpec on an RPM-based system, follow these steps:
     - `<VERSION>` with the version number to install.
     - `<LICENSE_ID>` with your Chef license ID.
 
+    On ARM-64 systems, replace `m=x86_64` with `m=aarch64` in the download URL.
+
 1. Install Chef InSpec using one of the following methods:
 
     - Install using `rpm`:
@@ -122,6 +129,8 @@ To install Chef InSpec on an RPM-based system, follow these steps:
       ```
 
     Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1.amzn2.x86_64.rpm`.
+
+    On ARM-64 systems, the package name uses the `.aarch64.rpm` suffix instead of `.x86_64.rpm`.
 
 1. Verify that Chef InSpec is installed:
 
