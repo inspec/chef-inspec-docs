@@ -63,22 +63,36 @@ To uninstall Chef InSpec, follow these steps:
 
 To uninstall Chef InSpec on macOS, follow these steps:
 
-1. Remove the installed files:
+1. Remove the `inspec` symlink:
 
    ```sh
-   sudo rm -rf /opt/inspec
+   sudo rm -f /usr/local/bin/inspec
    ```
+
+1. Remove the installed application files:
+
+   ```sh
+   sudo rm -rf "/Library/Application Support/InSpec"
+   ```
+
+1. Remove the underlying Habitat package files:
+
+   ```sh
+   sudo rm -rf /opt/hab
+   ```
+
+   Skip this step if you use Habitat for other packages on this system.
 
 1. Remove the package receipt:
 
    ```sh
-   sudo pkgutil --forget com.getchef.pkg.inspec
+   sudo pkgutil --forget io.chef.inspec-enterprise
    ```
 
 1. Verify that the package has been removed:
 
    ```sh
-   pkgutil --pkgs | grep com.getchef.pkg.inspec
+   pkgutil --pkgs | grep io.chef.inspec-enterprise
    ```
 
    The command returns no output if the package is removed successfully.

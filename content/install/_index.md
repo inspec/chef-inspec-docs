@@ -196,13 +196,21 @@ To install Chef InSpec on macOS, follow these steps:
 
     ```sh
     hdiutil attach inspec-enterprise-<VERSION>-macos.dmg
-    sudo installer -pkg "/Volumes/inspec-enterprise-<VERSION>/inspec-enterprise-<VERSION>.pkg" -target /
-    hdiutil detach "/Volumes/inspec-enterprise-<VERSION>"
     ```
 
-    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1.arm64.dmg`.
+    Then, from the mounted volume shown in Finder, double-click the `.pkg` file and follow the on-screen installation wizard, or install it from the command line:
 
-    You can also double-click the downloaded `.dmg` file and follow the on-screen installation wizard.
+    ```sh
+    sudo installer -pkg "/Volumes/<MOUNTED_VOLUME_NAME>/inspec-enterprise-<VERSION>.pkg" -target /
+    ```
+
+    Replace `<MOUNTED_VOLUME_NAME>` with the name of the mounted `.dmg` volume, and `<VERSION>` with the version number of the downloaded package.
+
+1. Unmount the disk image:
+
+    ```sh
+    hdiutil detach "/Volumes/<MOUNTED_VOLUME_NAME>"
+    ```
 
 1. Verify that Chef InSpec is installed:
 
