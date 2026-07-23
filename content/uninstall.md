@@ -59,6 +59,30 @@ To uninstall Chef InSpec, follow these steps:
 
    The command returns no output if the package is removed successfully.
 
+## Uninstall Chef InSpec on macOS
+
+To uninstall Chef InSpec on macOS, follow these steps:
+
+1. Remove the installed files:
+
+   ```sh
+   sudo rm -rf /opt/inspec
+   ```
+
+1. Remove the package receipt:
+
+   ```sh
+   sudo pkgutil --forget com.getchef.pkg.inspec
+   ```
+
+1. Verify that the package has been removed:
+
+   ```sh
+   pkgutil --pkgs | grep com.getchef.pkg.inspec
+   ```
+
+   The command returns no output if the package is removed successfully.
+
 ## Uninstall Chef InSpec on Windows
 
 To uninstall using the Windows UI:
