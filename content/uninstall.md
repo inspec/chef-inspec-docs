@@ -42,7 +42,7 @@ To uninstall Chef InSpec, follow these steps:
     - Using `dnf`:
 
       ```sh
-      sudo dnf remove inspec
+      sudo dnf remove inspec-enterprise
       ```
 
     - For Amazon Linux 2 or systems using `yum`:
@@ -54,7 +54,7 @@ To uninstall Chef InSpec, follow these steps:
 1. Verify that the package has been removed:
 
    ```sh
-   rpm -qa inspec
+   rpm -qa | grep inspec
    ```
 
    The command returns no output if the package is removed successfully.
