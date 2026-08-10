@@ -9,8 +9,6 @@ draft = false
     weight = 10
 +++
 
-<!-- cSpell:ignore -->
-
 Chef InSpec 7 installers are available for Windows, Debian, and RPM-based Linux distributions.
 You can download and install pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools.
 
@@ -20,7 +18,7 @@ Chef InSpec is supported on the following platforms:
 
 - Windows x86-64
 - Linux x86-64
-- Linux ARM-64
+- Linux ARM64
 
 ## Prerequisites
 
@@ -30,11 +28,11 @@ This installation process has the following prerequisites:
 
   If Chef InSpec is already installed, see the [Chef InSpec uninstall documentation](/uninstall/).
 
-- On Windows systems, `tar` is installed.
-- On Debian-based systems, the `dpkg` package manager is installed.
-- On RPM-based systems, `rpm` and either `dnf` or `yum` are installed. For Amazon Linux 2, use `rpm` and `yum`.
+- Windows systems have tar installed.
+- Debian-based systems have the DPKG package manager installed.
+- RPM-based systems have RPM and either DNF or YUM installed. Amazon Linux 2 systems use RPM and YUM.
 - You have a valid Progress Chef license key.
-- The target system is connected to the internet.
+- The target system has an internet connection.
 
 ## Install Chef InSpec
 
@@ -47,31 +45,31 @@ To install Chef InSpec on a Debian-based system, follow these steps:
     - Download using `wget`:
 
       ```sh
-      wget -O "inspec-enterprise-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
+      wget -O "inspec-enterprise-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=deb&v=<VERSION>"
       ```
 
     - Download using `curl`:
 
       ```sh
-      curl -o "inspec-enterprise-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=deb&v=<VERSION>"
+      curl -o "inspec-enterprise-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=deb&v=<VERSION>"
       ```
 
     Replace:
 
     - `<VERSION>` with the version number to install.
     - `<LICENSE_ID>` with your Chef license ID.
-
-    On ARM-64 systems, replace `m=x86_64` with `m=aarch64` in the download URL.
+    - `<ARCHITECTURE>` with `x86_64` or `aarch64`
 
 1. Install Chef InSpec:
 
     ```sh
-    sudo dpkg -i inspec-enterprise-<VERSION>_amd64.deb
+    sudo dpkg -i inspec-enterprise-<VERSION>_<ARCHITECTURE>.deb
     ```
 
-    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1_amd64.deb`.
+    Replace:
 
-    On ARM-64 systems, the package name uses the `_arm64.deb` suffix instead of `_amd64.deb`.
+    - `<VERSION>` with the version number of the downloaded package, for example `7.1.6-1`.
+    - `<ARCHITECTURE>` with `arm64` or `amd64`.
 
 1. Verify that Chef InSpec is installed:
 
@@ -92,45 +90,45 @@ To install Chef InSpec on an RPM-based system, follow these steps:
     - Download using `wget`:
 
       ```sh
-      wget -O "inspec-enterprise-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
+      wget -O "inspec-enterprise-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=rpm&v=<VERSION>"
       ```
 
     - Download using `curl`:
 
       ```sh
-      curl -o "inspec-enterprise-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=linux&pm=rpm&v=<VERSION>"
+      curl -o "inspec-enterprise-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=rpm&v=<VERSION>"
       ```
 
     Replace:
 
     - `<VERSION>` with the version number to install.
     - `<LICENSE_ID>` with your Chef license ID.
-
-    On ARM-64 systems, replace `m=x86_64` with `m=aarch64` in the download URL.
+    - `<ARCHITECTURE>` with `x86_64` or `aarch64`.
 
 1. Install Chef InSpec using one of the following methods:
 
     - Install using `rpm`:
 
       ```sh
-      sudo rpm -Uvh inspec-enterprise-<VERSION>.x86_64.rpm
+      sudo rpm -Uvh inspec-enterprise-<VERSION>.<ARCHITECTURE>.rpm
       ```
 
     - Install using `dnf`:
 
       ```sh
-      sudo dnf install ./inspec-enterprise-<VERSION>.x86_64.rpm
+      sudo dnf install ./inspec-enterprise-<VERSION>.<ARCHITECTURE>.rpm
       ```
 
     - For Amazon Linux 2 or systems using `yum`:
 
       ```sh
-      sudo yum install ./inspec-enterprise-<VERSION>.x86_64.rpm
+      sudo yum install ./inspec-enterprise-<VERSION>.<ARCHITECTURE>.rpm
       ```
 
-    Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1.amzn2.x86_64.rpm`.
+    Replace:
 
-    On ARM-64 systems, the package name uses the `.aarch64.rpm` suffix instead of `.x86_64.rpm`.
+    - `<VERSION>` with the version number of the downloaded package, for example `7.1.6-1.amzn2`.
+    - `<ARCHITECTURE>` with `x86_64` or `aarch64`.
 
 1. Verify that Chef InSpec is installed:
 
@@ -181,6 +179,6 @@ To upgrade Chef InSpec to a newer version:
 1. [Uninstall the current version](/uninstall/) using the steps for your platform.
 1. Download and install the new version using the steps for your platform using the instruction on this page.
 
-## More information
+## See also
 
 - [Chef Download API documentation](https://docs.chef.io/download/)
