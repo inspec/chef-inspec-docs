@@ -45,20 +45,20 @@ To install Chef InSpec on a Debian-based system, follow these steps:
     - Download using `wget`:
 
       ```sh
-      wget -O "inspec-enterprise-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=deb&v=<VERSION>"
+      wget -O "inspec-enterprise-<VERSION>_<ARCHITECTURE>.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=deb&v=<VERSION>"
       ```
 
     - Download using `curl`:
 
       ```sh
-      curl -o "inspec-enterprise-<VERSION>-linux.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=deb&v=<VERSION>"
+      curl -o "inspec-enterprise-<VERSION>_<ARCHITECTURE>.deb" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=deb&v=<VERSION>"
       ```
 
     Replace:
 
     - `<VERSION>` with the version number to install.
     - `<LICENSE_ID>` with your Chef license ID.
-    - `<ARCHITECTURE>` with `x86_64` or `aarch64`
+    - `<ARCHITECTURE>` with `x86_64` or `aarch64`.
 
 1. Install Chef InSpec:
 
@@ -68,8 +68,8 @@ To install Chef InSpec on a Debian-based system, follow these steps:
 
     Replace:
 
-    - `<VERSION>` with the version number of the downloaded package, for example `7.1.6-1`.
-    - `<ARCHITECTURE>` with `arm64` or `amd64`.
+    - `<VERSION>` with the version number of the downloaded package, for example `7.1.6`.
+    - `<ARCHITECTURE>` with `x86_64` or `aarch64`.
 
 1. Verify that Chef InSpec is installed:
 
@@ -90,13 +90,13 @@ To install Chef InSpec on an RPM-based system, follow these steps:
     - Download using `wget`:
 
       ```sh
-      wget -O "inspec-enterprise-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=rpm&v=<VERSION>"
+      wget -O "inspec-enterprise-<VERSION>.<ARCHITECTURE>.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=rpm&v=<VERSION>"
       ```
 
     - Download using `curl`:
 
       ```sh
-      curl -o "inspec-enterprise-<VERSION>-linux.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=rpm&v=<VERSION>"
+      curl -o "inspec-enterprise-<VERSION>.<ARCHITECTURE>.rpm" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=<ARCHITECTURE>&p=linux&pm=rpm&v=<VERSION>"
       ```
 
     Replace:
@@ -127,7 +127,7 @@ To install Chef InSpec on an RPM-based system, follow these steps:
 
     Replace:
 
-    - `<VERSION>` with the version number of the downloaded package, for example `7.1.6-1.amzn2`.
+    - `<VERSION>` with the version number of the downloaded package, for example `7.1.6`.
     - `<ARCHITECTURE>` with `x86_64` or `aarch64`.
 
 1. Verify that Chef InSpec is installed:
@@ -147,7 +147,7 @@ To install Chef InSpec on Windows, follow these steps:
 1. Download the installer in an elevated PowerShell session:
 
       ```powershell
-      Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-enterprise-<VERSION>-windows.msi"
+      Invoke-WebRequest -Uri "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=x86_64&p=windows&pm=msi&v=<VERSION>" -OutFile "inspec-enterprise-<VERSION>-x64.msi"
       ```
 
 1. Install Chef InSpec using one of the following methods:
@@ -158,7 +158,7 @@ To install Chef InSpec on Windows, follow these steps:
       msiexec /i inspec-enterprise-<VERSION>-x64.msi /qn
       ```
 
-      Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1_x64.msi`.
+      Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1-x64.msi`.
 
     - Double-click the `.msi` file and follow the on-screen installation wizard.
 
