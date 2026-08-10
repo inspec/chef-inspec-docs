@@ -11,8 +11,8 @@ draft = false
 
 <!-- cSpell:ignore -->
 
-Chef InSpec 7 installers are available for Windows, Debian, and RPM-based Linux distributions.
-You can download and install pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools.
+Chef InSpec 7 installers are available for Windows, Debian, RPM-based Linux distributions, and macOS.
+You can download and install pre-built `.msi`, `.deb`, `.rpm`, or `.dmg` packages using your existing package management tools.
 
 ## Supported platforms
 
@@ -20,6 +20,7 @@ Chef InSpec is supported on the following platforms:
 
 - Windows x86-64
 - Linux x86-64
+- macOS Apple Silicon (ARM-64)
 
 ## Prerequisites
 
@@ -32,6 +33,7 @@ This installation process has the following prerequisites:
 - On Windows systems, `tar` is installed.
 - On Debian-based systems, the `dpkg` package manager is installed.
 - On RPM-based systems, `rpm` and either `dnf` or `yum` are installed. For Amazon Linux 2, use `rpm` and `yum`.
+- On macOS systems, you have administrator access to run the `installer` command.
 - You have a valid Progress Chef license key.
 - The target system is connected to the internet.
 
@@ -154,6 +156,70 @@ To install Chef InSpec on Windows, follow these steps:
       Replace `<VERSION>` with the version number of the downloaded package, for example `inspec-enterprise-7.1.6-1_x64.msi`.
 
     - Double-click the `.msi` file and follow the on-screen installation wizard.
+
+1. Verify that Chef InSpec is installed:
+
+    ```sh
+    inspec version
+    ```
+
+    The output displays the installed Chef InSpec version.
+
+1. [Accept the Chef EULA](license#accept-the-chef-eula).
+
+### Install Chef InSpec on macOS
+
+Chef InSpec supports macOS on Apple Silicon (ARM-64) devices.
+
+To install Chef InSpec on macOS, follow these steps:
+
+1. Download the macOS installer using one of the following methods:
+
+    - Download using `wget`:
+
+      ```sh
+      wget -O "inspec-enterprise-<VERSION>-macos.dmg" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=aarch64&p=mac_os_x&pm=dmg&v=<VERSION>"
+      ```
+
+    - Download using `curl`:
+
+      ```sh
+      curl -o "inspec-enterprise-<VERSION>-macos.dmg" "https://chefdownload-commercial.chef.io/stable/inspec/download?eol=false&license_id=<LICENSE_ID>&m=aarch64&p=mac_os_x&pm=dmg&v=<VERSION>"
+      ```
+
+    Replace:
+
+    - `<VERSION>` with the version number to install.
+    - `<LICENSE_ID>` with your Chef license ID.
+
+1. Mount the disk image:
+
+    ```sh
+    hdiutil attach inspec-enterprise-<VERSION>-macos.dmg
+    ```
+
+    This command mounts the `.dmg` file as a volume that appears in Finder.
+
+1. Install Chef InSpec from the mounted volume, using one of the following methods:
+
+    - In Finder, open the mounted volume, double-click the `.pkg` file, and follow the on-screen installation wizard.
+
+    - Install using the `installer` command:
+
+      ```sh
+      sudo installer -pkg "/Volumes/<MOUNTED_VOLUME_NAME>/inspec-enterprise-<VERSION>.pkg" -target /
+      ```
+
+      Replace the following:
+
+      - `<MOUNTED_VOLUME_NAME>` with the name of the mounted `.dmg` volume.
+      - `<VERSION>` with the version number of the downloaded package, for example `7.1.16`.
+
+1. Unmount the disk image:
+
+    ```sh
+    hdiutil detach "/Volumes/<MOUNTED_VOLUME_NAME>"
+    ```
 
 1. Verify that Chef InSpec is installed:
 
