@@ -172,23 +172,22 @@ To install Chef InSpec on Windows, follow these steps:
 
 1. [Accept the Chef EULA](license#accept-the-chef-eula).
 
-
-## Install Chef InSpec on MacOs
+## Install Chef InSpec on macOS
 
 {{< note >}}
 
-    For macOS, skip above steps. Install from a Chef Habitat package using below steps.
+For macOS, skip the above steps. Install from a Chef Habitat package using the steps below.
 
 {{< /note >}}
 
 ### Prerequisites
 
-  - [Chef Habitat installed on your workstation](https://docs.chef.io/habitat/install_habitat/)
-  - [A Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/)
+- [Chef Habitat installed on your workstation](https://docs.chef.io/habitat/install_habitat/)
+- [A Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/)
 
 ### Install Chef InSpec
 
-  - Install the Chef InSpec Habitat package:
+- Install the Chef InSpec Habitat package:
 
     ```sh
     sudo hab pkg install chef/inspec --channel base-2025 --binlink --force --auth <HAB_BUILDER_TOKEN>
@@ -197,17 +196,18 @@ To install Chef InSpec on Windows, follow these steps:
     For more information, see the [Habitat CLI documentation](https://docs.chef.io/habitat/habitat_cli/#hab-pkg-install).
 
 ### Verify installation
-  - Use the following commands to verify that Chef InSpec is installed.
+
+- Use the following commands to verify that Chef InSpec is installed.
 
     If you binlinked the InSpec package during installation, check the installed InSpec version:
 
-      ```sh
-      inspec version
-      ```
+    ```sh
+    inspec version
+    ```
 
 ### Manage the Chef InSpec package
 
-  - Upgrade Chef InSpec
+- Upgrade Chef InSpec
 
     To upgrade to a newer version in the same channel, re-run the install command with `--force`:
 
@@ -215,7 +215,7 @@ To install Chef InSpec on Windows, follow these steps:
     sudo hab pkg install chef/inspec --channel base-2025 --binlink --force
     ```
 
-  - Uninstall the InSpec package
+- Uninstall the InSpec package
 
     ```sh
     sudo hab pkg uninstall chef/inspec
@@ -225,7 +225,7 @@ To install Chef InSpec on Windows, follow these steps:
 
 {{< note >}}
 
-    These steps are not applicable for MacOs Habitat Package.
+These steps aren't applicable for the macOS Habitat package.
 
 {{< /note >}}
 
