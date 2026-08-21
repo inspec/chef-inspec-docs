@@ -9,18 +9,28 @@ draft = false
     weight = 10
 +++
 
-Chef InSpec 7 installers are available for Windows, Debian, and RPM-based Linux distributions.
-You can download and install pre-built `.msi`, `.deb`, or `.rpm` packages using your existing package management tools.
+You can install Chef InSpec using a platform-native installer on:
 
-## Supported platforms
+- Windows
+- Debian-based Linux distributions
+- RPM-based Linux distributions
 
-Chef InSpec is supported on the following platforms:
+You can install the Chef InSpec Habitat package on:
+
+- macOS
+- Windows
+- Debian-based Linux distributions
+- RPM-based Linux distributions
+
+## Install Chef InSpec using a platform-native installer
+
+### Supported platforms
 
 - Windows x86-64
 - Linux x86-64
 - Linux ARM64
 
-## Prerequisites
+### Prerequisites
 
 This installation process has the following prerequisites:
 
@@ -33,8 +43,6 @@ This installation process has the following prerequisites:
 - RPM-based systems have RPM and either DNF or YUM installed. Amazon Linux 2 systems use RPM and YUM.
 - You have a valid Progress Chef license key.
 - The target system has an internet connection.
-
-## Install Chef InSpec
 
 ### Install Chef InSpec on Debian-based systems
 
@@ -172,22 +180,28 @@ To install Chef InSpec on Windows, follow these steps:
 
 1. [Accept the Chef EULA](license#accept-the-chef-eula).
 
-## Install Chef InSpec on macOS
+## Install the Chef InSpec Habitat package
 
-{{< note >}}
+### Supported platforms
 
-For macOS, skip the above steps. Install from a Chef Habitat package using the steps below.
-
-{{< /note >}}
+- Windows x86-64
+- Linux x86-64
+- Linux ARM64
+- macOS ARM64
 
 ### Prerequisites
 
-- [Chef Habitat installed on your workstation](https://docs.chef.io/habitat/install_habitat/)
-- [A Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/)
+- Chef Automate, and Chef Workstation aren't installed on the target system.
+- [Chef Habitat is installed on your workstation](https://docs.chef.io/habitat/install_habitat/).
+- [You have a Chef Habitat Builder profile with a personal access token](https://docs.chef.io/habitat/builder_profile/).
+- You have a valid Progress Chef license key.
+- The target system has an internet connection.
 
 ### Install Chef InSpec
 
-- Install the Chef InSpec Habitat package:
+To install the Chef InSpec Habitat package, follow these steps:
+
+1. Install the Chef InSpec Habitat package:
 
     ```sh
     sudo hab pkg install chef/inspec --channel base-2025 --binlink --force --auth <HAB_BUILDER_TOKEN>
@@ -195,45 +209,16 @@ For macOS, skip the above steps. Install from a Chef Habitat package using the s
 
     For more information, see the [Habitat CLI documentation](https://docs.chef.io/habitat/habitat_cli/#hab-pkg-install).
 
-### Verify installation
-
-- Use the following commands to verify that Chef InSpec is installed.
-
-    If you binlinked the InSpec package during installation, check the installed InSpec version:
+1. Verify that Chef InSpec is installed.
 
     ```sh
     inspec version
     ```
 
-### Manage the Chef InSpec package
-
-- Upgrade Chef InSpec
-
-    To upgrade to a newer version in the same channel, re-run the install command with `--force`:
-
-    ```sh
-    sudo hab pkg install chef/inspec --channel base-2025 --binlink --force
-    ```
-
-- Uninstall the InSpec package
-
-    ```sh
-    sudo hab pkg uninstall chef/inspec
-    ```
-
-## Upgrade Chef InSpec
-
-{{< note >}}
-
-These steps aren't applicable for the macOS Habitat package.
-
-{{< /note >}}
-
-To upgrade Chef InSpec to a newer version:
-
-1. [Uninstall the current version](/uninstall/) using the steps for your platform.
-1. Download and install the new version using the steps for your platform using the instruction on this page.
+1. [Accept the Chef EULA](license#accept-the-chef-eula).
 
 ## See also
 
 - [Chef Download API documentation](https://docs.chef.io/download/)
+- [Uninstall Chef InSpec](/manage/uninstall)
+- [Upgrade Chef InSpec](/manage/upgrade)
