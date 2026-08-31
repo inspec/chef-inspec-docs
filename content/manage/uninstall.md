@@ -2,14 +2,16 @@
 title = "Uninstall Chef InSpec"
 draft = false
 
-[menu.uninstall]
-    title = "Uninstall"
-    identifier = "uninstall"
+[menu.manage]
+title = "Uninstall Chef InSpec"
+identifier = "manage/uninstall"
+parent = "manage"
+weight = 20
 +++
 
 ## Uninstall Habitat-based Chef InSpec
 
-If you installed Chef InSpec as a Habitat package, use the [`hab pkg uninstall`](https://docs.chef.io/habitat/latest/reference/habitat_cli/#hab-pkg-uninstall) command:
+If you installed Chef InSpec from a Habitat package, use the [`hab pkg uninstall`](https://docs.chef.io/habitat/latest/reference/habitat_cli/#hab-pkg-uninstall) command:
 
 ```sh
 sudo hab pkg uninstall chef/inspec
