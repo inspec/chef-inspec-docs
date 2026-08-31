@@ -101,7 +101,7 @@ errorLevel = 'warning'
 
 [versions.this_version]
 swiftype_search_products = [ "inspec-7.2" ]
-release_date = "YYYY-MM-DD"
+release_date = "2026-09-01"
 
 [versions.version_selector]
 enabled = true
