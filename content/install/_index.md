@@ -9,15 +9,24 @@ draft = false
     weight = 10
 +++
 
-You can install Chef InSpec using a platform-native installer on:
+Chef InSpec can be installed using either a platform-native installer or a Habitat package. Choose the installation method that best fits your environment.
 
-- macOS
-- Windows
-- Debian-based Linux distributions
-- RPM-based Linux distributions
+## Installation methods
 
-Chef InSpec 7 installers are available for Windows, Debian, RPM-based Linux distributions, and macOS.
-You can download and install pre-built `.msi`, `.deb`, `.rpm`, or `.dmg` packages using your existing package management tools.
+Chef InSpec is available through two installation methods:
+
+### Platform-native installer
+
+Use a platform-native installer if you want to install Chef InSpec using your operating system's standard installation tools.
+
+Available platforms and installers:
+
+- macOS on Apple Silicon (ARM64): `.dmg`
+- Windows: `.msi`
+- Debian-based Linux distributions: `.deb`
+- RPM-based Linux distributions: `.rpm`
+
+### Habitat package
 
 You can install the Chef InSpec Habitat package on:
 
@@ -221,7 +230,7 @@ To install Chef InSpec on macOS, follow these steps:
 
 1. Install Chef InSpec from the mounted volume, using one of the following methods:
 
-    - In Finder, open the mounted volume, double-click the `.pkg` file, and follow the on-screen installation wizard.
+    - In Finder, open the mounted volume, open the `.pkg` file, and follow the on-screen installation wizard.
 
     - Install using the `installer` command:
 
