@@ -50,7 +50,7 @@ This installation process has the following prerequisites:
 
 - Chef InSpec, Chef Automate, and Chef Workstation aren't installed on the target system.
 
-  If Chef InSpec is already installed, see the [Chef InSpec uninstall documentation](/uninstall/).
+  If Chef InSpec is already installed, see the [Chef InSpec uninstall documentation](/manage/uninstall/).
 
 - Windows systems have tar installed.
 - Debian-based systems have the DPKG package manager installed.
