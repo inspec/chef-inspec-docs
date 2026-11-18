@@ -1,6 +1,11 @@
 <!-- markdownlint-disable MD002 -->
 # Chef InSpec documentation
 
+> [!IMPORTANT]
+> Chef InSpec docs now live in [chef/chef-web-docs](https://github.com/chef/chef-web-docs/tree/main/content/inspec).
+
+<!--
+
 The InSpec documentation is deployed on <https://docs.chef.io/inspec/>.
 
 ## The fastest way to contribute
@@ -107,6 +112,8 @@ support email address. If you need support, contact [Chef Support](https://www.c
 Submit an issue to the [InSpec repo](https://github.com/inspec/chef-inspec-docs/issues)
 for "important" documentation bugs that may need visibility among a larger group,
 especially in situations where a doc bug may also surface a product bug.
+
+-->
 
 ## Copyright
 
